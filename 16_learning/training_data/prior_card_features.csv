@@ -1,0 +1,37 @@
+﻿card_id,category,family,problem_type,source_count,figure_hint_count,risk_hint_count,copy_risk_status
+CARD8d5926dbad37,线性规划,优化决策,优化决策型,41,5,3,abstracted_pass
+CARDe9b8514efbcf,层次分析法,统计评价,数据评价型,31,5,3,abstracted_pass
+CARD243e877b5fdf,拟合模型,预测回归,预测分析型,22,5,3,abstracted_pass
+CARD4514782099af,遗传算法,优化决策,优化决策型,18,5,3,abstracted_pass
+CARD8e70bd939a32,模糊综合评价,统计评价,数据评价型,16,5,3,abstracted_pass
+CARD761c70fc454b,相关系数,统计评价,数据评价型,16,5,3,abstracted_pass
+CARD60dd60d8f596,多元回归,预测回归,预测分析型,16,5,3,abstracted_pass
+CARDd4ecbd80ba7d,微分方程,机理仿真,机理仿真型,15,5,3,abstracted_pass
+CARD6c9687c45c27,神经网络,机器学习,分类识别型,12,5,3,abstracted_pass
+CARD539e1199b391,主成分分析,统计评价,数据评价型,12,5,3,abstracted_pass
+CARD1cdab9e9aba1,聚类模型,统计评价,数据评价型,11,5,3,abstracted_pass
+CARD271f61c6b5ce,灰色预测,预测回归,预测分析型,10,5,3,abstracted_pass
+CARD91845aabd645,蒙特卡洛Monte-Carlo模拟,机理仿真,机理仿真型,8,5,3,abstracted_pass
+CARD6a6b4cf95156,方差分析,统计评价,数据评价型,8,5,3,abstracted_pass
+CARD5f20d78b16d1,插值,其他,综合开放型,7,5,2,abstracted_pass
+CARD123893464e76,模拟退火,优化决策,优化决策型,6,5,3,abstracted_pass
+CARD8efc3435e4cf,逻辑回归（logistic regression）,预测回归,预测分析型,6,5,3,abstracted_pass
+CARD85721a3813c1,图论floyd算法,优化决策,优化决策型,5,5,3,abstracted_pass
+CARD0776019e20d8,优劣解距离法（TOPSIS）,优化决策,优化决策型,4,5,3,abstracted_pass
+CARDef9b2c695b7a,动态规划,优化决策,优化决策型,4,5,3,abstracted_pass
+CARDde1170c174bf,博弈论,优化决策,优化决策型,4,5,3,abstracted_pass
+CARDf3cf64ed7853,排队论,优化决策,优化决策型,4,5,3,abstracted_pass
+CARD0fb9a960f569,蚁群算法,优化决策,优化决策型,4,5,3,abstracted_pass
+CARDb5b6c924cc7c,元胞自动机,机理仿真,机理仿真型,4,5,3,abstracted_pass
+CARD95a8ca37105d,因子分析,统计评价,数据评价型,4,5,3,abstracted_pass
+CARDd267a878a7eb,灰色关联分析,统计评价,数据评价型,4,5,3,abstracted_pass
+CARDbd4d453938cf,图论Dijkstra模型,优化决策,优化决策型,3,5,3,abstracted_pass
+CARDa9705b703211,马尔科夫Markov Model,机理仿真,机理仿真型,3,5,3,abstracted_pass
+CARD8001a69928a7,逐步回归,预测回归,预测分析型,3,5,3,abstracted_pass
+CARD1b8d18bdf4bc,粒子群算法,优化决策,优化决策型,2,5,3,abstracted_pass
+CARDb6360a172c78,小波分析,机理仿真,机理仿真型,2,5,3,abstracted_pass
+CARD2cdf0c003e5f,典型相关分析,统计评价,数据评价型,2,5,3,abstracted_pass
+CARD05a952067824,时间序列ARMA,预测回归,预测分析型,2,5,3,abstracted_pass
+CARD3d784a37f4f2,决策树,机器学习,分类识别型,1,5,3,abstracted_pass
+CARDdffbcc72c8d3,支持向量机,机器学习,分类识别型,1,5,3,abstracted_pass
+CARD91726efa2ce4,投影寻踪综合评价法,统计评价,数据评价型,1,5,3,abstracted_pass
