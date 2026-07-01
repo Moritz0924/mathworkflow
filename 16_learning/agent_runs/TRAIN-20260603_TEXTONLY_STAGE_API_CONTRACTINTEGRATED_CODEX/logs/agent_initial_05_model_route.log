@@ -1,0 +1,74 @@
+$ python scripts/deepseek_agent_runner.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_CONTRACTINTEGRATED_CODEX\workspace\agent_stage_initial_05_model_route.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_CONTRACTINTEGRATED_CODEX\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_CONTRACTINTEGRATED_CODEX --mode training_sandbox --max-iterations 3 --stage model_route --call-id initial_05_model_route
+cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_CONTRACTINTEGRATED_CODEX\workspace
+
+{"event": "stream_progress", "elapsed_seconds": 30.047, "chunk_count": 996, "content_chars": 0, "reasoning_content_chars": 2530, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 60.094, "chunk_count": 2117, "content_chars": 0, "reasoning_content_chars": 5245, "idle_seconds": 0.016, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 90.25, "chunk_count": 3343, "content_chars": 0, "reasoning_content_chars": 7835, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 120.391, "chunk_count": 4807, "content_chars": 0, "reasoning_content_chars": 11139, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 150.438, "chunk_count": 6259, "content_chars": 0, "reasoning_content_chars": 14094, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 180.531, "chunk_count": 7777, "content_chars": 0, "reasoning_content_chars": 17332, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 210.547, "chunk_count": 10086, "content_chars": 0, "reasoning_content_chars": 21871, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 240.594, "chunk_count": 11604, "content_chars": 0, "reasoning_content_chars": 25142, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 270.61, "chunk_count": 13683, "content_chars": 0, "reasoning_content_chars": 28993, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 300.641, "chunk_count": 15558, "content_chars": 0, "reasoning_content_chars": 32265, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 330.766, "chunk_count": 17188, "content_chars": 0, "reasoning_content_chars": 35409, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 360.766, "chunk_count": 19462, "content_chars": 0, "reasoning_content_chars": 39974, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 390.797, "chunk_count": 21701, "content_chars": 3966, "reasoning_content_chars": 40270, "idle_seconds": 0.0, "finish_reason": null}
+{
+  "status": "completed",
+  "stage": "model_route",
+  "call_id": "initial_05_model_route",
+  "profile_id": "deep",
+  "model": "deepseek-v4-pro",
+  "response": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_CONTRACTINTEGRATED_CODEX\\deepseek_calls\\initial_05_model_route\\deepseek_response.md",
+  "file_actions": [
+    {
+      "path": "05_model/model_route.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "05_model/model_route.md"
+    },
+    {
+      "path": "05_model/fallback_plan.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "05_model/fallback_plan.md"
+    },
+    {
+      "path": "05_model/symbols.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "05_model/symbols.md"
+    },
+    {
+      "path": "14_contracts/formula_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/formula_contract.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3839,
+    "completion_tokens": 21785,
+    "total_tokens": 25624,
+    "prompt_tokens_details": {
+      "cached_tokens": 1792
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 19631
+    },
+    "prompt_cache_hit_tokens": 1792,
+    "prompt_cache_miss_tokens": 2047
+  }
+}

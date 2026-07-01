@@ -1,0 +1,4 @@
+$ python scripts/deepseek_agent_runner.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_PROMPTSET_CODEX\workspace\agent_stage_initial_02_eda.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_PROMPTSET_CODEX\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_PROMPTSET_CODEX --mode training_sandbox --max-iterations 3 --stage eda --call-id initial_02_eda
+cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_PROMPTSET_CODEX\workspace
+
+{"status": "failed", "failure_code": "DEEPSEEK_AGENT_ERROR", "message": "DeepSeek request failed: [WinError 10054] 远程主机强迫关闭了一个现有的连接。"}

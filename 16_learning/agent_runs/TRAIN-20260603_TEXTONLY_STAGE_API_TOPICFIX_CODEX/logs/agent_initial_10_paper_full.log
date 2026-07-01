@@ -1,0 +1,112 @@
+$ python scripts/deepseek_agent_runner.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX\workspace\agent_stage_initial_10_paper_full.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX --mode training_sandbox --max-iterations 3 --stage paper_full --call-id initial_10_paper_full
+cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX\workspace
+
+{"event": "stream_progress", "elapsed_seconds": 30.032, "chunk_count": 1133, "content_chars": 0, "reasoning_content_chars": 4942, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 60.032, "chunk_count": 2591, "content_chars": 0, "reasoning_content_chars": 10240, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 90.063, "chunk_count": 4199, "content_chars": 0, "reasoning_content_chars": 14587, "idle_seconds": 0.016, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 120.11, "chunk_count": 5592, "content_chars": 0, "reasoning_content_chars": 16962, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 150.141, "chunk_count": 6933, "content_chars": 0, "reasoning_content_chars": 20371, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 180.157, "chunk_count": 9313, "content_chars": 0, "reasoning_content_chars": 25278, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 210.266, "chunk_count": 11353, "content_chars": 0, "reasoning_content_chars": 30951, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 240.329, "chunk_count": 13083, "content_chars": 0, "reasoning_content_chars": 36750, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 270.344, "chunk_count": 14831, "content_chars": 0, "reasoning_content_chars": 42450, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 300.36, "chunk_count": 16448, "content_chars": 0, "reasoning_content_chars": 48112, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 330.375, "chunk_count": 18281, "content_chars": 0, "reasoning_content_chars": 53547, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 360.438, "chunk_count": 20410, "content_chars": 0, "reasoning_content_chars": 58933, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 390.454, "chunk_count": 22659, "content_chars": 0, "reasoning_content_chars": 63179, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 420.5, "chunk_count": 24035, "content_chars": 0, "reasoning_content_chars": 68638, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 450.719, "chunk_count": 26130, "content_chars": 3571, "reasoning_content_chars": 70515, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 480.75, "chunk_count": 28352, "content_chars": 7398, "reasoning_content_chars": 70515, "idle_seconds": 0.0, "finish_reason": null}
+{
+  "status": "completed",
+  "stage": "paper_full",
+  "call_id": "initial_10_paper_full",
+  "profile_id": "deep",
+  "model": "deepseek-v4-pro",
+  "response": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX\\deepseek_calls\\initial_10_paper_full\\deepseek_response.md",
+  "file_actions": [
+    {
+      "path": "14_contracts/figure_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/figure_contract.csv"
+    },
+    {
+      "path": "14_contracts/result_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/result_contract.csv"
+    },
+    {
+      "path": "14_contracts/formula_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/formula_contract.csv"
+    },
+    {
+      "path": "14_contracts/claim_evidence_map.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/claim_evidence_map.csv"
+    },
+    {
+      "path": "09_paper/full_draft.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "09_paper/full_draft.md"
+    },
+    {
+      "path": "09_paper/full_consistency_risk.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "09_paper/full_consistency_risk.md"
+    },
+    {
+      "path": "14_contracts/artifact_freeze_registry.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/artifact_freeze_registry.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "reports/training_enhancement_points.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "reports/training_enhancement_points.csv"
+    },
+    {
+      "path": "10_ai_logs/stage_paper_full_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "10_ai_logs/stage_paper_full_summary.md"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3913,
+    "completion_tokens": 29061,
+    "total_tokens": 32974,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 24696
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 2249
+  }
+}

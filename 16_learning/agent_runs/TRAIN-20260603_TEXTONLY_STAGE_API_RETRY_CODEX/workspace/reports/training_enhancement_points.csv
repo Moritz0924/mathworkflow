@@ -1,0 +1,7 @@
+target_area,point_id,description,source_stage,priority
+system,SYS-01,增强阶段依赖检查以防止跳过 results_freeze 等关键阶段,paper_full,high
+system,SYS-02,在 paper_full 启动时自动校验所有上游合同的存在性,paper_full,high
+prompt,PRM-01,在 paper_full 提示词中明确合同缺失时的回退与报告机制,paper_full,medium
+prompt,PRM-02,要求对缺失合同生成显式缺件清单而非静默继续,paper_full,high
+gate,GAT-01,模拟闸门应强制要求 formal_effect=none 并与正式闸门记录对齐,paper_full,high
+gate,GAT-02,增加人工对未解决缺口列表的确认步骤,paper_full,medium

@@ -1,0 +1,69 @@
+version: v3.2-mvp
+enabled: true
+
+skill_roots:
+  project_vendor: vendor/nature-skills/skills
+  codex_user: ~/.codex/skills
+
+installation_policy:
+  copy_whole_skill_directory: true
+  copy_skill_md_only: false
+  pin_vendor_commit: true
+  restart_codex_after_sync: true
+
+stage_skill_map:
+  literature:
+    - nature-academic-search
+    - nature-citation
+  data:
+    - nature-data
+  prior_retrieval:
+    - nature-reader
+  figures:
+    - nature-figure
+  paper_draft:
+    - nature-writing
+  paper_full:
+    - nature-writing
+  auto_review:
+    - nature-response
+  polish:
+    - nature-polishing
+  final_export:
+    - nature-paper2ppt
+
+skill_modes:
+  nature-academic-search: api_backed_when_available
+  nature-citation: verified_support_only
+  nature-data: reproducibility_statement
+  nature-reader: experience_card_extraction_only
+  nature-figure: contract_first_figure_design
+  nature-writing: evidence_bound_section_draft
+  nature-response: review_task_mapping_only
+  nature-polishing: fact_preserving_diff
+  nature-paper2ppt: post_final_presentation_only
+
+required_inputs:
+  nature-figure:
+    - 14_contracts/result_contract.csv
+    - 14_contracts/figure_contract.csv
+  nature-writing:
+    - 14_contracts/claim_evidence_map.csv
+    - 14_contracts/result_contract.csv
+    - 14_contracts/figure_contract.csv
+    - 14_contracts/formula_contract.csv
+  nature-polishing:
+    - 14_contracts/artifact_freeze_registry.csv
+  nature-citation:
+    - 14_contracts/citation_contract.csv
+  nature-response:
+    - 11_review/review_scorecard.csv
+    - 14_contracts/revision_tasks.csv
+
+output_guardrails:
+  no_fabricated_data: true
+  no_fabricated_citations: true
+  no_unregistered_figures: true
+  no_fact_changes_in_polish: true
+  no_prior_text_copying: true
+  all_skill_outputs_must_pass_gates: true

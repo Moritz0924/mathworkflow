@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'>
+  <rect width='400' height='400' fill='#f8f9fa'/>
+  <text x='200' y='30' text-anchor='middle' font-size='18' font-weight='bold' fill='#212529'>混淆矩阵</text>
+  <rect x='50' y='80' width='80' height='80' fill='#cfe2ff'/>
+  <text x='90' y='125' font-size='14' fill='#0a58ca'>TN: 450</text>
+  <rect x='130' y='80' width='80' height='80' fill='#f8d7da'/>
+  <text x='170' y='125' font-size='14' fill='#842029'>FP: 30</text>
+  <rect x='50' y='160' width='80' height='80' fill='#f8d7da'/>
+  <text x='90' y='205' font-size='14' fill='#842029'>FN: 20</text>
+  <rect x='130' y='160' width='80' height='80' fill='#cfe2ff'/>
+  <text x='170' y='205' font-size='14' fill='#0a58ca'>TP: 500</text>
+  <text x='130' y='260' font-size='12' fill='#495057'>预测类别</text>
+  <text x='15' y='200' transform='rotate(-90 15,200)' text-anchor='middle' font-size='12' fill='#495057'>真实类别</text>
+  <text x='90' y='70' font-size='12' fill='#495057'>阴性</text>
+  <text x='170' y='70' font-size='12' fill='#495057'>阳性</text>
+  <text x='40' y='125' font-size='12' fill='#495057'>阴性</text>
+  <text x='40' y='205' font-size='12' fill='#495057'>阳性</text>
+</svg>

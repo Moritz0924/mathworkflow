@@ -1,0 +1,49 @@
+{
+  "action_count": 3,
+  "results": [
+    {
+      "path": "12_submission/compile_gate_report.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_submission/compile_gate_report.md"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "10_ai_logs/compile_blocked.log",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "10_ai_logs/compile_blocked.log"
+    }
+  ],
+  "protocol_issues": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 3489,
+      "completion_tokens": 1935,
+      "total_tokens": 5424,
+      "prompt_tokens_details": {
+        "cached_tokens": 1792
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1379
+      },
+      "prompt_cache_hit_tokens": 1792,
+      "prompt_cache_miss_tokens": 1697
+    },
+    "reasoning_content_chars": 3769,
+    "stream": true,
+    "chunk_count": 1937,
+    "content_chars": 1999,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_CONTRACTINTEGRATED_CODEX\\deepseek_calls\\initial_14_compile\\deepseek_stream_status.jsonl"
+  }
+}

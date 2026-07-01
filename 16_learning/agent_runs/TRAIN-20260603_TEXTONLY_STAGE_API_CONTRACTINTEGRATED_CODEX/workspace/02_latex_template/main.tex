@@ -1,0 +1,79 @@
+% --- LaTeX 模板主文件 ---
+% 生成时间: 2026-06-03 (沙盒运行)
+% 文档类: ctexart (支持中文)
+\documentclass[12pt,a4paper]{ctexart}
+
+% --- 包与配置 ---
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{setspace}
+\usepackage{cite}
+\usepackage{url}
+
+% --- 引用标签命名规则 ---
+% 图:  \label{fig:chapter_descriptor}
+% 表:  \label{tab:chapter_descriptor}
+% 公式: \label{eq:chapter_descriptor}
+% 节:   \label{sec:chapter_descriptor}
+% 算法: \label{alg:chapter_descriptor}
+% 文献: 使用BibTeX，引用键格式 FirstAuthorYearKeyword
+
+% ---  PDF 信息 ---
+\hypersetup{
+    pdftitle={数学建模论文模板},
+    pdfauthor={待填充},
+    pdfsubject={数学建模竞赛},
+    pdfkeywords={数学建模, 模板}
+}
+
+% --- 页眉页脚 ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{待填充 (队伍编号)}
+\fancyhead[R]{页 \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% --- 正文开始 ---
+\begin{document}
+
+% 标题页
+\input{sections/01_title}
+
+% 摘要
+\input{sections/02_abstract}
+
+% 目录 (可选)
+\tableofcontents
+\newpage
+
+% 1. 引言
+\input{sections/03_introduction}
+
+% 2. 模型建立与求解
+\input{sections/04_model}
+
+% 3. 结果与分析
+\input{sections/05_results}
+
+% 4. 结论
+\input{sections/06_conclusion}
+
+% 附录
+\input{sections/07_appendix}
+
+% 参考文献
+\input{sections/08_references}
+
+\end{document}

@@ -1,0 +1,45 @@
+version: v3.2-mvp
+enabled: true
+
+paths:
+  legacy_sample_prior: 13_sample_prior
+  prior_db: 13_prior_db
+  cards: 13_prior_db/cards
+  fulltext_index: 13_prior_db/fulltext_index
+  screening: 13_prior_db/screening
+
+pre_solve_allowed_outputs:
+  - problem_type_experience
+  - common_model_families
+  - common_figure_types
+  - common_scoring_risks
+  - data_preprocessing_patterns
+
+post_draft_allowed_outputs:
+  - structure_comparison
+  - argument_gap_check
+  - figure_density_comparison
+  - scoring_risk_comparison
+  - reviewer_like_comments
+
+forbidden:
+  - copy_abstract
+  - copy_body_text
+  - copy_captions
+  - copy_conclusion
+  - reuse_tables_directly
+  - treat_prior_as_answer_key
+  - reveal_full_prior_text_in_generated_paper
+
+retrieval_policy:
+  pre_solve_top_k_cards: 5
+  post_draft_top_k_fulltext: 3
+  require_source_id: true
+  require_snippet_hash: true
+  require_copy_risk_check: true
+
+copy_risk:
+  max_ngram_overlap_ratio: 0.08
+  ngram_size: 8
+  fail_on_caption_overlap: true
+  fail_on_abstract_overlap: true

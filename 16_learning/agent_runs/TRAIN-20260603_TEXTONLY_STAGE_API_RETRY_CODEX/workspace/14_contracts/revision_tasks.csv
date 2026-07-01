@@ -1,0 +1,9 @@
+task_id,source_comment_id,target_artifact,target_location,required_action,acceptance_check,priority,status,assigned_to
+T001,C001,09_paper/paper.tex,All sections,Remove all placeholder markers and write original content expanding each section to meet problem statement requirements.,No placeholder markers remain; every section ≥250 words.,fail,open,
+T002,C002,09_paper/paper.tex,Data section,Add data source description variable definitions and preprocessing steps.,Data section exists with source table.,fail,open,
+T003,C003,09_paper/paper.tex,Model section,Write full model description with assumptions variables equations and justification.,At least 3 numbered equations; model section ≥500 words.,major,open,
+T004,C004,09_paper/paper.tex,Results section,Execute model and produce numerical results; populate results with tables and interpretation.,Results section contains at least one data table with numbers traceable to result_contract.csv.,fail,open,
+T005,C005,08_figures/Both figures,Regenerate F001 and F002 as actual charts using real data; register in figure_contract.csv.,Figure files >10KB; MCP vision confirms chart content; quality score ≥4.2.,fail,open,
+T006,C006,09_paper/paper.tex,Entire paper,Expand paper to ≥5000 chars; connect sections with logical flow; link each claim to evidence.,Paper length >5000 chars; claim_evidence_map.csv tracks all assertions.,fail,open,
+T007,C007,14_contracts/*.csv,All contract files,Populate claim_evidence_map result_contract figure_contract formula_contract citation_contract with paper elements.,validate_contracts.py passes.,major,open,
+T008,C008,11_review/review_scorecard.csv,Review cycle,After revisions rerun auto_review and close all fail/major tasks.,Scorecard shows no fail and ≤2 major.,major,open,

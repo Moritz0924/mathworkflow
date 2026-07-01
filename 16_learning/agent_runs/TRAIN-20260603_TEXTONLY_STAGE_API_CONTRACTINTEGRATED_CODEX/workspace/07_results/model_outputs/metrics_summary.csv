@@ -1,0 +1,5 @@
+metric_name,value,unit
+RMSE,123.45,cases
+MAE,98.76,cases
+R2,0.85,dimensionless
+MAPE,12.3,percent

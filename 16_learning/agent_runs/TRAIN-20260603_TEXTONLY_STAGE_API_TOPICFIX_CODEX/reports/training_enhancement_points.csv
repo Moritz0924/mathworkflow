@@ -1,0 +1,8 @@
+target_area,enhancement,category,priority
+system,"Locked-stage mechanism should allow emergency override for critical fixes (e.g., topic drift) without breaking sequential mode",stage_locking,high
+system,"Contract validation scripts must be integrated into sandbox stages to provide immediate feedback on fail items",contract_checks,high
+prompt,"Stage prompts for final_export should clarify the boundary between packaging and content repair when previous stages left defects",instruction_clarity,medium
+prompt,"Add explicit gate simulation guidance in sandbox overlay to avoid ambiguity in training runs",gate_simulation,medium
+gate,"Human gate log entries should differentiate between real and simulated approvals; formal_effect field already supports this",gate_log_design,low
+gate,"Implement automatic exemption tracking in sandbox to prevent accumulation of unresolvable fail items that block later stages",gate_handling,medium
+system,"Consider allow-listing certain write paths (e.g., 08_figures) in final_export for emergency figure generation when prior stage output is missing",write_permissions,low

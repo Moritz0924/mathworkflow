@@ -1,0 +1,59 @@
+% !TeX program = xelatex
+\documentclass[12pt,a4paper]{ctexart}
+
+% 页面布局
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+% 常用数学包
+\usepackage{amsmath,amssymb,amsfonts}
+
+% 图表支持
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+% 超链接与引用
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black
+}
+\usepackage[numbers,sort&compress]{natbib}
+
+% 图片路径
+\graphicspath{{figures/}}
+
+% 代码高亮（若需要）
+% \usepackage{listings}
+
+% 标题信息
+\title{[题目标题占位]}
+\author{[作者姓名占位]}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  [论文摘要占位：简要说明问题背景、所用方法、主要结果和结论。不得在此填入实际研究内容。]
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+\input{sections/introduction}
+\input{sections/model}
+\input{sections/solution}
+\input{sections/analysis}
+\input{sections/conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

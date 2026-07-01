@@ -1,0 +1,63 @@
+{
+  "action_count": 5,
+  "results": [
+    {
+      "path": "11_review/auto_reviewer_comments.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/auto_reviewer_comments.md"
+    },
+    {
+      "path": "11_review/review_scorecard.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/review_scorecard.csv"
+    },
+    {
+      "path": "14_contracts/revision_tasks.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/revision_tasks.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "11_review/stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/stage_summary.md"
+    }
+  ],
+  "protocol_issues": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 7719,
+      "completion_tokens": 7811,
+      "total_tokens": 15530,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5512
+      },
+      "prompt_cache_hit_tokens": 1664,
+      "prompt_cache_miss_tokens": 6055
+    },
+    "reasoning_content_chars": 17228,
+    "stream": true,
+    "chunk_count": 7813,
+    "content_chars": 9896,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_RETRY_CODEX\\deepseek_calls\\iteration_02_11_auto_review\\deepseek_stream_status.jsonl"
+  }
+}

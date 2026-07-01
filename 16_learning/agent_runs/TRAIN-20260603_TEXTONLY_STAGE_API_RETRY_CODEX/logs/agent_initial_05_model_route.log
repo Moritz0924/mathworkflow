@@ -1,0 +1,67 @@
+$ python scripts/deepseek_agent_runner.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_RETRY_CODEX\workspace\agent_stage_initial_05_model_route.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_RETRY_CODEX\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_RETRY_CODEX --mode training_sandbox --max-iterations 3 --stage model_route --call-id initial_05_model_route
+cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260603_TEXTONLY_STAGE_API_RETRY_CODEX\workspace
+
+{"event": "stream_progress", "elapsed_seconds": 30.015, "chunk_count": 1060, "content_chars": 0, "reasoning_content_chars": 2477, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 60.062, "chunk_count": 2408, "content_chars": 0, "reasoning_content_chars": 5395, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 90.062, "chunk_count": 3740, "content_chars": 0, "reasoning_content_chars": 8785, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 120.062, "chunk_count": 5033, "content_chars": 0, "reasoning_content_chars": 11119, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 150.094, "chunk_count": 6544, "content_chars": 1613, "reasoning_content_chars": 12290, "idle_seconds": 0.016, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 180.125, "chunk_count": 7931, "content_chars": 3994, "reasoning_content_chars": 12290, "idle_seconds": 0.0, "finish_reason": null}
+{
+  "status": "completed",
+  "stage": "model_route",
+  "call_id": "initial_05_model_route",
+  "profile_id": "deep",
+  "model": "deepseek-v4-pro",
+  "response": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_RETRY_CODEX\\deepseek_calls\\initial_05_model_route\\deepseek_response.md",
+  "file_actions": [
+    {
+      "path": "05_model/model_route.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "05_model/model_route.md"
+    },
+    {
+      "path": "05_model/fallback_plan.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "05_model/fallback_plan.md"
+    },
+    {
+      "path": "05_model/symbols.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "05_model/symbols.md"
+    },
+    {
+      "path": "14_contracts/formula_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/formula_contract.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3798,
+    "completion_tokens": 8808,
+    "total_tokens": 12606,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 5600
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 3798
+  }
+}

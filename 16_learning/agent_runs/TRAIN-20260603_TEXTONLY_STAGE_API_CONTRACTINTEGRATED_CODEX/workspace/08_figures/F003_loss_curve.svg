@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 350'>
+  <rect width='500' height='350' fill='#f8f9fa'/>
+  <text x='250' y='30' text-anchor='middle' font-size='18' font-weight='bold' fill='#212529'>训练损失曲线</text>
+  <line x1='50' y1='50' x2='50' y2='300' stroke='#6c757d' stroke-width='2'/>
+  <line x1='50' y1='300' x2='450' y2='300' stroke='#6c757d' stroke-width='2'/>
+  <text x='250' y='335' font-size='12' fill='#495057'>时期</text>
+  <text x='15' y='180' transform='rotate(-90 15,180)' text-anchor='middle' font-size='12' fill='#495057'>损失</text>
+  <polyline points='70,280 120,230 170,190 220,160 270,135 320,120 370,110 420,105' fill='none' stroke='#3498db' stroke-width='2' stroke-linejoin='round'/>
+  <polyline points='70,290 120,250 170,210 220,180 270,155 320,140 370,130 420,125' fill='none' stroke='#e74c3c' stroke-width='2' stroke-dasharray='5,5'/>
+  <line x1='320' y1='60' x2='340' y2='60' stroke='#3498db' stroke-width='2'/>
+  <text x='345' y='65' font-size='12' fill='#212529'>训练</text>
+  <line x1='320' y1='80' x2='340' y2='80' stroke='#e74c3c' stroke-width='2' stroke-dasharray='5,5'/>
+  <text x='345' y='85' font-size='12' fill='#212529'>验证</text>
+</svg>

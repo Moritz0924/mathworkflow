@@ -1,0 +1,6 @@
+formula_id,latex,description,source_stage,notes
+EQ001,I_j = \frac{1}{M} \sum_{m=1}^{M} \sum_{t \in T_m} \Delta I(t, j),基尼重要性计算公式,model_route,用于特征重要性评估
+EQ002,\hat{y} = \arg\max_{c} \sum_{m=1}^{M} I(h_m(x) = c),随机森林投票公式,model_route,集成决策
+EQ003,Gini(t) = 1 - \sum_{k=1}^{K} p_k^2,节点基尼不纯度,model_route,决策树分裂准则
+EQ004,\text{Accuracy} = \frac{TP+TN}{TP+TN+FP+FN},准确率,model_route,分类评价指标
+EQ005,\text{F1}_{\text{weighted}} = \sum_{k} w_k \cdot \frac{2 P_k R_k}{P_k+R_k},加权F1分数,model_route,多分类综合评价

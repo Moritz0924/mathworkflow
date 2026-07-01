@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 350'>
+  <rect width='500' height='350' fill='#f8f9fa'/>
+  <text x='250' y='30' text-anchor='middle' font-size='18' font-weight='bold' fill='#212529'>特征重要性</text>
+  <line x1='150' y1='50' x2='150' y2='300' stroke='#6c757d' stroke-width='2'/>
+  <line x1='150' y1='300' x2='450' y2='300' stroke='#6c757d' stroke-width='2'/>
+  <text x='250' y='335' font-size='12' fill='#495057'>重要性</text>
+  <text x='30' y='180' transform='rotate(-90 30,180)' text-anchor='middle' font-size='12' fill='#495057'>特征</text>
+  <rect x='160' y='110' width='120' height='20' fill='#2c3e50'/>
+  <text x='285' y='125' font-size='12' fill='#212529'>特征A</text>
+  <rect x='160' y='140' width='90' height='20' fill='#2c3e50'/>
+  <text x='255' y='155' font-size='12' fill='#212529'>特征B</text>
+  <rect x='160' y='170' width='70' height='20' fill='#2c3e50'/>
+  <text x='235' y='185' font-size='12' fill='#212529'>特征C</text>
+  <rect x='160' y='200' width='40' height='20' fill='#2c3e50'/>
+  <text x='205' y='215' font-size='12' fill='#212529'>特征D</text>
+  <rect x='160' y='230' width='20' height='20' fill='#2c3e50'/>
+  <text x='185' y='245' font-size='12' fill='#212529'>特征E</text>
+</svg>

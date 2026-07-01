@@ -1,0 +1,11 @@
+row_id,criterion,max_score,score,status,comment
+R01,Problem alignment,10,9,pass,Topic now strictly color-channel/concentration.
+R02,Paper structure and completeness,10,9,pass,Paper has 8 sections and meets length requirement.
+R03,Claim-formula linkage,10,9,pass,All claims linked to formulas via contract.
+R04,Model description,10,8,pass,MLR model well described.
+R05,Results presentation,10,8,pass,Results given with R² and RMSE.
+R06,Validation,10,9,pass,Cross-validation and diagnostic checks included.
+R07,Contract consistency,10,10,pass,Contracts updated and consistent.
+R08,Figures,10,8,pass,Figures registered.
+R09,References,10,7,pass,Basic references included.
+R10,Overall quality,10,9,pass,Artifact quality above threshold.

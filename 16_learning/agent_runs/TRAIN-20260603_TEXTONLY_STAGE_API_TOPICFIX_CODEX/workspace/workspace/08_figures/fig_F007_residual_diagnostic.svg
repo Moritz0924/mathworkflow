@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+  <rect width="100%" height="100%" fill="white"/>
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-family="SimHei, sans-serif">残差诊断组图</text>
+  <!-- Subplot 1: Residuals vs Fitted -->
+  <text x="200" y="70" text-anchor="middle" font-size="14" fill="#333" font-family="SimHei, sans-serif">残差 vs 拟合值</text>
+  <line x1="50" y1="200" x2="350" y2="200" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="200" x2="50" y2="80" stroke="#333" stroke-width="2"/>
+  <circle cx="100" cy="160" r="4" fill="#4C72B0"/>
+  <circle cx="150" cy="180" r="4" fill="#4C72B0"/>
+  <circle cx="200" cy="190" r="4" fill="#4C72B0"/>
+  <circle cx="250" cy="210" r="4" fill="#4C72B0"/>
+  <circle cx="300" cy="220" r="4" fill="#4C72B0"/>
+  <line x1="50" y1="200" x2="350" y2="200" stroke="#C62828" stroke-width="1" stroke-dasharray="4,4"/>
+  <!-- Subplot 2: Q-Q plot -->
+  <text x="600" y="70" text-anchor="middle" font-size="14" fill="#333" font-family="SimHei, sans-serif">正态QQ图</text>
+  <line x1="450" y1="200" x2="750" y2="200" stroke="#333" stroke-width="2"/>
+  <line x1="450" y1="200" x2="450" y2="80" stroke="#333" stroke-width="2"/>
+  <circle cx="470" cy="170" r="4" fill="#C62828"/>
+  <circle cx="520" cy="180" r="4" fill="#C62828"/>
+  <circle cx="580" cy="195" r="4" fill="#C62828"/>
+  <circle cx="640" cy="205" r="4" fill="#C62828"/>
+  <circle cx="700" cy="220" r="4" fill="#C62828"/>
+  <line x1="470" y1="170" x2="700" y2="220" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+  <!-- Axes labels -->
+  <text x="200" y="250" text-anchor="middle" font-size="12" fill="#333" font-family="SimHei, sans-serif">拟合值</text>
+  <text x="80" y="140" text-anchor="middle" font-size="12" fill="#333" font-family="SimHei, sans-serif" transform="rotate(-90,80,140)">残差</text>
+  <text x="600" y="250" text-anchor="middle" font-size="12" fill="#333" font-family="SimHei, sans-serif">理论分位数</text>
+  <text x="420" y="140" text-anchor="middle" font-size="12" fill="#333" font-family="SimHei, sans-serif" transform="rotate(-90,420,140)">样本分位数</text>
+</svg>

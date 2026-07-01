@@ -1,0 +1,2 @@
+stage,gate_type,status,comment,formal_effect
+intake,soft,waiting_manual_confirm,Simulated human gate: agent cannot read problem materials; waiting for human input.,none

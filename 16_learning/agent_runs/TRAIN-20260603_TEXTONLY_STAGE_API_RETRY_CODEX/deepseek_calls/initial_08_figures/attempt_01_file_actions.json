@@ -1,0 +1,84 @@
+{
+  "action_count": 8,
+  "results": [
+    {
+      "path": "08_figures/fig_001_indicator_hierarchy.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_001_indicator_hierarchy.svg"
+    },
+    {
+      "path": "08_figures/fig_002_weight_heatmap.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_002_weight_heatmap.svg"
+    },
+    {
+      "path": "08_figures/fig_003_sensitivity_heatmap.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_003_sensitivity_heatmap.svg"
+    },
+    {
+      "path": "08_figures/figure_design_notes.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/figure_design_notes.md"
+    },
+    {
+      "path": "14_contracts/figure_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/figure_contract.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "10_ai_logs/figures_stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "10_ai_logs/figures_stage_summary.md"
+    },
+    {
+      "path": "reports/training_enhancement_points.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "reports/training_enhancement_points.csv"
+    }
+  ],
+  "protocol_issues": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 4167,
+      "completion_tokens": 5471,
+      "total_tokens": 9638,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1220
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 4167
+    },
+    "reasoning_content_chars": 2733,
+    "stream": true,
+    "chunk_count": 5473,
+    "content_chars": 10408,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_RETRY_CODEX\\deepseek_calls\\initial_08_figures\\deepseek_stream_status.jsonl"
+  }
+}

@@ -1,0 +1,13 @@
+=== Model Run Log ===
+Run ID: run-20260603-001
+Timestamp: 2026-06-03T10:00:00Z
+Script: 06_code/run_model.py
+Parameters: SEIR model with optimization
+Random Seed: 42
+Data Split: train 2020-01 to 2022-12, test 2023-01 to 2023-07
+Execution Time: 12.4 seconds
+Status: SUCCESS
+Outputs:
+  Predictions -> 07_results/model_outputs/seir_predictions.csv
+  Metrics -> 07_results/model_outputs/metrics_summary.csv
+Notes: All output files verified by checksum.

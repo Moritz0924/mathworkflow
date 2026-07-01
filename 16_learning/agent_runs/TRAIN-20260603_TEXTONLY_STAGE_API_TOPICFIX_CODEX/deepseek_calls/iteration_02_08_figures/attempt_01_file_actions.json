@@ -1,0 +1,119 @@
+{
+  "action_count": 13,
+  "results": [
+    {
+      "path": "workspace/14_contracts/figure_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/14_contracts/figure_contract.csv"
+    },
+    {
+      "path": "workspace/08_figures/fig_F001_signal_timing.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/08_figures/fig_F001_signal_timing.svg"
+    },
+    {
+      "path": "workspace/08_figures/fig_F002_intersection_heatmap.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/08_figures/fig_F002_intersection_heatmap.svg"
+    },
+    {
+      "path": "workspace/08_figures/fig_F003_pareto_front.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/08_figures/fig_F003_pareto_front.svg"
+    },
+    {
+      "path": "workspace/08_figures/fig_F004_flow_network.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/08_figures/fig_F004_flow_network.svg"
+    },
+    {
+      "path": "workspace/08_figures/fig_F005_simulation_trajectory.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/08_figures/fig_F005_simulation_trajectory.svg"
+    },
+    {
+      "path": "workspace/08_figures/fig_F006_sensitivity_heatmap.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/08_figures/fig_F006_sensitivity_heatmap.svg"
+    },
+    {
+      "path": "workspace/08_figures/fig_F007_residual_diagnostic.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/08_figures/fig_F007_residual_diagnostic.svg"
+    },
+    {
+      "path": "workspace/08_figures/fig_F008_feature_importance.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/08_figures/fig_F008_feature_importance.svg"
+    },
+    {
+      "path": "workspace/08_figures/figure_design_brief.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/08_figures/figure_design_brief.md"
+    },
+    {
+      "path": "workspace/11_review/simulated_human_gate_log.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "workspace/11_review/figures_stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/11_review/figures_stage_summary.md"
+    },
+    {
+      "path": "workspace/10_ai_logs/figures_log.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "workspace/10_ai_logs/figures_log.md"
+    }
+  ],
+  "protocol_issues": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 4982,
+      "completion_tokens": 16456,
+      "total_tokens": 21438,
+      "prompt_tokens_details": {
+        "cached_tokens": 1792
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7307
+      },
+      "prompt_cache_hit_tokens": 1792,
+      "prompt_cache_miss_tokens": 3190
+    },
+    "reasoning_content_chars": 16353,
+    "stream": true,
+    "chunk_count": 16459,
+    "content_chars": 23600,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX\\deepseek_calls\\iteration_02_08_figures\\deepseek_stream_status.jsonl"
+  }
+}

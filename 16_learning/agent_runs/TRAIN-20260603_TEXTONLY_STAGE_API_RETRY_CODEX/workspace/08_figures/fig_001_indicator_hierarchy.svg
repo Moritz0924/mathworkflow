@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#FAFAFA"/>
+  <text x="400" y="40" text-anchor="middle" font-size="20" font-family="SimHei, Microsoft YaHei, sans-serif" fill="#2C3E50">图1：评价指标体系层级结构图</text>
+  <text x="400" y="70" text-anchor="middle" font-size="14" fill="#7F8C8D">占位符：展示三层指标体系（目标层-准则层-指标层），节点颜色为 muted_blue_gold 方案</text>
+  <!-- 示意节点 -->
+  <circle cx="400" cy="150" r="40" fill="#1F77B4" opacity="0.8"/>
+  <text x="400" y="155" text-anchor="middle" font-size="12" fill="white">目标层</text>
+  <line x1="400" y1="190" x2="200" y2="280" stroke="#7F8C8D" stroke-width="2"/>
+  <line x1="400" y1="190" x2="600" y2="280" stroke="#7F8C8D" stroke-width="2"/>
+  <circle cx="200" cy="300" r="30" fill="#FFB74D" opacity="0.8"/>
+  <text x="200" y="305" text-anchor="middle" font-size="10" fill="black">准则1</text>
+  <circle cx="600" cy="300" r="30" fill="#FFB74D" opacity="0.8"/>
+  <text x="600" y="305" text-anchor="middle" font-size="10" fill="black">准则2</text>
+  <circle cx="100" cy="450" r="20" fill="#66BB6A" opacity="0.7"/>
+  <text x="100" y="455" text-anchor="middle" font-size="8" fill="white">指标1</text>
+  <circle cx="300" cy="450" r="20" fill="#66BB6A" opacity="0.7"/>
+  <text x="300" y="455" text-anchor="middle" font-size="8" fill="white">指标2</text>
+  <circle cx="500" cy="450" r="20" fill="#66BB6A" opacity="0.7"/>
+  <text x="500" y="455" text-anchor="middle" font-size="8" fill="white">指标3</text>
+  <circle cx="700" cy="450" r="20" fill="#66BB6A" opacity="0.7"/>
+  <text x="700" y="455" text-anchor="middle" font-size="8" fill="white">指标4</text>
+  <line x1="200" y1="330" x2="100" y2="430" stroke="#BDBDBD"/>
+  <line x1="200" y1="330" x2="300" y2="430" stroke="#BDBDBD"/>
+  <line x1="600" y1="330" x2="500" y2="430" stroke="#BDBDBD"/>
+  <line x1="600" y1="330" x2="700" y2="430" stroke="#BDBDBD"/>
+</svg>

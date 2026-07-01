@@ -1,0 +1,13 @@
+{
+  "stage": "results_freeze",
+  "mode": "training_sandbox",
+  "profile_id": "deep",
+  "model_alias": "strong",
+  "model": "deepseek-v4-pro",
+  "thinking": true,
+  "reasoning_effort": "max",
+  "temperature": 0.15,
+  "high_risk_detected": true,
+  "matched_keyword": "contract",
+  "depth_escalation_reason": "stage_keyword:contract"
+}

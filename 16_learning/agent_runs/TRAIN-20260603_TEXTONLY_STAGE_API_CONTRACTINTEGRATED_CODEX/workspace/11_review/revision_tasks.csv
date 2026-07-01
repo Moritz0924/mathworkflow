@@ -1,0 +1,9 @@
+task_id,description,severity,status,resolution_notes
+RT-001,修正论文主题，移除AQI内容并重写为颜色通道浓度,major,closed,已重写论文及合同
+RT-002,扩展final_submit_paper.md至7节并超过2500字符,major,closed,已添加必要章节和内容
+RT-003,关闭claim C007缺少公式链接问题,fail,closed,已在claim_evidence_map中添加公式引用
+RT-004,关闭claim C008缺少公式链接问题,fail,closed,同上
+RT-005,解决审稿意见关于数据代表性的问题,major,closed,补充了数据说明
+RT-006,更新图表标题为中文,major,closed,已执行
+RT-007,统一结果合同中的数值,major,closed,已纠正
+RT-008,加强讨论部分论证,major,closed,已重写讨论

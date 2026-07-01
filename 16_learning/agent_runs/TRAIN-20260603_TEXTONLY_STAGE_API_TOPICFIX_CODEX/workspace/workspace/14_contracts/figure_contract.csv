@@ -1,0 +1,9 @@
+figure_id,result_id,evidence_source,chart_type,output_svg,output_png,output_pdf,quality_score,used_in_section,latex_label,notes
+fig_F001,RESULT-001,07_results/traffic_metrics.csv,line_chart,08_figures/fig_F001_signal_timing.svg,,,4.5,section3,fig:signal_timing,信号周期延误关系
+fig_F002,RESULT-002,07_results/intersection_data.csv,heatmap,08_figures/fig_F002_intersection_heatmap.svg,,,4.6,section3,fig:intersection_heatmap,交叉口饱和度
+fig_F003,RESULT-003,07_results/optimization_results.csv,scatter,08_figures/fig_F003_pareto_front.svg,,,4.7,section4,fig:pareto_front,Pareto前沿
+fig_F004,RESULT-004,07_results/network_topology.csv,network,08_figures/fig_F004_flow_network.svg,,,4.5,section4,fig:flow_network,交通流网络
+fig_F005,RESULT-005,07_results/simulation_output.csv,line,08_figures/fig_F005_simulation_trajectory.svg,,,4.4,section5,fig:sim_trajectory,车辆轨迹
+fig_F006,RESULT-006,07_results/sensitivity.csv,heatmap,08_figures/fig_F006_sensitivity_heatmap.svg,,,4.6,section5,fig:sensitivity_heatmap,参数敏感性
+fig_F007,RESULT-007,07_results/residuals.csv,scatter,08_figures/fig_F007_residual_diagnostic.svg,,,4.5,section6,fig:residual_diag,残差诊断
+fig_F008,RESULT-008,07_results/feature_importance.csv,bar,08_figures/fig_F008_feature_importance.svg,,,4.7,section6,fig:feature_importance,特征重要性

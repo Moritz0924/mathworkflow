@@ -1,0 +1,178 @@
+run_id: TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX
+mode: training_sandbox
+status: completed_with_open_gaps
+created_at: '2026-06-03T19:13:36'
+workspace: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/workspace
+problem: 00_problem/inbox/text_only_color_concentration_problem.md
+max_iterations: 3
+formal_protected_snapshot: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/formal_protected_snapshot.csv
+agent_prompt: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/workspace/agent_prompt.md
+prompt_route_manifest:
+  csv_path: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/reports/prompt_route_manifest.csv
+  markdown_path: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/reports/prompt_route_manifest.md
+  bundle_path: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/reports/stage_prompt_bundle.md
+  stage_count: 16
+  missing_count: 0
+  prompt_set: training_sandbox_backup
+environment_diagnostics: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/reports/environment_diagnostics.json
+stage_execution_enabled: true
+training_required_outputs:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+- workspace/09_paper/full_draft.md
+- workspace/12_submission/final_submit_paper.md
+- workspace/12_submission/final_submit_package.md
+updated_at: '2026-06-03T20:27:36'
+agent_command_present: true
+initial_exit_code: 0
+initial_log_tail: "{\"event\": \"stream_progress\", \"elapsed_seconds\": 30.031, \"\
+  chunk_count\": 935, \"content_chars\": 0, \"reasoning_content_chars\": 2319, \"\
+  idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\",\
+  \ \"elapsed_seconds\": 60.094, \"chunk_count\": 2121, \"content_chars\": 61, \"\
+  reasoning_content_chars\": 5144, \"idle_seconds\": 0.0, \"finish_reason\": null}\n\
+  {\n  \"status\": \"completed\",\n  \"stage\": \"final_export\",\n  \"call_id\":\
+  \ \"initial_15_final_export\",\n  \"profile_id\": \"light\",\n  \"model\": \"deepseek-v4-pro\"\
+  ,\n  \"response\": \"E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\\16_learning\\\
+  \\agent_runs\\\\TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX\\\\deepseek_calls\\\
+  \\initial_15_final_export\\\\deepseek_response.md\",\n  \"file_actions\": [\n  \
+  \  {\n      \"path\": \"11_review/simulated_human_gate_log.csv\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"11_review/simulated_human_gate_log.csv\"\n    },\n    {\n   \
+  \   \"path\": \"12_submission/final_submit_package.md\",\n      \"operation\": \"\
+  write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"resolved_path\"\
+  : \"12_submission/final_submit_package.md\"\n    },\n    {\n      \"path\": \"reports/training_enhancement_points.csv\"\
+  ,\n      \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\":\
+  \ \"allowed\",\n      \"resolved_path\": \"reports/training_enhancement_points.csv\"\
+  \n    },\n    {\n      \"path\": \"reports/training_enhancement_points.md\",\n \
+  \     \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\": \"\
+  allowed\",\n      \"resolved_path\": \"reports/training_enhancement_points.md\"\n\
+  \    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 3688,\n    \"completion_tokens\"\
+  : 3015,\n    \"total_tokens\": 6703,\n    \"prompt_tokens_details\": {\n      \"\
+  cached_tokens\": 1664\n    },\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\"\
+  : 2093\n    },\n    \"prompt_cache_hit_tokens\": 1664,\n    \"prompt_cache_miss_tokens\"\
+  : 2024\n  }\n}\n"
+initial_synced_reports:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+initial_stage_call_count: 16
+initial_validation_queue_added: 8
+iteration_2_exit_code: 0
+iteration_2_log_tail: "{\"event\": \"stream_progress\", \"elapsed_seconds\": 30.0,\
+  \ \"chunk_count\": 1067, \"content_chars\": 0, \"reasoning_content_chars\": 4737,\
+  \ \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 60.047, \"chunk_count\": 2321, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 10275, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 90.125, \"chunk_count\": 3527, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 13501, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 120.141, \"chunk_count\": 4689, \"content_chars\": 0, \"\
+  reasoning_content_chars\": 16264, \"idle_seconds\": 0.0, \"finish_reason\": null}\n\
+  {\"event\": \"stream_progress\", \"elapsed_seconds\": 150.172, \"chunk_count\":\
+  \ 6592, \"content_chars\": 0, \"reasoning_content_chars\": 21204, \"idle_seconds\"\
+  : 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\", \"elapsed_seconds\"\
+  : 180.234, \"chunk_count\": 8381, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 26549, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 210.266, \"chunk_count\": 10768, \"content_chars\": 0, \"\
+  reasoning_content_chars\": 31321, \"idle_seconds\": 0.0, \"finish_reason\": null}\n\
+  {\"event\": \"stream_progress\", \"elapsed_seconds\": 240.297, \"chunk_count\":\
+  \ 13037, \"content_chars\": 3236, \"reasoning_content_chars\": 32740, \"idle_seconds\"\
+  : 0.0, \"finish_reason\": null}\n{\n  \"status\": \"completed\",\n  \"stage\": \"\
+  final_export\",\n  \"call_id\": \"iteration_02_15_final_export\",\n  \"profile_id\"\
+  : \"deep\",\n  \"model\": \"deepseek-v4-pro\",\n  \"response\": \"E:\\\\math-module\\\
+  \\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\\TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX\\\
+  \\deepseek_calls\\\\iteration_02_15_final_export\\\\deepseek_response.md\",\n  \"\
+  file_actions\": [\n    {\n      \"path\": \"12_submission/final_submit_paper.md\"\
+  ,\n      \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\":\
+  \ \"allowed\",\n      \"resolved_path\": \"12_submission/final_submit_paper.md\"\
+  \n    },\n    {\n      \"path\": \"12_submission/final_submit_package.md\",\n  \
+  \    \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\"\
+  ,\n      \"resolved_path\": \"12_submission/final_submit_package.md\"\n    },\n\
+  \    {\n      \"path\": \"reports/training_enhancement_points.csv\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.csv\"\n    },\n    {\n  \
+  \    \"path\": \"reports/training_enhancement_points.md\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.md\"\n    },\n    {\n   \
+  \   \"path\": \"11_review/simulated_human_gate_log.csv\",\n      \"operation\":\
+  \ \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"11_review/simulated_human_gate_log.csv\"\n    },\n    {\n   \
+  \   \"path\": \"09_paper/full_draft.md\",\n      \"operation\": \"write\",\n   \
+  \   \"applied\": true,\n      \"reason\": \"allowed\",\n      \"resolved_path\"\
+  : \"09_paper/full_draft.md\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\"\
+  : 4473,\n    \"completion_tokens\": 14543,\n    \"total_tokens\": 19016,\n    \"\
+  prompt_tokens_details\": {\n      \"cached_tokens\": 0\n    },\n    \"completion_tokens_details\"\
+  : {\n      \"reasoning_tokens\": 11442\n    },\n    \"prompt_cache_hit_tokens\"\
+  : 0,\n    \"prompt_cache_miss_tokens\": 4473\n  }\n}\n"
+iteration_2_blocking_queue_before: 8
+iteration_2_synced_reports:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+iteration_2_stage_targets:
+- figures
+- paper_full
+- final_export
+iteration_2_stage_call_count: 3
+iteration_2_blocking_queue_after: 19
+iteration_2_no_improvement_streak: 0
+iteration_2_validation_queue_added: 17
+iteration_3_exit_code: 0
+iteration_3_log_tail: "{\"event\": \"stream_progress\", \"elapsed_seconds\": 30.0,\
+  \ \"chunk_count\": 952, \"content_chars\": 0, \"reasoning_content_chars\": 2197,\
+  \ \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 60.031, \"chunk_count\": 2099, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 4851, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 90.046, \"chunk_count\": 3296, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 7654, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 120.125, \"chunk_count\": 4665, \"content_chars\": 1372,\
+  \ \"reasoning_content_chars\": 9534, \"idle_seconds\": 0.0, \"finish_reason\": null}\n\
+  {\"event\": \"stream_progress\", \"elapsed_seconds\": 150.125, \"chunk_count\":\
+  \ 6160, \"content_chars\": 4043, \"reasoning_content_chars\": 9534, \"idle_seconds\"\
+  : 0.0, \"finish_reason\": null}\n{\n  \"status\": \"completed\",\n  \"stage\": \"\
+  final_export\",\n  \"call_id\": \"iteration_03_15_final_export\",\n  \"profile_id\"\
+  : \"deep\",\n  \"model\": \"deepseek-v4-pro\",\n  \"response\": \"E:\\\\math-module\\\
+  \\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\\TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX\\\
+  \\deepseek_calls\\\\iteration_03_15_final_export\\\\deepseek_response.md\",\n  \"\
+  file_actions\": [\n    {\n      \"path\": \"11_review/simulated_human_gate_log.csv\"\
+  ,\n      \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\":\
+  \ \"allowed\",\n      \"resolved_path\": \"11_review/simulated_human_gate_log.csv\"\
+  \n    },\n    {\n      \"path\": \"12_submission/final_submit_paper.md\",\n    \
+  \  \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\"\
+  ,\n      \"resolved_path\": \"12_submission/final_submit_paper.md\"\n    },\n  \
+  \  {\n      \"path\": \"12_submission/final_submit_package.md\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"12_submission/final_submit_package.md\"\n    },\n    {\n    \
+  \  \"path\": \"reports/training_enhancement_points.csv\",\n      \"operation\":\
+  \ \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.csv\"\n    },\n    {\n  \
+  \    \"path\": \"reports/training_enhancement_points.md\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.md\"\n    }\n  ],\n  \"usage\"\
+  : {\n    \"prompt_tokens\": 4874,\n    \"completion_tokens\": 7268,\n    \"total_tokens\"\
+  : 12142,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 1792\n    },\n\
+  \    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 4178\n    },\n\
+  \    \"prompt_cache_hit_tokens\": 1792,\n    \"prompt_cache_miss_tokens\": 3082\n\
+  \  }\n}\n"
+iteration_3_blocking_queue_before: 19
+iteration_3_synced_reports:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+iteration_3_stage_targets:
+- results_freeze
+- figures
+- paper_full
+- final_export
+iteration_3_stage_call_count: 4
+iteration_3_blocking_queue_after: 8
+iteration_3_no_improvement_streak: 0
+iteration_3_validation_queue_added: 8
+benchmark:
+  run_id: TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX
+  draft_path: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/workspace/09_paper/full_draft.md
+  draft_status: existing
+  gap_count: 0
+  queue_count: 0
+  report: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/reports/full_gap_report.md
+blocking_queue_count: 8
+iteration_stop_reason: blocking_queue_open
+copy_risk: pass
+copy_risk_report: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/reports/copy_risk_report.csv
+copy_risk_markdown: 16_learning/agent_runs/TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX/reports/copy_risk_report.md

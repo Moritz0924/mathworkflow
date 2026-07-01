@@ -1,0 +1,3 @@
+result_id,description,value,units,source,claim_ids
+R001,Train set regression metrics,"R²=0.974, RMSE=0.143, MAE=0.112",,paper_draft,C001 C003 C007
+R002,Cross-validation RMSE,"mean=0.149, std=0.022",,paper_draft,C004 C008

@@ -1,0 +1,2 @@
+model,rmse_kWh,r2
+LinearRegression-Baseline,12.34,0.85

@@ -1,0 +1,110 @@
+{
+  "action_count": 10,
+  "results": [
+    {
+      "path": "09_paper/full_draft.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "09_paper/full_draft.md"
+    },
+    {
+      "path": "09_paper/consistency_risks.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "09_paper/consistency_risks.md"
+    },
+    {
+      "path": "11_review/review_issues.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/review_issues.md"
+    },
+    {
+      "path": "14_contracts/claim_evidence_map.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/claim_evidence_map.csv"
+    },
+    {
+      "path": "14_contracts/formula_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/formula_contract.csv"
+    },
+    {
+      "path": "14_contracts/artifact_freeze_registry.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/artifact_freeze_registry.csv"
+    },
+    {
+      "path": "reports/training_enhancement_points.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "reports/training_enhancement_points.csv"
+    },
+    {
+      "path": "reports/training_enhancement_points.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "reports/training_enhancement_points.md"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "10_ai_logs/paper_full_stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "10_ai_logs/paper_full_stage_summary.md"
+    }
+  ],
+  "protocol_issues": [],
+  "protocol_history": [],
+  "network_history": [
+    {
+      "attempt": 1,
+      "network_attempt": 1,
+      "stage": "paper_full",
+      "call_id": "iteration_03_10_paper_full",
+      "retryable": true,
+      "error": "stream_idle_timeout",
+      "profile_id": "deep",
+      "reasoning_effort": "max"
+    }
+  ],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 7526,
+      "completion_tokens": 14873,
+      "total_tokens": 22399,
+      "prompt_tokens_details": {
+        "cached_tokens": 7424
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11047
+      },
+      "prompt_cache_hit_tokens": 7424,
+      "prompt_cache_miss_tokens": 102
+    },
+    "reasoning_content_chars": 23617,
+    "stream": true,
+    "chunk_count": 14875,
+    "content_chars": 7922,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_RETRY_CODEX\\deepseek_calls\\iteration_03_10_paper_full\\deepseek_stream_status.jsonl"
+  }
+}

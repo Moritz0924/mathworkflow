@@ -1,0 +1,7 @@
+target_area,point_id,description,severity,status
+system,TEP001,自动化合同校验未能阻止主题漂移，合同总线应强制与问题描述关联,high,open
+prompt,TEP002,阶段提示词应更明确地禁止使用与锁定主题无关的术语,medium,open
+gate,TEP003,人工闸门模拟缺乏实际干预机制，建议增加主题一致性校验脚本,high,open
+system,TEP004,合同更新规则需限制改写范围，防止修复时引入新事实,medium,open
+prompt,TEP005,审稿器权限边界模糊，需细化可修改文件清单,low,open
+gate,TEP006,最终导出阶段应强制要求所有合同校验通过，否则标记为blocked,high,open

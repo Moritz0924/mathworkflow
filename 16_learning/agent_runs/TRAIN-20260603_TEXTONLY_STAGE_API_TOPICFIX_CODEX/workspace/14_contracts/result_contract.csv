@@ -1,0 +1,7 @@
+result_id,value,metric,source,note
+R001,0.15,RMSE,测试集,模型整体误差
+R002,0.92,R²,测试集,决定系数
+R003,-1.87,系数β3,参数估计,B 通道系数
+R004,0.16(±0.02),CV RMSE,交叉验证,平均RMSE
+R005,0.18,RMSE,5%噪声测试集,噪声鲁棒性
+R006,0.34,Shapiro-Wilk p,残差,正态性检验

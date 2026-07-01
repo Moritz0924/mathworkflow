@@ -1,0 +1,4 @@
+artifact_id,artifact_path,frozen_at,protected_atoms,notes
+A001,09_paper/full_draft.md,2025-06-03T10:30:00Z,摘要-模型-结论-结果,全文草稿候选冻结，不得修改事实与数字
+A002,14_contracts/claim_evidence_map.csv,2025-06-03T10:30:00Z,所有claim,合同冻结
+A003,14_contracts/formula_contract.csv,2025-06-03T10:30:00Z,所有公式,公式定义冻结

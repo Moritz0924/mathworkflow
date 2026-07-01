@@ -1,0 +1,8 @@
+figure_id,label,caption,file_path,status
+F001,RGB 分布,"图F001: T01/T02/T03 样本的 RGB 三通道箱线图分布",08_figures/fig_F001_RGB_distribution.svg,frozen
+F002,相关矩阵,图F002: 特征间 Pearson 相关系数矩阵热力图,08_figures/fig_F002_correlation_matrix.svg,frozen
+F003,预测vs真实,图F003: T01 测试集预测浓度与真实浓度散点图,08_figures/fig_F003_predicted_vs_actual_T01.svg,frozen
+F004,残差图,图F004: 标准化残差与预测值散点图,08_figures/fig_F004_residual_plot.svg,frozen
+F005,系数条形图,图F005: 标准化回归系数及其 95% 置信区间,08_figures/fig_F005_coefficient_bar.svg,frozen
+F006,CV RMSE 箱线图,图F006: 5 折交叉验证 RMSE 分布箱线图,08_figures/fig_F006_cv_rmse_boxplot.svg,frozen
+F007,噪声敏感性,图F007: 不同噪声水平下模型 RMSE 变化曲线,08_figures/fig_F007_sensitivity_noise.svg,frozen

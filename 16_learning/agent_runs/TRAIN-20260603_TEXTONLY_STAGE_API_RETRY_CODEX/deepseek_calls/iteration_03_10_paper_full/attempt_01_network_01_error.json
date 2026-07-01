@@ -1,0 +1,10 @@
+{
+  "attempt": 1,
+  "network_attempt": 1,
+  "stage": "paper_full",
+  "call_id": "iteration_03_10_paper_full",
+  "retryable": true,
+  "error": "stream_idle_timeout",
+  "profile_id": "deep",
+  "reasoning_effort": "max"
+}

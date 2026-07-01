@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+  <rect width="100%" height="100%" fill="white"/>
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-family="SimHei, sans-serif">多目标优化Pareto前沿</text>
+  <line x1="100" y1="500" x2="700" y2="500" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="500" x2="100" y2="100" stroke="#333" stroke-width="2"/>
+  <text x="400" y="550" text-anchor="middle" font-size="16" fill="#333" font-family="SimHei, sans-serif">延误指数</text>
+  <text x="30" y="300" text-anchor="middle" font-size="16" fill="#333" font-family="SimHei, sans-serif" transform="rotate(-90,30,300)">排队长度 (米)</text>
+  <!-- Pareto points (teal-orange diverging) -->
+  <circle cx="150" cy="400" r="8" fill="#008080"/>
+  <circle cx="200" cy="350" r="8" fill="#008080"/>
+  <circle cx="280" cy="300" r="8" fill="#008080"/>
+  <circle cx="380" cy="250" r="8" fill="#008080"/>
+  <circle cx="500" cy="220" r="8" fill="#008080"/>
+  <circle cx="620" cy="200" r="8" fill="#008080"/>
+  <circle cx="180" cy="450" r="8" fill="#E07B39"/>
+  <circle cx="300" cy="420" r="8" fill="#E07B39"/>
+  <circle cx="450" cy="380" r="8" fill="#E07B39"/>
+  <polyline points="150,400 200,350 280,300 380,250 500,220 620,200" stroke="#008080" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <text x="630" y="195" font-size="12" fill="#008080" font-family="SimHei, sans-serif">前沿解</text>
+  <text x="460" y="385" font-size="12" fill="#E07B39" font-family="SimHei, sans-serif">支配解</text>
+</svg>

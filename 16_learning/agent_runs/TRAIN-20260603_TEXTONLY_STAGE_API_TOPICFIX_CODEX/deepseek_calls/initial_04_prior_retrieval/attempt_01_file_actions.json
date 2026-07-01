@@ -1,0 +1,27 @@
+{
+  "action_count": 0,
+  "results": [],
+  "protocol_issues": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 3619,
+      "completion_tokens": 1412,
+      "total_tokens": 5031,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1301
+      },
+      "prompt_cache_hit_tokens": 1664,
+      "prompt_cache_miss_tokens": 1955
+    },
+    "reasoning_content_chars": 3165,
+    "stream": true,
+    "chunk_count": 1414,
+    "content_chars": 476,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_TOPICFIX_CODEX\\deepseek_calls\\initial_04_prior_retrieval\\deepseek_stream_status.jsonl"
+  }
+}
