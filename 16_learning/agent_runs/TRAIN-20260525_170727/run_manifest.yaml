@@ -1,0 +1,25 @@
+{
+  "run_id": "TRAIN-20260525_170727",
+  "mode": "training_sandbox",
+  "status": "dry_run",
+  "created_at": "2026-05-25T17:07:28",
+  "workspace": "16_learning/agent_runs/TRAIN-20260525_170727/workspace",
+  "problem": "00_problem/problem_statement.md",
+  "max_iterations": 3,
+  "formal_protected_snapshot": "16_learning/agent_runs/TRAIN-20260525_170727/formal_protected_snapshot.csv",
+  "agent_prompt": "16_learning/agent_runs/TRAIN-20260525_170727/workspace/agent_prompt.md",
+  "updated_at": "2026-05-25T17:07:33",
+  "agent_command_present": false,
+  "dry_run": true,
+  "benchmark": {
+    "run_id": "TRAIN-20260525_170727",
+    "draft_path": "16_learning/agent_runs/TRAIN-20260525_170727/workspace/09_paper/full_draft.md",
+    "draft_status": "normalized_from_final_paper.md",
+    "gap_count": 5,
+    "queue_count": 5,
+    "report": "16_learning/agent_runs/TRAIN-20260525_170727/reports/full_gap_report.md"
+  },
+  "copy_risk": "pass",
+  "copy_risk_report": "16_learning/agent_runs/TRAIN-20260525_170727/reports/copy_risk_report.csv",
+  "copy_risk_markdown": "16_learning/agent_runs/TRAIN-20260525_170727/reports/copy_risk_report.md"
+}
