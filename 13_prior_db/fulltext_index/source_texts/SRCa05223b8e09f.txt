@@ -1,0 +1,292 @@
+第 2 1卷 第 7 期 
+20 04 q "-12 月 
+工 程 数 学 学 报 v01．21 No．7 
+C H IN E S E J O U R N A L O F E N G IN E E R IN G M A T H E M A T IC S D ec ． 20 04 
+文 章 编 号 ：1005—3085(2004)07-0124—07 
+饮 酒 驾 车 的 优 化 模 型 
+l下 毅 ， 乍 妃 ， 钟 书 亮 
+指 导 教 师 ： 颜 文 勇 ． 梁 兵 ， 下 科 
+(成 都 电 子 机 械 高 等 专 科 学 校 ， 成 都 610031) 
+编 者 按 ： 本 文 的 模 假 设 密 合 理 ， 尤 其 是 列 入 J ‘人 李 第 ‘次 拎 验 到 第 ：次 喝 酒 之 f甘j 隔 为 小 时 ” 。 这 样 ， 使 得 
+作 肯 可 以 山 数 学 结 果 合 砰 地 推 }Ij问 题 ‘的 结 论 。 文 章 的 ‘个 缺 点 是 推 导 了 洒 精 人 体 内 的 积 累 公 式 ， 但 在 给 
+能 火 天 喝 的 结 论 时 ， 没 订 运 用 所 得 到 的 这 ’数 结 果 。 
+摘 要 ： 本 文 通 过 分 析 啤 洇 巾 洒 精 任 人 体 体 内 胃 肠 (含 肝 脏 ) 与 体 液 (含 血 液 一 ) 之 问 的 交 换 机 理 ， 分 别 建 厂 在 短 
+时 内 喝 洒 和 K 时 喝 洒 两 种 情 况 下 ， 胃 肠 平】『体 液 (含 m 液 ) 中 的 酒 精 含 的 微 分 方 程 模 。 对 给 }lj的 数 
+据 ， 利 用 非 线 最 小 乘 数 据 拟 合 及 高 斯 一个 顿 法 ， 确 定 J，酒 精 含 毓 以 及 洒 精 从 胃 肠 进 入 血 液 的 速 度 系 数 
+和 酒 精 从 m 液 渗 透 flj体 外 的 速 度 系 数 。 继 ， 对 J_J喝 酒 方 式 卜 ， 血 液 巾 洒 精 浓 度 进 行 分 析 ： 该 模 可 以 预 
+测 瞒 洒 后 仟 ‘时 刻 ffiL液 中 的 洒 精 浓 度 。 对 十 第 ‘问 假 殴 人 李 往 第 一次 拎 商 后 、仁 小 时 喝 涌 ， 山 十 体 液 叶 1 残 留 
+的 洒 精 ， 故 第 ：次 榆 查 时 酒 精 浓 度 为 20．2448毫 克 ／ 『 毫 升 。 
+关 键 词 ： 饮 溺 ： 微 分 方 程 ： 高 斯 一 牛 顿 算 法 
+分 类 号 ：A M S (2000) 65L80 中 图 分 类 号 ：O 241．81 文 献 标 识 码 ： A 
+1 模 型 假 设 
+1． 假 设 喝 啤 酒 后 ， 啤 酒 巾 的 酒 精 全 部 进 入 胃 肠 (含 肝 脏 ) ， 然 后 经 过 胃 肠 渗 透 到 体 液 中 。 
+2． 假 设 酒 精 从 胃 肠 向 体 液 的 转 移 速 度 ， 与 胃 肠 rf1的 酒 精 浓 度 (或 含 量 ) 成 正 比 。 
+3、 假 设 体 液 rf1的 酒 精 消 耗 ( 向 外 排 山 、 分 解 或 吸 收 ) 的 速 度 ， 与 体 液 中 的 酒 精 浓 度 (或 
+含 景 ) 成 正 比 。 
+4、 对 『口J题 一 ， 假 设 大 李 l在 下 午 6点 接 受 检 奋 ， 之 后 由 丁 停 车 、 等 待 等 原 冈 耽 误 了 一 定 时 
+I-HJT o (这 里 妨 设 To = 0．5小 时 ) ， 即 大 夸 从 第 一 次 检 验 到 第 次 喝 酒 之 fHj间 隔 为 个 小 时 。 
+5． 对 『口J题 一 ， 假 设 大 住 两 次 喝 酒 时 都 是 将 酒 瞬 时 喝 下 去 并 立 即 进 入 胃 肠 中 ， 没 有 时 间 
+耽 搁 。 
+6． 假 设 酒 l在 很 短 的 时 内 喝 完 即 将 酒 瞬 时 喝 下 去 并 立 即 进 入 胃 肠 rf1， 没 有 时 耽 搁 。 
+7， 假 设 酒 在 较 K 一 段 时 『HJ内 喝 时 是 匀 速 喝 下 去 。 
+8． 假 设 体 液 的 密 度 为 1千 克 ／升 。 
+2 模 型 建 立 
+一
+个 人 的 血 rf1酒 精 含 景 取 决 丁 他 的 饮 酒 景 、 体 内 原 仃 的 
+酒 精 含 景 以 及 喝 酒 方 式 等 。 由 科 普 失【l识 失ll道 ， 酒 精 足 经 胃 
+肠 (主 要 是 肝 脏 ) 的 吸 收 与 分 解 进 入 体 液 的 。 冈 此 本 文 酒 
+精 从 胃 肠 (含 肝 脏 ) 向 体 液 转 移 情 况 用 图 1直 观 地 表 ／J 。 
+图 1 
+维普资讯 http://www.cqvip.com 
+更多数学建模资料请关注微店店铺“数学建模学习交流”
+https://k.weidian.com/RHO6PSpA
+第 7期 饮 洒 驾 车 的 优 化 模 刊 125 
+其 中 k11为 酒 精 从 胃 肠 渗 透 到 (除 体 液 外 ) 其 它 地 方 的 速 率 系 数 ； k12为 酒 精 从 胃 肠 进 入 体 液 
+的 速 率 系 数 ： k21为 酒 精 在 体 液 中 消 耗 (向 外 排 除 或 分 解 或 吸 收 ) 的 速 率 系 数 ； ， (￡)为 酒 精 进 入 
+胃 肠 的 速 率 。 
+问 题 一 ： 
+要 解 释 大 李 碰 到 的 情 况 ， 就 要 证 明 大 李 在 中 午 12点 喝 一 瓶 啤 酒 后 在 下 午 6点 时 体 内 血 液 中 的 
+酒 精 含 量 小 于 20毫 克 ／百 毫 升 ， 在 晚 饭 时 再 喝 一 瓶 啤 酒 后 在 凌 晨 2点 时 体 内 血 液 中 的 酒 精 含 量 大 
+干 或 等 于 20毫 克 ／百 毫 升 。 
+由 于 酒 精 在 血 液 中 的 含 量 与 在 体 液 中 的 含 量 相 同 ，下 面 讨 论 人 喝 酒 后 胃 肠 与 体 液 中 的 酒 精 
+含 量 。 根 据 假 设 的 条 件 及 图 1可 以 看 出 ： z1(t)的 变 化 率 由 从 胃 肠 进 入 体 液 的 酒 精 - kllXl和 从 胃 
+肠 渗 透 到 (除 体 液 外 ) 其 它 地 方 的 酒 精 一 k12z 1组 成 ； Y1(t)的 变 化 率 是 由 从 胃 肠 进 入 体 液 的 酒 
+精 k12z1与 在 体 液 中 消 耗 (向 外 排 出 、 分 解 或 吸 收 ) 的 酒 精 一 k21yl组 成 。 所 以 ， 可 以 建 立 如 下 
+的 微 分 方 程 ： 
+1) 大 李 在 中 午 12点 喝 一 瓶 啤 酒 时 ， 即 在 t = oH~ ， 胃 肠 中 的 酒 精 量 z1(0)为 一 瓶 酒 中 的 酒 
+精 a与 饮 酒 瓶 数 Ⅳ 的 乘 积 Ⅳ n， 而 此 时 体 液 中 的 酒 精 量 Y1(0)为 零 。 因 此 初 始 条 件 为 
+2 z1(0)=Ⅳn (2) 
+I Yl(0)= 0 
+体 液 (或 血 液 ) 巾 酒 精 的 浓 度 为 ： 
+c (￡) ： (3) 
+根 据 以 上 建 立 的 微 分 方 程 模 型 ， 求 出 当 N = 1时 C (6) = 的 值 ， 并 判 定 C (6) < 20 (毫 
+克 ／百 毫 升 ) 是 否 成 立 ， 若 成 立 ， 则 说 明 大 李 在 rf1午 12点 喝 一 瓶 啤 酒 后 在 下 午 6点 时 符 合 驾 车 标 
+准 。 
+2) 大 李 第 ： 次 喝 酒 时 胃 肠 和 体 液 中 已 经 有 酒 精 ， 所 以 在 第 一 次 喝 酒 即 ￡ = 0时 胃 肠 中 的 酒 
+精 量 z 2(0)为 Ⅳ 瓶 酒 巾 的 酒 精 质 量 Ⅳ n与 第 一 次 喝 酒 后 残 留 在 胃 肠 中 的 酒 精 质 量 X l(T1)之 和 ， 而 
+此 时 体 液 中 的 酒 精 质 量 Y1(0)为 第 一 次 喝 酒 后 残 留 在 胃 肠 中 的 酒 精 质 量 1( )。 因 此 大 李 第 二 次 
+喝 酒 的 模 犁 如 下 ： 
+xl = - kllX2 ——k12x2 
+= k 12 x 2 一 k 2 1Y 2 
+z2(o) = Xl(T1)+ aN 
+y2(O) = Yl(T1) 
+C (￡) = u2(。t) 
+根 据 题 意 ， 判 断 C (14 一 T 1) = 丝 l二 ≥ 20是 含 成 立 。 
+问 题 二 ： 
+1) 问 题 的 第 一 问 与 问 题 一 巾 大 李 第 一 次 喝 酒 的 情 况 相 同 。 
+2) 对 于 第 问 ， z(￡)的 变 化 率 由 从 胃 肠 进 入 体 液 的 酒 精 一 11z ， 从 胃 肠 渗 透 到 (除 体 液 
+外 ) 其 它 地 方 的 酒 精 一 12x 以 及 酒 精 进 入 胃 肠 的 速 率 ，(￡)组 成 。 y(t)的 变 化 率 由 从 胃 肠 进 入 
+体 液 的 酒 精 k12X与 在 体 液 中 消 耗 (向 外 排 出 、 分 解 或 吸 收 ) 的 酒 精 一 k21Y组 成 。 在 饮 酒 期 间 
+(0 < t < T ) ， 假 设 酒 精 进 入 胃 肠 的 速 度 是 匀 速 的 ， 则 酒 精 进 入 胃 肠 的 速 率 为 I (t) = —N a， 饮 
+酒 后 ， 无 酒 精 进 入 胃 肠 ， 所 以 I(t) = 0， 因 此 ， 建 立 微 分 方 程 模 型 如 下 ： 
+舢 
+一 
+一 
+= ll 
+， ● ● 、 ● ● 
+维普资讯 http://www.cqvip.com 
+
+126 工 程 数 学 学 报 第 21卷 
+{ ，(t) = - ：kll X -- k—l2 X + ， )， 其中，ct = 。 ； 
+下 面 讨 论 初 始 条 件 ， 因 在 t = 0时 胃 肠 中 的 酒 精 质 量 (0)和 体 液 中 的 酒 精 质 量 (0)都 为 零 。 
+故 初 始 条 件 为 
+’ 
+体 液 (或 血 液 ) 中 酒 精 的 浓 度 为 ： (t) = 。 
+问 题 二 即 求 满 足 (t) ≥ 20的 时 间 t范 围 。 
+问 题 三 ： 
+问 题 三 分 为 两 种 情 况 ： 第 一 种 情 况 是 酒 在 很 短 的 时 间 内 喝 的 ， 第 二 种 情 况 是 酒 在 较 长 一 段 
+时 间 内 喝 的 。 
+第 一 种 情 况 ：酒 在 很 短 的 时 间 内 喝 的 ，要 求 血 液 中 酒 精 含 量 最 高 的 时 间 ， 即 求 体 液 中 酒 精 含 
+量 函 数 (t)的 最 值 点 。 用 极 值 与 最 值 的 关 系 ， 因 最 值 存 在 ， 且 驻 点 唯 一 ， 故 可 通 过 求 解 驻 点 得 
+到 。 即 求 满 足 ) = 0的 时 间 t。 其 中 (t)满 足 以 下 微 分 方 程 (1)及 初 始 条 件 (2)， (3)。 
+第 二 种 情 况 为 ： 酒 在 较 长 一 段 时 间 内 喝 完 ， 同 理 为 求 满 足 ) = 0 的 时 间 t。 其 中 (t)满 足 
+以 下 微 分 方 程 
+{ ；：= -- k ll—X-- k 12 +，@ ， 其中，ct ={ 。 ； 
+初 始 条 件 为 ： (0)= 0 ， v (o) = 0 。 
+问 题 四 ： 
+如 果 天 天 喝 酒 ， 设 每 天 喝 Ⅳ 瓶 ， 第 次 饮 酒 与 第 + 1次 饮 酒 的 间 隔 时 间 为 正 ， 每 日 饮 酒 量 
+为 Ⅳ 0 ， 按 照 与 问 题 一 同 样 的 思 路 ， 得 第 一 天 体 液 中 酒 精 含 量 满 足 的 微 分 方 程 为 ： 
+I i(t)= 一kllXl—kl2Xl 
+J Yi(t)= k12x1一 21Y1 
+l Xl(0)= Ⅳ 0 
+【Yl(0)= 0 
+第 二 天 体 液 中 酒 精 含 量 满 足 的 微 分 方 程 为 ： 第 几天 体 液 中 酒 精 含 量 满 足 的 微 分 方 
+3 模 型 求 解 
+问 题 一 的 求 解 ： 
+微 分 方 程 
+，n = 一 (kll+ kl2)X 
+= k 12 x 一 k 2 1Y 
+n (0) = N a + Xn-- 1( 一 1) 
+Yn (a) = Yn一1( 一1) 
+D 丑 
+一 
+． 、=： 
+2 一 一 ㈤ Ⅳ 玑 = = = = ㈣ ㈣ ㈤ 
+维普资讯 http://www.cqvip.com 
+
+第 7期 饮 酒 驾 车 的 优 化 模 型 12 7 
+X ~
+j
+=
+：
+- 
+k l lX l
+一
+-
+惫 k l 2 X ； 
+(4)是 可 分 离 变 量 的 微 分 方 程 ， (5)是 一 阶 线 性 非 齐 次 微 分 方 程 ， 通 过 求 解 ， 得 出 它 满 足 初 始 
+条 件 
+X l (
+。
+O )
+：
+~-- -
+。
+N 。 
+的 特 解 为 
+= Ⅳ 。 e 一 ( ll+ )t
+， 
+= 一 (e- (kll+k12)t _ e- k21t) 
+令 
+解 可 转 化 为 
+一 Ⅳ 0e一 = (e-at _ e-~t) 
+根 据 题 目 中 所 给 的 饮 两 瓶 啤 酒 的 数 据 ， 此 
+时 N = 2。 对 于 利 用 非 线 性 最 小 二 乘 法 拟 合 及 
+高 斯 一牛 顿 算 法 可 得 ： = 2．180， = 0．1755， = 
+-
+5 4 4 6 8 。 
+拟 合 图 形 见 图 2。 图 2中 圆 圈 表 示 的 点 是 题 中 表 示 的 
+参 考 数 据 ， 曲 线 为 拟 合 后 的 图 形 。 
+将 以 上 数 据 代 入 问 题 一 的 模 型 中 ， 可 求 得 大 李 在 
+中 午 12点 饮 一 瓶 啤 酒 ， 即 Ⅳ = IN ， 到 下 午 6点 第 
+一
+次 检 查 时 体 液 中 的 酒 精 含 量 (即 血 液 中 的 酒 精 含 
+量 ) 
+c (6) = = 19．9616 < 20 ， 所 以 大 李 通 过 了 
+第 一 次 检 查 。 
+大 李 第 二 次 喝 酒 模 型 的 方 程 解 为 
+2 = aN (1 + e-aTI)e一 ， Y2 = 
+图 2 ： 
+((1 + e-c'T1)e-O~t _ (1 髓 )e- ~t) 
+考 虑 到 大 李 在 下 午 6点 接 受 检 查 ， 之 后 由 于 停 车 等 待 等 原 因 耽 误 了 一 定 时 间 ， 假 设 大 李 从 第 
+一
+次 检 验 到 第 二 次 喝 酒 之 间 间 隔 0．5d,时 ， 代 入 数 据 计 算 可 得 第 二 次 检 验 时 ， 大 李 血 液 中 酒 精 
+含 量 为 ： 20．2448 (毫 克 ／百 毫 升 ) 。 这 就 解 释 了 大 李 在 第 一 次 喝 酒 通 过 检 查 ， 第 二 次 喝 同 样 的 
+酒 且 经 过 更 长 的 时 间 检 查 却 被 定 为 饮 酒 驾 车 的 情 况 ， 因 为 第 二 次 喝 酒 时 有 第 一 次 喝 酒 的 残 留 
+量 。 
+问 题 二 的 求 解 ： 
+我 们 分 别 考 虑 喝 了 3瓶 啤 酒 和 半 斤 低 度 白 酒 在 短 时 间 和 2d,时 内 喝 下 的 情 况 。 
+短 时 间 内 喝 下 的 模 型 ， 已 在 问 题 一 求 解 中 解 得 到 求 解 。 
+在 一 个 较 长 时 间 内 喝 下 的 微 分 方 程 中 ， ， (t)是 个 分 段 函 数 ， 所 以 需 要 分 段 求 解 ， 我 们 将 其 转 
+维普资讯 http://www.cqvip.com 
+
+128 丁 程 数 学 学 报 第 21卷 
+化 为 两 个 微 分 方 程 ： 
+(￡) = 一 k11x1 一 k12x1 + N a／T 
+i(￡)一 kl2Xl— k21Yl 
+Xl(0) = 0 
+Yl(0) ： 0 
+0 ≤ t ≤ T 
+5(￡) … kllX2 k12x2 
+(￡) = k12x2 一 k21Y2 
+z2(o) = X l(T ) 
+Y2(0) = 1( ) 
+微 分 方 程 组 (6)的 解 为 ： 1= aN(1一 e—Q‘)，Y1= 等 e一 ( 一 e(t~j-m )t+ 忐 一 ) 
+微 分 方 程 组 (7)的 解 为 ： X2 一 Yl( )e～ ，Y2 = Yl( )(a — )e一 一 xl(T )k12(e一 一 e一 ) 
+再 代 入 具 体 参 数 值 进 行 计 算 可 得 多 少 时 间 内 驾 车 违 反 新 规 定 ， 列 表 如 下 ： 
+3瓶 啤 酒 (500m l，5 。) 半 斤 白 酒 (38 。) 
+短 时 问 内 喝 完 12．254 ,时 13．6 4,时 
+24 ,时 内 喝 完 13．28 4x时 14．63 4"时 
+问 题 三 的 求 解 ： 
+第 一 种 情 况 是 酒 在 很 短 的 时 问 内 喝 下 的 ，我 们 在 问 题 一 中 已 求 得 ： Y = (e—m — e-Bt)。 
+令 = 0可 得 ￡= 鲁三 。 
+可 见 无 论 喝 多 少 酒 ， 体 液 中 酒 精 的 含 量 达 到 最 高 所 用 的 时 间 均 为 1．3255~ 时 。 
+图 3 图 4 
+(6) 
+图 3中 曲 线 分 别 表 示 喝 1瓶 ， 2瓶 ， … ， 5瓶 啤 酒 体 液 巾 酒 精 含 最 的 走 势 图 。 
+第 ：二种 情 况 是 酒 在 较 长 一 段 时 间 内 喝 的 ， 其 体 液 中 酒 精 含 量 的 表 达 式 为 分 段 函 数 ， 并 可 证 
+明 其 最 高 值 在 后 半 段 到 达 。 令 Y = 0 ， 可 得 
+喝 酒 所 用 的 时 间 1 2 3 4 5 6 7 8 
+(单 位 ：小 时 ) 
+酒 精 含 量 达 到 最 高 点 所 用 的 时 间 1．9139 2．65 10 3．4835 4 ．3713 5，29 17 6．2329 7．0880 8．1530 
+(单 位 ：小 时 ) 
+维普资讯 http://www.cqvip.com 
+
+第 7期 饮 酒 驾 的 优 化 模 型 129 
+图 4为 一 瓶 啤 酒 在 不 同 的 时 间 内 喝 完 的 图 形 ， 8条 曲 线 从 左 到 右 分 别 为 1．8个 小 时 内 喝 完 酒 体 液 
+巾 酒 精 含 最 走 势 图 。 其 中 每 条 曲 线 的 最 高 点 为 体 液 巾 酒 精 含 最 的 最 高 值 。 图 中 点 组 成 的 图 形 表 
+示 持 续 喝 酒 时 体 液 中 酒 精 含 量 的 变 化 ， 曲 线 表 示 喝 充 酒 后 体 液 中 的 酒 精 含 量 变 化 。 
+对 于 其 它 的 情 况 也 可 用 同 样 的 方 法 估 计 血 液 中 的 酒 精 含 量 在 什 么 时 间 最 高 。 
+问 题 四 的 求 解 ： 
+先 求 出 和 Y 的 表 达 式 ， 它 们 都 是 等 比 数 列 ， 再 求 极 限 。 
+n = N a (1 + e—QT + e一2QT + … + e- (n-- 1)QT )e— Q ： N n _二 e—Q 
+一 e 一 
+卜 
+= N -y [(1 + e-aT +
+． ． ．
++ e-(n-1)aT)e-at_ (1+ e一 T + … + e一( ) T)e-~t】 
+： — I 1 - e- n ~T
+e 一 
+1 - e - n fl T
+e ] 
+Y ne．黑 南 。 ] 【 。 一 。 j 
+通 过 代 入 数 值 计 算 ， 如 果 一 个 70kg ~ 人 天 天 喝 酒 ， (每 天 喝 酒 一 次 ， 每 次 喝 酒 时 间 固 定 ， 
+短 文 (略 ) 。 
+每 天 喝 啤 酒 瓶 数 1 2 3 4 5 
+多 少 小 时 以 后 可 以 开 车 6 10 13 14 16 
+4 模 型 的 分 析 与 检 验 
+本 文 分 别 建 立 了 在 短 时 问 内 喝 酒 和 长 时 问 喝 酒 两 种 情 况 下 体 液 (含 血 液 ) 中 的 酒 精 含 量 的 
+模 型 ， 对 给 山 的 数 据 ， 利 用 非 线 性 最 小 二 乘 数 据 拟 合 及 高 斯 ．牛 顿 算 法 ， 确 定 了 酒 精 含 量 以 及 
+酒 精 从 胃 肠 进 入 血 液 的 速 度 系 数 和 酒 精 从 血 液 渗 透 出 体 外 的 速 度 系 数 。 根 据 模 型 得 到 的 结 果 基 
+本 符 合 实 际 。 模 型 具 有 较 好 的 稳 定 性 ， 能 够 根 据 每 天 喝 的 酒 量 来 算 出 可 安 全 驾 车 的 时 间 限 定 。 
+5 模 型 的 评 价 与 推 广 
+模 型 很 好 的 描 述 了 酒 精 在 体 内 的 变 化 规 律 ， 在 酒 精 摄 入 的 不 同 (即 喝 不 同 量 的 酒 ) 时 能 够 
+较 为 准 确 的 预 测 出 不 同 时 间 的 血 液 酒 精 浓 度 。 对 司 机 安 排 喝 酒 与 开 车 的 关 系 有 指 导 性 作 用 。 能 
+够 有 效 的 防 止 酒 后 驾 车 的 发 生 。 
+模 型 的 优 点 ： 1． 本 模 型 简 明 易 懂 ， 具 有 较 好 的 通 用 性 。 2． 模 型 把 复 杂 的 生 理 循 环 问 题 转 
+化 为 胃 肠 与 体 液 之 间 的 简 单 变 化 。 模 型 的 缺 点 ： 本 模 型 存 在 近 似 误 差 ， 是 通 过 拟 合 产 生 的 ； 本 
+模 型 未 考 虑 不 同 的 人 对 酒 精 的 消 耗 速 率 可 能 存 在 差 异 。 模 型 的 推 广 ： 模 型 稍 作 修 改 可 以 用 于 药 
+物 动 力 学 ， 对 药 物 在 体 内 的 浓 度 的 变 化 进 行 研 究 。 也 可 以 推 广 到 化 学 方 面 。 
+参 考 文 献 ： 
+【1] 姜 启 源 、 谢 金 星 、 叶 俊 ． 《数 学 模 型 》 第 三 版 【M 高 等 数 学 出 版 社 ， 2003年 8月 
+【2] 同 济 数 学 研 究 室 、 《高 等 数 学 》 【M ]、 北 京 ， 高 等 数 学 }I{版 社 ， 2002年 6月 
+【3] 飞 思 科 技 产 品 研 发 中 心 ． 《M A T LA B 6,5 辅 助 优 化 计 算 与 设 计 》 【M ]、 电 子 工 业 出 版 社 ， 2003年 4月 
+【4] 苏 金 明 、 张 莲 花 、 刘 波 等 、 《M AT L A B 工 具 箱 应 用 》 【M ]、 电 子 工 业 出 版 社 ， 2004年 1月 
+【5] 王 灵 儿 、 周 汉 桥 、 人 体 酒 精 含 量 与 交 通 事 故 率 密 切 相 关 、 
+网 址 ： http：／／w w w ．cnhubei．com ／200406／ca481390、htm ， 访 问 时 间 (2004年 9月 17 日 )。 
+维普资讯 http://www.cqvip.com 
+
+13 0 工 程 数 学 学 报 第 21卷 
+【6】 梁 静 平 、 董 少 广 ．酒 成 为 第 二 大 健 康 杀 手 警 惕 慢 性 酒 精 中 毒 
+网 址 ： http ：／／finance．sina．com ．cn ／o／20020730／1508238349、htm l， 访 问 时 间 (2004 年 9月 17日 )。 
+O p tim u m M o d el o f D rin k in g an d D riv in g 
+W A N G Y i， L I F e i， Z H O N G S h u —lian g 
+A d v iso r： Y A N W en —y on g ， L IA N G B in g ， W A N G K e 
+( C hengdu E lectro-m echanical C ollege，C hengdu 610031 ) 
+A b st ra c t： In th is p a p er， w e g iv e tw o d iff eren tial eq u a tion s co n ce rn in g situ atio ns ， in w h ich a certa in am o u n t 
+o f a lc o h o l d rin k s is g iv e n in a s h o r t tim e V S ． in a lo n g tim e b y a n a ly s in g th e e x c h an g e m e c h an is m o f a lc o h o l 
+betw een the stom ach (includ ing the liver) an d the body fluid (including the blood)． E ac h coefficient is solved， 
+b ased On given d a tas b y n on lin ea r least sq u ar e m etho d a n d G au ss-N ew ton ’S a lg orith m ． A s resu lts， w e can 
+explain w hy the density of alcohol in big L i’S bod y is m ore than 2O m illigram ／ one hundred m illiliters in the 
+sec o n d in s p e c t io n ． 
+K e y w o rd s： d rin k in g ； d ifi e ren tial eq ua tion s； G a u ss-N e w to n ’S algo rith m 
+(上 接 146页 ) 
+O p tim u m P roject on th e A dv ertisem ent for O ffi cers 
+H E X ian g ， M A Y a n ， G A O S u -q in 
+A d visor： P E I C hon ~ jun 
+(A nhui U niversity of Finance and Econom ics，Bengbu A nhui 233061 ) 
+A b stra c t ： In th e p ap er，the au th ors des ign the m ath e m atica l o p tim ized m o d els o n the ass ign m ent o f em p loyees． 
+T h e sp ecialties a n d w ishe s o f th e can d id a tes ， d em a nd s a n d con d ition s o f the em p loy in g d ep artm en t are fi rstly 
+g iven n u m erica l ev alu a tions to m a ke co rres p o n d in g ar row s； an d the n b ased o n th e E u clid d is tan ce， th e au tho rs 
+fig u re o u t th e ap p roac h d egree to th e spec ia lties of th e can d id ates an d d em an d s of th e em p loy in g d ep artm en t 
+to g et a m a trix o f th e a p p ro ac h d egr ee ． B y m ak in g a fu zzy classifica tion ， w e can g et an o p tim ized d istrib u tion 
+ac c o r d in g t o n e e d w ith o u t co n s id e r in g t h e w is h es o f th e c a n d id a tes ． In t h e s a m e w a y to g e t a m a t rix o f th e 
+a p p ro ac h d egr ee b y w o rk in g ou t th e a p p ro ac h d egr ee to th e w ish es o f th e can d id ates a n d the co n d itio n s o f th e 
+e m p lo y in g d e p ar t m e n t ． T h e y g e t a m a tr ix o f co m p o u n d a p p ro ac h d e gr ee b y g iv in g a ra te to th e t w o m a t rix es 
+to m ak e a lin ear co m b in a tion resp ectively． M ak in g a fu zzy class ifi catio n in o rd er to g et an ass ign m e nt fit fo r 
+w ishe s o f can d id ate s a n d n ee d s o f th e e m p loy in g dep ar tm en t， a n d exp lain th a t th e p ro jec t can also b e u sed in 
+th e situ a tio n w h en the re a re N can d id a tes ap p ly in g fo r M em p loy in g d e p ar tm en ts． C o n sid erin g th e p refe ren ce 
+of the ne ed s o f th e em p loye r an d th e can d id ates ’w ish es， th e a u th o rs give a d iscu ssio n o n th e p rob le m ab ove in 
+d etai l， a n d m ak e a b rief e val u atio n o n it． 
+K ey w o r d s ： E u clid d istan ce ； ap p roa ch degr ee ； fuz zy class ifi catio n 
+维普资讯 http://www.cqvip.com

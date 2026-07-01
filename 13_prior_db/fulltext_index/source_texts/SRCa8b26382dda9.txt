@@ -1,0 +1,406 @@
+第 2o卷 第 7期 工 程 数 学 学 报 
+。。。年 月 JO U R N A L O F E N G IN E E R IN G M A T H E M A T IC S 
+V o 1． 2 0 N O ． 7 
+D eC． 2 003 
+文 章 编 号 ：1005—3085(2003)07—0020—09 
+考 虑 自 愈 的 SA R S 的 传 播 模 型 
+李 贝 ， 徐 海 臻 ， 郭 佳 佳 
+(大 连 理 工 大 学 ， 大 连 116024 ) 
+编 者 按 ： 本 文 根 据 SA R S 的 传 播 规 律 ，将 人 群 分 成 易 感 染 者 、潜 伏 期 病 人 、未 发 现 的 病 人 、已 发 现 的 病 人 及 
+治 愈 (或 死 亡 )而 具 有 免 疫 力 的 人 五 类 。 考 虑 自 愈 和 控 制 (用 参 数 表 示 )建 立 了 微 分 方 程 模 型 和 模 
+拟 模 型 ，研 究 了 疫 情 随 各 参 数 (包 括 自 愈 率 )变 化 的 规 律 ，为 控 制 疫 情 提 供 了 具 有 一 定 参 考 价 值 的 
+意 见 ，作 者 如 能 通 过 对 前 期 数 据 的 分 析 去 确 定 参 数 ，则 模 型 还 能 发 挥 一 定 的 后 期 预 测 功 能 。 本 刊 
+已 发 表 文 章 的 主 要 部 分 。 
+摘 要 ： 本 文 根 据 对 SA R S 传 播 的 分 析 ，把 人 群 分 为 5 类 ：易 感 类 、潜 伏 期 类 、患 病 未 被 发 现 类 、患 病 已 被 发 
+现 类 和 治 愈 及 死 亡 组 成 的 免 疫 类 ，并 考 虑 自 愈 因 素 ，提 出 了 两 个 模 型 ：微 分 方 程 模 型 和 基 于 Sm all- 
+w orld N etw ork 的 模 拟 模 型 。 对 微 分 方 程 模 型 ，以 香 港 为 例 讨 论 了 自 愈 的 影 响 ，在 一 定 意 义 下 说 明 
+自 愈 现 象 在 SA R S 传 播 中 是 普 遍 存 在 的 。 模 拟 模 型 利 用 Sm all—W orld N etw ork… 模 拟 现 实 中 人 们 
+之 间 的 接 触 ；借 鉴 Sznajd 模 型 ]观 念 传 播 的 基 本 思 想 “考 察 区 域 内 每 个 成 员 如 何 影 响 与 其 有 联 系 
+的 其 他 成 员 ” ，用 影 响 类 比 传 染 ，从 患 病 者 去 传 染 与 其 有 接 触 的 健 康 人 的 角 度 ，模 拟 SA R S 的 传 播 
+过 程 ；然 后 吸 收 元 胞 自 动 机 模 型 ∞ ]同 步 更 新 的 思 想 ，最 终 建 立 了 一 个 患 病 者 传 染 邻 居 ，且 一 个 成 
+员 同 时 受 所 有 邻 居 影 响 的 基 于 Sm al1．W orldN etw ork 的 模 拟 模 型 。 对 此 模 型 ，我 们 讨 论 了 一 些 主 要 
+参 数 及 接 种 疫 苗 的 影 响 ，最 后 拟 合 北 京 数 据 ，讨 论 了 提 前 或 推 迟 5 天 采 取 措 施 的 影 响 。 
+关 键 词 ： SA R S ；自 愈 ；微 分 方 程 ；Sm al1．W orld N etw ork ；Sznajd 模 型 ；元 胞 自 动 机 模 型 ； 模 拟 
+分 类 号 ： A M S (2000 ) 34B 08 中 图 分 类 号 ： O 241．81 文 献 标 识 码 ： A 
+1 基 本 假 设 与 符 号 
+1 ．1 基 本 假 设 
+(1) 假 设 SA R S 的 传 播 方 式 为 接 触 性 传 播 ，不 与 患 病 者 接 触 就 不 会 被 感 染 ； 
+(2 ) 假 设 人 们 被 感 染 后 需 先 进 入 潜 伏 期 ，在 潜 伏 期 内 不 具 备 传 染 性 ； 
+(3) 假 设 SA R S 患 者 被 发 现 后 就 立 即 被 隔 离 ，被 隔 离 者 不 具 备 传 染 性 ，SA R S 患 者 只 在 
+被 发 现 前 可 以 传 染 他 人 ； 
+(4 ) 假 设 SA R S 康 复 者 不 会 被 再 次 感 染 ，并 且 不 具 备 传 染 性 ； 
+(5) 不 考 虑 在 SA R S 传 播 期 间 人 口 的 自 然 出 生 和 自 然 死 亡 ； 
+(6) 所 研 究 地 区 的 人 口 总 量 一 定 ，不 考 虑 该 段 时 间 内 人 口 的 迁 入 迁 出 ； 
+1．2 符 号 说 明 
+维普资讯 http://www.cqvip.com 
+更多数学建模资料请关注微店店铺“数学建模学习交流”
+https://k.weidian.com/RHO6PSpA
+第 7 期 考 虑 自 愈 的 SA R S 的 传 播 模 型 21 
+N — — 我 们 所 研 究 区 域 的 人 口 总 数 ； 
+S — — 易 感 类 ，该 类 成 员 没 有 染 上 SA R S ，也 没 有 免 疫 能 力 ，可 以 被 传 染 上 SA R S ； 
+E — — 潜 伏 期 类 ，该 类 成 员 已 经 感 染 了 SA R S 病 毒 ，但 尚 处 于 潜 伏 期 ，还 不 是 SA R S 患 
+者 ，不 能 把 病 毒 传 染 给 S 类 成 员 ； 
+，
+— —
+患 病 未 被 发 现 类 ，该 类 成 员 已 经 成 为 真 正 的 SA R S 患 者 ，能 够 把 病 毒 传 染 给 S 
+类 成 员 ； 
+— —
+患 病 已 被 发 现 类 ，该 类 成 员 虽 然 是 SA R S 患 者 ，但 由 于 发 现 后 立 即 被 严 格 隔 离 ， 
+不 能 传 染 给 S 类 成 员 ；R — — 免 疫 类 ，该 类 成 员 为 SA R S 康 复 者 或 因 患 SA R S 死 亡 ，已 经 具 
+有 免 疫 力 ，不 再 对 其 它 成 员 产 生 任 何 影 响 ； 
+H — — 潜 伏 期 天 数 ； L — — 传 染 期 天 数 ； 
+P — — Sw N 模 型 中 每 条 连 接 边 “断 键 重 连 ”的 概 率 ； 
+-厂— — S w N 模 型 中 每 个 节 点 被 选 中 进 行 再 次 “断 键 重 连 ”的 选 中 概 率 ； 
+Q — — S 类 成 员 接 触 ， 类 成 员 后 被 感 染 SA R S 的 概 率 ； 
+2 微 分 方 程 模 型 
+2 ．1 模 型 建 立 
+我 们 把 一 个 封 闭 区 域 内 的 人 群 完 备 的 分 成 5 类 ：S 类 、E 类 、 类 、 类 和 R 类 ，设 第 ￡ 
+天 时 五 类 成 员 的 人 数 分 别 为 S ( ￡)、 E 
+(t)、 (t)、 (￡)、R (￡) ，该 地 区 总 人 口 
+为 N 。 考 虑 自 愈 因 素 ，则 各 类 成 员 之 间 
+的 流 动 情 况 如 下 图 所 示 ： 
+其 中 ： 是 患 病 人 群 每 天 接 触 并 传 染 
+易 感 人 群 的 比 例 系 数 ； 
+g 是 SA R S 感 染 者 的 日 发 病 率 ， 是 
+SA R S 感 染 者 的 日 自 愈 率 ； 
+z 是 患 病 人 群 每 天 被 隔 离 的 比 率 ，C 
+是 免 疫 率 ； 
+借 鉴 以 往 微 分 方 程 建 立 传 染 病 模 型 的 思 想 【4-6]，我 们 得 到 如 下 的 关 于 SA R S 传 播 的 
+SE I R 微 分 方 程 模 型 ： 
+s
+一
+= ～ S Is + E + I + I + R = N 
+E s—gE 一,uE i s≥0，E≥ 0， ≥ 0， ≥ 0，R≥0 
+gE — zI 其 中 ，{ 1 
+，，： 一 I g 十 ／．tzI cI 再 = 一 i H 
+R = c + E tO~< g ， z ， c≤ 1 
+2 ．2 模 型 求 解 及 结 果 分 析 
+2 ．2 ．1 参 数 意 义 及 确 定 
+(1) 是 患 病 人 群 每 天 接 触 并 传 染 易 感 人 群 的 比 例 系 数 
+维普资讯 http://www.cqvip.com 
+
+22 工 程 数 学 学 报 第 20 卷 
+易 知 d = q 。 其 中 ， 为 一 天 内 一 个 患 病 者 与 他 人 的 接 触 率 ， = 
+墨 鱼 
+， q 为 一 个 易 感 者 接 触 一 个 患 病 者 后 被 感 染 的 概 率 
+(2) g 是 SA R S 感 染 者 的 日 发 病 率 是 SA R S 感 染 者 的 日 自 愈 率 
+假 定 每 个 SA R S 感 染 者 的 实 际 潜 伏 期 天 数 服 从 区 间 [1，H ]上 的 均 匀 分 布 。 也 就 是 
+说 ， SA R S 感 染 者 以 均 等 的 概 率 在 这 H 天 之 中 的 任 何 一 天 发 病 或 者 自 愈 。 (H 为 
+潜 伏 期 天 数 上 限 )容 易 得 到 ：g + = 去 
+(3) z 是 患 病 人 群 每 天 被 隔 离 的 比 率 ，反 映 了 社 会 的 警 觉 程 度 及 政 府 措 施 的 力 度 。 
+(4 ) c 是 免 疫 率 ，也 就 是 患 病 人 群 每 天 病 死 率 和 治 愈 率 之 和 。 
+易知：c=堡 耄案 ，可以根据实际数据得到。(由每天数据计算出当 
+天 r 值 ，其 平 均 值 即 为 所 求 ) 
+2 ．2 ．2 模 型 求 解 及 结 果 分 析 
+我 们 先 做 出 公 布 的 实 际 数 据 与 时 间 的 函 数 图 象 ，然 后 调 用 M atlab 软 件 中 的 。d 45 函 数 
+得 到 方 程 的 解 。 对 比 这 两 组 图 ，可 以 发 现 实 际 和 理 论 存 在 着 一 定 的 差 异 。 所 以 ，我 们 必 须 通 
+过 不 断 调 整 非 确 定 性 参 数 ( ，g ， ，2 )来 使 实 际 图 象 和 理 论 图 象 趋 于 一 致 。 需 要 注 意 的 是 ， 
+公 布 的 SA R S 日 累 计 患 病 人 数 是 ， (t) + R (t) 一 E (t)的 值 ，不 包 括 未 被 发 现 的 SA R S 患 
+病 者 J (￡)的 值 。 
+(1) 与 公 布 数 据 的 比 较 
+我 们 以 香 港 数 据 为 例 。 查 得 香 港 总 人 口 为 670 万 ，把 N = 6．7 × 10 代 入 微 分 方 程 组 约 
+束 条 件 ，并 取 初 值 J (0) = 1，S (0 ) = N 一 1 ，E (0 ) = (0 ) = R (0 ) = 0 (即 认 为 起 初 有 一 个 人 
+突 然 得 病 )。 根 据 实 际 数 据 计 算 c = 0 ．014。 根 据 相 关 资 料 取 H = 10 。 在 香 港 这 样 一 个 大 都 
+市 中 ，平 均 每 人 每 天 接 触 约 几 百 人 ，而 总 人 口 为 670 万 ，且 根 据 概 率 的 定 义 9 值 应 该 在 0 到 
+1 之 间 ，故 的 数 量 级 应 为 10 一 。 调 整 参 数 得 到 如 图 1 结 果 。 
+2 
+嘉 ，一 
+畦 
+●
+一 
+，．，’ 
+● 
+， 
+l 
+： J — — 宴 际 数 据 J ， 
+， 
+。 舶 ‘0 6 0 时 ( 天 )’∞ ’舶 ¨ 。 ’60 
+x 10 6 
+i 
+．1 
+。 加 。 时 天 ) 。。。 ’00。 ’20。 
+图 1 对 香 港 疫 情 的 分 析 (实 际 数 据 从 4 月 25 日 开 始 ) 图 2 假 设 不 存 在 自 愈 对 结 果 的 影 响 
+可 以 看 出 方 程 的 解 较 好 的 符 合 了 实 际 数 据 。 此 时 各 参 数 的 值 为 ： = 0 ．0000382 ，g = 0 ． 
+0 0 0 1 一
+． 
+0 ．0999 ， = 0 ．4 ，c = 0 ．014。 d 值 基 本 符 合 我 们 的 估 计 ，结 果 是 合 理 的 。 同 时 得 到 
+g 《 ，也 就 是 说 绝 大 多 数 SA R S 感 染 者 是 自 愈 的 ，只 有 一 小 部 分 SA R S 感 染 者 病 发 成 为 真 
+正 的 SA R S 患 者 ，这 与 钟 南 山 院 士 最 新 的 研 究 成 果 也 是 一 致 的 ]： 
+(2) 自 愈 现 象 对 结 果 的 影 响 
+拍 ： ， 0 
+《 < 嘎 帕 辩 
+维普资讯 http://www.cqvip.com 
+
+第 7 期 考 虑 自 愈 的 SA R S 的 传 播 模 型 23 
+如 果 不 考 虑 自 愈 的 情 况 ，即 = 0 (此 时 g = 0 ．1) ，仍 以 香 港 为 例 (C = 0 ．014 )。 我 们 采 取 
+极 其 严 厉 的 措 施 ，取 = 100 ％ (此 时 基 本 上 每 个 SA R S 感 染 者 一 旦 发 病 就 立 即 被 隔 离 )。 在 
+这 种 最 不 利 于 SA R S 传 播 的 情 况 下 调 整 值 ，在 的 意 义 允 许 的 范 围 内 ，即 使 将 其 调 到 非 常 
+小 ( = 0 ．0000002 )，仍 然 得 到 如 图 2 所 示 结 果 。 即 ：如 果 不 存 在 自 愈 ，则 SA R S 流 行 时 间 的 
+跨 度 成 倍 增 加 ，起 初 疫 情 发 展 缓 慢 ，后 来 突 然 爆 发 ，患 病 人 数 激 增 至 2 ．1 × 10。，也 就 是 说 ，在 
+如 此 严 厉 的 隔 离 措 施 作 用 下 ，最 终 仍 然 有 三 分 之 一 的 成 员 都 染 上 了 SA R S 。 这 一 结 果 显 然 
+是 与 实 际 不 符 的 ，这 正 说 明 了 自 愈 现 象 是 确 实 存 在 的 ，而 且 对 结 果 影 响 相 当 大 。 
+(3) 对 其 他 地 区 数 据 的 拟 合 
+我 们 利 用 对 香 港 的 分 析 方 法 对 其 他 城 市 的 SA R S 传 播 进 行 分 析 。 以 台 湾 为 例 (台 湾 人 
+口 为 2270 万 )，得 到 以 下 结 果 ，此 时 参 数 取 值 为 = 0 ．00000 1128 ，g = 0 ．0000 1， = 0 ． 
+09999 ，z = 0 ．4 ，C = 0 ．045。 (图 略 ) 
+从 图 中 可 以 看 出 我 们 的 模 型 不 仅 适 合 香 港 的 情 况 也 可 以 很 好 的 描 述 台 湾 的 疫 情 传 播 。 
+对 于 不 同 地 区 ，只 要 选 取 合 适 的 参 数 都 可 以 用 该 模 型 来 分 析 。 
+3 基 于 Sm all—W orld N etw ork 的 模 拟 模 型 
+鉴 于 微 分 方 程 模 型 只 能 得 到 一 个 总 量 上 的 宏 观 描 述 ，我 们 考 虑 人 群 内 部 的 具 体 接 触 情 
+况 ，从 模 拟 SA R S 具 体 传 播 过 程 的 角 度 出 发 ，提 出 了 一 个 新 的 模 型 ：即 基 于 Sm all—w 。rld N et— 
+w ork ，并 吸 收 Sznajd 和 元 胞 自 动 机 (cellular autom ation)模 型 思 想 的 的 模 拟 模 型 。· 
+3．1 模 型 建 立 及 算 法 设 计 
+3．1 ．1 人 群 接 触 情 况 的 描 述 
+用 Sm all—W orld N etw ork 模 型 模 拟 现 代 社 会 网 络 _8 ，把 社 会 中 的 人 们 看 成 网 络 的 节 
+点 ，把 人 们 之 间 的 接 触 关 系 表 示 为 节 点 间 的 连 接 边 ，在 流 行 病 预 测 、及 防 范 、控 制 策 略 等 的 研 
+究 [12 J上 取 得 了 不 少 成 果 。 
+我 们 从 一 个 含 N 个 节 点 的 环 状 规 则 网 络 开 始 ，每 个 节 点 向 与 它 最 邻 近 的 K 个 节 点 连 
+出 K 条 边 。 对 于 每 一 个 节 点 ，都 使 它 与 沿 顺 时 针 方 向 的 K ／2 个 邻 居 节 点 以 概 率 P “断 键 重 
+连 ”(即 断 开 与 原 邻 居 节 点 的 连 接 ，而 与 另 一 个 随 机 挑 选 的 非 邻 居 节 点 连 接 ) ，并 且 保 证 没 有 
+重 复 的 边 出 现 。 这 是 对 人 群 接 触 的 静 态 描 述 。 
+在 已 经 构 造 好 的 SW N 网 络 基 础 上 ，每 隔 一 段 时 间 后 ，使 所 有 节 点 都 以 概 率 J 被 选 中 ， 
+让 选 中 的 节 点 仍 以 概 率 P 进 行 再 次 “断 键 重 连 ”。 注 意 不 能 与 处 于 隔 离 期 和 免 疫 期 (死 亡 者 
+无 法 接 触 ，而 病 愈 者 人 们 则 会 自 动 疏 远 )的 节 点 相 连 。 这 是 对 人 群 接 触 的 动 态 描 述 ，J 度 量 
+了 网 络 内 部 节 点 间 的 流 动 程 度 。 
+3 ．1．2 模 型 建 立 
+设 潜 伏 期 上 限 为 H 天 ，假 定 SA R S 感 染 者 等 可 能 的 在 这 H 天 中 的 任 一 天 发 病 或 自 愈 ， 
+根 据 概 率 知 识 计 算 得 到 ，处 于 潜 伏 期 第 丁 天 的 SA R S 感 染 者 转 变 的 概 率 为 西 — ，设 每 
+J 』 』 l 1 
+天 转 变 的 SA R S 感 染 者 中 自 愈 的 概 率 为 V ，自 然 的 ，发 病 的 概 率 为 1 一 。 
+设 第 t 天 时 五 类 成 员 的 人 数 分 别 为 s (t)、E (t)、 (t)、 (t)、R (t)，该 地 区 总 人 口 为 
+N 。 一 个 易 感 者 接 触 一 个 患 病 者 后 被 感 染 的 概 率 为 Q ，SA R S 患 者 从 发 病 到 被 发 现 所 经 历 
+的 平 均 时 间 ，也 就 是 传 染 期 天 数 为 L ，SA R S 患 者 从 被 发 现 到 最 终 治 愈 或 死 亡 所 需 要 的 平 均 
+维普资讯 http://www.cqvip.com 
+
+24 工 程 数 学 学 报 第 20 卷 
+天 数 为 M ，则 各 类 成 员 之 间 的 流 动 情 况 如 右 图 
+所 不 ： 
+3．1 ．3 算 法 
+根 据 对 SA R S 传 播 的 具 体 分 析 ，我 们 按 
+以 下 步 骤 建 立 SA R S 传 播 的 模 拟 模 型 ： 
+第 一 步 ，构 建 一 个 总 节 点 数 为 N ，每 个 
+点 的 度 为 K 。节 点 断 键 重 连 的 概 率 为 P ，流 
+程 度 为 的 SW N 网 络 ； 
+第 二 步 ，初 始 化 所 有 节 点 的 状 态 {ST A T E ，E F T ，IFT ，T R T }，随 机 地 选 一 个 节 点 为 J 
+类 ，其 他 节 点 均 为 S 类 ；(S T A T E 为 节 点 的 状 态 ；E FT 、IFT 、T R T 分 别 为 潜 伏 、传 染 、治 疗 时 
+间 ，即 为 节 点 变 成 E 、J J 类 后 经 历 的 时 间 ) 
+第 三 步 ，在 当 前 时 刻 t 下 遍 历 所 有 节 点 ： 
+1) 如 果 节 点 为 ， 类 ，则 
+a ) 遍 历 该 J 类 节 点 所 有 的 邻 居 节 点 ，若 邻 居 节 点 为 S 类 ，则 这 个 S 类 节 点 以 概 率 Q 
+转 变 成 E 类 ，同 时 E FT 变 为 1 ； 
+b ) IFT 变 成 IFT + 1，若 此 时 IF T > L ，则 该 节 点 转 变 成 fi类 ，同 时 T R T 变 为 1 ； 
+2 ) 如 果 节 点 为 E 类 ，则 
+口) 该 节 点 以 概 率 百 = 被 选 中 ，选 中 的 节 点 以 概 率 V 转 变 成 R 类 ，否 则 转 变 成 
+J 类 (同 时 IFT 变 为 1) ； 
+b ) E F T 变 成 E FT + 1 ； 
+3) 如 果 节 点 为 ， 类 ，则 T R T 变 成 T R T + 1 ，若 此 时 T R T > M ，则 该 节 点 转 变 成 R 类 ； 
+4) 在 此 遍 历 过 程 中 ，S 、E 、J 类 节 点 均 以 概 率 被 选 中 ，选 中 的 节 点 以 概 率 P 断 键 重 连 ； 
+5) 当 前 时 刻 t 变 成 t + 1 ； 
+6 ) 回 到 第 三 步 ，或 结 束 程 序 ； 
+3 ．2 结 果 及 分 析 
+3 ．2 ．1 对 参 数 Q 、L 的 讨 论 
+10 
+《 
+< 5 
+壤 
+帕 0 
+0 
+(1) L = 10 (2 ) Q = 0 ．1 
+图 3 SA R S 的 实 际 传 播 率 Q 、传 染 期 天 数 L 对 疫 情 的 影 响 
+(1) Q 、L 对 结 果 的 影 响 
+维普资讯 http://www.cqvip.com 
+
+第 7 期 考 虑 自 愈 的 SA R S 的 传 播 模 型 25 
+根 据 ll_中 对 构 建 SW N 网 络 的 要 求 ：N 》 K 》 In(N )》 1，我 们 取 N = 105，K = 20 。 取 P 
+： 0．02 ，M = 30 ，H = 10 ，将 SA R S 的 实 际 传 染 率 Q 、传 染 期 天 数 L 、区 域 内 人 们 的 流 动 程 度 
+J 、SA R S 感 染 者 的 自 愈 率 V 作 为 可 调 参 数 。 用 当 前 实 际 患 病 人 数 ( t) + ( t)来 表 示 
+SA R S 传 播 的 实 际 情 况 。 
+取 J = 0 ， V = 0 (即 暂 不 考 虑 人 员 流 动 性 及 自 愈 )，固 定 Q 、L 中 的 一 个 ，讨 论 另 一 个 取 不 
+同 值 时 对 结 果 的 影 响 。 图 4 (1)、(2 )为 分 别 改 变 Q 、L 的 情 形 。 
+从 图 3(1)可 以 看 出 ，当 L 一 定 的 时 候 ，随 着 Q 的 增 加 ，患 病 高 峰 期 逐 渐 提 前 ，患 病 人 数 
+的 峰 值 逐 渐 增 大 。 也 就 是 说 ，如 果 病 毒 实 际 传 播 性 较 强 ，Q 值 较 大 ，该 区 域 内 一 旦 有 人 患 
+病 ，病 毒 很 快 地 就 传 播 开 来 。 值 得 注 意 的 是 ，Q 有 一 个 阀 值 Q ，只 有 Q > Q 时 该 传 染 病 才 
+会 在 该 区 域 内 开 始 流 行 ，否 则 该 传 染 病 就 不 能 流 行 。 如 图 ，在 L ： 10 时 ，我 们 得 到 Q = 0． 
+0 4 。 
+从 图 3 (2 )可 以 看 出 ，当 Q 一 定 的 时 候 ，随 着 L 的 增 加 ，患 病 人 数 的 峰 值 缓 慢 增 大 。 也 
+就 是 说 ，SA R S 患 者 传 染 期 L 的 增 加 将 加 剧 SA R S 的 传 播 。 我 们 发 现 L 也 有 一 个 阀 值 L ， 
+如 果 L > L ，则 SA R S 将 大 规 模 流 行 ，否 则 就 不 能 流 行 。 如 图 ，当 Q ： 0 ．1 时 ，L = 7。 
+综 上 可 得 ： 、 
+① 患 病 人 数 的 峰 值 随 着 Q 的 增 大 而 迅 速 增 大 ，而 随 着 L 的 增 大 ，患 病 人 数 峰 值 并 没 有 
+非 常 明 显 的 改 变 。 也 就 是 说 ，患 病 人 数 峰 值 对 Q 的 改 变 比 对 L 的 改 变 更 加 敏 感 ； 
+② Q 的 减 小 将 使 高 峰 期 推 迟 ，而 L 对 高 峰 期 影 响 不 大 ； 
+③ Q 、L 都 存 在 一 个 阀 值 ，当 其 值 小 于 阀 值 时 ，SA R S 不 会 大 范 围 传 播 ，当 大 于 阀 值 时 将 
+大 规 模 流 行 ； 
+(2) 在 迭 代 过 程 中 Q 、L 变 化 对 结 果 的 影 响 
+时 间 ( 天 J 
+(1) Q 改 变 L 不 变 
+时 间 { 天 ) 
+(2) L 改 变 Q 不 变 
+图 4 一 段 时 间 后 采 取 措 施 对 疫 情 的 影 响 
+初 期 人 们 对 SA R S 并 没 有 任 何 防 范 ，Q 和 L 的 值 都 很 大 ，一 段 时 间 后 采 取 措 施 使 得 Q 
+和 L 减 小 。 Q 和 L 的 值 减 小 的 越 多 ，代 表 相 应 的 措 施 力 度 越 大 。 我 们 仍 取 J = 0 ，V = 0 ：取 
+L = 12 ， ，分 别 取 0 ．09 、0 ．11、0 ．13 、0 ．15 ，保 留 = 0 ．2 的 曲 线 作 为 对 比 ，不 同 的 对 应 的 曲 线 见 
+图 4(1) ；取 Q = 0 ．2 ，，分 别 取 3 …6 7 8 、10 ，保 留 = 12 的 曲 线 作 为 对 比 ，不 同 的 对 应 的 曲 线 见 
+图 4(2) ；从 图 4(1)中 可 以 看 出 ，L 不 变 Q 减 小 时 ，在 Q = 0 ．1 附 近 出 现 突 变 ：Q < 0 ．1 时 
+患 病 人 数 在 采 取 相 应 措 施 后 立 刻 减 少 ，并 很 快 减 到 0 ；而 Q > 0 ．1 时 患 病 人 数 在 采 取 措 施 
+后 仍 然 继 续 增 加 ，只 是 上 升 的 速 度 有 所 减 缓 ，患 病 人 数 峰 值 有 所 减 小 ，且 高 峰 期 推 迟 出 现 。 
+从 图 4(2 )中 可 以 看 出 ，Q 不 变 L 减 小 时 ，在 L = 5 附 近 出 现 突 变 ，L > 5 时 采 取 相 应 措 施 
+能 使 患 病 人 数 峰 值 有 所 减 小 ，但 对 高 峰 期 影 响 不 大 。 
+维普资讯 http://www.cqvip.com 
+
+26 工 程 数 学 学 报 第 2O 卷 
+3 ．2 ．2 对 参 数 ‘， 的 讨 论 
+(1) 参 数 ‘， 对 结 果 的 影 响 
+取 Q = 0 ．1，L ： 12 ，V = 0 ，改 变 J 的 值 ，得 到 如 图 5 结 果 。 可 以 看 出 ，区 域 内 人 口 流 动 
+性 越 强 ，病 毒 蔓 延 得 越 快 ，传 染 的 人 越 多 ，疫 情 越 严 重 。 
+(2)在 迭 代 过 程 中 改 变 J 对 结 果 的 影 响 
+¨ ’ 
+-< 
+馁 
+帕 
+图 5 区 域 内 人 们 的 流 动 程 度 J 对 疫 情 的 影 响 图 6 自 愈 率 对 疫 情 的 影 响 
+取 Q ： 0 ．1 ，L = 12 ，V = 0 ，t= 18 前 J = 0 ．2 ，因 为 时 间 原 因 ，这 里 仅 给 出 t = 18 后 J = 0 ． 
+2 和 J = 0 ．1 的 患 病 人 数 峰 值 ：M ax [， (t) + t)]J = 0 ．2 = 8 ．6 104 M ax [， (t) + ， (t)]J 
+= 0 ． 1 = 4 ．8 1 0 4 
+可 以 看 出 ，区 域 内 人 们 流 动 程 度 J 的 减 小 也 使 患 病 人 数 大 大 减 少 ，疫 情 得 以 缓 解 。 
+3 ．2 ．3 对 参 数 的 讨 论 
+取 Q = 0 ．2 ，L = 10 ，J = 0 ，改 变 自 愈 率 的 值 ，得 到 如 图 6 结 果 。 从 图 中 可 以 看 出 ，当 
+自 愈 率 很 小 时 ，SA R S 将 大 规 模 传 播 。 随 着 自 愈 率 的 增 大 ，患 病 人 数 减 少 ，高 峰 期 推 迟 ， 
+超 过 一 个 值 后 ，SA R S 不 能 传 播 开 。 如 图 得 V c= 0 ．78。 
+3 ．2 ．4 接 种 疫 苗 的 作 用 
+在 初 始 人 群 中 以 一 定 的 比 率 引 入 已 接 种 疫 苗 的 成 员 ，将 这 个 比 率 称 为 疫 苗 接 种 率 W 。 
+这 些 已 接 种 疫 苗 的 成 员 既 不 能 被 别 人 传 染 ，更 不 能 传 染 别 人 ，实 际 上 是 尺 类 成 员 。 按 照 与 
+我 们 原 模 型 相 同 的 规 则 ，只 是 在 初 始 化 时 赋 以 尺 类 成 员 初 值 ，＼， 即 可 。 取 Q = 0 ．1，L = 
+10 ，J = 0 ．1，V = 0 ，改 变 W 值 ，可 得 到 不 同 的 W 对 SA R S 传 播 情 况 的 影 响 。 
+如 图 7 所 示 ，在 不 同 的 疫 苗 接 种 率 W 下 ，SA R S 传 播 的 规 模 相 差 很 大 ，疫 苗 接 种 率 W 
+每 提 高 5 个 百 分 点 ，相 应 的 患 病 人 数 峰 值 就 有 大 幅 度 的 下 降 ，高 峰 期 也 延 迟 相 当 一 段 时 间 。 
+值 得 注 意 的 是 ，当 W 为 20 ％ 时 ，患 病 人 数 非 常 少 ，SA R S 病 毒 根 本 不 能 够 大 范 围 的 传 播 开 
+来 。 这 一 结 果 说 明 接 种 疫 苗 不 仅 仅 是 使 单 个 成 员 免 于 病 毒 的 感 染 ，更 是 切 断 了 病 毒 进 一 步 
+传 播 的 途 径 ，因 而 能 够 出 现 SA R S 病 毒 从 一 开 始 就 不 能 传 播 开 的 情 况 。 所 以 说 接 种 疫 苗 能 
+够 从 根 本 上 杜 绝 SA R S 的 大 范 围 传 播 。 
+从 图 7 我 们 观 察 到 W 有 一 个 临 界 值 ，当 超 过 该 值 时 ，患 病 人 数 基 本 为 零 。 下 面 我 们 讨 
+论 不 同 流 动 性 的 区 域 对 这 一 临 界 W 值 的 要 求 。 仍 取 Q = 0 ．1 ，L = 10 ，V = 0 ，仅 改 变 J ，对 
+于 每 组 参 数 组 合 ，都 有 相 应 的 临 界 W 值 ，当 大 于 该 值 时 患 病 人 数 非 常 少 (我 们 取 患 病 人 数 
+峰 值 小 于 50 为 标 准 )。 结 果 如 图 8 所 示 。 也 就 是 说 ，要 想 完 全 杜 绝 病 毒 的 传 播 ，流 动 性 越 强 
+的 区 域 所 要 求 人 群 的 疫 苗 接 种 率 越 高 。 越 是 经 济 发 达 的 大 城 市 ，越 是 需 要 大 范 围 接 种 疫 苗 。 
+3 ．3 对 北 京 疫 情 的 分 析 
+维普资讯 http://www.cqvip.com 
+
+第 7 期 考 虑 自 愈 的 SA R S 的 传 播 模 型 27 
+薹≤ 
+图 8 区 域 成 员 间 流 动 性 J 与 疫 苗 接 种 率 的 关 系 
+综 合 以 上 提 到 的 所 有 因 素 ，下 面 拟 合 北 京 的 疫 情 发 展 情 况 。 取 N = 10 ，K = 20 ，P = 0 ． 
+02 ，M = 30 ，H = 10 。 北 京 市 第 一 例 SA R S 出 现 在 3 月 1 日 ，以 此 为 坐 标 起 点 。 政 府 自 4 月 
+25 日 起 公 布 数 据 ，近 似 认 为 从 此 时 (t= 56 )开 始 采 取 措 施 ，用 ( t) 的 累 计 值 拟 合 公 布 数 字 
+(从 采 取 措 施 起 参 数 发 生 变 化 ，未 取 采 措 施 前 采 用 (t) + (t)的 值 拟 合 公 布 数 字 )。 调 整 
+参 数 拟 合 实 际 数 据 ，我 们 取 J = 0．1 ，v = 0 ．6 ，，得 到 图 9 结 果 。 
+；’ 
+； 
+． —
+／ …“f + 攀磊 嚣f一 
+图 10 提 前 或 延 迟 采 取 措 施 的 影 响 
+3 ．3 ．2 提 前 和 推 迟 采 取 措 施 对 结 果 的 影 响 
+保 持 上 述 参 数 不 变 ，仅 使 起 点 除 外 的 所 有 分 段 点 时 间 统 一 减 (加 )5 ，即 可 得 到 提 前 (推 
+迟 )5 天 采 取 措 施 的 结 果 (如 图 10)。 可 以 看 出 ，仅 仅 推 迟 5 天 采 取 措 施 ，就 会 使 患 病 人 数 峰 
+值 从 2523 增 加 到 3642 ，疫 情 最 终 得 以 控 制 的 时 间 (即 曲 线 开 始 趋 于 水 平 的 时 间 )往 后 推 迟 。 
+而 提 前 5 天 采 取 措 施 则 能 使 患 病 人 数 峰 值 减 至 1702 ，疫 情 得 到 控 制 的 时 间 有 所 提 前 。 也 就 
+是 说 ，采 取 措 施 的 及 时 程 度 对 SA R S 疫 情 的 影 响 很 大 ，政 府 部 门 能 否 尽 早 认 识 到 问 题 的 严 重 
+性 ，尽 早 采 取 果 断 措 施 对 SA R S 疫 情 的 发 展 起 到 了 至 关 重 要 的 作 用 。 
+3 ．4 模 型 评 价 及 改 进 
+3 ．4 ．1 模 型 评 价 
+(1) 本 模 型 首 先 采 用 SW N 模 型 构 建 区 域 结 构 ，较 好 的 模 拟 了 现 实 中 人 们 之 间 接 触 情 
+况 ，为 问 题 的 进 一 步 的 解 决 建 立 了 较 为 合 理 的 基 础 ； 
+(2) 本 模 型 在 模 拟 SA R S 的 实 际 传 播 过 程 时 ，同 时 吸 收 了 Sznajd 和 元 胞 自 动 机 模 型 中 
+的 合 理 之 处 ，摈 弃 了 其 中 不 符 合 本 题 实 际 问 题 的 成 分 。 做 到 了 既 从 每 个 成 员 影 响 他 人 的 角 
+度 考 虑 问 题 ，又 能 实 现 同 步 更 新 ，认 为 一 个 成 员 下 一 时 刻 的 状 态 是 受 到 当 前 与 其 接 触 的 多 个 
+成 员 影 响 累 老 女j结 果 ，这 些 都 是 非 常 符 合 现 实 情 况 的 ； 
+3 ．4 ．2 模 型 改 进 
+(1) 可 以 采 用 Scale～free N etw ork 模 型 ，它 更 能 反 映 现 实 中 人 们 之 间 联 系 的 先 取 连 接 
+维普资讯 http://www.cqvip.com 
+
+28 工 程 数 学 学 报 第 20 卷 
+性 (P referential Connectivity) ，也 就 是 说 ，实 际 中 每 个 节 点 的 度 并 不 都 是 相 同 的 ，而 是 存 在 一 
+些 关 键 节 点 ，和 它 们 相 连 的 节 点 数 比 其 他 节 点 多 。 可 以 对 这 些 关 键 节 点 进 行 研 究 ，比 如 ，这 
+些 关 键 节 点 如 果 患 病 或 者 接 种 疫 苗 会 对 结 果 产 生 什 么 影 响 ； 
+(2 ) 在 运 用 SW N 模 型 时 ，对 于 和 一 个 节 点 相 连 的 2K 个 节 点 ，到 该 节 点 的 路 径 权 值 应 
+该 是 不 相 同 的 ，即 和 某 成 员 有 联 系 的 2K 个 成 员 有 亲 密 疏 远 的 差 别 ，他 们 被 传 染 上 SA R S 的 
+概 率 是 不 同 的 。 我 们 可 以 使 节 点 与 其 原 邻 居 节 点 之 间 的 路 径 权 值 取 d ，与 非 原 邻 居 节 点 之 
+间 的 路 径 权 值 取 d ，， 自 然 的 ，d n> d 
+参 考 文 献 
+[10 ] 
+[11] 
+[12 ] 
+[13] 
+[14 ] 
+[15 ] 
+[16 ] 
+W atts， D ．J and Strogatz ， S ．H ， Co llective dynam ics of ”sm al1．w orld” netw orks[J]， N ature 393 (1998 )， 
+4 4 0 4 4 2 
+D ietrich Stauffer． Socioph3rsics： the Sznajd m odel and its applications[J]， Com puter P hysics (_~ m m unica— 
+tio ns 14 6 (2 0 02 ) ． 9 3 9 8 
+G ． C h S irak ou lis ． I ． K a raf3rllid is ． A ． T han ailak is ． A cellu lar a utom atio n m od el fo r the effects o f po pu la— 
+tion m ovem ent and vaccination on epidem ic propagation[J]， Ecological M odeling， 133(2000 )， 209 223 
+唐 焕 文 贺 明 峰 ， 数 学 模 型 引 论 (第 二 版 )[M ]． 北 京 ：高 等 教 育 出 版 社 ， 2001 
+姜 启 源 数 学 模 型 (第 二 版 )[M ]， 北 京 ：高 等 教 育 出 版 社 ， 1993 
+Jan M edlock ， M ark K ot， Spreading disease ： integro_dIfferential equations old and new [J] ， M athem atical 
+B iosciences， 184 (2 003 )， 20 1 222 
+http ：／／new s．sina．com cn／o／2003 09 14／1200748765s．shtm l [E B ／O L ] 
+F rancesc Co m ellas． M ichael Sam pels， D eterm inistic sm al1．w orld netw orks [J ]， P hysica A 309 (2002 ) ， 
+2 3 1．2 3 5 20 0 2 
+B arrat and W eigt， O n the properties of sm al1 w orld netw ork m odels [J ]， E urophysics Journal B ， 13 
+(2000 )， 547 560 ， 
+L ． A N ． A m a ra1． A ． S cala ． M B a rth e le m y ． an d H ． E ． S tan ley C lasses o f sm a l1 w o rld netw o rks 
+[J]， PN A S ， vo1． 97 no． 2l(2000 ) ， 11149 11152 
+M ． E J． N ew m an and D ． J． W atts， Scaling and percolation in the sm all-w orld netw ork m odel[J ]， 
+P hys． R ev． E ． 60 (1999 )， 7332—7342 
+Jonathan M ． R ead ．M att J K eeling ， D isease evolution on netw orks： the role of contact structure[J ]， 
+P roc． R ． Soc． Lond． B ， 2 70 (2003 )， 699 708 
+H ． A nderss on ， T ． B ritton ， E pidem ics： Stochastic m odels and their statistical analysis[J]， Springer L ec- 
+ture N otes in S tatistics， V o1． 15 1(2000)， Springer， N ew Y ork 
+D am ian H ． Zanette * ， M arcelo K uperm an ， E ffects of im m unization in sm all—w orld epidem ics[J]， P hysi— 
+ca A 309 (2002 )， 445 452 
+O ctav io M iram on tes ， B artolo L u q ue ， D yn am ical sm all—w orld beh avior in an epidem ical m o del of m o bile in - 
+dividuals[J]， P hysica D ， 168 169 (2002 )： 379 385 
+R om ualdo Pastor Satorras and A lessan dro V espignani， E pidem ic Spreading in S cale—F ree N etw orks[J]， 
+P hysical R eview E ， 86 (200 1)， 3200 3203 (下 转 44 页 ) 
+1 ： ] ； 1 J n 1j 
+维普资讯 http://www.cqvip.com 
+
+工 程 数 学 学 报 第 20 卷 
+参 考 文 献 ： 
+姜 启 源 ． 数 学 模 型 [M ]． 北 京 ：高 等 教 育 出 版 社 ，1993 
+赵 达 纲 ，朱 迎 善 ． 应 用 随 机 过 程 [M ． 北 京 ：机 械 工 业 出 版 社 ，1993 
+闻 新 等 ．M atlab 神 经 网 络 应 用 设 计 [M ]，北 京 ：科 学 出 版 社 ，2000 
+Shi Y aolin ． Stochastic dynam ic m odel of SA R S spreading [J] ．W W W science．com ，2003 ；9 
+T h e S tu d y o f th e S p re a d o f S A R S 
+X IA O H o ng ，jian g ． w U T o n g ， L I M in g—k e 
+A d viso r ： H E Z u—g uo 
+(Beijing U niversity of Posts and T elecom m unications ， B eijing 100876 ) 
+A bstract： T h is article co m pares th e m o de l in the attachm en t 1 ，an d ex am s its m e tho d called ” H alf — Im itatio n — 
+C ircu latio n ～ c alculation ” ．T he ad va nta ge of the m o del is itsease ，its high precisio n in th e asp ect o f im itatio n ，and 
+its reason ab le ch a ng e of th e value of ” K ” ．A t th e sam e tim e ，w e po in t o u t that its m ain d raw b ack is that it de 
+pen ds o n the d ata ex cessixrely an d is no t ab le to pred ict th e situatio n fo r lo n ger tim e ． In th e secon d q uestio n ，w e 
+bring uD four m odels w hich are based on four different core m ethods：(1 )the m od el based on differential and dif— 
+ference equation ；(2 )the controling — m odel based on filter；(3 )the m odel of neural netw ork ；(4 )the sinm lation 
+m od el b ased o n B ra n ching P rocess ． In M od el 2 ，w e con clu de th at S A R S w ill last 9 9 d ays in B eijing ；th e earlie r it 
+is co ntrolled ．the b etter it w ill b eco m e ；and S A R S w ill no t b reak o u t preo d ically ．In th e th ird q u es tio n ，w e are en ， 
+lig h ted by th e ’’co ns equ ense fun ctio n ” in eco no m ics ．so w e brin g in th ree differen t in flu en tial fu n ction s to d raw o ut 
+”
+an influ en tial m o del o f th e foreign visito rs ” ．~'h en w e d raw a co nclusion th at th e city o f B er in g w ill lose 1 ，38 2 ， 
+1 10 foreig n visito rs d ue to S A R S ．F ina lly ， w e g iv e a sh ort co m po sition to be prin ted on th e lo cal n ew sp ap ers ． 
+K ey w ord s ： filter ； ne ural n etw o rk ； bra nch ing pro cess 
+(上 接 28 页 ) 
+M o d e lin g th e S A R S E p id e m ic C o n sid e rin g S e lf-cu re 
+L I Bei， X U H aixuan ， G U O Jiajia 
+( D alian U niversity of T echnology ， D alian 1 16024 ， C hina ) 
+A bstract： In this paper， a SE IuIiR (susceptible， exposed ， uniso lated infectious， iso lated infectious， recovered) 
+m od el w ith self．cure is b uilt to m o d el th e SA R S ep id em ic ． T h e pro b lem is solved w ith tw o m etho d s： o n e is ordi— 
+nary d ifferential e qu atio n w h ich w e th en co m e to a co nclusio n th at self cu re in d eed e xists in th e S A R S tra nsm is． 
+sio n ； the o th er is com p uter sim u latio n based o n th e sm a l1 w ork n etw o rk w hich w e a lso abso rb th e b asic id eas of 
+the Sznajd and the cellular autom ation m odel， and then w e discuss som e param eters and the effects of vaccina— 
+tio n ． A t la st w e a nalyze th e ep id em ic situatio n in B eijing an d es tim ate th e results if co n tro l m e asures are taken 5 
+d ays later or earlier． 
+K eyw ords： SA R S ； Self—cure ； ordinary differential equation； Sm all—W orld N etw ork ； the Sznajd m odel： the cellu 
+lar au tom a tion m o d el： sim u latio n 
+1 i 1 J 1 2 3 4 L二 
+维普资讯 http://www.cqvip.com

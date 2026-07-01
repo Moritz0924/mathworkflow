@@ -1,0 +1,307 @@
+第 2o卷 第 7期 工 程 数 学 学 报 
+。。 年 月 J O U R N A L O F E N G IN E E R IN G M A T H E M A T IC S 
+V o 1．2 O N o ．8 
+D e c ． 2 0 0 3 
+文 章 编 号 ：1005—3085 (2003)07—0063—06 
+露 天 矿 生 产 的 车 辆 安 排 
+丁 余 良 ， 胡 海 林 ， 郭 丽 君 
+指 导 教 师 ： 李 新 秀 
+(南 京 邮 电 学 院 ，南 京 2 10003 ) 
+编 者 安 ： 本 文 模 型 完 整 、正 确 、叙 述 清 楚 严 格 ．求 解 方 法 可 行 ，结 果 准 确 ，对 整 条 路 线 车 次 约 束 讨 论 较 好 ，确 
+是 一 篇 优 秀 论 文 。 此 外 本 文 还 讨 论 了 有 关 几 种 等 待 的 情 况 ，虽 未 完 全 解 决 ，但 已 属 不 易 。 缺 点 是 
+本 文 不 太 精 炼 ，此 处 已 作 删 节 ． 
+摘 要 ： 本 文 研 究 了 露 天 矿 生 产 的 车 辆 安 排 最 优 化 问 题 。 利 用 主 要 目 标 法 将 多 目 标 最 优 化 问 题 转 化 为 单 
+目 标 最 优 化 问 题 ，根 据 主 要 目 标 (总 运 量 )列 出 最 小 费 用 函 数 ，将 次 要 目 标 最 小 卡 车 数 转 化 为 约 束 
+条 件 ，然 后 逐 步 简 化 ，将 非 线 性 规 划 转 化 为 线 性 整 数 规 划 ，并 通 过 SA S 软 件 编 程 遍 历 120 个 线 性 
+规 划 子 问 题 ，经 过 比 较 得 出 最 优 解 ．最 后 在 最 优 解 基 础 上 运 用 贪 心 算 法 求 出 所 用 的 最 少 卡 车 数 并 
+给 出 了 一 个 班 次 的 运 输 方 案 。 对 于 问 题 一 ，得 到 最 小 总 运 量 为 85628 ．62 吨 公 里 ，此 时 7 台 电 铲 分 
+别 放 在 第 1 ．2 ，3 ．4 ，8 ，9 ，10 铲 点 ，所 需 卡 车 最 少 为 13 辆 。 对 于 问 题 二 ，利 用 类 似 于 问 题 一 的 解 法 ， 
+在 充 分 利 用 现 有 卡 车 和 铲 车 的 条 件 下 ，求 得 最 大 的 产 量 为 103334 吨 ，2O 辆 车 完 全 利 用 ，相 应 的 铲 
+点 为 ：1 ，2 ，3 ．4 ，8 ，9 ，10 。 最 小 运 输 量 为 147792 ．26 吨 公 里 ，相 应 的 岩 石 产 量 为 49280 吨 ．矿 石 产 量 
+为 54054 吨 。 
+我 们 还 讨 论 了 一 辆 卡 车 在 不 同 的 路 线 运 输 所 产 生 的 转 移 时 间 差 和 两 辆 卡 车 发 生 等 待 的 条 件 ． 
+为 解 决 等 待 问 题 提 供 了 一 种 很 好 的 方 法 。 
+关 键 词 ： 主 要 目 标 法 ； 贪 心 算 法 ； 转 移 时 间 差 
+分 类 号 ： A M S(2()(]O) 90C 29 中 图 分 类 号 ： O 221．2 文 献 标 识 码 ： A 
+1 问 题 重 述 (略 ) 2 模 型 假 设 (略 ) 3 符 号 说 明 (略 ) 
+4 问 题 分 析 
+这 是 一 个 多 目 标 最 优 化 问 题 。 优 化 目 标 有 两 个 ，最 小 运 输 量 和 最 少 卡 车 数 ，两 个 目 标 在 
+一
+定 程 度 上 是 相 互 影 响 的 。 在 运 输 成 本 中 ，总 运 量 是 主 要 决 定 因 素 ，把 总 运 量 作 为 主 要 目 
+标 ，将 卡 车 数 转 化 成 约 束 条 件 ，使 卡 车 总 数 不 大 于 20 ，得 到 改 进 模 型 。 根 据 多 目 标 的 主 要 目 
+标 法 的 有 效 解 理 论 ，在 此 最 优 解 集 上 求 最 少 卡 车 数 的 有 效 解 或 弱 有 效 解 。 另 外 ，由 于 电 铲 和 
+卸 点 只 能 同 时 为 一 辆 卡 车 服 务 ，若 此 时 还 存 在 其 他 卡 车 在 该 铲 点 或 卸 点 需 要 服 务 ，就 出 现 等 
+待 情 况 ，在 解 决 时 应 避 免 该 情 况 发 生 。 在 装 石 料 时 若 一 条 路 线 中 卡 车 数 超 过 一 定 值 时 ，必 然 
+会 出 现 等 待 。 为 了 方 便 讨 论 ，我 们 按 矿 石 漏 ，倒 装 场 I，倒 装 场 II，岩 石 漏 ，岩 场 的 顺 序 将 它 
+维普资讯 http://www.cqvip.com 
+更多数学建模资料请关注微店店铺“数学建模学习交流”
+https://k.weidian.com/RHO6PSpA
+工 程 数 学 学 报 第 20 卷 
+们 依 次 记 作 卸 点 D 1，D2，… D5，装 点 S1， ，… S10。 于 是 ，每 条 s — D j— s 路 线 的 运 行 周 期 为 
+T (i = 3 + 5 + ，其 中 ，j )2 S i -~ D j ~ IN N N N (k m )' N @ ~ N N (km ／ 
+h )。 由 于 每 装 一 次 车 的 平 均 时 间 为 5m in (大 于 卸 车 时 间 3m in )，那 ／z,每 条 路 线 上 可 容 纳 的 
+最大车辆数 w(i，-，)=[ ]。此外 ，每辆车一个班次工作 480min，则一辆车在相应的 
+路线上运输次数的上界为 ME( ) [ ]c 
+5 模 型 的 建 立 及 求 解 
+5．1 模 型 准 备 
+在 模 型 建 立 之 前 ，先 给 出 几 个 必 要 的 命 题 (证 明 过 程 略 )和 分 析 过 程 。 我 们 用 标 志 数 c 
+来 刻 画 第 ，l 辆 车 是 否 被 利 用 。 当 第 ，l 辆 车 被 利 用 时 c = 1 ，否 则 c = 0 。 
+命 题 1 第 ，l 辆 车 是 否 被 利 用 的 标 志 数 c = ag ( Y (i，-『)) ，，l = 1，2 ，… ，20 ， 
+其 中 y ， (i，j．)是 第 辆 车 从 s 0D ，的 运 输 次 数 ，fl ag 为 符 号 函 数 。 
+命 题 2 第 i 个 铲 点 是 否 有 铲 车 的 标 志 数 h f= ag ( 21 Y n(i，-，))，i = 1，2 ，… ，10 。 
+5 ．2 问 题 一 的 模 型 
+对 于 问 题 1 和 问 题 2 ，都 必 须 满 足 ： 
+1) 各 铲 点 向 所 有 卸 点 提 供 的 岩 石 和 矿 石 总 量 应 分 别 不 大 于 该 铲 点 矿 石 数 量 k 和 岩 石 
+数 量 Y ，即 为 模 型 J 中 的 (1)式 。 
+2) 由 所 有 铲 点 向 各 卸 点 运 输 的 石 料 总 和 应 不 小 于 卸 点 所 需 石 料 的 下 限 ，即 为 模 型 J 中 
+的 (2 )式 。 
+3) 品 位 限 制 ，在 三 个 矿 石 卸 点 ，矿 石 的 平 均 铁 含 量 应 在 给 定 范 围 内 ，即 为 模 型 J 中 的 
+(3)式 。 
+4) 由 于 铲 车 数 量 为 7 ，所 以 要 求 利 用 的 铲 点 数 不 超 过 7 个 ，即 为 模 型 J 中 的 (4 )式 。 
+5) 每 个 铲 点 的 工 作 次 数 不 大 于 96 次 ，即 为 模 型 J 中 的 (5)式 。 
+6) 每 个 卸 点 的 工 作 次 数 不 大 于 160 次 ，即 为 模 型 J 中 的 (6 )式 。 
+综 上 所 述 ，可 得 问 题 一 的 基 本 模 型 
+模 型 I 
+2 0 10 5 
+m in f = 154 {Y ， (i， )d (i，J) } 
+ll 1 l 1 I L 
+2 0 1 0 5 
+m in C， 这 里 C， = ∥ ag ( y (i，j．)， = 1 ，2 ，… ，20 
+，l l f l J I 
+2 0 3 2 0 5 
+·
+154 Z
+，手 gn( ， ) k 154 Z ， t gn(i，j_) Yd = 1，2，… ，l0 (1) 
+2 0 1 0 
+154 Y ， (i ， ) M D j J = 1，2 ，… ，5 (2 ) 
+2 0 1 0 
+∑ ∑ Y t i ，j 8 l 
+28．5％ # — — — — 一 30．5％ ， = 1，2，3； (3) 
+Y (i，J) 
+维普资讯 http://www.cqvip.com 
+
+第 7 期 露 天 矿 生 产 的 车 辆 安 排 65 
+三 ^ 三三三 7 ，h = _厂fag ( 三 三 Y ( ，J ))， = 1，2 ，… ，10 ； 
+I I I ， l 
+2 0 5 
+三 二 Y ， ( ，J) 96 = 1，2 ，… ，10 ； 
+I ， 1 
+2 0 i 0 
+三 三 Y ( ，J_) 160 J = 1 ，2 ，… ，5 ； 
+H I I I 
+h ∈ {0 ，1 }；c ∈ (0 ，1)， = 1 ，2 ，… ，10 ；n = 1 ，2 ，… ，20 
+(i，J) ∈ N U {0}；n = 1，2，… ，20 ；i = 1，2 ，… ，10； = 1，2 ，… ，5 
+(4 ) 
+(5 ) 
+(6 ) 
+(7) 
+(8) 
+5 ．3 模 型 的 求 解 
+模 型 I 是 双 目 标 规 划 ，运 输 总 量 为 线 性 函 数 ，所 需 卡 车 数 是 非 线 性 的 ，并 且 不 连 续 ，无 法 
+用 一 般 的 非 线 性 规 划 求 解 。 根 据 多 目 标 规 划 中 的 主 要 目 标 法 ，将 运 输 总 量 设 为 主 要 目 标 ，最 
+少 卡 车 数 设 为 次 要 目 标 ，将 次 要 目 标 转 化 为 约 束 条 件 ，从 而 使 得 模 型 I 简 化 为 单 目 标 规 划 问 
+题 。 由 前 面 的 讨 论 ，将 最 少 卡 车 数 转 化 为 约 束 条 件 后 ，可 以 求 出 最 优 解 。 于 是 ，化 简 后 的 改 
+进 模 型 为 
+模 型 Ⅱ ： 
+i0 5 2 0 
+ra in f = 154 三 三 {( 三 y ， ( ，J．)) × d (i， )} 
+S．t． (1) ，(2) ，(3 )，(5) ，(6) ，(7 )，(8) 同 模 型 I ； 
+i 0 2 0 5 
+三 h = 7 ， h = 口g ( 三 三 y (i， )) ， = 1 ，2 ，… ，10 ； (4 ) 
+l 1 ” I ， l 
+2 0 i0 5 
+三 c， 三三三 20 ，c = fzag ( 三 三 y ， ( ， ))，n = 1 ，2 ，… ，20 ． (9 ) 
+由 于 排 时 计 划 无 效 ，等 待 问 题 很 难 从 基 本 上 解 决 ，我 们 这 里 深 入 讨 论 一 个 班 次 内 所 有 卡 
+车 来 回 于 第 i 个 铲 点 和 第 J．个 卸 点 次 数 的 上 界 M (i，J_)，由 于 每 条 路 线 卡 车 的 运 行 周 期 是 一 
+定 的 ，且 相 邻 两 车 间 隔 不 小 于 5 分 钟 ，因 而 在 整 条 路 线 上 的 车 次 也 是 一 定 的 ，加 之 受 到 相 应 
+铲 点 岩 石 和 矿 石 最 大 产 量 的 限 制 ，可 得 到 (M E (i， )为 一 辆 车 在 相 应 的 路 线 上 运 输 次 数 的 
+上 界 ) 
+M ( ， ) = ra in { ( ， ) × M E ( ， )，[p (i， )／154 ]} 
+M 
+，r 
+=
+(M (i， )10 5 
+其 中 = 
+k l ,
+J 
+M E ( ] 
+于 是 ， 三 Y ， (i， ) M (i， ) ，V i = 1 ，2 ，… ，5 ．得 到 最 终 求 解 模 型 
+模 型 Ill ： ra in f = 154 三 {( 三 ) y ) (i， )) × d (i， )}， ．t．(1)… … (9 ) 同 模 型 Ⅱ 
+三 Y (i， ) M (i，J )，i = 1 ，2 ，… ，10 ， = 1 ，2 ，… ，5 ． (10) 
+根 据 以 上 的 改 进 模 型 ，为 了 便 于 求 解 ，暂 时 不 考 虑 约 束 条 件 (9) ，由 三 h，= 7 按 铲 点 位 置 
+0 0 1 1 1 
+7 8 8 8 8 
+7 7 0 0 6 
+8 8 7 8 7 
+4 4 4 4 4 
+8 8 6 7 7 
+8 6 8 8 8 
+6 6 6 6 6 
+2 1 1 5 0 
+7 8 8 7 8 
+1 0 1 2 4 
+7 7 7 7 7 
+8 8 8 8 8 
+6 6 6 6 6 
+4 4 4 0 4 
+6 6 6 7 8 
+8 8 8 1 1 
+6 6 6 7 7 
+l l l l l 
+6 6 6 8 8 
+维普资讯 http://www.cqvip.com 
+
+66 工 程 数 学 学 报 第 20 卷 
+分 成 120 个 子 问 题 ，将 y ( ，J)看 作 一 个 变 量 ，一 共 50 个 变 量 。 每 个 子 问 题 恰 好 是 整 数 
+线 性 规 划 ，利 用 SA S 软 件 对 每 个 子 问 题 分 别 求 解 ，经 过 比 较 得 到 最 优 解 ：最 小 总 运 量 为 = 
+556 ．03 × 154 = 85628 ．62 吨 公 里 。 此 时 5 ，6 ，7 三 个 铲 点 没 有 运 输 量 ，恰 好 满 足 铲 车 数 量 的 
+约 束 ，主 要 目 标 已 经 解 决 。 在 此 基 础 上 ，分 析 车 辆 分 配 方 案 ，使 所 用 卡 车 数 量 最 少 。 若 
+2 0 2 0 
+∑ y ( ) M E (i， )，则 安 排 一 辆 卡 车 在 一 个 班 次 内 只 行 驶 S — D ， 路 线 。 但 当 ∑ y ， 
+( i， )不 是 M E ( i， )的 整 数 倍 时 ，必 然 还 要 其 他 卡 车 将 剩 余 的 石 料 运 输 完 ，其 车 次 为 z ( ， 
+? n 
+) = m od( ∑ Y ( i， )，M E (i，J ))。 通 过 调 整 卡 车 在 各 路 线 的 运 输 可 使 卡 车 数 最 少 。 这 里 
+，i = l 
+运 用 了 贪 心 算 法 · ，具 体 算 法 如 下 ： 
+(1) 将 剩 余 车 次 矩 阵 Z l。 5中 非 零 元 素 对 应 运 输 时 间 周 期 矩 阵 丁 10 5从 大 到 小 排 序 ； 
+(2 ) 首 先 尽 可 能 多 运 输 丁 。 5中 最 大 元 素 所 对 应 的 路 线 ，但 不 能 超 过 班 次 的 总 工 作 时 
+间 ，如 有 时 间 剩 余 ，则 转 移 到 丁 。 次 大 元 素 对 应 的 路 线 ，选 择 其 中 不 超 过 班 次 总 工 作 时 间 
+的 最 大 路 线 ；运 输 后 就 在 丁 中 减 去 已 运 输 的 次 数 ； 
+(3) 依 此 策 略 直 至 一 辆 卡 车 的 工 作 时 间 排 满 为 止 ； 
+(4) 若 z o 5中 还 存 在 非 零 元 素 就 返 回 (1 )，按 上 述 方 法 重 复 ，直 至 剩 余 车 次 矩 阵 z 1o 5 
+中 元 素 都 为 零 ，结 束 。 
+经 过 调 整 并 且 考 虑 到 转 移 时 间 差 ，我 们 得 到 第 一 问 所 需 最 小 车 辆 数 为 13 辆 ，其 安 排 如 
+表 1。 
+定 理 1 在 该 问 题 中 所 利 用 的 最 少 的 车 辆 数 为 13 辆 。 
+证 明 在 最 优 解 中 ，我 们 将 运 输 周 期 Z Io 5和 运 输 计 划 安 排 车 次 N 10 5相 乘 并 求 和 得 出 
+10 5 
+在 此 方 案 下 的 理 想 工 作 时 间 总 和 total = 三 ∑ T ( ) × N ( ) = 6038 ．976 分 钟 ，每 辆 卡 
+i = l ， = l 
+车 的 有 效 工 作 时 间 都 是 480 分 钟 ，所 需 卡 车 数 n = total／480 = 12 ．5813 辆 ，所 以 所 需 卡 车 数 
+必 然 大 于 12 辆 。 而 表 1 中 已 给 出 了 13 辆 车 的 可 行 运 输 方 案 ，所 以 命 题 成 立 。 
+表 1 问 题 1 一 班 次 的 运 输 方 案 
+1 2 3 4 8 9 10 品 位 
+1 0 13 (3) 0 0 2 5 (1) ，2 9 (11) 0 5 (2)6 (3) 30 50 ％ 
+2 0 3 “ 1 ，3 9 (8) 0 6 (4)3 7 (1。) 0 0 0 30 0 2 ％ 
+3 0 13 (5) 2 (6) 0 0 0 2 3 (6)4 7 (12) 30 ．49 ％ 
+4 3 7 (4144 (7) 0 8 (6)35 (9) 0 O 0 0 
+5 0 0 0 0 0 3 8 (12) ，32 (2) 15 f5) 
+其 中 ，13(3)表 示 第 3 辆 卡 车 在 铲 点 2 与 卸 点 1 之 间 共 运 输 了 13 车 次 ，其 他 类 似 。 
+5 ．4 转 移 时 间 差 
+在 以 上 的 讨 论 中 ，我 们 均 没 有 考 虑 当 一 辆 卡 车 从 一 条 路 线 转 移 到 另 一 条 路 线 上 的 时 间 
+差 。 时 问 差 的 产 生 主 要 是 在 运 输 过 程 中 ，这 辆 车 无 需 再 回 到 原 来 的 铲 点 ，而 是 直 接 到 另 一 条 
+路 线 上 相 应 的 铲 点 ，由 于 两 条 路 线 的 不 同 ，造 成 了 卡 车 在 转 移 过 程 中 的 转 移 时 间 差 。 不 妨 设 
+维普资讯 http://www.cqvip.com 
+
+第 7 期 露 天 矿 生 产 的 车 辆 安 排 67 
+(i， )为 一 条 从 S 到 D 的 运 输 路 线 ，那 么 当 一 辆 卡 车 从 路 线 转 移 到 路 线 时 ，其 转 移 时 间 差 
+A t((i1， 1)一 (i 2， 2)) ： 
+结 论 ：根 据 最 优 结 果 进 行 分 配 车 次 ，考 虑 转 移 时 间 差 ，其 时 间 的 总 量 必 然 比 原 来 的 理 想 
+时 间 总 和 6038 ．976 大 。 
+5．5 等 待 问 题 的 讨 论 
+由 于 对 任 何 多 于 两 辆 车 的 讨 论 都 可 转 化 为 两 辆 车 的 情 况 ，所 以 ，在 此 仅 讨 论 两 辆 车 产 生 
+等 待 的 情 况 。 根 据 卡 车 出 现 等 待 的 位 置 对 等 待 情 况 进 行 分 类 ： 
+图 中 ：A B 表 示 装 赁 时 间 段 (5m in ) ，C D 表 示 卸 货 时 间 段 (3m in )，S 1，S 2 表 示 两 辆 卡 车 ．t1．t 2 分 别 表 示 两 辆 卡 车 开 始 
+在 A 点 装 货 的 时 间 ，tcⅢ )表 示 时 间 段 A 1(2 ) 一 B 1(2 ) 一 C ，．丁 表 示 一 圈 所 用 的 时 间 ；对 于 图 一 ．M ax }m od (t2 一 tI) ，m od 
+(tl— t 2 ，T )}表 示 这 两 辆 车 在 运 行 时 间 圈 上 的 时 间 间 隔 ， 
+1．在 铲 点 处 产 生 等 待 ．如 果 有 两 辆 车 在 同 一 条 路 线 上 运 行 ，那 么 它 们 的 运 行 可 以 用 图 一 
+表 示 ， 只 有 当 M ax {ro od (t2 一 t1)，m od (t1 一 t2，T )}< 5 时 ，两 车 才 会 在 装 点 发 生 等 待 。 如 
+果 这 两 车 在 不 同 的 路 线 上 但 是 在 同 一 个 铲 点 装 货 运 行 ，如 图 二 ， 则 只 有 当 以 下 三 式 0 < m od 
+(t — t1，T 1)< 5 ，0 < ro od (t — t2，T 2)< 5 ，rllaac(t1，t2)< t< 480 联 立 有 解 的 时 候 ，两 车 才 会 
+产 生 等 待 ． 
+2．卸 点 处 产 生 等 待 ．类 似 于 1 的 讨 论 ，可 以 分 为 两 种 情 况 ：当 两 辆 车 在 同 一 条 路 线 上 面 
+运 行 时 (图 一 )，那 么 必 须 满 足 M a3c{m od( t2一 t1)，m od (t1 一 t2，丁 ) }< 3 ，(卸 货 时 间 C D )；当 
+两 辆 车 在 不 同 一 条 路 线 上 运 行 时 (图 三 ) ，只 有 当 以 下 三 式 t < m od (t — t】，T 】)< 3 + tr】， 
+tc2< m od (t — t2，T 2)< 3 + tc2，打Ⅲ z (t1，t2)< t< 480 联 立 有 解 时 ，两 车 才 会 发 生 等 待 。 
+5 ．6 问 题 二 的 模 型 
+对 于 问 题 2 ，基 于 问 题 l 的 约 束 条 件 ，求 最 大 产 量 且 运 输 量 最 小 ，可 得 出 模 型 如 下 ： 
+2 0 1 0 5 
+模 型 Ⅳ ： m ax P = 154 ∑ ∑ Y (i，i) 
+1 i 1 t = 1 
+1 (】 5 2 0 
+m in f = 154 {( ∑ y ， ( ， )) × d ( ， ))}，S．t． (1)… … (10 ) 同 模 型 Ⅲ 。 
+￡ I J 1 " 1 
+采 用 类 似 于 问 题 l 的 解 法 ，首 先 不 考 虑 约 束 条 件 (9)，按 铲 点 分 布 不 同 ，共 分 为 c I = 
+120 个 整 数 线 性 规 划 子 问 题 ，求 出 其 产 量 最 大 的 解 。 然 后 ，将 最 大 产 量 作 为 一 个 约 束 条 件 ， 
+并 考 虑 岩 石 产 量 优 先 ，再 次 利 用 SA S 求 解 最 小 运 量 。 求 得 总 产 量 67 l 车 次 ，10 ．3034 万 吨 ， 
+总 运 量 为 147792 ．26 吨 公 里 ，其 中 岩 石 产 量 为 320 车 次 ，49280 吨 ；矿 石 产 量 为 351 产 量 ， 
+， 
+0 
+维普资讯 http://www.cqvip.com 
+
+68 工 程 数 学 学 报 第 20 卷 
+54054 吨 ；卡 车 数 量 为 20 辆 。 
+类 似 于 问 题 1 ，采 用 贪 心 算 法 ，并 且 考 虑 转 移 时 间 差 ，求 出 安 排 如 表 2 ： 
+表 2 问 题 2 一 班 次 的 运 输 方 案 
+＼ 铲 
+卸 ． ＼ 1 2 3 4 8 9 1O 品 位 
+4 (7)18 (13) 
+1 O O O 18 (4)2 (t0) 2 0 (2) O 3 0 ，5 O ％ 18
+(t9 ) 
+1 0 (6)10 (7) 4 (3)37 (14) 2 2 4
+(10) 3 (8)5 (9) O O O 3 0 ，O 6 ％ 3 9
+(12) 13 (4)14 (5) 
+3 O 8 (6) 1 6 (9) O 32 (15)3 2(18) O 2 4 (t) 3 0 ，5 O ％ 
+2 3 (7)5 (10) 4 19 (5) 9 (6) 32 (8) 27 (3)1 (4) O O O 4 4
+( t1) 
+2 2 (1)5 (2) 5 O O O O 1
+(6)1 1(2) 3 8 (16)38 (17) 4 5
+(20) 
+6 模 型 的 评 价 与 改 进 
+本 文 对 建 立 的 两 个 基 本 模 型 逐 步 简 化 求 解 ，将 多 目 标 规 划 利 用 主 要 目 标 法 转 化 为 单 目 
+标 规 划 ，非 线 性 规 划 转 化 为 线 性 规 划 ，利 用 SA S 软 件 的 整 数 规 划 求 解 ，模 型 简 单 ，适 用 性 强 ， 
+容 易 编 程 实 现 求 解 ，并 且 能 够 很 好 的 解 决 问 题 的 整 数 约 束 。 由 于 模 型 的 简 单 化 ，就 避 免 不 了 
+很 多 的 重 复 操 作 ，将 原 问 题 分 成 120 个 简 单 的 整 数 规 划 的 子 问 题 ，为 了 求 得 最 优 解 ，必 须 遍 
+历 这 120 个 问 题 ，求 出 各 个 子 问 题 的 最 优 解 ，再 进 行 比 较 ，时 间 开 销 很 大 ；但 是 ，在 求 解 过 程 
+中 ，我 们 发 现 很 多 情 况 其 实 是 不 符 合 要 求 的 ，这 样 可 以 将 那 些 对 产 量 上 限 很 不 敏 感 的 铲 点 不 
+予 考 虑 ，作 出 适 当 的 简 化 。 
+参 考 文 献 ： 
+[1 ] 林 锉 云 等 ．多 目 标 优 化 的 方 法 与 理 论 [M ] ． 长 春 ： 吉 林 教 育 出 版 社 ，199 2 
+[2 ] 倪 勤 ． S A S 最 优 化 软 件 速 成 [M ]． 北 京 ： 科 学 出 版 社 ， 1998 
+[3] 王 晓 东 ． 计 算 机 算 法 设 计 与 分 析 [M ]． 北 京 ： 电 子 工 业 出 版 社 ，2001 
+T r u ck A r ra n ge m en t fo r an O p e n ca st Iro n M in e 
+D IN G Y u—lian g ， H U H ai—lin ， G U O L i—ju n 
+A d v iso r ：L I X in —x iu 
+(N anjing U niversity of Posts and T elecom m unications，N anjing ，210003) 
+A bstract： In th is pa per ， w e stud y th e op tim iza tion p rob lem of th e tru ck arran g em en t fo r an op en cast iron m in e ． 
+W e use the prim ary ——object m ethod to transform the m ulti——object optim ization problem to a single——object opti- 
+m ization problem ， B ased on the prim ary object (the total transportation load) ， w e setup a m inim al transportation 
+load function ， and use the secondary object as a regulation ， then w e sim plify the COSt function ， and transform the 
+non — linear program m ing problem to the linear program m ing problem ． (下 转 114 页 ) 
+维普资讯 http://www.cqvip.com 
+
+114 工 程 数 学 学 报 第 20 卷 
+[2 ] 宋 济 ．知 识 助 我 登 上 领 奖 台 [J]． 游 泳 ，2002 ；4 ：27 — 28 
+[3] 彭 援 军 ．毛 泽 东 畅 游 九 江 [J]．游 泳 ，2002 ；4 ：28 — 28 
+[4] 史 力 生 ．用 数 字 直 接 模 拟 层 流 [J]．长 沙 铁 道 学 院 学 报 ，1994 ；12 (2) ：43 — 54 
+[5] 杨 波 ，程 亮 ．陈 晶 ，李 亮 ，吴 莎 ． 抢 渡 长 江 最 佳 路 线 的 探 讨 [J]．数 学 通 讯 ，2002 ；24 ：42 — 43 
+T h e A p p lic a tio n o f M a th em a tic M o d el in th e C o m p etitio n 
+of C rossing the C hangj iang R iver 
+C H E N L i， P A N H ai— li， G U O L ing 
+Instru ctor ： C H E N T ao 
+(N anchang U niversity ， N anchang 330047) 
+A bstract ： T h is p ap er establishes th e optim a l m od el for crossing issue ．A t th e beg in n in g ， e xact resu lts a re presen t— 
+ed on th e first tw o q ues tio n s g iven in th e article． W e also an alyze th e m ain reason fo r th e percen tages d ifferen t of 
+p eop le w h o can su cceed in reach ing the o pp osite b an k in 19 34 an d in 2 0 0 2 an d gives th e n ecess ary req uirem en ts 
+fo r th os e w h o can reach the d es tination su ccess fu lly ． In 20 0 2 th e m inim al speed o f thos e su ccessfu l co m p etito rs 
+w as 1 ．43m ／s． In the process of analyzing the latter problem s， the idea that adjusting the com petitor’s flat — out 
+direction as current changes is brought forw ard to es tablish M odel II and M odel llI ． M odel lV provides an idea l 
+crossing w ay in the case that one can adjust his flat ——out direction at any tim e as current changes and gives a rela— 
+tively ration al d istrib ution fun ctio n of w ater sp eed ． B y an alyzin g w ater sp eed o n th e fo u n dation of th e real co nd i— 
+tion ， w e get a m o re ration al d istrib ution fun ctio n of w ater sp eed an d b uild M od el V ． T h e L IN G 0 an d M A T H E 
+M A T IC A so ftw are are used in proc eedin g to get th e op tim ized answ e r． B y th e en d ， th e m o de ls es ta blish ed in this 
+pap er ca n be sp read to oth er fields such as air — flig h t， sp ace flig h t an d n av ig ation ． 
+K eyw ords：the com petition of crossing the C hangiiang R iver；optim al route 
+(上 接 68 页 ) 
+A bstract ： U sin g th e S A S so ftw are ， w e trav erse all the 12 0 lin ear pro gram m ing su b — p rob lem s， an d get the m os t 
+o ptim u m so lu tio n ． B ased on th e so lu tio n w e use th e greed y a lgo rithm to g et th e lea st tru ck n um ber and th e p lan 
+fo r ev ery tru ck ’s ro utin e ． F o r pro blem on e ， w e fig ure o ut th at the m inim a l total trans portation load is 8 5 62 8 ．6 2 
+ton * km ，th e sev en fo rk lifts are p laced in th e 1st，2n d ，3 rd ， 4 th ，8 th ，9 th fo rk lifts pos ition ， 1 3tru ck s are n eed ed ． 
+F o r p ro blem tw o ， w e u se th e sim ilar so lution to prob lem on e ， an d m ak e a fu ll u se of the p resent reso urce ， w e get 
+a m ax im al p ro d uctio n qu an tity is 10 33 3 4 ton ， 2 0 tru cks are used ， an d fo rk lifts are p laced in th e 1st ， 2 n d ， 3 rd ， 
+4 th ， 8 th ， 9 th ，lO th fork lifts p ositio n ． T h e m in im al transp ortation load is 14 7 79 2 ．2 6 to n * k m ， th e q uan tity of 
+rock s is 4 9 2 80 ton ， th e q uan tity of o re is 5 40 5 4 ton 
+F urth erm o re ， w e an aly ze th e tim e w h en tw o tru cks w ou ld w ait in th e sam e line ， an d th e cost of tim e for a 
+truck m ov in g from on e tran sp ortatio n ro utine to an oth er． 
+K eyw ords： prim ary — object m ethod ， greedy algorithm ，the tim e difference of trans fer． 
+维普资讯 http://www.cqvip.com

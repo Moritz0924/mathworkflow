@@ -1,0 +1,1869 @@
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+钢管订购和运输优化模型 
+王海涛 张 浩 许 翔 
+指 导 教 师 ： 谭 欣 欣 
+摘要:本文建立一个钢管订购和运输模型，从钢厂到主管道结点的运费是影响总费用的重
+要因素。为使总费用最小，须使从钢厂到主管道结点的运费——钢管运输费最小。对求网络
+中最短路径的 Dijkstra 算法进行改进，得到新的算法，可对含多种权重计算方式的网络进行
+搜索，得出最小费用路径（最短路径）。在此基础上，建立起描述总费用的函数，把钢管的
+订购和运输问题归结为在一定约束条件下求最小总费用的二次规划问题。用 Matlab 软件中
+的 QP( )函数求得问题的最优解。 
+对于问题（１），最小总费用为 129.17 亿元；对于问题（２），钢厂Ｓ１的产量上限的变化和
+钢厂S5的钢管销价的变化对订购和运输计划及其总费用的影响最大；对于问题（３），最小
+总费用为 141.83亿元。 
+ 
+一．问题的提出 
+要铺设一条输送天然气的主管道A1→A2→…→A15，能生产这种钢管的厂家一共有:S1,S2,…
+S7 。厂家与管道间的交通网络已知。假设沿管道或者原来有公路，或者建有施工公路。 
+为方便计算，1km主管道钢管称为 1 单位钢管。一个钢厂如果承担制造这种钢管，至少需要
+生产 500 个单位。钢厂Si在指定期限内能生产该钢管的最大数量为si 个单位，钢厂 1单位钢
+管的出厂销价为pi万元，如表一(见附录)。 
+1 单位钢管的铁路运价如表二(见附录)，1000km 以上每增加 1至 100km 运价增加 5 万元。 
+公路运输费用为 1 单位钢管每公里 0.1 万元（不足整公里部分按整公里计算）。钢管可由铁
+路、公路运往铺设地点（不只是运到主管道结点A1,A2,…, A15 ,而是管道全线）。 
+（1）请制定一个主管道钢管的订购和运输计划，使总费用最小（给出总费用）。 
+（2）请就（１）的模型分析：哪个钢厂钢管的销价的变化对购运计划和总费用影响最大，
+哪个钢厂钢管的产量的上限的变化对购运计划和总费用的影响最大，并给出相应的数字结
+果。 
+（3）如果要铺设的管道不是一条线，而是一个树形图，铁路、公路和管道构成网络，请就
+这种更一般的情况给出一种解决办法，并对图（２）的情形给出模型和结果。 
+二．问题的条件和假设 
+沿管道或者原来有公路，或者建有施工公路。 
+个钢厂如果承担制造这种钢管，至少需要生产 500 个单位。 
+ 
+ 本文获“2000年网易杯全国大学生数学建模竞赛”全国二等奖 
+感谢您对网站建设一如既往的支持和厚爱 
+更多数学建模资料请关注微店店铺“数学建模学习交流”
+https://k.weidian.com/RHO6PSpA
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+钢管的铺设是全线的，而不只是运到点A1,A2,…, A15 。 
+钢厂的钢管销价不随定货量的改变而变化。 
+三．符号说明 
+Ai 主管道与公路的第i个交点，称为结点； 
+Si 第i个钢厂； 
+si 钢厂Si在指定期限内生产钢管的最大数量； 
+pi 由钢厂Si 生产的单位钢管的出厂销价； 
+Xij 从钢厂Si运到主管道结点Aj的钢管数量； 
+Cij 从钢厂Si运一单位钢管到主管道结点Aj的最小费用；
+Ti1 从主管道结点Ai向左端铺管道所用钢管的数量； 
+Ti2 从主管道结点Ai向右端铺管道所用钢管的数量； 
+Ti,j 从主管道结点Ai向Aj方向铺管道所用钢管的数量； 
+H 公路单位运费； 
+Mat(i,j) 结点 i 到结点 j的距离。 
+四．问题的分析： 
+总费用由三部分组成： 
+钢管的订购费。 
+支付钢厂订购钢管的费用。 
+ 因为钢厂生产单位钢管的出厂销价为常量，所以在运费相同的情况下，应从销价低的钢
+厂订购钢管。 
+把钢管从钢厂运到主管道结点所需的运费。 
+ 我们发现，总费用最小时，把单位钢管从钢厂运到主管道结点的费用也最小。因为，如
+果存在一条路径，使钢厂到主管道结点的单位钢管运费更小，则从这条路径运输，可使总费
+用更小。因此，可先对运费进行优化，即先求出把单位钢管从钢厂运到主管道结点的最小费
+用。这样做，既进行了初步优化，又便于表达运输钢管所需费用的函数。 
+运到主管道结点后从结点向两边铺设管道的费用。 
+铺设管道时，存在铺设里程数不为整数的情况。由题意，不足整公里部分按整公里计算。设
+铺设里程数为 x。当x 为整数时，费用为： 
+Hxx ⋅+ )1(2
+1
+x 为非整数时，通过估算可知，铺设管道费用远较订购钢管费用为小，故用上式近似表达铺
+设管道费用，对总费用而言，引起的偏差很小。 
+但当 x 较小时是与实际不符的。这时 x 应看作是连续的。费用为： 
+式求解。这样，问题归
+Hx ⋅2
+2
+1
+ 观察图一和图二（图见附录，下略）可知 x 均较大，故可用近似
+结为一个二次规划问题。 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+五．问题（１）的模型的建立和求解 
+1．求从钢厂Si运单位钢管到主管道结点Aj的最小费用 
+从钢厂Si运单位钢管到主管道结点Aj的费用由两部分组成：公路费用和铁路费用。求最小费
+用，即相当于求最短路径。 
+Dijkstra 给出一种对只含一种权重计算方式的网络求一结点到其它各结点的最短路 
+径的算法。我们基于其思想，进行加工和改进，得到了对含多种权重计算方式的网络求任意
+两点间最小费用的算法。具体步骤如下： 
+建立由火车站构成的图，确定一源火车站，由Dijkstra 算法给出源火车站到其它 
+火车站的最短路径。 
+② 改变源火车站，重复１的步骤，可得到任意两个火车站间最短路径。 
+建立由火车站、主管道结点构成的图（如图一）。用vn表示图的第n个结点，ei,j 
+表示vi，vj 间的边。任意两点vi，vj：若vi，vj 间有铁路相连（可经过结点），则认为vi，vj
+相连接。把两点间的最短路径（由①，②给出）转化为铁路费用，作为ei,j 的权。若vi，vj以
+公路相连接且不经过其它结点，则把两点间公路长度转化为公路费用，作为ei,j的权。 
+④ 对上图，确定一源结点，由 Dijkstra 算法给出源结点到其它各结点的最短路径。 
+⑤ 改变源结点，可求得任意两个结点间最小费用。 
+算法由程序(见附录三)实现。在求得任一钢厂到每个主管道结点最小费用的同时，并给出对
+应的路线。 
+分析最小费用路径，除去无用结点。 
+观察最小费用路径，发现主管道结点A２总在任意钢厂Si 到A1最小费用路径上。同样，主管道
+结点A5也总在任意钢厂Si 到A4最小费用路径上。因为所求路径表示的是最小费用路径，所以
+对于A1和A4这样的点,就可以认为它们是无用的铺设结点。从而A１A２间的管道，全部由A２向
+A１铺设；同样A3A4，A４A５间的管道，全部由A3,A５向A４铺设。即：T2,1为常数，等于A２，A１间
+的距离;T1,2为常数，等于 0。这样就可简化网络为S１ …S7 与 A2 A3 A5…A１5 这 13 个铺设点间
+的最小费用。 
+把原问题归结为最优化问题 
+钢管的订购费： ∑∑
+==
+•
+7
+1
+13
+1
+])[(
+i
+i
+j
+ij pX
+把钢管从钢厂运到主管道结点所需的运费： ∑∑
+==
+7
+1
+13
+1ij
+ijij CX
+从主管道结点向两边铺设管道的费用： HTTTT
+i
+iiii ⋅+++∑
+=
+7
+1
+2211 )]1()1([2
+1 
+所以钢管订购和运输的总费用为： 
+HTTTTpXCX
+i
+iiii
+ii j
+iijij
+j
+ij ⋅++++•+ ∑∑∑ ∑∑
+=== ==
+7
+1
+2211
+7
+1
+7
+1
+13
+1
+13
+1
+)]1()1([2
+1])[( 
+有如下约束条件： 
+１．钢厂的订购量有其上限和下限： 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+;500500
+13
+1
+13
+1
+i
+j
+ij
+j
+ij sXX ≤≤≥ ∑∑
+==
+时有当 
+0500500
+13
+1
+13
+1
+13
+1
+==< ∑∑∑
+=== j
+ij
+j
+ij
+j
+ij XXX 或时有当 
+定义函数：Sub（X）来表示上述关系。 
+２．运抵结点的钢管数等于从结点向两端铺设的钢管数： 
+)15,2,1 
+7
+1
+21 ，（ …==+ ∑
+=
+jXTT
+i
+ijjj
+３．运抵结点的钢管数等于从结点向两端铺设的钢管数： 
+设Ai在Aj的左方且相邻，则从Ai向右铺设的钢管数与从Aj向左铺设的钢管数之和等于AiAj间的
+距离。即： 
+的距离。到表示其中， 1 )1,( ++ ii AAiimat14)1,2,(i )1,(1,12 …=+=+ + iimatTT ii
+ 
+于是问题（１）归结为如下最优化问题： 
+⎪
+⎪
+⎪
+⎪
+⎩
+⎪⎪
+⎪
+⎪
+⎨
+⎧
+…=+=+
+…==+
+⎭
+⎬
+⎫
+⎩
+⎨
+⎧ ++++•+
++
+=
+== ===
+∑
+∑∑∑∑∑
+14)1,2,(i )1,( 
+)15,2,1 
+)( s.t 
+)]1()1([2
+1])[(min
+1,12
+7
+1
+21
+7
+1
+2211
+7
+1
+15
+1
+15
+1
+7
+1
+iimatTT
+jXTT
+Xsub
+TTTTpXCX
+ii
+i
+ijjj
+i
+i
+iiii
+ij
+iijij
+j
+ij
+i
+，（
+４ 优化求解 
+利用 MATLAB工具箱中的 QP 函数求问题（１）这一二次规划问题的最优解。先把各变量的下
+限设为０，求出在无约束条件下的最优解；以该解为初始点进行分析： 
+我们发现：Ｓ７厂的订购量不满足Sub(x)函数的条件。因此，为满足该条件，我们分别对两
+种情形分析，得出最优解列如下表： 
+ A1 A2 A3 A
+4
+A5 A6 A7 A 8 A9 A10 A11 A1
+2
+A13 A14 A15 定购总数
+S1 0 0 0 0 349.5 194 256.5 0 0 0 0 0 0 0 0 800 
+S2 0 104 86 0 450.5 0 0 159.5 0 0 0 0 0 0 0 800 
+S3 0 0 252 0 0 0 0 0 748 0 0 0 0 0 0 1000 
+S4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+S5 0 0 519 0 0 0 0 0 0 0 480 0 0 0 0 999 
+S6 0 0 0 0 0 0 0 0 0 402 0 40 268 782 80 1572 
+S7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+**
+* 
+0 104 857 0 800 194 256.5 159.5 748 402 480 40 268 782 80 5171 
+总费用： 1291698 万元 
+＊＊＊：表示所有钢厂运到主管道结点的钢管总长度。 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+六．问题（２）的分析 
+ ① 钢厂钢管产量上限的变化对购运计划和总费用的影响分析： 
+由问题（1）的解，我们可以看出：只有Ｓ１、Ｓ２、Ｓ３三厂的订购量达到各自的上限，故
+产量上限的变化只对这三个厂有影响。进行灵敏度分析，保持两个厂产量上限不变，另一个
+厂的产量上限分别增加：2%，4%，6%，8%，10%。求得的最小总费用如下表: 
+ 单位:万元 
+ 2% 4% 6% 8% 10% 
+S1 1290050 1288402 1286754 1285106 1283458 
+S2 1291138 1290578 1290018 1289458 1288898 
+S3 1291198 1290698 1290198 1289698 1289198 
+由计算结果可以看出：钢厂Ｓ１的产量上限的变化对购运计划和总费用的影响最大。 
+②钢厂钢管销价的变化对购运计划和总费用的影响分析： 
+当钢厂钢管销价的变化时，进行灵敏度分析，保持六个钢厂的钢管销价不变，另一钢厂的钢
+管销价分别增加：5 万元，10 万元。得到相应的最小总费用如下表: 
+ 单位：万元 
+钢管销价 Ｓ１ Ｓ2 Ｓ3 Ｓ4 Ｓ5 Ｓ6 Ｓ7
++5 1295698 1295698 1296698 1291698 1296693 1297788 1291698 
+ +10 1299698 1299698 1301698 1291698 1300008 1299938 1291698 
+可见，钢厂S1、S2、S3因为订购量达到上限，故钢管销价的变化对最小总费用影响较大。钢
+厂S5 的钢管销价的改变引起最小总费用的变化也比较快，但随销价升高，订购量变小。钢厂
+S4、S7因为订购量为零，故对最小总费用无影响。 
+七．问题（３）的求解 
+当主管道由直线变为树形图，铁路、公路和管道构成的网络时，求从钢厂Si运单位钢管到主
+管道结点Ai的最小费用的算法仍旧适用，求解问题（1）的思想也适合于求解问题（3），但
+有些细节问题需要注意（见附录三）。 
+主管道变为图后，有些结点有多个分岔，即可向多个相邻结点铺设管道，将导致未知数的增
+加。在分析最小费用路径来去掉无用点时，有些结点起到中转作用，如主管道结点A11。这时，
+A１７经A１1向A１０，A１２铺设管道，其运钢管的费用比T17,10 ,T17,1２多一段经A１７到A１１的费用（这
+里T17,10 表示由T17运到T11的钢管经T11 向T10 铺设的长度；T17,12也同理）。这将导致目标函数中
+经A１1向A１０，A１２铺设管道铺设费用项的表达式变为： 
+)()11,17()]1()1[(2
+1[ 12,1710,1712,1712,1710,1710,17 TTmatTTTT +⋅++⋅+⋅+ 
+Hmatmat ⋅⋅++ )]11,17()1)11,17((2
+1 。用 Matlab中的 QP( )函数进行求解，得： 
+Ｓ１ Ｓ２ Ｓ３ Ｓ４ Ｓ５ Ｓ６ Ｓ７ 最小总费用 
+800 800 1000 0 1303 2000 0 1418319 万元 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+八．模型的评价和改进 
+我们在建立模型和构造算法时对各种可能的情况都进行了考虑，故模型的一般性很强,能够
+求解由铁路、公路构成的交通网络的钢管订购和运输的最优化问题，给出订购计划，最佳运
+输路径和铺设管道方式。这种处理方法，对于更一般的运输和分配问题，也是适用的。 
+目标函数中，在处理铺设管道费用时有些草率，仅采用近似表达式计算。如能采用更为精确
+的表达式且使问题仍能可解，可得到更优的解。 
+ 
+参考文献： 
+[1] 张志涌 刘瑞桢 杨祖婴，掌握和精通 MATLAB，北京航空航天大学出版社，北京，1997. 
+[2] 严蔚敏 吴伟民，数据结构，清华大学出版社，北京，1992. 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+附录： 
+附录 一、 
+表一 
+I 1 2 3 4 5 6 7 
+SI 800 800 1000 2000 2000 2000 3000 
+Pi 160 155 155 160 155 150 160 
+表二 
+里程（km） ≤300 301~350 351~400 401~450 451~500 
+运价（万
+元） 
+20 23 26 29 32 
+里程（km） 501~600 601~700 701~800 801~900 901~10000 
+运价（万
+元） 
+37 44 50 55 60 
+ 
+附录 二、Matlab 函数的说明 
+Matlab 中的QP( )函数被用来进行二次规划求解，它的使用格式是: 
+X=qp(H,C,A,B,VLB,VUB,X0,n) 
+各参数的意义: F(x )=X’*H*X+C*X 
+ A*X<=B 
+ VLB<=X<=VUB 
+ n 表示条件中的前 n 个为等式。 
+ 
+附录 三、图和源程序对原附图的结点进行编号得到如下二图。 
+程序从数据文件 d:\mat_load_1.txt（d:\mat_load_2.txt）中读取数据，经过运算后得到任一钢
+厂到每个主管道结点最小费用及相应的路线，分别存入数据文件: 
+ 
+d\result_1.txt (d:\result_2.txt)和 d: \HighwayPath_1.txt(d:\HighwayPath_2.txt)中。 
+文件名中，_1 表示对问题一求解，_2 表示对问题三求解。给出的源程序可对问题一求解，
+把源程序中的所有的_1 替换为_2 便可实现对问题三的求解。 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+ 感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+If mstate = 0 Then 
+ Mat(iI, iJ).Value = mvalue 
+ Mat(iI, iJ).State = 0 
+ Mat(iJ, iI).Value = mvalue 
+ Mat(iJ, iI).State = 0 
+End If 
+Next i 
+Close #1 
+ 
+Open "d:\RailwayPath_1.txt" For Output As #1 
+Close #1 
+ 
+'v is beginning point. 
+'v:Steel Factory. 
+For v = 16 To n 
+ 
+For i = 1 To n 
+Dist(i).Value = Mat(v, i).Value 
+If Mat(v, i).State = 0 Then 
+ Dist(i).Previous = v 
+Else 
+ Dist(i).Previous = 0 
+End If 
+OKSet(i) = 0 
+Next i 
+ 
+OKSet(v) = 1 
+Dist(v).Value = 0 
+ 
+For i = 1 To n - 1 
+ 
+'find minimat. 
+Dim mI As Integer, mTemp As Integer 
+Dim mC As Double 'mC:Yunfee. 
+mTemp = Infin 
+For mI = 1 To n 
+mC = Dist(mI).Value 
+If OKSet(mI) = 0 And mC <= mTemp Then 
+ mTemp = mC 
+ w = mI 
+End If 
+Next mI 
+'return w. 
+OKSet(w) = 1 
+'********************************** 
+'Need input Number of Vex. 
+'File: mat_load_i 
+'The First Row:the number of Edge. 
+'The rest Row: 
+'Vex i,Vex j,Length(i,j),State(i,j) 
+'********************************** 
+ 
+'n is the number of vex. 
+Public n As Integer 
+Dim Dist() As urlValue 
+Dim OKSet() As Integer 
+ 
+Private Sub cmdMinWay_Click() 
+Dim i As Integer, j As Integer 
+ 
+'v is the beginning point. 
+Dim v As Integer 
+'w is the minimum point. 
+Dim w As Integer 
+Dim iI As Integer, iJ As Integer 
+Dim iNum As Integer 
+Dim Mat() As urlValue 
+ 
+'输入结点数: 
+n = InputBox("Input number of vex:") 
+ReDim OKSet(1 To n) As Integer 
+ReDim Dist(1 To n) As urlValue 
+ReDim Mat(1 To n, 1 To n) As urlValue 
+ 
+For i = 1 To n 
+For j = 1 To n 
+Mat(i, j).Value = Infin 
+Mat(i, j).State = -1 
+Next j 
+Next i 
+ 
+'************************** 
+'DataFileName is mat_load_1.txt. 
+'************************** 
+Open "d:\mat_load_1.txt" For Input As #1
+Input #1, iNum 
+For i = 1 To iNum 
+Input #1, iI, iJ, mvalue, mstate 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+ 
+For j = 1 To n 
+ 
+If OKSet(j) = 0 Then 
+If 
+Dist(w).Value+Mat(w,j).Value<Dist(j).V
+alue Then 
+ Dist(j).Value = Dist(w).Value +
+Mat(w, j).Value 
+ Dist(j).Previous = w 
+End If 
+End If 
+ 
+Next j 
+ 
+Next i 
+ 
+For i = 1 To n 
+Mat(v, i).Value = Dist(i).Value 
+Mat(i, v).Value = Dist(i).Value 
+Mat(v, i).State = 0 
+Mat(i, v).State = 0 
+Next i 
+ 
+Open "d:\RailwayPath_1.txt" For
+Append As #1 
+'Print #1, "The Steel Factory is:";
+v 
+For i = 1 To n 
+fi = Dist(i).Previous 
+If fi = 0 Then 
+GoTo ab: 
+End If 
+ 
+If i >= v Then 
+ 
+Print #1, i; fi; 
+Do While fi > 0 
+If Dist(fi).Previous = 0 Then Exit Do
+Print #1, Dist(fi).Previous; 
+fi = Dist(fi).Previous 
+Loop 
+Print #1, "" 
+ 
+Else 
+ Dim ttt As Integer 
+ttt = 1 
+spath = OutputRailway(v, i) 
+ 
+Open "d:\temppath.txt" For Output As #5
+Print #5, spath 
+Close #5 
+ 
+Open "d:\temppath.txt" For Input As #5
+Do While Not EOF(5) 
+Input #5, ispath(ttt) 
+ttt = ttt + 1 
+Loop 
+Close #5 
+ 
+Open "d:\railwaypath_1.txt" For Append
+As #1 
+'Print ttt, spath 
+'Stop 
+For ttt = ttt - 1 To 1 Step -1 
+Print #1, ispath(ttt); 
+Next ttt 
+Print #1, v 
+End If 
+ 
+ab: 
+Next i 
+Close #1 
+ 
+Next v 
+ 
+Open "d:\mat_load_1.txt" For Input As #1
+Input #1, iNum 
+For i = 1 To iNum 
+Input #1, iI, iJ, mvalue, mstate 
+If mstate = 1 Then 
+ Mat(iI, iJ).Value = mvalue 
+ Mat(iI, iJ).State = mstate 
+ Mat(iJ, iI).Value = mvalue 
+ Mat(iJ, iI).State = mstate 
+End If 
+Next i 
+Close #1 
+ 
+Open "d:\modeldata_1.txt" For Output As #1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Open "d:\result_1.txt" For Output As #1 
+Close #1 
+Open "d:\HighwayPath_1.txt" For Output As #1
+Close #1 
+ 
+'****************************** 
+'SourceDataFile: modeldata_1.txt 
+Open "d:\modeldata_1.txt" For Input As #1
+Input #1, n 
+ReDim Dist(1 To n) As urlValue 
+ReDim OKSet(1 To n) As Integer 
+ReDim Mat(1 To n, 1 To n) As urlValue 
+ 
+For i = 1 To n * n 
+Input #1, iI, iJ, mvalue, mstate 
+If mstate = -1 Then mstate = 0 
+Mat(iI, iJ).Value = mvalue 
+Mat(iI, iJ).State = mstate 
+'Mat(iJ, iI).Value = mvalue 
+'Mat(iJ, iI).State = mstate 
+Next i 
+ 
+Close #1 
+ 
+'v = 1 'v is beginning point. 
+For v = 21 To 27 
+ 
+For i = 1 To n 
+Dist(i).Previous = v 
+If Mat(v, i).State = 1 Then 
+Dist(i).Value = TranFee(Mat(v, i).Value, 1)
+Dist(i).State = 2 
+Else 
+Dist(i).Value = TranFee(Mat(v, i).Value, 0)
+Dist(i).State = 2 
+End If 
+OKSet(i) = 0 
+Next i 
+ 
+OKSet(v) = 1 
+Dist(v).Value = 0 
+'From railway. 
+Dist(v).State = 0 
+Print #1, n 
+For i = 1 To n 
+For j = 1 To n 
+Print #1, i; j; Mat(i, j).Value; Mat(i, j).State
+Next j 
+Next i 
+Close #1 
+ 
+Print "End" 
+End Sub 
+ 
+Private Sub Form_KeyPress(KeyAscii As Integer)
+If KeyAscii = 27 Then End 
+End Sub 
+ 
+Private Sub Form_Load() 
+With frmInitMatrix 
+.Left = (Screen.Width - .Width) / 2 
+.Top = (Screen.Height - .Height) / 2 
+End With 
+ 
+End Sub 
+ 
+ 
+ 
+'***************************** 
+'Structure of modeldata: 
+'The first row: n:number of vex. 
+'The rest row: Matrix(i,j) 
+'***************************** 
+ 
+Dim n As Integer 
+ 
+Private Sub cmdMinWay_Click() 
+Dim i As Integer, j As Integer 
+'v is the beginning point. 
+Dim v As Integer 
+'w is the minimum point. 
+Dim w As Integer 
+Dim iI As Integer, iJ As Integer 
+Dim fi As Integer 
+Dim Dist() As urlValue 
+Dim OKSet() As Integer 
+Dim Mat() As urlValue 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+ 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+Next i 
+Close #1 
+Open "d:\HighwayPath_1.txt" For Append As
+#1 
+Print #1, "The Steel Factory is:"; v 
+For i = 1 To n 
+fi = Dist(i).Previous 
+Print #1, i; 
+If fi = v Then 
+If Mat(i, v).State = 0 Then 
+'Railway output i-->v. 
+Print #1, OutputRailway(i, v) 
+GoTo ab: 
+End If 
+End If 
+Do While fi <> v 
+Print #1, fi; 
+If Dist(fi).Previous = v Then 
+If Mat(fi, v).State = 0 Then 
+'Railway output fi-->v 
+Print #1, OutputRailway(fi, v) 
+GoTo ab: 
+End If 
+Exit Do 
+End If 
+fi = Dist(fi).Previous 
+Loop 
+Print #1, v 
+ab: 
+Next i 
+Close #1 
+Next v 
+Print "End" 
+End Sub 
+ 
+Private Sub Form_KeyPress(KeyAscii As
+Integer) 
+If KeyAscii = 27 Then End 
+End Sub 
+ 
+Private Sub Form_Load() 
+With frmMCM 
+.Left = (Screen.Width - .Width) / 2 
+.Top = (Screen.Height - .Height) / 2 
+End With 
+End Sub 
+For i = 1 To n - 1 
+'find minimat. 
+Dim mI As Integer, mTemp As Integer 
+Dim mC As Double 'mC:Yunfee. 
+mTemp = Infin 
+For mI = 1 To n 
+mC = TranFee(Dist(mI).Value, Dist(mI).State)
+If OKSet(mI) = 0 And mC <= mTemp Then 
+ mTemp = mC 
+ w = mI 
+End If 
+Next mI 
+'return w. 
+OKSet(w) = 1 
+For j = 1 To n 
+If OKSet(j) = 0 Then 
+'Yunfee 
+Dim yFee As Double 
+Dim mY As Double 
+'Dist(w).state is same as Mat(w,j).state. 
+If Dist(w).State = 0 And Mat(w, j).State = 0 Then
+If TranFee(Dist(w).Value+Mat(w,j).Value,0)<
+_ 
+ TranFee(Dist(j).Value, Dist(j).State) Then
+ Dist(j).Value = Dist(w).Value + Mat(w,
+j).Value 
+ Dist(j).State = 0 
+ Dist(j).Previous = w 
+ End If 
+Else 
+ mY = TranFee(Dist(w).Value, Dist(w).State) _
+ + TranFee(Mat(w, j).Value, Mat(w, j).State)
+ If mY < TranFee(Dist(j).Value,
+Dist(j).State) Then 
+ Dist(j).Value = mY 
+ Dist(j).State = 2 
+ Dist(j).Previous = w 
+ End If 
+End If 
+End If 
+Next j 
+Next i 
+'Output to result.txt. 
+Open "d:\result_1.txt" For Append As #1 
+For i = 1 To n 
+Print #1, v; i; Dist(i).Value 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+ ‘**************************** 
+‘** m obule ** 
+‘**************************** 
+Public Const Infin As Integer = 10000 
+Type urlValue 
+ Previous As Integer 
+ Cost As Double 
+ Value As Double 
+ State As Integer 
+End Type 
+'State: 
+Case Is <= 600 
+ rFee = 37 
+ Case Is <= 700 
+ rFee = 44 
+ Case Is <= 800 
+ rFee = 50 
+ Case Is <= 900 
+ rFee = 55 
+ Case Is <= 1000 
+ rFee = 60 
+ Case Else 
+ rFee = Int((rDist - 901) / 100) * 5 + 60
+ End Select 
+Case 1 
+rFee = 0.1 * rDist 
+Case 2 
+rFee = rDist 
+End Select 
+TranFee = rFee 
+End Function 
+Function OutputRailway(cFi As Integer, cv
+As Integer) As String 
+Dim cBegin As Integer, cEnd As Integer 
+Dim cString As String 
+Dim cLength As Integer 
+Dim cLastS As String 
+cLastS = "end" 
+Open "d:\RailwayPath_1.txt" For Input As #2
+Do Until EOF(2) 
+Line Input #2, cString 
+cString = Trim(cString) 
+cLength = Len(cString) 
+cBegin = Val(Mid(cString, 1, 2)) 
+cEnd = Val(Mid(cString, cLength - 1, 2))
+If cFi = cBegin And cv = cEnd Then 
+ cLastS = Mid(cString, 4, cLength - 2)
+ Exit Do 
+End If 
+Loop 
+Close #2 
+ 
+OutputRailway = cLastS 
+End Function 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ '-1:NoWay 0: RailWay 
+ '1: HighWay 2: YunFee 
+Sub main() 
+Dim sName As String 
+sName = InputBox("Input frmInit or frmMCM:")
+ 
+Do While True 
+If sName = "frmInit" Or sName = "frminit" Then
+ frmInitMatrix.Show 
+ Exit Do 
+ElseIf sName = "frmMCM" Or sName = "frmmcm" Then
+ frmMCM.Show 
+ Exit Do 
+End If 
+Loop 
+End Sub 
+Function TranFee(rDist As Double, iState As
+Integer) 
+Dim rFee As Double 
+Select Case iState 
+Case 0 
+ Select Case rDist 
+ Case Is <= 300 
+ rFee = 20 
+ Case Is <= 350 
+ rFee = 23 
+ Case Is <= 400 
+ rFee = 26 
+ Case Is <= 450 
+ rFee = 29 
+ Case Is <= 500 
+ rFee = 32 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+附录 四、数据文件格式说明及部分文件 
+数据文件 d: \mat_load_1.txt（d:\mat_load_2.txt）的格式为： 
+第一行：图中边的条数 
+以下每行：结点 结点 两点间距离 道路类型 
+例如： 2 8 3 8 450 0 
+（道路类型¦ – 1：两结点不相邻； 0 ：铁路； 1：公路； 2 ：两点间距离为运费） 
+数据文件 d\result_1.txt (d:\result_2.txt) 的格式为： 
+每行：结点 结点 两点间最小费用 
+例如：21 1 170.7 
+数据文件 d:\HighwayPath_1.txt(d:\HighwayPath_2.txt) 的格式为： 
+ 每行：起始点 途经点 终点 
+ 例如： 1 2 28 30 31 35 21 
+result_1.txt: （问题（1） 钢厂到各铺设点的最小运费） 
+ 
+ 23 1
+230.7 
+ 23 2
+220.3 
+ 23 3
+200.2 
+ 23 4
+181.6 
+ 23 5
+121 
+ 23 6
+105.5 
+23 7 96 
+ 23 8
+86.2 
+ 23 9
+48.2 
+ 23 10
+82 
+ 23 11
+86 
+ 23 12
+96 
+23 13 
+111.2 
+23 14
+118 
+ 23 1 5
+132 
+26 14 11 
+ 26 15 28
+ 27 1
+275.7 
+ 27 2
+265.3 
+ 27 3
+245.2 
+ 27 4
+226.6 
+ 27 5 166 
+ 27 6
+150.5 
+ 27 7 141 
+ 27 8
+131.2 
+ 27 9 99.2 
+ 27 10 76 
+ 27 11 66 
+ 24 15 97 
+25 1
+255.7 
+25 2
+245.3 
+25 3
+225.2 
+25 4
+206.6 
+ 25 5 146 
+25 6
+130.5 
+ 25 7 121 
+25 8
+111.2 
+ 25 9 79.2 
+ 25 10 57 
+ 25 11 33 
+ 25 12 51 
+25 1 3
+71.2 
+ 25 14 73 
+ 25 15 87 
+26 1
+265.7 
+26 2
+255.3 
+26 3
+235.2 
+21 1 170.7 
+ 21 2
+160.3 
+ 21 3
+140.2 
+ 21 4 98.6 
+ 21 5 38 
+ 21 6 20.5 
+ 21 7 3.1 
+ 21 8 21.2 
+ 21 9 64.2 
+ 21 10 92 
+ 21 11 96 
+ 21 12 106 
+ 21 13
+121.2 
+ 21 14 128 
+ 21 15 142 
+ 22 1
+215.7 
+ 22 2
+205.3 
+ 22 3
+190.2 
+ 22 4
+171.6 
+ 22 5 111 
+ 22 6 95.5 
+ 22 7 86 
+ 22 8 71.2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+Result_2.txt:（问题（3） 钢厂到各铺设点的最小运费） 
+27 8 131.2 
+ 27 9 99.2 
+ 27 10 76 
+ 27 11 64 
+ 27 12 56 
+ 27 13 38.2 
+ 27 14 26 
+ 27 15 2 
+ 27 16 95 
+ 27 17 63 
+ 27 18 50 
+ 27 19 55 
+ 27 20 32 
+ 27 26 26 
+25 5 146 
+25 6 130.5 
+ 25 7 121 
+25 8 111.2 
+ 25 9 79.2 
+ 25 10 57 
+ 25 11 33 
+ 25 12 51 
+25 13 71.2 
+ 25 14 73 
+ 25 15 87 
+ 25 16 75 
+ 25 17 32 
+ 25 18 45 
+ 25 19 50 
+ 25 20 65 
+ 25 26 75 
+26 1 260.7 
+26 2 250.3 
+ 26 3 235.2 
+26 4 216.6 
+ 26 5 156 
+26 6 140.5 
+26 7 128.1 
+26 8 116.2 
+ 26 9 84.2 
+ 26 10 61 
+ 26 11 47 
+ 26 12 37 
+26 13 16.2 
+ 26 14 11 
+ 26 15 28 
+ 26 16 80 
+ 26 17 46 
+ 26 18 33 
+ 26 19 36 
+ 26 20 10 
+ 27 1 275.7 
+27 2 265.3 
+27 3 245.2 
+27 4 226.6 
+ 27 5 166 
+27 6 150.5 
+ 27 7 141 
+23 3 200.2 
+ 23 4 181.6 
+ 23 5 121 
+ 23 6 105.5 
+ 23 7 96 
+ 23 8 86.2 
+ 23 9 48.2 
+ 23 10 82 
+ 23 11 86 
+ 23 12 96 
+ 23 13
+111.2 
+ 23 14 118 
+ 23 15 132 
+ 23 16 44 
+ 23 17 85 
+ 23 18 90 
+ 23 19 95 
+ 23 20 105 
+ 23 26 115 
+ 24 1 260.7 
+ 24 2 250.3 
+ 24 3 235.2 
+ 24 4 216.6 
+ 24 5 156 
+ 24 6 140.5 
+ 24 7 131 
+ 24 8 116.2 
+ 24 9 84.2 
+ 24 10 62 
+ 24 11 51 
+ 24 12 61 
+ 24 13 76.2 
+ 24 14 83 
+ 24 15 97 
+ 24 16 80 
+ 24 17 50 
+ 24 18 55 
+ 24 19 60 
+ 24 20 70 
+ 24 26 80 
+ 25 1 255.7 
+ 25 2 245.3 
+ 25 3 225.2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+21 1 170.7 
+ 21 2 160.3 
+ 21 3 140.2 
+ 21 4 98.6 
+ 21 5 38 
+ 21 6 20.5 
+ 21 7 3.1 
+ 21 8 21.2 
+ 21 9 64.2 
+ 21 10 92 
+ 21 11 96 
+ 21 12 106 
+ 21 13
+121.2 
+ 21 14 128 
+ 21 15 142 
+ 21 16 60 
+ 21 17 95 
+ 21 18 100 
+ 21 19 105 
+ 21 20 115 
+ 21 26 125 
+ 22 1 215.7 
+ 22 2 205.3 
+ 22 3 190.2 
+ 22 4 171.6 
+ 22 5 111 
+ 22 6 95.5 
+ 22 7 86 
+ 22 8 71.2 
+ 22 9 114.2 
+ 22 10 142 
+ 22 11 146 
+ 22 12 156 
+ 22 13
+171.2 
+ 22 14 178 
+ 22 15 192 
+ 22 16 110 
+ 22 17 145 
+ 22 18 150 
+ 22 19 155 
+ 22 20 165 
+ 22 26 175 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+HighwayPath_1: （问题（1） 钢厂到各铺设点的最小运费路径） 
+ 
+10 36 16 23 
+ 1 1 17 16 23 
+ 12 19 18 23 
+ 13 20 18 23 
+ 14 38 16 23 
+ 15 39 16 23 
+ The Steel Factory is: 24 
+ 1 2 28 16 24 
+ 2 28 16 2 4 
+ 3 29 16 2 4 
+ 4 5 32 16 24 
+ 5 32 16 2 4 
+ 6 33 16 2 4 
+ 7 34 16 2 4 
+ 8 35 16 2 4 
+ 9 16 36 37 24 
+ 10 36 37 24 
+ 1 1 17 37 24 
+ 12 19 18 24 
+ 13 20 18 24 
+ 14 38 18 24 
+ 15 39 18 24 
+ The Steel Factory is: 25 
+ 1 2 28 17 25 
+ 2 28 17 2 5 
+ 3 29 17 2 5 
+ 4 5 32 17 25 
+ 5 32 17 2 5 
+ 6 33 17 2 5 
+ 7 34 17 2 5 
+ 8 35 17 2 5 
+ 9 16 36 37 17 25 
+ 10 36 17 25 
+ 1 1 17 25 
+ 12 19 18 25 
+ 13 20 18 25 
+ 14 38 17 25 
+ 15 39 17 25 
+ The Steel Factory is: 26 
+ 1 2 28 20 26 
+ 2 28 20 2 6 
+ 3 29 20 2 6 
+The Steel Factory is: 21 
+ 1 2 28 30 31 35 21 
+ 2 28 30 31 35 21 
+ 3 29 30 31 35 21 
+ 4 5 32 33 34 21 
+ 5 32 33 34 21 
+ 6 33 34 2 1 
+ 7 21 
+ 8 35 21 
+ 9 16 35 2 1 
+ 10 36 16 21 
+ 1 1 17 16 21 
+ 12 19 18 21 
+ 13 20 18 21 
+ 14 38 16 21 
+ 15 39 16 21 
+ The Steel Factory is: 22 
+ 1 2 28 30 31 35 22 
+ 2 28 30 31 35 22 
+ 3 29 30 31 35 22 
+ 4 5 32 21 22 
+ 25 32 21 22 
+ 6 33 21 2 2 
+ 7 34 21 2 2 
+ 8 35 22 
+ 9 16 35 2 2 
+ 10 36 16 22 
+ 1 1 17 16 22 
+ 12 19 18 22 
+ 13 20 18 22 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+14 38 16 22 
+15 39 16 22 
+The Steel Factory is: 23 
+1 2 2 8 16 23 
+2 28 16 23 
+3 29 16 23 
+4 5 3 2 16 23 
+5 32 16 23 
+6 33 16 23 
+7 34 16 23 
+8 35 16 23 
+9 16 23 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+ 4 5 3 2 20 26 
+ 5 32 20 2 6 
+ 6 33 20 2 6 
+ 7 34 20 2 6 
+ 8 35 20 2 6 
+ 9 16 36 37 18 20 38 26
+ 10 36 20 26 
+ 1 1 17 37 18 20 3 8 26 
+ 12 19 18 26 
+ 13 20 38 26 
+ 14 26 
+ 15 39 38 26 
+ The Steel Factory is: 27 
+ 1 2 28 20 27 
+ 2 28 20 2 7 
+ 3 29 20 2 7 
+ 4 5 32 20 27 
+ 5 32 20 2 7 
+ 6 33 20 2 7 
+ 7 34 20 2 7 
+ 8 35 20 2 7 
+ 9 1 6 3 6 37 18 20 3 8 3 9
+27 
+ 10 36 39 15 27 
+ 1 1 17 37 18 20 3 8 39 27
+ 12 19 18 27 
+ 13 20 38 39 27 
+ 14 38 39 27 
+15 27 
+ 
+HighwayPath_2.txt: 
+（问题（3） 钢厂到各铺设点的最小运费
+路径） 
+The Steel Factory is: 21 
+ 1 2 28 30 31 35 21 
+ 2 28 30 31 35 21 
+ 3 29 30 31 35 21 
+ 4 5 32 33 34 21 
+ 5 32 33 34 21 
+ 6 33 34 2 1 
+ 7 21 
+ 8 35 21 
+ 9 16 35 2 1 
+ 12 19 1 8 21 
+ 13 20 18 21 
+ 14 38 16 21 
+ 15 39 16 21 
+ 16 35 21 
+ 17 16 21 
+ 18 16 21 
+ 19 18 21 
+ 20 18 21 
+ 26 20 18 21 
+ The Steel Factory is: 22 
+ 1 2 28 30 31 35 22 
+ 2 28 30 31 35 22 
+ 3 29 30 31 35 22 
+ 4 5 32 21 22 
+ 5 32 21 2 2 
+ 6 33 21 2 2 
+ 7 34 21 2 2 
+ 8 35 22 
+ 9 16 35 2 2 
+ 10 36 16 22 
+ 1 1 17 16 22 
+ 12 19 18 22 
+ 13 20 18 22 
+ 14 38 16 22 
+ 15 39 16 22 
+ 16 35 22 
+ 17 16 22 
+ 18 16 22 
+ 19 18 22 
+ 20 18 8 22 
+ 26 20 18 22 
+ The Steel Factory is: 23 
+ 1 2 28 16 23 
+ 2 28 16 2 3 
+ 3 29 16 2 3 
+ 4 5 32 16 23 
+ 5 32 16 2 3 
+ 6 33 16 2 3 
+ 7 34 16 2 3 
+ 8 35 16 2 3 
+ 9 16 23 
+ 10 36 16 23 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+ 12 19 18 23 
+ 13 20 18 23 
+ 14 38 16 23 
+ 15 39 16 23 
+ 16 23 
+ 17 16 23 
+ 18 16 23 
+ 19 18 23 
+ 20 18 23 
+ 26 16 23 
+ The Steel Factory is: 24 
+ 1 2 28 16 24 
+ 2 28 16 2 4 
+ 3 29 16 2 4 
+ 4 5 32 16 24 
+ 5 32 16 2 4 
+ 6 33 16 2 4 
+ 7 34 16 2 4 
+ 8 35 16 2 4 
+ 9 16 36 37 24 
+ 10 36 37 24 
+ 1 1 17 37 24 
+ 12 19 18 24 
+ 13 20 18 24 
+ 14 38 18 24 
+ 15 39 18 24 
+ 16 36 37 24 
+ 17 37 24 
+ 18 37 24 
+ 19 18 24 
+ 20 18 24 
+ 26 18 24 
+ The Steel Factory is: 25 
+ 1 2 28 17 25 
+ 2 28 17 2 5 
+ 3 29 17 2 5 
+ 4 5 32 17 25 
+ 5 32 17 2 5 
+ 6 33 17 2 5 
+ 7 34 17 2 5 
+ 8 35 17 2 5 
+12 19 18 21 
+ 13 20 18 21 
+ 14 38 16 21 
+ 15 39 16 21 
+ 16 35 21 
+ 17 16 21 
+ 18 16 21 
+ 19 18 21 
+ 20 18 21 
+ 26 20 18 21 
+ The Steel Factory is: 22 
+ 1 2 28 30 31 35 22 
+ 2 28 30 31 35 22 
+ 3 29 30 31 35 22 
+ 4 5 32 21 22 
+ 5 32 21 2 2 
+ 6 33 21 2 2 
+ 7 34 21 2 2 
+ 8 35 22 
+ 9 16 35 2 2 
+ 10 36 16 22 
+ 1 1 17 16 22 
+ 12 19 18 22 
+ 13 20 18 22 
+ 14 38 16 22 
+ 15 39 16 22 
+ 16 35 22 
+ 17 16 22 
+ 18 16 22 
+ 19 18 22 
+ 20 18 8 22 
+ 26 20 18 22 
+ The Steel Factory is: 23 
+ 1 2 28 16 23 
+ 2 28 16 2 3 
+ 3 29 16 2 3 
+ 4 5 32 16 23 
+ 5 32 16 2 3 
+ 6 33 16 2 3 
+ 7 34 16 2 3 
+ 8 35 16 2 3 
+ 9 16 23 
+ 10 36 16 23 
+ 1 1 17 16 23 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 9 16 36 37 17 25 
+ 10 36 17 25 
+ 1 1 17 25 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+ 
+ 12 19 18 27 
+ 13 20 38 39 27 
+ 14 38 39 27 
+ 15 27 
+ 16 36 37 18 20 38 39 27
+ 17 18 20 38 39 27 
+ 18 20 38 39 27 
+ 19 18 27 
+ 20 38 39 27 
+ 26 38 39 27 
+ 
+ 12 19 18 25 
+ 13 20 18 25 
+ 14 38 17 25 
+ 15 39 17 25 
+ 16 36 37 17 25 
+ 17 25 
+ 18 17 25 
+ 19 18 25 
+ 20 18 25 
+ 26 17 25 
+ The Steel Factory is: 26 
+ 1 2 28 20 26 
+ 2 28 20 2 6 
+ 3 29 20 2 6 
+ 4 5 32 20 26 
+ 5 32 20 2 6 
+ 6 33 20 2 6 
+ 7 21 20 2 6 
+ 8 35 20 2 6 
+ 9 16 36 37 18 20 38 26 
+ 10 36 20 26 
+ 1 1 17 18 20 26 
+ 12 19 20 26 
+ 13 20 26 
+ 14 26 
+ 15 39 38 26 
+ 16 36 37 18 20 38 26 
+ 17 18 20 26 
+ 18 20 26 
+ 19 20 26 
+ 20 26 
+ 2 6 end 
+ The Steel Factory is: 27 
+ 1 2 28 20 27 
+ 2 28 20 2 7 
+ 3 29 20 2 7 
+ 4 5 32 20 27 
+ 5 32 20 2 7 
+ 6 33 20 2 7 
+ 7 34 20 2 7 
+ 8 35 20 2 7 
+ 9 1 6 36 3 7 18 2 0 3 8 39
+27 
+ 10 36 39 15 27 
+ 1 1 17 18 20 38 3 9 27 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+感谢您对网站建设一如既往的支持和厚爱 
+欢迎光临中国数学建模网 ――― w ww.shumo.org 
+ 
+感谢您对网站建设一如既往的支持和厚爱
