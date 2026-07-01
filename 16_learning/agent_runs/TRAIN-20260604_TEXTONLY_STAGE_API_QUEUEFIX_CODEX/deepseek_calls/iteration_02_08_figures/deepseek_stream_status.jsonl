@@ -1,0 +1,9 @@
+{"event": "stream_start", "elapsed_seconds": 0.0, "chunk_count": 0, "content_chars": 0, "reasoning_content_chars": 0, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:40:27"}
+{"event": "stream_progress", "elapsed_seconds": 30.188, "chunk_count": 1017, "content_chars": 0, "reasoning_content_chars": 2452, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:40:57"}
+{"event": "stream_progress", "elapsed_seconds": 60.266, "chunk_count": 2467, "content_chars": 0, "reasoning_content_chars": 6288, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:41:27"}
+{"event": "stream_progress", "elapsed_seconds": 90.329, "chunk_count": 3819, "content_chars": 0, "reasoning_content_chars": 9436, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:41:57"}
+{"event": "stream_progress", "elapsed_seconds": 120.454, "chunk_count": 5449, "content_chars": 0, "reasoning_content_chars": 13344, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:42:27"}
+{"event": "stream_progress", "elapsed_seconds": 150.485, "chunk_count": 7058, "content_chars": 0, "reasoning_content_chars": 17139, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:42:57"}
+{"event": "stream_progress", "elapsed_seconds": 180.485, "chunk_count": 9079, "content_chars": 0, "reasoning_content_chars": 22143, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:43:27"}
+{"event": "stream_progress", "elapsed_seconds": 210.516, "chunk_count": 12114, "content_chars": 0, "reasoning_content_chars": 30233, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:43:57"}
+{"event": "stream_done", "elapsed_seconds": 231.282, "chunk_count": 14794, "content_chars": 6256, "reasoning_content_chars": 31218, "idle_seconds": 0.0, "finish_reason": "stop", "logged_at": "2026-06-04T02:44:18"}

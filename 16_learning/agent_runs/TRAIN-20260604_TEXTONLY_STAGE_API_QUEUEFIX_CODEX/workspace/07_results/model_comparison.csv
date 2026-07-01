@@ -1,0 +1,4 @@
+model,RMSE
+Linear,0.123
+Ridge,0.115
+Lasso,0.108

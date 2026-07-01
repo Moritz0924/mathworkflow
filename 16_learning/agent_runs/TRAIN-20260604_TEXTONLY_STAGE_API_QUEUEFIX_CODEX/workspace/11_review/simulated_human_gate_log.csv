@@ -1,0 +1,5 @@
+gate_id,gate_name,simulated,confirmed_by,formal_effect,timestamp,notes
+intake_gate,intake,yes,simulated,formal_effect=none,2026-06-04T10:00:00Z,simulated human gate for intake
+model_route_gate,model_route,yes,simulated,formal_effect=none,2026-06-04T10:30:00Z,simulated human gate for model_route
+paper_full_gate,paper_full,yes,simulated,formal_effect=none,2026-06-04T11:00:00Z,simulated human gate for paper_full
+final_export_gate,final_export,yes,simulated,formal_effect=none,2026-06-04T11:30:00Z,simulated human gate for final_export

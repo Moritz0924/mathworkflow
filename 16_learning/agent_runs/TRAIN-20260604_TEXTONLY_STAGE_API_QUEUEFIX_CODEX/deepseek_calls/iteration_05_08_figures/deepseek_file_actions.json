@@ -1,0 +1,162 @@
+{
+  "action_count": 19,
+  "results": [
+    {
+      "path": "08_figures/fig_F001.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F001.svg"
+    },
+    {
+      "path": "08_figures/fig_F002.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F002.svg"
+    },
+    {
+      "path": "08_figures/fig_F003.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F003.svg"
+    },
+    {
+      "path": "08_figures/fig_F004.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F004.svg"
+    },
+    {
+      "path": "08_figures/fig_F005.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F005.svg"
+    },
+    {
+      "path": "08_figures/fig_F006.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F006.svg"
+    },
+    {
+      "path": "08_figures/fig_F007.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F007.svg"
+    },
+    {
+      "path": "08_figures/fig_F008.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F008.svg"
+    },
+    {
+      "path": "08_figures/fig_F001.png",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F001.png"
+    },
+    {
+      "path": "08_figures/fig_F002.png",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F002.png"
+    },
+    {
+      "path": "08_figures/fig_F003.png",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F003.png"
+    },
+    {
+      "path": "08_figures/fig_F004.png",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F004.png"
+    },
+    {
+      "path": "08_figures/fig_F005.png",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F005.png"
+    },
+    {
+      "path": "08_figures/fig_F006.png",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F006.png"
+    },
+    {
+      "path": "08_figures/fig_F007.png",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F007.png"
+    },
+    {
+      "path": "08_figures/fig_F008.png",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F008.png"
+    },
+    {
+      "path": "14_contracts/figure_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/figure_contract.csv"
+    },
+    {
+      "path": "08_figures/figure_blueprint.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/figure_blueprint.md"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    }
+  ],
+  "protocol_issues": [],
+  "protocol_history": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 12011,
+      "completion_tokens": 17689,
+      "total_tokens": 29700,
+      "prompt_tokens_details": {
+        "cached_tokens": 3584
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11676
+      },
+      "prompt_cache_hit_tokens": 3584,
+      "prompt_cache_miss_tokens": 8427
+    },
+    "reasoning_content_chars": 26924,
+    "stream": true,
+    "chunk_count": 17691,
+    "content_chars": 14914,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\deepseek_calls\\iteration_05_08_figures\\deepseek_stream_status.jsonl"
+  }
+}

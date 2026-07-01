@@ -1,0 +1,112 @@
+{
+  "action_count": 12,
+  "results": [
+    {
+      "path": "14_contracts/figure_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/figure_contract.csv"
+    },
+    {
+      "path": "08_figures/fig1_scatter.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig1_scatter.svg"
+    },
+    {
+      "path": "08_figures/fig2_residuals.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig2_residuals.svg"
+    },
+    {
+      "path": "08_figures/fig3_coefficients.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig3_coefficients.svg"
+    },
+    {
+      "path": "08_figures/fig4_pred_vs_actual.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig4_pred_vs_actual.svg"
+    },
+    {
+      "path": "08_figures/fig5_feature_importance.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig5_feature_importance.svg"
+    },
+    {
+      "path": "08_figures/fig6_qqplot.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig6_qqplot.svg"
+    },
+    {
+      "path": "08_figures/fig7_sensitivity_heatmap.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig7_sensitivity_heatmap.svg"
+    },
+    {
+      "path": "08_figures/stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/stage_summary.md"
+    },
+    {
+      "path": "10_ai_logs/figures_stage_execution.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "10_ai_logs/figures_stage_execution.md"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "11_review/revision_tasks.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/revision_tasks.csv"
+    }
+  ],
+  "protocol_issues": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 11751,
+      "completion_tokens": 22877,
+      "total_tokens": 34628,
+      "prompt_tokens_details": {
+        "cached_tokens": 3584
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 16563
+      },
+      "prompt_cache_hit_tokens": 3584,
+      "prompt_cache_miss_tokens": 8167
+    },
+    "reasoning_content_chars": 41478,
+    "stream": true,
+    "chunk_count": 22879,
+    "content_chars": 16894,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX\\deepseek_calls\\iteration_04_08_figures\\deepseek_stream_status.jsonl"
+  }
+}

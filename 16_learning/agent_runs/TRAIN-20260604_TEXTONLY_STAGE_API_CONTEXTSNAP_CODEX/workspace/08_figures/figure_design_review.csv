@@ -1,0 +1,9 @@
+figure_id,design_decision,risk_assessment,peer_check
+F001,柱状图展示系数方向，配色muted_blue_gold,font_risk=medium,中文标签已检查
+F002,散点图显示预测与真实值，配色deep_blue_vermilion,font_risk=medium,中文标签已检查
+F003,残差-拟合值散点图，无系统模式,font_risk=medium,中文标签已检查
+F004,Q-Q图，评估正态性,font_risk=medium,中文标签已检查
+F005,散点矩阵展示三通道与浓度关系，非默认配色,font_risk=medium,中文标签已检查
+F006,相关热力图，红色/蓝色渐变,font_risk=medium,中文标签已检查
+F007,分组柱状图对比CV RMSE，配色teal_orange_diverging,font_risk=medium,新增图表，中文标签已设计
+F008,误差条图显示预测区间，配色deep_blue,font_risk=medium,新增图表，中文标签已设计

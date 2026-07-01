@@ -1,0 +1,2 @@
+﻿check_id,artifact,protected_atom_delta_count,status,notes
+POL-001,09_paper/full_draft.md,0,pass,训练润色不改变数字、公式、标签和含义

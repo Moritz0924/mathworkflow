@@ -1,0 +1,6 @@
+﻿result_id,question_id,model_id,metric_name,metric_value,unit,source_file,source_row_or_cell,code_file,run_id,random_seed,assumption_ids,used_by_figure_ids,used_by_claim_ids,freeze_status,freeze_time,owner,notes
+R001,Q1,M1_GREEDY,baseline_distance,91.4,km,07_results/model_metrics.csv,M1_GREEDY,06_code/run_all.py,local_training,42,A1,F001,C001,ready,2026-06-05T00:07:32,local_training_agent,基线方案
+R002,Q2,M3_ROBUST,robust_total_distance,86.2,km,07_results/model_metrics.csv,M3_ROBUST,06_code/run_all.py,local_training,42,A1,F002;F003,C002,ready,2026-06-05T00:07:32,local_training_agent,推荐方案
+R003,Q2,M3_ROBUST,risk_score,0.096,score,07_results/model_metrics.csv,M3_ROBUST,06_code/run_all.py,local_training,42,A1,F004,C003,ready,2026-06-05T00:07:32,local_training_agent,鲁棒性指标
+R004,Q3,M3_ROBUST,vehicle_count,3,vehicle,07_results/route_plan.csv,all,06_code/run_all.py,local_training,42,A1,F005,C004,ready,2026-06-05T00:07:32,local_training_agent,车辆调度
+R005,Q3,M3_ROBUST,sensitivity_max_risk_change,18.5,%,07_results/sensitivity_summary.csv,道路可靠度下降10%,06_code/run_all.py,local_training,42,A1,F006,C005,ready,2026-06-05T00:07:32,local_training_agent,敏感性上界

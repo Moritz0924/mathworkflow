@@ -1,0 +1,2 @@
+﻿call_id,iteration,stage_order,stage_id,prompt_path,log_path,exit_code,status,started_at,finished_at,notes
+initial_00_latex_template,1,0,latex_template,16_learning/agent_runs/TRAIN-20260604_TEXTONLY_CROP_YIELD_API_CODEX/workspace/agent_stage_initial_00_latex_template.md,16_learning/agent_runs/TRAIN-20260604_TEXTONLY_CROP_YIELD_API_CODEX/logs/agent_initial_00_latex_template.log,2,fail,2026-06-04T21:11:55,2026-06-04T21:11:58,

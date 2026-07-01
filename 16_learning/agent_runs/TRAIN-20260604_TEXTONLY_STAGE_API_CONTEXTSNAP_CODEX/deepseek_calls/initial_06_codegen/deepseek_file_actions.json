@@ -1,0 +1,78 @@
+{
+  "action_count": 7,
+  "results": [
+    {
+      "path": "06_code/q1_linear_model.py",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "06_code/q1_linear_model.py"
+    },
+    {
+      "path": "07_results/logs/q1_run.log",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "07_results/logs/q1_run.log"
+    },
+    {
+      "path": "07_results/q1_coefficients.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "07_results/q1_coefficients.csv"
+    },
+    {
+      "path": "07_results/q1_metrics.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "07_results/q1_metrics.csv"
+    },
+    {
+      "path": "14_contracts/result_contract.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/result_contract.csv"
+    },
+    {
+      "path": "07_results/result_source_map.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "07_results/result_source_map.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    }
+  ],
+  "protocol_issues": [],
+  "protocol_history": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 6534,
+      "completion_tokens": 30091,
+      "total_tokens": 36625,
+      "prompt_tokens_details": {
+        "cached_tokens": 3200
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 28400
+      },
+      "prompt_cache_hit_tokens": 3200,
+      "prompt_cache_miss_tokens": 3334
+    },
+    "reasoning_content_chars": 60408,
+    "stream": true,
+    "chunk_count": 30091,
+    "content_chars": 4853,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\\deepseek_calls\\initial_06_codegen\\deepseek_stream_status.jsonl"
+  }
+}

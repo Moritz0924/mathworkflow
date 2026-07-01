@@ -1,0 +1,2 @@
+result_id,question_id,model_id,metric_name,metric_value,unit,source_file,source_row_or_cell,code_file,run_id,random_seed,freeze_status,used_by_claim_ids,notes
+R001,Q1,model_A,unknown_metric,0.0,placeholder,07_results/placeholder.csv,N/A,06_code/placeholder.py,run_000,42,blocked,,Placeholder blocked result pending real execution and verification

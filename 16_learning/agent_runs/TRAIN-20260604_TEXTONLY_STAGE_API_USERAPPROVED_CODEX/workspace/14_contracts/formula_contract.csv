@@ -1,0 +1,5 @@
+formula_id,latex,description,reference
+E01,y = \beta_0 + \beta_1 x_R + \beta_2 x_G + \beta_3 x_B + \varepsilon,多元线性回归模型,公式(1)
+E02,R^2 = 1 - \frac{SS_{res}}{SS_{tot}},决定系数,公式(2)
+E03,RMSEP = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2},预测均方根误差,公式(3)
+E04,DW = \frac{\sum_{t=2}^{n}(e_t - e_{t-1})^2}{\sum_{t=1}^{n}e_t^2},Durbin-Watson统计量,公式(4)

@@ -1,0 +1,10 @@
+{"event": "stream_start", "elapsed_seconds": 0.0, "chunk_count": 0, "content_chars": 0, "reasoning_content_chars": 0, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:22:33"}
+{"event": "stream_progress", "elapsed_seconds": 30.0, "chunk_count": 955, "content_chars": 0, "reasoning_content_chars": 2135, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:23:03"}
+{"event": "stream_progress", "elapsed_seconds": 60.0, "chunk_count": 2076, "content_chars": 0, "reasoning_content_chars": 4564, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:23:33"}
+{"event": "stream_progress", "elapsed_seconds": 90.0, "chunk_count": 3211, "content_chars": 0, "reasoning_content_chars": 6927, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:24:03"}
+{"event": "stream_progress", "elapsed_seconds": 120.204, "chunk_count": 4526, "content_chars": 0, "reasoning_content_chars": 9624, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:24:34"}
+{"event": "stream_progress", "elapsed_seconds": 150.235, "chunk_count": 5746, "content_chars": 1161, "reasoning_content_chars": 10942, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:25:04"}
+{"event": "stream_progress", "elapsed_seconds": 180.235, "chunk_count": 7431, "content_chars": 4164, "reasoning_content_chars": 10942, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:25:34"}
+{"event": "stream_progress", "elapsed_seconds": 210.235, "chunk_count": 9090, "content_chars": 7576, "reasoning_content_chars": 10942, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:26:04"}
+{"event": "stream_progress", "elapsed_seconds": 240.235, "chunk_count": 10373, "content_chars": 10239, "reasoning_content_chars": 10942, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:26:34"}
+{"event": "stream_done", "elapsed_seconds": 254.875, "chunk_count": 11124, "content_chars": 11846, "reasoning_content_chars": 10942, "idle_seconds": 0.0, "finish_reason": "stop", "logged_at": "2026-06-04T03:26:48"}

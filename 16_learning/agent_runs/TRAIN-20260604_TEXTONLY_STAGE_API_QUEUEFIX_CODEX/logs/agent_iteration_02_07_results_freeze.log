@@ -1,0 +1,65 @@
+$ python scripts/deepseek_agent_runner.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\workspace\agent_stage_iteration_02_07_results_freeze.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX --mode training_sandbox --max-iterations 5 --stage results_freeze --call-id iteration_02_07_results_freeze
+cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\workspace
+
+{"event": "stream_progress", "elapsed_seconds": 30.031, "chunk_count": 1112, "content_chars": 0, "reasoning_content_chars": 4912, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 60.031, "chunk_count": 2555, "content_chars": 0, "reasoning_content_chars": 10654, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 90.094, "chunk_count": 4127, "content_chars": 0, "reasoning_content_chars": 16477, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 120.172, "chunk_count": 5961, "content_chars": 3487, "reasoning_content_chars": 19388, "idle_seconds": 0.0, "finish_reason": null}
+{
+  "status": "completed",
+  "stage": "results_freeze",
+  "call_id": "iteration_02_07_results_freeze",
+  "profile_id": "deep",
+  "model": "deepseek-v4-pro",
+  "response": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\deepseek_calls\\iteration_02_07_results_freeze\\deepseek_response.md",
+  "file_actions": [
+    {
+      "path": "07_results/model_metrics.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "07_results/model_metrics.csv"
+    },
+    {
+      "path": "14_contracts/result_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/result_contract.csv"
+    },
+    {
+      "path": "14_contracts/artifact_freeze_registry.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/artifact_freeze_registry.csv"
+    },
+    {
+      "path": "07_results/result_freeze_report.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "07_results/result_freeze_report.md"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4813,
+    "completion_tokens": 6816,
+    "total_tokens": 11629,
+    "prompt_tokens_details": {
+      "cached_tokens": 3200
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 4823
+    },
+    "prompt_cache_hit_tokens": 3200,
+    "prompt_cache_miss_tokens": 1613
+  }
+}

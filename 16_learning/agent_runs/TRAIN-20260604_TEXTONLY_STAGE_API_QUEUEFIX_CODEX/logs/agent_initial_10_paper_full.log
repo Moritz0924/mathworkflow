@@ -1,0 +1,87 @@
+$ python scripts/deepseek_agent_runner.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\workspace\agent_stage_initial_10_paper_full.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX --mode training_sandbox --max-iterations 5 --stage paper_full --call-id initial_10_paper_full
+cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\workspace
+
+{"event": "stream_progress", "elapsed_seconds": 30.046, "chunk_count": 1078, "content_chars": 0, "reasoning_content_chars": 2559, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 60.078, "chunk_count": 2399, "content_chars": 0, "reasoning_content_chars": 5404, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 90.078, "chunk_count": 3730, "content_chars": 0, "reasoning_content_chars": 7905, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 120.093, "chunk_count": 5084, "content_chars": 0, "reasoning_content_chars": 11280, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 150.109, "chunk_count": 6366, "content_chars": 0, "reasoning_content_chars": 13776, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 180.109, "chunk_count": 7862, "content_chars": 0, "reasoning_content_chars": 16461, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 210.171, "chunk_count": 9151, "content_chars": 0, "reasoning_content_chars": 18910, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 240.187, "chunk_count": 10699, "content_chars": 0, "reasoning_content_chars": 22416, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 270.375, "chunk_count": 12246, "content_chars": 0, "reasoning_content_chars": 25305, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 300.39, "chunk_count": 14663, "content_chars": 0, "reasoning_content_chars": 29659, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 330.453, "chunk_count": 16278, "content_chars": 0, "reasoning_content_chars": 32677, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 360.468, "chunk_count": 17860, "content_chars": 0, "reasoning_content_chars": 35642, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 390.515, "chunk_count": 19425, "content_chars": 0, "reasoning_content_chars": 38626, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 420.562, "chunk_count": 20835, "content_chars": 0, "reasoning_content_chars": 41257, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 450.562, "chunk_count": 22122, "content_chars": 0, "reasoning_content_chars": 43592, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 480.593, "chunk_count": 23798, "content_chars": 0, "reasoning_content_chars": 46437, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 510.656, "chunk_count": 25813, "content_chars": 0, "reasoning_content_chars": 50061, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 540.687, "chunk_count": 28050, "content_chars": 60, "reasoning_content_chars": 54223, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 570.718, "chunk_count": 30579, "content_chars": 4591, "reasoning_content_chars": 54223, "idle_seconds": 0.0, "finish_reason": null}
+{
+  "status": "completed",
+  "stage": "paper_full",
+  "call_id": "initial_10_paper_full",
+  "profile_id": "deep",
+  "model": "deepseek-v4-pro",
+  "response": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\deepseek_calls\\initial_10_paper_full\\deepseek_response.md",
+  "file_actions": [
+    {
+      "path": "09_paper/full_draft.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "09_paper/full_draft.md"
+    },
+    {
+      "path": "09_paper/missing_evidence_report.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "09_paper/missing_evidence_report.md"
+    },
+    {
+      "path": "14_contracts/claim_evidence_map.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/claim_evidence_map.csv"
+    },
+    {
+      "path": "14_contracts/formula_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/formula_contract.csv"
+    },
+    {
+      "path": "14_contracts/artifact_freeze_registry.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/artifact_freeze_registry.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3937,
+    "completion_tokens": 31397,
+    "total_tokens": 35334,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 28077
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 3937
+  }
+}

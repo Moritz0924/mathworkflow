@@ -1,0 +1,56 @@
+{
+  "action_count": 4,
+  "results": [
+    {
+      "path": "09_paper/paper_full_stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "09_paper/paper_full_stage_summary.md"
+    },
+    {
+      "path": "14_contracts/artifact_freeze_registry.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/artifact_freeze_registry.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "09_paper/unresolved_review_issues.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "09_paper/unresolved_review_issues.md"
+    }
+  ],
+  "protocol_issues": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 19282,
+      "completion_tokens": 6581,
+      "total_tokens": 25863,
+      "prompt_tokens_details": {
+        "cached_tokens": 3328
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4326
+      },
+      "prompt_cache_hit_tokens": 3328,
+      "prompt_cache_miss_tokens": 15954
+    },
+    "reasoning_content_chars": 9943,
+    "stream": true,
+    "chunk_count": 6583,
+    "content_chars": 4703,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\\deepseek_calls\\iteration_03_10_paper_full\\deepseek_stream_status.jsonl"
+  }
+}

@@ -1,0 +1,39 @@
+# Contract validation report
+
+- stage: final_export
+- fail_count: 14
+- warn_count: 19
+
+- [fail] result_without_source_file (14_contracts/result_contract.csv): R01 has no source_file
+- [warn] result_metric_missing (14_contracts/result_contract.csv): R01 has no metric_name
+- [warn] result_value_missing (14_contracts/result_contract.csv): R01 has no metric_value
+- [fail] result_without_source_file (14_contracts/result_contract.csv): R02 has no source_file
+- [warn] result_metric_missing (14_contracts/result_contract.csv): R02 has no metric_name
+- [warn] result_value_missing (14_contracts/result_contract.csv): R02 has no metric_value
+- [fail] result_without_source_file (14_contracts/result_contract.csv): R03 has no source_file
+- [warn] result_metric_missing (14_contracts/result_contract.csv): R03 has no metric_name
+- [warn] result_value_missing (14_contracts/result_contract.csv): R03 has no metric_value
+- [fail] result_without_source_file (14_contracts/result_contract.csv): R04 has no source_file
+- [warn] result_metric_missing (14_contracts/result_contract.csv): R04 has no metric_name
+- [warn] result_value_missing (14_contracts/result_contract.csv): R04 has no metric_value
+- [fail] result_without_source_file (14_contracts/result_contract.csv): R05 has no source_file
+- [warn] result_metric_missing (14_contracts/result_contract.csv): R05 has no metric_name
+- [warn] result_value_missing (14_contracts/result_contract.csv): R05 has no metric_value
+- [fail] result_without_source_file (14_contracts/result_contract.csv): R06 has no source_file
+- [warn] result_metric_missing (14_contracts/result_contract.csv): R06 has no metric_name
+- [warn] result_value_missing (14_contracts/result_contract.csv): R06 has no metric_value
+- [warn] claim_support_grade_missing (14_contracts/claim_evidence_map.csv): C01 support_grade=<empty>
+- [warn] claim_support_grade_missing (14_contracts/claim_evidence_map.csv): C02 support_grade=<empty>
+- [warn] claim_support_grade_missing (14_contracts/claim_evidence_map.csv): C03 support_grade=<empty>
+- [warn] claim_support_grade_missing (14_contracts/claim_evidence_map.csv): C04 support_grade=<empty>
+- [warn] claim_support_grade_missing (14_contracts/claim_evidence_map.csv): C05 support_grade=<empty>
+- [warn] claim_support_grade_missing (14_contracts/claim_evidence_map.csv): C06 support_grade=<empty>
+- [warn] claim_support_grade_missing (14_contracts/claim_evidence_map.csv): C07 support_grade=<empty>
+- [fail] review_score_below_threshold (11_review/review_scorecard.csv): row 2: 30.0 < 85.0
+- [fail] review_score_below_threshold (11_review/review_scorecard.csv): row 3: 20.0 < 85.0
+- [fail] review_score_below_threshold (11_review/review_scorecard.csv): row 4: 20.0 < 85.0
+- [fail] review_score_below_threshold (11_review/review_scorecard.csv): row 5: 10.0 < 85.0
+- [fail] review_score_below_threshold (11_review/review_scorecard.csv): row 6: 0.0 < 85.0
+- [fail] review_score_below_threshold (11_review/review_scorecard.csv): row 7: 20.0 < 85.0
+- [fail] review_score_below_threshold (11_review/review_scorecard.csv): row 8: 40.0 < 85.0
+- [fail] review_score_below_threshold (11_review/review_scorecard.csv): row 9: 20.0 < 85.0

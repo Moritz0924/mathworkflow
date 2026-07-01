@@ -1,0 +1,105 @@
+{
+  "action_count": 11,
+  "results": [
+    {
+      "path": "11_review/review_scorecard.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/review_scorecard.csv"
+    },
+    {
+      "path": "14_contracts/revision_tasks.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/revision_tasks.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "11_review/problem_reviewer_comments.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/problem_reviewer_comments.md"
+    },
+    {
+      "path": "11_review/model_reviewer_comments.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/model_reviewer_comments.md"
+    },
+    {
+      "path": "11_review/code_reviewer_comments.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/code_reviewer_comments.md"
+    },
+    {
+      "path": "11_review/figure_reviewer_comments.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/figure_reviewer_comments.md"
+    },
+    {
+      "path": "11_review/paper_reviewer_comments.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/paper_reviewer_comments.md"
+    },
+    {
+      "path": "11_review/judge_reviewer_comments.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/judge_reviewer_comments.md"
+    },
+    {
+      "path": "11_review/auto_review_stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/auto_review_stage_summary.md"
+    },
+    {
+      "path": "reports/training_enhancement_points.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "reports/training_enhancement_points.csv"
+    }
+  ],
+  "protocol_issues": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 25346,
+      "completion_tokens": 20470,
+      "total_tokens": 45816,
+      "prompt_tokens_details": {
+        "cached_tokens": 3328
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 17572
+      },
+      "prompt_cache_hit_tokens": 3328,
+      "prompt_cache_miss_tokens": 22018
+    },
+    "reasoning_content_chars": 52462,
+    "stream": true,
+    "chunk_count": 20472,
+    "content_chars": 10329,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\\deepseek_calls\\iteration_05_11_auto_review\\deepseek_stream_status.jsonl"
+  }
+}

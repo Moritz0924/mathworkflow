@@ -1,0 +1,13 @@
+numpy
+pandas
+matplotlib
+seaborn
+plotly
+networkx
+pyyaml
+scipy
+scikit-learn
+reportlab
+openpyxl
+pypdf
+PyPDF2

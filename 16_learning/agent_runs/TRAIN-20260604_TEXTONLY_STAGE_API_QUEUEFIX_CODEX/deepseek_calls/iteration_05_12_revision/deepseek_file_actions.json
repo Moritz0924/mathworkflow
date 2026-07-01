@@ -1,0 +1,106 @@
+{
+  "action_count": 11,
+  "results": [
+    {
+      "path": "08_figures/fig_F001.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F001.svg"
+    },
+    {
+      "path": "08_figures/fig_F002.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F002.svg"
+    },
+    {
+      "path": "08_figures/fig_F003.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F003.svg"
+    },
+    {
+      "path": "08_figures/fig_F004.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F004.svg"
+    },
+    {
+      "path": "08_figures/fig_F005.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F005.svg"
+    },
+    {
+      "path": "08_figures/fig_F006.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig_F006.svg"
+    },
+    {
+      "path": "14_contracts/figure_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/figure_contract.csv"
+    },
+    {
+      "path": "14_contracts/claim_evidence_map.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/claim_evidence_map.csv"
+    },
+    {
+      "path": "14_contracts/revision_tasks.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/revision_tasks.csv"
+    },
+    {
+      "path": "15_iteration_memory/task_closure_log.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "15_iteration_memory/task_closure_log.md"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    }
+  ],
+  "protocol_issues": [],
+  "protocol_history": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 11240,
+      "completion_tokens": 8755,
+      "total_tokens": 19995,
+      "prompt_tokens_details": {
+        "cached_tokens": 3072
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5967
+      },
+      "prompt_cache_hit_tokens": 3072,
+      "prompt_cache_miss_tokens": 8168
+    },
+    "reasoning_content_chars": 25260,
+    "stream": true,
+    "chunk_count": 8757,
+    "content_chars": 9495,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\deepseek_calls\\iteration_05_12_revision\\deepseek_stream_status.jsonl"
+  }
+}

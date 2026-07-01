@@ -1,0 +1,12 @@
+check_id,item,status,remark
+C01,main.tex compiles without errors,NOT_RUN,blocked by missing upstream contracts
+C02,All figures registered in figure_contract.csv and files present,NOT_RUN,
+C03,All citations match citation_contract.csv,NOT_RUN,
+C04,All formulas registered in formula_contract.csv,NOT_RUN,
+C05,No TODO/placeholder text,NOT_RUN,
+C06,No duplicate labels,NOT_RUN,
+C07,Contracts validate (validate_contracts.py --stage final_export),FAIL,contracts not created/updated
+C08,Gate check passes (check_gates.py),FAIL,contracts not ready
+C09,Revision tasks closed,FAIL,revision_tasks.csv missing
+C10,Polish diff consistency,FAIL,polish_diff_check.csv missing
+C11,Final human gate approved,SIMULATED_PENDING,recorded in simulated_human_gate_log.csv

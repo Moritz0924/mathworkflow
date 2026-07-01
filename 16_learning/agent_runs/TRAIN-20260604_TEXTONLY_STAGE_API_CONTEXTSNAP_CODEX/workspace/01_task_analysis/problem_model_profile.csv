@@ -1,0 +1,4 @@
+problem_id,question_id,problem_summary,problem_class,input_description,output_description,dependencies,keywords,candidate_model_families,modeling_type,data_scale,risk_flags
+CE-2025-Q1,Q1,分析颜色通道与物质浓度关系并建立可解释预测模型,回归分析（数据驱动、可解释模型）,标准样本的R/G/B归一化值和浓度,关系分析结论+可解释预测模型（及其参数）,无,颜色浓度关系;可解释模型;回归系数方向;小样本过拟合;多元共线性,linear_regression;polynomial_regression;regularized_linear;PLS;explainable_ensemble,data_evaluation_interpretable,10samples*3features,小样本不稳定;多重共线性;可解释性要求
+CE-2025-Q2,Q2,比较至少三类模型的预测误差并选择最优模型同时控制过拟合,模型评估与选择,标准样本的R/G/B和浓度,不同模型的性能指标表;过拟合控制策略说明;最终选定模型,前置问题一的分析结果但可并行,模型比较;交叉验证;正则化;过拟合控制;模型选择准则,linear_regression;polynomial_regression;ridge;lasso;random_forest;gradient_boosting;decision_tree,model_comparison,10samples*3features,小样本验证不可靠;模型复杂度与精度权衡;超参数选择
+CE-2025-Q3,Q3,预测待测样本浓度并量化不确定性且给出可复用检测流程,预测与不确定性量化,待测样本颜色值+选定模型+标准样本数据,预测浓度及不确定性度量（区间）;复用流程文档,依赖问题二模型选择结果,浓度预测;不确定性;预测区间;bootstrap;检测流程;可复用,model_selected_from_Q2,forecasting_uncertainty,3test_samples,外推风险;不确定性假设;流程泛化局限

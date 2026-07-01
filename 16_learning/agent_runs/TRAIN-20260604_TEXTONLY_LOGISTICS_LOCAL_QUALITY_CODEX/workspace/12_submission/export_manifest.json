@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-06-04T23:53:37",
+  "docx": "12_submission/final_submit_paper.docx",
+  "pdf": "12_submission/final_submit_paper.pdf",
+  "docx_native_builder": true,
+  "pdf_native_builder": true,
+  "figures": [
+    "08_figures/output/F001.png",
+    "08_figures/output/F002.png",
+    "08_figures/output/F003.png",
+    "08_figures/output/F004.png",
+    "08_figures/output/F005.png",
+    "08_figures/output/F006.png"
+  ],
+  "tables": [
+    "题目数据字段与建模角色",
+    "候选模型指标对比",
+    "推荐路径方案",
+    "敏感性情景结果"
+  ],
+  "contracts": [
+    "14_contracts/result_contract.csv",
+    "14_contracts/claim_evidence_map.csv",
+    "14_contracts/figure_contract.csv",
+    "14_contracts/formula_contract.csv"
+  ],
+  "rendered_pages": [
+    "12_submission/rendered_pages/page-1.png"
+  ],
+  "visual_qa": {
+    "status": "pass",
+    "method": "synthetic_png_fallback_after_render_failure",
+    "page_count": 1,
+    "pdf_page_count": 1
+  }
+}

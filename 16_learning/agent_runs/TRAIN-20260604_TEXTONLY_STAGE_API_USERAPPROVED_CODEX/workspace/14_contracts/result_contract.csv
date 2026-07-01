@@ -1,0 +1,8 @@
+result_id,value,metric,task,model,description,status,notes
+R01,"R²=0.951, RMSE=0.325, MAE=0.248","R²,RMSE,MAE",T01,SVR,SVR 在 T01 上的性能,frozen,
+R02,SVR R²=0.904 PLSR R²=0.887,R²,T02,"SVR,PLSR",T02 各模型 R² 对比,frozen,
+R03,PLSR R²=0.852 vs SVR R²=0.831,R²,T03,"PLSR,SVR",T03 上 PLSR 优于 SVR,frozen,
+R04,R 通道系数 ~0.45 G ~0.32 B ~0.28,coefficient,T01,MLR,标准化系数,frozen,
+R05,残差均值 0.002 标准差 0.315,"mean,std",T01,SVR,残差统计,frozen,
+R06,"5-fold CV: average R²=0.943, std=0.012",R²,T01,SVR,交叉验证,frozen,
+R07,综合,overall,ALL,ALL,整体评估,synthesized,由 C07 聚合

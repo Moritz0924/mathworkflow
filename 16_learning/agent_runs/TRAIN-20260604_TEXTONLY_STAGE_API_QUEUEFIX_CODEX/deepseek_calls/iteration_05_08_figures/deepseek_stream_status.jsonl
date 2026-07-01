@@ -1,0 +1,11 @@
+{"event": "stream_start", "elapsed_seconds": 0.0, "chunk_count": 0, "content_chars": 0, "reasoning_content_chars": 0, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:53:18"}
+{"event": "stream_progress", "elapsed_seconds": 30.172, "chunk_count": 874, "content_chars": 0, "reasoning_content_chars": 1880, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:53:48"}
+{"event": "stream_progress", "elapsed_seconds": 60.375, "chunk_count": 2021, "content_chars": 0, "reasoning_content_chars": 4481, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:54:18"}
+{"event": "stream_progress", "elapsed_seconds": 90.375, "chunk_count": 3225, "content_chars": 0, "reasoning_content_chars": 7010, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:54:48"}
+{"event": "stream_progress", "elapsed_seconds": 120.407, "chunk_count": 4475, "content_chars": 0, "reasoning_content_chars": 9749, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:55:19"}
+{"event": "stream_progress", "elapsed_seconds": 150.438, "chunk_count": 5959, "content_chars": 0, "reasoning_content_chars": 13152, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:55:49"}
+{"event": "stream_progress", "elapsed_seconds": 180.485, "chunk_count": 7998, "content_chars": 0, "reasoning_content_chars": 18263, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:56:19"}
+{"event": "stream_progress", "elapsed_seconds": 210.485, "chunk_count": 9976, "content_chars": 0, "reasoning_content_chars": 22856, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:56:49"}
+{"event": "stream_progress", "elapsed_seconds": 240.5, "chunk_count": 11983, "content_chars": 753, "reasoning_content_chars": 26924, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:57:19"}
+{"event": "stream_progress", "elapsed_seconds": 270.532, "chunk_count": 15409, "content_chars": 9221, "reasoning_content_chars": 26924, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T03:57:49"}
+{"event": "stream_done", "elapsed_seconds": 292.0, "chunk_count": 17691, "content_chars": 14914, "reasoning_content_chars": 26924, "idle_seconds": 0.0, "finish_reason": "stop", "logged_at": "2026-06-04T03:58:10"}

@@ -1,0 +1,14 @@
+[2025-06-04 10:00:00] Running: python 06_code/q1_linear_model.py
+=== Q1 Results ===
+Intercept: 1.067247
+Coefficient for R: -1.821404
+Coefficient for G: 0.995618
+Coefficient for B: 5.630987
+R-squared: 0.997747
+RMSE: 0.067418
+
+Direction interpretation:
+- R channel: negative coefficient (decreases as concentration increases)
+- G channel: positive coefficient
+- B channel: positive coefficient
+Results saved.

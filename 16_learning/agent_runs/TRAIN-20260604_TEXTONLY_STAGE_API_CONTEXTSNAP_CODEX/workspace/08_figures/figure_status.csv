@@ -1,0 +1,9 @@
+figure_id,svg_exists,png_exists,pdf_exists,quality_score,contract_rows,result_bound,chinese_text,non_default_colors,used_in_section,recommendation
+F001,true,false,false,4.5,4,true,true,true,sec_model,promote_to_paper
+F002,true,false,false,4.5,2,true,true,true,sec_results,promote_to_paper
+F003,true,false,false,4.5,2,true,true,true,sec_diagnostics,promote_to_paper
+F004,true,false,false,4.5,2,true,true,true,sec_diagnostics,promote_to_paper
+F005,true,false,false,4.2,3,true,true,true,sec_model,promote_to_paper_or_appendix
+F006,true,false,false,4.2,2,true,true,true,sec_model,promote_to_paper_or_appendix
+F007,true,false,false,4.5,3,true,true,true,sec_model_comparison,promote_to_paper
+F008,true,false,false,4.5,9,true,true,true,sec_predictions,promote_to_paper

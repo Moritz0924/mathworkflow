@@ -1,0 +1,5 @@
+﻿field_name,meaning,unit,used_in_model,notes
+demand_id,需求点编号,,index,纯文本字段
+distance_km,最近仓库到需求点距离,km,cost,路径成本基线
+demand_units,需求量,unit,capacity,车辆容量约束
+road_reliability,道路可靠度,ratio,risk,鲁棒性权重

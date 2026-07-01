@@ -1,0 +1,7 @@
+metric_name,value,question_id,model_id,run_id,random_seed
+Accuracy,0.85,Q1,M1,run01,42
+Precision,0.82,Q1,M1,run01,42
+Recall,0.79,Q1,M1,run01,42
+F1_score,0.80,Q1,M1,run01,42
+RMSE,2.34,Q1,M1,run01,42
+R_squared,0.91,Q1,M1,run01,42

@@ -1,0 +1,4 @@
+task_id,new_status,closure_note
+RV-009,blocked,Code docstrings cannot be added in sandbox; human to complete
+RV-010,blocked,Font rendering verification requires human viewer
+RV-011,deferred,Language polish can be performed in dedicated polish stage

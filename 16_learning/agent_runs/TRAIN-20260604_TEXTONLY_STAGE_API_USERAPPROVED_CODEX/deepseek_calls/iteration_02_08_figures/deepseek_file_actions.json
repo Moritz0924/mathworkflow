@@ -1,0 +1,113 @@
+{
+  "action_count": 12,
+  "results": [
+    {
+      "path": "14_contracts/figure_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/figure_contract.csv"
+    },
+    {
+      "path": "08_figures/F001.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/F001.svg"
+    },
+    {
+      "path": "08_figures/F002.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/F002.svg"
+    },
+    {
+      "path": "08_figures/F003.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/F003.svg"
+    },
+    {
+      "path": "08_figures/F004.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/F004.svg"
+    },
+    {
+      "path": "08_figures/F005.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/F005.svg"
+    },
+    {
+      "path": "08_figures/F006.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/F006.svg"
+    },
+    {
+      "path": "08_figures/F007.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/F007.svg"
+    },
+    {
+      "path": "08_figures/figure_design_notes.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/figure_design_notes.md"
+    },
+    {
+      "path": "08_figures/stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/stage_summary.md"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "reports/training_enhancement_points.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "reports/training_enhancement_points.csv"
+    }
+  ],
+  "protocol_issues": [],
+  "protocol_history": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 5408,
+      "completion_tokens": 31237,
+      "total_tokens": 36645,
+      "prompt_tokens_details": {
+        "cached_tokens": 3712
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 26031
+      },
+      "prompt_cache_hit_tokens": 3712,
+      "prompt_cache_miss_tokens": 1696
+    },
+    "reasoning_content_chars": 60890,
+    "stream": true,
+    "chunk_count": 31237,
+    "content_chars": 12681,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX\\deepseek_calls\\iteration_02_08_figures\\deepseek_stream_status.jsonl"
+  }
+}

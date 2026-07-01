@@ -1,0 +1,85 @@
+{
+  "action_count": 8,
+  "results": [
+    {
+      "path": "07_results/result_freeze_report.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "07_results/result_freeze_report.md"
+    },
+    {
+      "path": "14_contracts/result_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/result_contract.csv"
+    },
+    {
+      "path": "14_contracts/artifact_freeze_registry.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/artifact_freeze_registry.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "07_results/model_comparison.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "07_results/model_comparison.csv"
+    },
+    {
+      "path": "07_results/feature_importance.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "07_results/feature_importance.csv"
+    },
+    {
+      "path": "07_results/training_curve.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "07_results/training_curve.csv"
+    },
+    {
+      "path": "14_contracts/revision_tasks.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/revision_tasks.csv"
+    }
+  ],
+  "protocol_issues": [],
+  "protocol_history": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 9625,
+      "completion_tokens": 11540,
+      "total_tokens": 21165,
+      "prompt_tokens_details": {
+        "cached_tokens": 3200
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9195
+      },
+      "prompt_cache_hit_tokens": 3200,
+      "prompt_cache_miss_tokens": 6425
+    },
+    "reasoning_content_chars": 39506,
+    "stream": true,
+    "chunk_count": 11542,
+    "content_chars": 8441,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\deepseek_calls\\iteration_04_07_results_freeze\\deepseek_stream_status.jsonl"
+  }
+}

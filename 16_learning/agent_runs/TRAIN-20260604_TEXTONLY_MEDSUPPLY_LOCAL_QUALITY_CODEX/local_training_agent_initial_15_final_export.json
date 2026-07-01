@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "executor": "local_training_agent",
+  "iteration": 1,
+  "max_iterations": 3,
+  "workspace": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_MEDSUPPLY_LOCAL_QUALITY_CODEX\\workspace",
+  "problem_title": "城市临时医疗点补给调度优化问题",
+  "topic_kind": "logistics",
+  "stages": [
+    "final_export"
+  ]
+}

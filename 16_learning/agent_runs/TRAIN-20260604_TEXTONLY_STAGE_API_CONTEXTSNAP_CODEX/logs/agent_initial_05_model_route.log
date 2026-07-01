@@ -1,0 +1,64 @@
+$ python scripts/deepseek_agent_runner.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\workspace\agent_stage_initial_05_model_route.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX --mode training_sandbox --max-iterations 5 --stage model_route --call-id initial_05_model_route
+cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\workspace
+
+{"event": "stream_progress", "elapsed_seconds": 30.0, "chunk_count": 954, "content_chars": 0, "reasoning_content_chars": 2166, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 60.031, "chunk_count": 2275, "content_chars": 1803, "reasoning_content_chars": 4374, "idle_seconds": 0.0, "finish_reason": null}
+{"event": "stream_progress", "elapsed_seconds": 90.266, "chunk_count": 3662, "content_chars": 7537, "reasoning_content_chars": 4374, "idle_seconds": 0.0, "finish_reason": null}
+{
+  "status": "completed",
+  "stage": "model_route",
+  "call_id": "initial_05_model_route",
+  "profile_id": "deep",
+  "model": "deepseek-v4-pro",
+  "response": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\\deepseek_calls\\initial_05_model_route\\deepseek_response.md",
+  "file_actions": [
+    {
+      "path": "05_model/model_route.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "05_model/model_route.md"
+    },
+    {
+      "path": "05_model/fallback_plan.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "05_model/fallback_plan.md"
+    },
+    {
+      "path": "05_model/symbols.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "05_model/symbols.md"
+    },
+    {
+      "path": "14_contracts/formula_contract.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/formula_contract.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 6465,
+    "completion_tokens": 4554,
+    "total_tokens": 11019,
+    "prompt_tokens_details": {
+      "cached_tokens": 3456
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1852
+    },
+    "prompt_cache_hit_tokens": 3456,
+    "prompt_cache_miss_tokens": 3009
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "provider": "deepseek",
+  "model": "deepseek-v4-pro",
+  "profile_id": "deep",
+  "depth_escalation_reason": "open_fail_gap:formula_and_model_detail",
+  "stage": "paper_full",
+  "stage_override": true,
+  "call_id": "iteration_05_10_paper_full",
+  "attempt": 1,
+  "network_attempt": 1,
+  "network_retry_count": 1,
+  "network_retry_backoff_seconds": 3.0,
+  "network_history": [],
+  "mode": "training_sandbox",
+  "max_iterations": 5,
+  "prompt_path": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\workspace\\agent_stage_iteration_05_10_paper_full.md",
+  "workspace": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\workspace",
+  "run_dir": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX",
+  "call_dir": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\deepseek_calls\\iteration_05_10_paper_full",
+  "prompt_lengths": {
+    "agents_chars": 2710,
+    "state_chars": 715,
+    "stage_prompt_chars": 3742,
+    "stage_prompt_source": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\workspace\\prompts\\training_sandbox\\stages\\10_paper_full.md",
+    "task_prompt_chars": 6330,
+    "vision_observation_chars": 21766,
+    "total_estimated_tokens": 8844
+  },
+  "thinking": {
+    "type": "enabled"
+  },
+  "reasoning_effort": "max",
+  "stream": true,
+  "stream_status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\deepseek_calls\\iteration_05_10_paper_full\\deepseek_stream_status.jsonl",
+  "stream_timeout_config": {
+    "soft_timeout_seconds": 1200,
+    "hard_timeout_seconds": 1800,
+    "first_chunk_timeout_seconds": 600,
+    "idle_timeout_seconds": 360,
+    "heartbeat_seconds": 30,
+    "request_timeout_seconds": 1800
+  },
+  "image_candidates": [
+    "08_figures/fig_F001.png",
+    "08_figures/fig_F002.png",
+    "08_figures/fig_F003.png",
+    "08_figures/fig_F004.png"
+  ],
+  "vision_observation_count": 4,
+  "api_key_logged": false
+}

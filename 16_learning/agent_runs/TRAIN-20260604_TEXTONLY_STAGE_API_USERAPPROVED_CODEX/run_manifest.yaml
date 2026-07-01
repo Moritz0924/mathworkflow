@@ -1,0 +1,334 @@
+run_id: TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX
+mode: training_sandbox
+status: completed_with_open_gaps
+created_at: '2026-06-04T00:05:47'
+workspace: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/workspace
+problem: 00_problem/inbox/text_only_color_concentration_problem.md
+max_iterations: 5
+formal_protected_snapshot: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/formal_protected_snapshot.csv
+agent_prompt: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/workspace/agent_prompt.md
+prompt_route_manifest:
+  csv_path: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/reports/prompt_route_manifest.csv
+  markdown_path: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/reports/prompt_route_manifest.md
+  bundle_path: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/reports/stage_prompt_bundle.md
+  stage_count: 16
+  missing_count: 0
+  prompt_set: training_sandbox_backup
+environment_diagnostics: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/reports/environment_diagnostics.json
+stage_execution_enabled: true
+training_required_outputs:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+- workspace/09_paper/full_draft.md
+- workspace/12_submission/final_submit_paper.md
+- workspace/12_submission/final_submit_package.md
+updated_at: '2026-06-04T01:52:20'
+agent_command_present: true
+initial_exit_code: 0
+initial_log_tail: "{\"event\": \"stream_progress\", \"elapsed_seconds\": 30.063, \"\
+  chunk_count\": 1060, \"content_chars\": 0, \"reasoning_content_chars\": 2437, \"\
+  idle_seconds\": 0.0, \"finish_reason\": null}\n{\n  \"status\": \"completed\",\n\
+  \  \"stage\": \"final_export\",\n  \"call_id\": \"initial_15_final_export\",\n \
+  \ \"profile_id\": \"light\",\n  \"model\": \"deepseek-v4-pro\",\n  \"response\"\
+  : \"E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\
+  \\TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX\\\\deepseek_calls\\\\initial_15_final_export\\\
+  \\deepseek_response.md\",\n  \"file_actions\": [\n    {\n      \"path\": \"11_review/simulated_human_gate_log.csv\"\
+  ,\n      \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\":\
+  \ \"allowed\",\n      \"resolved_path\": \"11_review/simulated_human_gate_log.csv\"\
+  \n    },\n    {\n      \"path\": \"12_submission/final_submit_paper.md\",\n    \
+  \  \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\"\
+  ,\n      \"resolved_path\": \"12_submission/final_submit_paper.md\"\n    },\n  \
+  \  {\n      \"path\": \"12_submission/final_submit_package.md\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"12_submission/final_submit_package.md\"\n    },\n    {\n    \
+  \  \"path\": \"reports/training_enhancement_points.csv\",\n      \"operation\":\
+  \ \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.csv\"\n    },\n    {\n  \
+  \    \"path\": \"reports/training_enhancement_points.md\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.md\"\n    }\n  ],\n  \"usage\"\
+  : {\n    \"prompt_tokens\": 3721,\n    \"completion_tokens\": 2216,\n    \"total_tokens\"\
+  : 5937,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 3072\n    },\n\
+  \    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 1081\n    },\n\
+  \    \"prompt_cache_hit_tokens\": 3072,\n    \"prompt_cache_miss_tokens\": 649\n\
+  \  }\n}\n"
+initial_final_refresh:
+  refreshed: true
+  reason: final_submit_refreshed_from_latest_full_draft
+  draft: 09_paper/full_draft.md
+  final: 12_submission/final_submit_paper.md
+  draft_chars: 5931
+  final_chars: 318
+  draft_marker_count: 6
+  final_marker_count_before: 6
+initial_synced_reports:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+initial_stage_call_count: 16
+initial_validation_queue_added: 30
+initial_contract_queue_added: 0
+iteration_2_exit_code: 0
+iteration_2_log_tail: "{\"event\": \"stream_progress\", \"elapsed_seconds\": 30.031,\
+  \ \"chunk_count\": 988, \"content_chars\": 0, \"reasoning_content_chars\": 2189,\
+  \ \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 60.391, \"chunk_count\": 2273, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 5365, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 90.406, \"chunk_count\": 3810, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 8806, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\n  \"status\": \"completed\"\
+  ,\n  \"stage\": \"final_export\",\n  \"call_id\": \"iteration_02_15_final_export\"\
+  ,\n  \"profile_id\": \"deep\",\n  \"model\": \"deepseek-v4-pro\",\n  \"response\"\
+  : \"E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\
+  \\TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX\\\\deepseek_calls\\\\iteration_02_15_final_export\\\
+  \\deepseek_response.md\",\n  \"file_actions\": [\n    {\n      \"path\": \"12_submission/final_submit_paper.md\"\
+  ,\n      \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\":\
+  \ \"allowed\",\n      \"resolved_path\": \"12_submission/final_submit_paper.md\"\
+  \n    },\n    {\n      \"path\": \"12_submission/final_submit_package.md\",\n  \
+  \    \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\"\
+  ,\n      \"resolved_path\": \"12_submission/final_submit_package.md\"\n    },\n\
+  \    {\n      \"path\": \"reports/training_enhancement_points.csv\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.csv\"\n    },\n    {\n  \
+  \    \"path\": \"reports/training_enhancement_points.md\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.md\"\n    },\n    {\n   \
+  \   \"path\": \"11_review/simulated_human_gate_log.csv\",\n      \"operation\":\
+  \ \"append\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"11_review/simulated_human_gate_log.csv\"\n    },\n    {\n   \
+  \   \"path\": \"11_review/final_export_blocker.md\",\n      \"operation\": \"write\"\
+  ,\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"resolved_path\"\
+  : \"11_review/final_export_blocker.md\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\"\
+  : 11194,\n    \"completion_tokens\": 6413,\n    \"total_tokens\": 17607,\n    \"\
+  prompt_tokens_details\": {\n      \"cached_tokens\": 3072\n    },\n    \"completion_tokens_details\"\
+  : {\n      \"reasoning_tokens\": 5148\n    },\n    \"prompt_cache_hit_tokens\":\
+  \ 3072,\n    \"prompt_cache_miss_tokens\": 8122\n  }\n}\n"
+iteration_2_blocking_queue_before: 30
+iteration_2_final_refresh:
+  refreshed: true
+  reason: final_submit_refreshed_from_latest_full_draft
+  draft: 09_paper/full_draft.md
+  final: 12_submission/final_submit_paper.md
+  draft_chars: 2129
+  final_chars: 674
+  draft_marker_count: 6
+  final_marker_count_before: 6
+iteration_2_synced_reports:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+iteration_2_stage_targets:
+- figures
+- paper_full
+- auto_review
+- final_export
+iteration_2_stage_call_count: 4
+iteration_2_blocking_queue_after: 23
+iteration_2_no_improvement_streak: 0
+iteration_2_validation_queue_added: 23
+iteration_2_contract_queue_added: 0
+iteration_3_exit_code: 0
+iteration_3_log_tail: "{\"event\": \"stream_progress\", \"elapsed_seconds\": 30.094,\
+  \ \"chunk_count\": 1046, \"content_chars\": 0, \"reasoning_content_chars\": 4682,\
+  \ \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 60.203, \"chunk_count\": 2363, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 8837, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 90.203, \"chunk_count\": 3794, \"content_chars\": 1674, \"\
+  reasoning_content_chars\": 11199, \"idle_seconds\": 0.0, \"finish_reason\": null}\n\
+  {\n  \"status\": \"completed\",\n  \"stage\": \"final_export\",\n  \"call_id\":\
+  \ \"iteration_03_15_final_export\",\n  \"profile_id\": \"deep\",\n  \"model\": \"\
+  deepseek-v4-pro\",\n  \"response\": \"E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\
+  \\16_learning\\\\agent_runs\\\\TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX\\\
+  \\deepseek_calls\\\\iteration_03_15_final_export\\\\deepseek_response.md\",\n  \"\
+  file_actions\": [\n    {\n      \"path\": \"12_submission/final_submit_paper.md\"\
+  ,\n      \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\":\
+  \ \"allowed\",\n      \"resolved_path\": \"12_submission/final_submit_paper.md\"\
+  \n    },\n    {\n      \"path\": \"12_submission/final_submit_package.md\",\n  \
+  \    \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\"\
+  ,\n      \"resolved_path\": \"12_submission/final_submit_package.md\"\n    },\n\
+  \    {\n      \"path\": \"reports/training_enhancement_points.csv\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.csv\"\n    },\n    {\n  \
+  \    \"path\": \"reports/training_enhancement_points.md\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.md\"\n    },\n    {\n   \
+  \   \"path\": \"11_review/simulated_human_gate_log.csv\",\n      \"operation\":\
+  \ \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"11_review/simulated_human_gate_log.csv\"\n    }\n  ],\n  \"usage\"\
+  : {\n    \"prompt_tokens\": 11212,\n    \"completion_tokens\": 5395,\n    \"total_tokens\"\
+  : 16607,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 3072\n    },\n\
+  \    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 2929\n    },\n\
+  \    \"prompt_cache_hit_tokens\": 3072,\n    \"prompt_cache_miss_tokens\": 8140\n\
+  \  }\n}\n"
+iteration_3_blocking_queue_before: 23
+iteration_3_final_refresh:
+  refreshed: true
+  reason: final_submit_refreshed_from_latest_full_draft
+  draft: 09_paper/full_draft.md
+  final: 12_submission/final_submit_paper.md
+  draft_chars: 7182
+  final_chars: 1930
+  draft_marker_count: 6
+  final_marker_count_before: 6
+iteration_3_synced_reports:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+iteration_3_stage_targets:
+- results_freeze
+- figures
+- paper_full
+- auto_review
+- final_export
+iteration_3_stage_call_count: 5
+iteration_3_blocking_queue_after: 38
+iteration_3_no_improvement_streak: 0
+iteration_3_validation_queue_added: 38
+iteration_3_contract_queue_added: 0
+iteration_4_exit_code: 0
+iteration_4_log_tail: "{\"event\": \"stream_progress\", \"elapsed_seconds\": 30.047,\
+  \ \"chunk_count\": 1026, \"content_chars\": 0, \"reasoning_content_chars\": 2719,\
+  \ \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 60.047, \"chunk_count\": 2348, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 5778, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 90.109, \"chunk_count\": 3827, \"content_chars\": 1786, \"\
+  reasoning_content_chars\": 7050, \"idle_seconds\": 0.0, \"finish_reason\": null}\n\
+  {\n  \"status\": \"completed\",\n  \"stage\": \"final_export\",\n  \"call_id\":\
+  \ \"iteration_04_15_final_export\",\n  \"profile_id\": \"deep\",\n  \"model\": \"\
+  deepseek-v4-pro\",\n  \"response\": \"E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\
+  \\16_learning\\\\agent_runs\\\\TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX\\\
+  \\deepseek_calls\\\\iteration_04_15_final_export\\\\deepseek_response.md\",\n  \"\
+  file_actions\": [\n    {\n      \"path\": \"12_submission/final_submit_paper.md\"\
+  ,\n      \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\":\
+  \ \"allowed\",\n      \"resolved_path\": \"12_submission/final_submit_paper.md\"\
+  \n    },\n    {\n      \"path\": \"12_submission/final_submit_package.md\",\n  \
+  \    \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\"\
+  ,\n      \"resolved_path\": \"12_submission/final_submit_package.md\"\n    },\n\
+  \    {\n      \"path\": \"reports/training_enhancement_points.csv\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.csv\"\n    },\n    {\n  \
+  \    \"path\": \"reports/training_enhancement_points.md\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.md\"\n    },\n    {\n   \
+  \   \"path\": \"11_review/simulated_human_gate_log.csv\",\n      \"operation\":\
+  \ \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"11_review/simulated_human_gate_log.csv\"\n    },\n    {\n   \
+  \   \"path\": \"11_review/revision_tasks.csv\",\n      \"operation\": \"append\"\
+  ,\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"resolved_path\"\
+  : \"11_review/revision_tasks.csv\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\"\
+  : 11171,\n    \"completion_tokens\": 5586,\n    \"total_tokens\": 16757,\n    \"\
+  prompt_tokens_details\": {\n      \"cached_tokens\": 3328\n    },\n    \"completion_tokens_details\"\
+  : {\n      \"reasoning_tokens\": 2874\n    },\n    \"prompt_cache_hit_tokens\":\
+  \ 3328,\n    \"prompt_cache_miss_tokens\": 7843\n  }\n}\n"
+iteration_4_blocking_queue_before: 38
+iteration_4_final_refresh:
+  refreshed: true
+  reason: final_submit_refreshed_from_latest_full_draft
+  draft: 09_paper/full_draft.md
+  final: 12_submission/final_submit_paper.md
+  draft_chars: 2310
+  final_chars: 1146
+  draft_marker_count: 6
+  final_marker_count_before: 6
+iteration_4_synced_reports:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+iteration_4_stage_targets:
+- figures
+- paper_full
+- auto_review
+- revision
+- final_export
+iteration_4_stage_call_count: 5
+iteration_4_blocking_queue_after: 20
+iteration_4_no_improvement_streak: 0
+iteration_4_validation_queue_added: 20
+iteration_4_contract_queue_added: 0
+iteration_5_exit_code: 0
+iteration_5_log_tail: "{\"event\": \"stream_progress\", \"elapsed_seconds\": 30.047,\
+  \ \"chunk_count\": 1036, \"content_chars\": 0, \"reasoning_content_chars\": 2450,\
+  \ \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 60.047, \"chunk_count\": 2361, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 5433, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 90.187, \"chunk_count\": 3679, \"content_chars\": 0, \"reasoning_content_chars\"\
+  : 8153, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 120.203, \"chunk_count\": 5042, \"content_chars\": 0, \"\
+  reasoning_content_chars\": 10907, \"idle_seconds\": 0.0, \"finish_reason\": null}\n\
+  {\"event\": \"stream_progress\", \"elapsed_seconds\": 150.219, \"chunk_count\":\
+  \ 6389, \"content_chars\": 0, \"reasoning_content_chars\": 13962, \"idle_seconds\"\
+  : 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\", \"elapsed_seconds\"\
+  : 180.25, \"chunk_count\": 7855, \"content_chars\": 1794, \"reasoning_content_chars\"\
+  : 15013, \"idle_seconds\": 0.0, \"finish_reason\": null}\n{\"event\": \"stream_progress\"\
+  , \"elapsed_seconds\": 210.281, \"chunk_count\": 9334, \"content_chars\": 4936,\
+  \ \"reasoning_content_chars\": 15013, \"idle_seconds\": 0.0, \"finish_reason\":\
+  \ null}\n{\n  \"status\": \"completed\",\n  \"stage\": \"final_export\",\n  \"call_id\"\
+  : \"iteration_05_15_final_export\",\n  \"profile_id\": \"deep\",\n  \"model\": \"\
+  deepseek-v4-pro\",\n  \"response\": \"E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\
+  \\16_learning\\\\agent_runs\\\\TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX\\\
+  \\deepseek_calls\\\\iteration_05_15_final_export\\\\deepseek_response.md\",\n  \"\
+  file_actions\": [\n    {\n      \"path\": \"12_submission/final_submit_paper.md\"\
+  ,\n      \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\":\
+  \ \"allowed\",\n      \"resolved_path\": \"12_submission/final_submit_paper.md\"\
+  \n    },\n    {\n      \"path\": \"12_submission/final_submit_package.md\",\n  \
+  \    \"operation\": \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\"\
+  ,\n      \"resolved_path\": \"12_submission/final_submit_package.md\"\n    },\n\
+  \    {\n      \"path\": \"11_review/simulated_human_gate_log.csv\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"11_review/simulated_human_gate_log.csv\"\n    },\n    {\n   \
+  \   \"path\": \"reports/training_enhancement_points.csv\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.csv\"\n    },\n    {\n  \
+  \    \"path\": \"reports/training_enhancement_points.md\",\n      \"operation\"\
+  : \"write\",\n      \"applied\": true,\n      \"reason\": \"allowed\",\n      \"\
+  resolved_path\": \"reports/training_enhancement_points.md\"\n    }\n  ],\n  \"usage\"\
+  : {\n    \"prompt_tokens\": 11434,\n    \"completion_tokens\": 10218,\n    \"total_tokens\"\
+  : 21652,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 3328\n    },\n\
+  \    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 6836\n    },\n\
+  \    \"prompt_cache_hit_tokens\": 3328,\n    \"prompt_cache_miss_tokens\": 8106\n\
+  \  }\n}\n"
+iteration_5_blocking_queue_before: 20
+iteration_5_final_refresh:
+  refreshed: true
+  reason: final_submit_refreshed_from_latest_full_draft
+  draft: 09_paper/full_draft.md
+  final: 12_submission/final_submit_paper.md
+  draft_chars: 2825
+  final_chars: 2661
+  draft_marker_count: 6
+  final_marker_count_before: 7
+iteration_5_synced_reports:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+iteration_5_stage_targets:
+- figures
+- paper_full
+- auto_review
+- final_export
+iteration_5_stage_call_count: 4
+iteration_5_blocking_queue_after: 17
+iteration_5_no_improvement_streak: 0
+iteration_5_validation_queue_added: 17
+iteration_5_contract_queue_added: 0
+benchmark:
+  run_id: TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX
+  draft_path: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/workspace/09_paper/full_draft.md
+  draft_status: existing
+  gap_count: 0
+  queue_count: 0
+  report: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/reports/full_gap_report.md
+blocking_queue_count: 17
+iteration_stop_reason: blocking_queue_open
+final_refresh:
+  refreshed: false
+  reason: final_submit_already_consistent
+  draft: 09_paper/full_draft.md
+  final: 12_submission/final_submit_paper.md
+  draft_chars: 2825
+  final_chars: 2825
+  draft_marker_count: 6
+  final_marker_count_before: 6
+copy_risk: pass
+copy_risk_report: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/reports/copy_risk_report.csv
+copy_risk_markdown: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/reports/copy_risk_report.md
+contract_validation:
+  status: fail
+  fail_count: 18
+  warn_count: 38
+  issue_count: 56
+  report: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX/workspace/11_review/contract_validation_report.json

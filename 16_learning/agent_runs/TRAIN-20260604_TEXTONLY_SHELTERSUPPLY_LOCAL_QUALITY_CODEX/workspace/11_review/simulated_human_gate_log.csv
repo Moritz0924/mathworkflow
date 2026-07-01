@@ -1,0 +1,5 @@
+﻿stage_id,gate_id,agent_decision,evidence,residual_risk,formal_effect
+model_route,model_route_gate,pass,05_model/model_route.md,sandbox only,none
+results_freeze,results_freeze_gate,pass,14_contracts/result_contract.csv,sandbox only,none
+paper_full,draft_review_gate,pass,09_paper/full_draft.md,sandbox only,none
+compile,final_submission_gate,pass,12_submission/export_manifest.json,sandbox only,none

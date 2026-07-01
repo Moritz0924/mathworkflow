@@ -1,0 +1,247 @@
+{
+  "run_id": "TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX",
+  "status": "completed_with_open_gaps",
+  "benchmark": {
+    "run_id": "TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX",
+    "draft_path": "16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX/workspace/09_paper/full_draft.md",
+    "draft_status": "existing",
+    "gap_count": 0,
+    "queue_count": 0,
+    "report": "16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX/reports/full_gap_report.md"
+  },
+  "validation": {
+    "run_id": "TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX",
+    "status": "fail",
+    "fail_count": 4,
+    "warn_count": 1,
+    "issue_count": 5,
+    "issues": [
+      {
+        "level": "fail",
+        "item": "training_final_paper_too_thin",
+        "detail": "chars=5820, sections=6",
+        "path": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\\workspace\\12_submission\\final_submit_paper.md"
+      },
+      {
+        "level": "fail",
+        "item": "open_blocking_revision_queue",
+        "detail": "fail TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX-VAL-001: Expand 12_submission/final_submit_paper.md from the latest full_draft with substantive problem analysis, model, results, validation, and conclusion sections.",
+        "path": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\\reports\\agent_revision_queue.csv"
+      },
+      {
+        "level": "fail",
+        "item": "open_blocking_revision_queue",
+        "detail": "fail TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX-VAL-002: Rewrite simulated gate log rows so formal_effect is exactly none.",
+        "path": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\\reports\\agent_revision_queue.csv"
+      },
+      {
+        "level": "fail",
+        "item": "training_simulated_gate_has_formal_effect",
+        "detail": "{'stage_id': 'revision_stage', 'gate_id': 'revision_closure_gate', 'agent_decision': '2026-06-04T23:00:00Z', 'evidence': 'All revision tasks closed or waived; contracts updated; simulation gate passed', 'residual_risk': 'simulated', 'formal_effect': None}",
+        "path": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\\workspace\\11_review\\simulated_human_gate_log.csv"
+      },
+      {
+        "level": "warn",
+        "item": "empty_gap_report",
+        "detail": "gap_report.csv has no findings",
+        "path": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX\\reports\\gap_report.csv"
+      }
+    ],
+    "report": "16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX/reports/agent_run_validation.md"
+  },
+  "contract_validation": {
+    "status": "pass",
+    "fail_count": 0,
+    "warn_count": 31,
+    "issue_count": 31,
+    "issues": [
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:2 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:3 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:4 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:5 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:6 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:7 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:8 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:9 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:10 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:11 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:12 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:13 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:14 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:15 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:16 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:17 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:18 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:19 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:20 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:21 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:22 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:23 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:24 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:25 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:26 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:27 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "figure_contract.csv:28 status=active",
+        "path": "figure_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "citation_contract.csv:2 status=active",
+        "path": "citation_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "citation_contract.csv:3 status=active",
+        "path": "citation_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "citation_contract.csv:4 status=active",
+        "path": "citation_contract.csv"
+      },
+      {
+        "level": "warn",
+        "item": "unknown_status",
+        "detail": "citation_contract.csv:5 status=active",
+        "path": "citation_contract.csv"
+      }
+    ],
+    "report": "16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_API_CONTEXTSNAP_CODEX/workspace/11_review/contract_validation_report.json"
+  }
+}

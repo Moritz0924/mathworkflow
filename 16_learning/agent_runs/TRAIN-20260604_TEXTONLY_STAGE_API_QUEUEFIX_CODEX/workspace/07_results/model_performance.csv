@@ -1,0 +1,2 @@
+Model,RMSE,MAE,R2
+LinearRegression,12.5,9.3,0.85

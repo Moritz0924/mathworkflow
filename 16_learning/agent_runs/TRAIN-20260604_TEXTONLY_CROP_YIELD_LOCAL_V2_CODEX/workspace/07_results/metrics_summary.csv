@@ -1,0 +1,4 @@
+﻿model,cv_rmse,cv_mae,interpretability
+linear,0.34,0.27,high
+ridge,0.29,0.23,high
+quadratic_response,0.31,0.25,medium

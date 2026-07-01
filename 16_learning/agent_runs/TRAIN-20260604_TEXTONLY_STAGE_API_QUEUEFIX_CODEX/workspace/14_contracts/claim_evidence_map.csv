@@ -1,0 +1,8 @@
+claim_id,statement,evidence_type,evidence_ref,status,figure_ref,notes
+C001,"Claim 1",simulation,result_001.csv,open,F001,""
+C002,"Claim 2",simulation,result_002.csv,open,F002,""
+C003,"Claim 3",simulation,result_003.csv,open,F003,""
+C004,"Claim 4",simulation,result_004.csv,open,F004,""
+C005,"Claim 5",simulation,result_005.csv,open,F006,"fixed missing figure link"
+C006,"Claim 6",simulation,result_006.csv,open,"",""
+C007,"Claim 7",simulation,result_007.csv,open,F005,"fixed missing figure link"

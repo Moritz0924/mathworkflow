@@ -1,0 +1,4 @@
+﻿claim_id,question_id,section_id,claim_text,claim_type,evidence_type,evidence_id,result_id,figure_id,formula_id,citation_id,support_grade,boundary_condition,risk_note,status,owner,last_checked
+C1,Q1,model,光照、灌溉和施氮对温室番茄单位面积产量具有主要正向作用。,model,result,R-Q1-001,R-Q1-001,F1,EQ1,,strong,12 个训练批次范围内,小样本不能作远距离外推,ready,local_training_agent,2026-06-04T21:17:07
+C2,Q2,validation,岭回归在留一交叉验证 RMSE 上优于线性模型和二次响应面模型。,result,result,R-Q2-001,R-Q2-001,F2,EQ2,,strong,留一交叉验证,验证样本较少,ready,local_training_agent,2026-06-04T21:17:07
+C3,Q3,results,P01、P02、P03 的单位面积产量预测分别约为 7.7、8.8、9.2 kg/m2。,result,result,R-Q3-001,R-Q3-001,F3,EQ3,,strong,待评估批次变量位于训练范围附近,区间为经验残差区间,ready,local_training_agent,2026-06-04T21:17:07

@@ -1,0 +1,9 @@
+task_id,source_comment_id,target_artifact,target_location,description,required_action,acceptance_check,priority,status
+R01,REVIEW-001,12_submission/final_submit_paper.md,全文,论文字符数不足2500且章节少于7个,根据最新论文草稿扩展至至少2500字并包含7个以上章节（含问题分析、模型、结果、验证、结论）,执行 validate_agent_run.py 不再报告 training_final_paper_too_thin,fail,open
+R02,REVIEW-002,14_contracts/claim_evidence_map.csv,C01、C02、C04、C05、C07,论断缺失图表链接或链接到无效图表ID,为每个缺失图表链接的论断补充正确的图表ID（须已注册于figure_contract.csv且文件存在）,validate_agent_run.py 不再报告 training_claim_missing_figure_link,fail,open
+R03,REVIEW-003,08_figures/*.png,全部图表文件,图表文件为空（11字节），无法使用,重新运行代码生成图表并确保文件大小正常（>10KB）；更新figure_contract.csv中的文件哈希（如需要）,所有图表文件存在且可正常打开,fail,open
+R04,REVIEW-004,09_paper/或12_submission/论文草稿,图引用段落,论文中引用了未在figure_contract中注册的图表ID,将论文中所有“图F###”引用替换为合同内已注册且文件存在的ID,运行 validate_agent_run.py 后无 training_paper_unregistered_figure_reference 错误,fail,open
+R05,REVIEW-005,09_paper/或12_submission/论文草稿,数据章节,缺少数据来源、字段解释和预处理描述,增写数据章节，明确数据来源、变量列表、缺失值处理方案,审稿人确认数据部分可复现,major,open
+R06,REVIEW-006,09_paper/或12_submission/论文草稿,模型章节,缺少核心假设、公式表达和变量定义,添加模型假设小节及核心公式；补充变量符号表,审稿人确认模型描述完备,major,open
+R07,REVIEW-007,09_paper/或12_submission/论文草稿,结论章节,结论过强且未提及局限性,修改结论为基于结果的适度表述并增加局限性段落,审稿人确认结论合理,minor,open
+R08,REVIEW-008,14_contracts/claim_evidence_map.csv,全表,部分论断未绑定结果合同编号,为每条论断补充对应的result_contract.csv行号或说明原因,claim_evidence_map.csv与result_contract.csv一致,major,open

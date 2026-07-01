@@ -1,0 +1,71 @@
+{
+  "action_count": 6,
+  "results": [
+    {
+      "path": "09_paper/full_draft.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "09_paper/full_draft.md"
+    },
+    {
+      "path": "14_contracts/artifact_freeze_registry.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/artifact_freeze_registry.csv"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "10_ai_logs/paper_full_consistency_report.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "10_ai_logs/paper_full_consistency_report.md"
+    },
+    {
+      "path": "09_paper/missing_evidence_report.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "09_paper/missing_evidence_report.md"
+    },
+    {
+      "path": "14_contracts/artifact_freeze_registry.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/artifact_freeze_registry.csv"
+    }
+  ],
+  "protocol_issues": [],
+  "protocol_history": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 4991,
+      "completion_tokens": 7823,
+      "total_tokens": 12814,
+      "prompt_tokens_details": {
+        "cached_tokens": 3328
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3125
+      },
+      "prompt_cache_hit_tokens": 3328,
+      "prompt_cache_miss_tokens": 1663
+    },
+    "reasoning_content_chars": 6862,
+    "stream": true,
+    "chunk_count": 7825,
+    "content_chars": 10657,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\deepseek_calls\\iteration_03_10_paper_full\\deepseek_stream_status.jsonl"
+  }
+}

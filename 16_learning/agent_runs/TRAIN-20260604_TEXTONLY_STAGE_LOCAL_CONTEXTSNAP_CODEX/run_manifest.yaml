@@ -1,0 +1,28 @@
+run_id: TRAIN-20260604_TEXTONLY_STAGE_LOCAL_CONTEXTSNAP_CODEX
+mode: training_sandbox
+status: needs_external_api_consent
+created_at: '2026-06-04T04:31:09'
+workspace: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_LOCAL_CONTEXTSNAP_CODEX/workspace
+problem: 00_problem/inbox/text_only_color_concentration_problem.md
+max_iterations: 3
+formal_protected_snapshot: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_LOCAL_CONTEXTSNAP_CODEX/formal_protected_snapshot.csv
+agent_prompt: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_LOCAL_CONTEXTSNAP_CODEX/workspace/agent_prompt.md
+prompt_route_manifest:
+  csv_path: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_LOCAL_CONTEXTSNAP_CODEX/reports/prompt_route_manifest.csv
+  markdown_path: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_LOCAL_CONTEXTSNAP_CODEX/reports/prompt_route_manifest.md
+  bundle_path: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_LOCAL_CONTEXTSNAP_CODEX/reports/stage_prompt_bundle.md
+  stage_count: 16
+  missing_count: 0
+  prompt_set: training_sandbox_backup
+environment_diagnostics: 16_learning/agent_runs/TRAIN-20260604_TEXTONLY_STAGE_LOCAL_CONTEXTSNAP_CODEX/reports/environment_diagnostics.json
+stage_execution_enabled: true
+training_required_outputs:
+- reports/training_enhancement_points.csv
+- reports/training_enhancement_points.md
+- workspace/09_paper/full_draft.md
+- workspace/12_submission/final_submit_paper.md
+- workspace/12_submission/final_submit_package.md
+updated_at: '2026-06-04T04:31:09'
+agent_command_present: true
+external_api_consent_required: true
+external_api_consent_scope: training sandbox problem, prompts, workspace context

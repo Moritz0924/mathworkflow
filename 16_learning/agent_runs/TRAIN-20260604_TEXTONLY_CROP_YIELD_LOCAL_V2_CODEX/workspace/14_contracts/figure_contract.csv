@@ -1,0 +1,4 @@
+﻿figure_id,title,result_id,evidence_source,output_svg,output_png,output_pdf,used_in_section,latex_label,quality_score,status,owner,notes
+F1,环境管理变量与产量关系图,R-Q1-001,03_data/raw/crop_yield_batches.csv,08_figures/output/crop_driver_relationship.svg,,,数据分析,fig:crop-driver-relationship,4.8,ready,local_training_agent,
+F2,候选模型交叉验证误差对比图,R-Q2-001,07_results/metrics_summary.csv,08_figures/output/crop_model_error_compare.svg,,,模型评价,fig:crop-model-error,4.8,ready,local_training_agent,
+F3,待评估批次产量预测区间图,R-Q3-001,07_results/q3_results.csv,08_figures/output/crop_prediction_interval.svg,,,结果分析,fig:crop-prediction-interval,4.8,ready,local_training_agent,

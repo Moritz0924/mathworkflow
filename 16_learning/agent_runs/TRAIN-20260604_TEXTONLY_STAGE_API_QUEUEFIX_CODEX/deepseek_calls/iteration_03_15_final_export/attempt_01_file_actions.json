@@ -1,0 +1,70 @@
+{
+  "action_count": 6,
+  "results": [
+    {
+      "path": "12_submission/final_submit_paper.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_submission/final_submit_paper.md"
+    },
+    {
+      "path": "12_submission/final_submit_package.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_submission/final_submit_package.md"
+    },
+    {
+      "path": "reports/training_enhancement_points.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "reports/training_enhancement_points.csv"
+    },
+    {
+      "path": "reports/training_enhancement_points.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "reports/training_enhancement_points.md"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "10_ai_logs/final_export_log.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "10_ai_logs/final_export_log.md"
+    }
+  ],
+  "protocol_issues": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 9743,
+      "completion_tokens": 11123,
+      "total_tokens": 20866,
+      "prompt_tokens_details": {
+        "cached_tokens": 3072
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5108
+      },
+      "prompt_cache_hit_tokens": 3072,
+      "prompt_cache_miss_tokens": 6671
+    },
+    "reasoning_content_chars": 10942,
+    "stream": true,
+    "chunk_count": 11124,
+    "content_chars": 11846,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_QUEUEFIX_CODEX\\deepseek_calls\\iteration_03_15_final_export\\deepseek_stream_status.jsonl"
+  }
+}

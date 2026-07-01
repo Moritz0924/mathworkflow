@@ -1,0 +1,113 @@
+{
+  "action_count": 12,
+  "results": [
+    {
+      "path": "14_contracts/figure_contract.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "14_contracts/figure_contract.csv"
+    },
+    {
+      "path": "08_figures/fig1_scatter.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig1_scatter.svg"
+    },
+    {
+      "path": "08_figures/fig2_residuals.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig2_residuals.svg"
+    },
+    {
+      "path": "08_figures/fig3_coefficients.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig3_coefficients.svg"
+    },
+    {
+      "path": "08_figures/fig4_pred_vs_actual.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig4_pred_vs_actual.svg"
+    },
+    {
+      "path": "08_figures/fig5_feature_importance.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig5_feature_importance.svg"
+    },
+    {
+      "path": "08_figures/fig6_error_distribution.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig6_error_distribution.svg"
+    },
+    {
+      "path": "08_figures/fig7_model_comparison.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig7_model_comparison.svg"
+    },
+    {
+      "path": "08_figures/fig8_sensitivity_heatmap.svg",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/fig8_sensitivity_heatmap.svg"
+    },
+    {
+      "path": "08_figures/figures_stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "08_figures/figures_stage_summary.md"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "append",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "10_ai_logs/iteration_03_08_figures_log.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "10_ai_logs/iteration_03_08_figures_log.md"
+    }
+  ],
+  "protocol_issues": [],
+  "protocol_history": [],
+  "network_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 11808,
+      "completion_tokens": 16931,
+      "total_tokens": 28739,
+      "prompt_tokens_details": {
+        "cached_tokens": 1792
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10927
+      },
+      "prompt_cache_hit_tokens": 1792,
+      "prompt_cache_miss_tokens": 10016
+    },
+    "reasoning_content_chars": 25700,
+    "stream": true,
+    "chunk_count": 16933,
+    "content_chars": 16019,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260604_TEXTONLY_STAGE_API_USERAPPROVED_CODEX\\deepseek_calls\\iteration_03_08_figures\\deepseek_stream_status.jsonl"
+  }
+}

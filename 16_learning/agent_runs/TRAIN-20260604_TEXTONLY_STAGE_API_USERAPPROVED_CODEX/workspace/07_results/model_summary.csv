@@ -1,0 +1,10 @@
+metric,value
+R-squared,0.85
+Adjusted R-squared,0.83
+MSE,12.5
+Coefficient_X1,2.3
+Coefficient_X2,-1.1
+Coefficient_X3,0.05
+Intercept,5.0
+F-statistic,45.6
+Prob(F-statistic),0.000

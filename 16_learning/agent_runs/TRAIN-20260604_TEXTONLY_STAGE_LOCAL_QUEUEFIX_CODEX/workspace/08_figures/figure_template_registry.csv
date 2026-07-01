@@ -1,0 +1,9 @@
+﻿template_id,template_name,figure_family,best_for,not_for,required_data_format,default_palette,output_format,code_file,quality_notes
+TPL_001,排序坡度图,对比评价图,评价排序、方案前后变化,类别过多超过12个,"long format: item, stage, value",muted_blue_gold,svg/png/pdf,templates/publication_advanced.py,优于普通柱状图，突出排名变化
+TPL_002,相关/权重热力图,关系矩阵图,变量相关、指标权重、误差矩阵,样本量过小或矩阵稀疏,wide numeric matrix,teal_orange_diverging,svg/png/pdf,templates/publication_advanced.py,变量排序并标注关键单元格
+TPL_003,Pareto前沿图,优化结果图,多目标优化、方案权衡,单目标结果,"columns: objective_x, objective_y, label(optional)",deep_blue_vermilion,svg/png/pdf,templates/publication_advanced.py,标出推荐解、极端解和支配关系
+TPL_004,网络关系图,网络图,节点关系、路径、传播、流量,节点过密且无筛选,"edge list: source, target, weight",tech_purple_cyan,svg/png/pdf,templates/networkx_template.py,突出关键节点，弱化次要边
+TPL_005,空间分布图,空间图,地理分布、路径、区域强度,无空间字段,geodataframe or lon/lat table,nature_green_gold,svg/png/pdf,templates/geopandas_map_template.py,注意投影和比例尺说明
+TPL_006,残差诊断组图,检验图,回归预测误差、模型检验,无预测值或真实值,"columns: y_true, y_pred, residual",teal_orange_diverging,svg/png/pdf,templates/publication_advanced.py,必须配误差指标表
+TPL_007,结果摘要卡片图,论文增强图,摘要式展示核心数值、方案建议,没有明确结论指标,"metric, value, note",muted_blue_gold,svg/png/pdf,templates/publication_advanced.py,适合结果段开头或结论前
+TPL_008,机制/流程图,结构图,模型链路、变量关系、算法流程,纯装饰流程,nodes and edges or mermaid/dot,deep_blue_vermilion,svg/png/pdf,templates/graphviz_mechanism_template.dot,必须和公式变量一致

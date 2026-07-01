@@ -1,0 +1,6 @@
+﻿result_id,question_id,model_id,metric_name,metric_value,unit,source_file,source_row_or_cell,code_file,run_id,random_seed,assumption_ids,used_by_figure_ids,used_by_claim_ids,freeze_status,freeze_time,owner,notes
+R-Q1-001,Q1,M-LIN,dominant_driver_light_irrigation,positive,direction,07_results/metrics_summary.csv,analysis,06_code/run_all.py,local_crop_training,42,A1,F1,C1,ready,2026-06-04T21:15:49,local_training_agent,text-only crop-yield sandbox
+R-Q2-001,Q2,M-RIDGE,ridge_cv_rmse,0.29,kg/m2,07_results/metrics_summary.csv,ridge,06_code/run_all.py,local_crop_training,42,A1,F2,C2,ready,2026-06-04T21:15:49,local_training_agent,best local validation metric
+R-Q3-001,Q3,M-RIDGE,P01_pred,7.7,kg/m2,07_results/q3_results.csv,P01,06_code/run_all.py,local_crop_training,42,A1,F3,C3,ready,2026-06-04T21:15:49,local_training_agent,
+R-Q3-002,Q3,M-RIDGE,P02_pred,8.8,kg/m2,07_results/q3_results.csv,P02,06_code/run_all.py,local_crop_training,42,A1,F3,C3,ready,2026-06-04T21:15:49,local_training_agent,
+R-Q3-003,Q3,M-RIDGE,P03_pred,9.2,kg/m2,07_results/q3_results.csv,P03,06_code/run_all.py,local_crop_training,42,A1,F3,C3,ready,2026-06-04T21:15:49,local_training_agent,

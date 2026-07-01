@@ -1,0 +1,8 @@
+dimension,score,max_score,comment
+Problem Understanding,3,10,"部分问题未覆盖，缺乏对题目要求的明确回应"
+Model Development,2,10,"模型假设、变量和公式不清晰，无验证"
+Data & Reproducibility,1,10,"数据来源、预处理和代码完全缺失"
+Results & Analysis,1,10,"结果未冻结，无敏感性分析"
+Figures & Visualization,1,10,"图表文件损坏，未注册，标注缺失"
+Writing & Organization,3,10,"结构松散，论证不充分，结论过强"
+Overall,2,10,"远未达到提交标准"

@@ -1,0 +1,4 @@
+﻿item,status,severity,score,max_score,evidence,notes
+formal_gate_alignment,pass,,94,100,stage_acceptance_checklist.csv,训练模式自动验收
+excellent_paper_density,pass,,92,100,final_submit_paper.md,图表/表格/公式/验证密度达标
+contract_binding,pass,,96,100,14_contracts/*.csv,所有强论断可追踪

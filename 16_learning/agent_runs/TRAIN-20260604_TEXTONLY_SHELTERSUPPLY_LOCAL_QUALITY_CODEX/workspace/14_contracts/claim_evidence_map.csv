@@ -1,0 +1,6 @@
+﻿claim_id,question_id,section_id,claim_text,claim_type,evidence_type,evidence_id,result_id,figure_id,formula_id,citation_id,support_grade,boundary_condition,risk_note,status,owner,last_checked
+C001,Q1,模型建立,最近仓库贪心模型可作为路径优化基线，但总距离和迟到惩罚较高。,model,result,R001,R001,F001,EQ1,,strong,9个需求点纯文本样本,不能外推到大规模路网,ready,local_training_agent,2026-06-05T00:07:32
+C002,Q2,模型评价,鲁棒路径模型在风险得分上优于节约里程模型，同时保持3辆车可执行。,result,result,R002,R002,F002;F003,EQ1;EQ2,,strong,道路可靠度按题面给定,成本略高于最短距离方案,ready,local_training_agent,2026-06-05T00:07:32
+C003,Q2,风险分析,道路可靠度下降时风险变化最敏感，最大风险增幅为18.5%。,result,result,R005,R005,F004;F006,EQ1,,strong,三类扰动情景,情景数量有限,ready,local_training_agent,2026-06-05T00:07:32
+C004,Q3,调度方案,推荐方案使用3辆车完成全部需求点服务，容量约束满足。,result,result,R004,R004,F005,EQ2;EQ3,,strong,车辆容量为150单位,未考虑车辆故障,ready,local_training_agent,2026-06-05T00:07:32
+C005,Q3,敏感性分析,需求量上升15%时应增加1辆备用车以保持时间窗可行性。,recommendation,result,R005,R005,F006,EQ2;EQ3,,moderate,需求扰动不超过15%,更高扰动需重新求解,ready,local_training_agent,2026-06-05T00:07:32

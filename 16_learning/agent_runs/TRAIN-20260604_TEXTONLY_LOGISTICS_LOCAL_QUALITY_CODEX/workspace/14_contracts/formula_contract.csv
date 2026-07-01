@@ -1,0 +1,4 @@
+﻿formula_id,used_in_section,formula_latex,meaning,symbols_defined,assumption_ids,result_ids,status,owner,notes
+EQ1,模型建立,"\min Z=\sum_{i,j} d_{ij}x_{ij}+\lambda\sum_{i,j}(1-r_{ij})x_{ij}",距离与道路风险联合目标,d:距离; x:路径选择; r:道路可靠度; lambda:风险权重,A1,R002;R003,ready,local_training_agent,
+EQ2,容量约束,\sum_{i\in K_m}q_i\le Q,车辆容量约束,q:需求量; Q:车辆容量; K_m:车辆m服务集合,A1,R004,ready,local_training_agent,
+EQ3,时间窗约束,a_i\le t_i\le b_i,需求点服务时间窗,"a,b:时间窗上下界; t:到达时刻",A1,R002,ready,local_training_agent,

@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-06-04T23:53:34",
+  "source_path": "00_problem/inbox/text_only_emergency_logistics_problem.md",
+  "workspace_statement": "00_problem/problem_statement.md",
+  "source": {
+    "title": "城市应急物资配送路径优化问题",
+    "sha256": "2abb118bb2f5257a965dda11c7263e0f596bbedf464d0e910fe33c56b1e3e22f",
+    "length": 1318,
+    "markers": [
+      "R",
+      "G",
+      "B"
+    ],
+    "compact_prefix_sha256": "291f43236c8aeb26c73b47430e982d3875ebe9ef4ae87c940c26e2a604bd1ab5"
+  },
+  "statement": {
+    "title": "城市应急物资配送路径优化问题",
+    "sha256": "2abb118bb2f5257a965dda11c7263e0f596bbedf464d0e910fe33c56b1e3e22f",
+    "length": 1318,
+    "markers": [
+      "R",
+      "G",
+      "B"
+    ],
+    "compact_prefix_sha256": "291f43236c8aeb26c73b47430e982d3875ebe9ef4ae87c940c26e2a604bd1ab5"
+  }
+}

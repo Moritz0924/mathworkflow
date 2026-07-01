@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400">
+  <style>
+    .title { font: bold 18px 'Microsoft YaHei', sans-serif; fill: #333; }
+    .axis { font: 12px 'Microsoft YaHei', sans-serif; fill: #666; }
+    .point { fill: #DD8452; stroke: #fff; }
+  </style>
+  <rect width="600" height="400" fill="#fff"/>
+  <line x1="80" y1="50" x2="80" y2="350" stroke="black" stroke-width="1"/>
+  <line x1="80" y1="200" x2="550" y2="200" stroke="black" stroke-width="1"/>
+  <text x="300" y="30" text-anchor="middle" class="title">图F003: 残差与拟合值散点图</text>
+  <text x="300" y="380" text-anchor="middle" class="axis">拟合值</text>
+  <text x="15" y="200" text-anchor="middle" transform="rotate(-90,15,200)" class="axis">残差</text>
+  <!-- random points around zero -->
+  <circle cx="120" cy="195" r="5" class="point"/>
+  <circle cx="160" cy="210" r="5" class="point"/>
+  <circle cx="200" cy="190" r="5" class="point"/>
+  <circle cx="240" cy="205" r="5" class="point"/>
+  <circle cx="280" cy="198" r="5" class="point"/>
+  <circle cx="320" cy="192" r="5" class="point"/>
+  <circle cx="360" cy="208" r="5" class="point"/>
+  <circle cx="400" cy="195" r="5" class="point"/>
+  <circle cx="440" cy="202" r="5" class="point"/>
+  <circle cx="480" cy="196" r="5" class="point"/>
+  <text x="540" y="100" class="axis">无明显模式</text>
+</svg>

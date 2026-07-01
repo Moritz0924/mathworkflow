@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.secret
+*.zip
+
+node_modules/
+11_dashboard/web/node_modules/
+
+10_ai_logs/mcp_*.log
+10_ai_logs/*_secret*.json
+16_learning/agent_runs/*/logs/*secret*
+__pycache__/
+.pytest_cache/

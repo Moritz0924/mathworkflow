@@ -1,0 +1,73 @@
+% !TEX program = xelatex
+% main.tex - 数学建模论文主文件
+% 模板仅提供结构，不包含任何题目事实或结果
+\documentclass[12pt,a4paper]{ctexart}
+
+% ---------- 基本包 ----------
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ---------- 标签命名规范（说明见 label_naming_rules.md） ----------
+% 图: fig:q1_model_diagram, fig:q2_error_compare ...
+% 表: tab:q1_coefficients, tab:q3_predictions ...
+% 公式: eq:linear_model, eq:r2_formula ...
+% 节: sec:model_q1, sec:result_q2 ...
+% 算法: algo:ridge_regression ...
+
+% ---------- 后续合同接口 ----------
+% 所有数值结果必须来自 result_contract.csv 中冻结条目
+% 所有图表必须先在 figure_contract.csv 中登记
+% 所有公式必须在 formula_contract.csv 中登记
+% 所有引用必须在 citation_contract.csv 中登记
+% 在插入正文时，通过 \label{} 和 \ref{} 引用，并在 claim_evidence_map.csv 中记录映射
+
+\title{颜色与物质浓度的辨识问题}  % 题目来自 problem_statement，仅为论文标题，不代表模型输出
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% ---------- 摘要 ----------
+\input{sections/00_abstract.tex}
+
+% ---------- 关键词 ----------
+% 由建模阶段添加
+
+% ---------- 正文 ----------
+\input{sections/01_restatement.tex}
+\input{sections/02_assumptions.tex}
+\input{sections/03_notation.tex}
+\input{sections/04_model_q1.tex}
+\input{sections/05_model_q2.tex}
+\input{sections/06_model_q3.tex}
+\input{sections/07_sensitivity.tex}
+\input{sections/08_conclusion.tex}
+
+% ---------- 参考文献 ----------
+\bibliographystyle{plain}
+\bibliography{reference.bib}
+
+% ---------- 附录 ----------
+\appendix
+\input{appendix/code_list.tex}
+
+\end{document}

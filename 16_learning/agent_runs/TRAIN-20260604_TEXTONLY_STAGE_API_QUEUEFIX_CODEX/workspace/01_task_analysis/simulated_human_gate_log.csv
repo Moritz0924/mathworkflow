@@ -1,0 +1,2 @@
+timestamp,stage,gate_type,action,actor,notes,formal_effect
+2026-06-04T12:00:00,task_analysis,simulated_soft,blocked,codex,Missing 00_problem/problem_statement.md; cannot proceed.,none

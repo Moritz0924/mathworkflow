@@ -1,0 +1,6 @@
+{"event": "stream_start", "elapsed_seconds": 0.0, "chunk_count": 0, "content_chars": 0, "reasoning_content_chars": 0, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:38:11"}
+{"event": "stream_progress", "elapsed_seconds": 30.031, "chunk_count": 1112, "content_chars": 0, "reasoning_content_chars": 4912, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:38:41"}
+{"event": "stream_progress", "elapsed_seconds": 60.031, "chunk_count": 2555, "content_chars": 0, "reasoning_content_chars": 10654, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:39:11"}
+{"event": "stream_progress", "elapsed_seconds": 90.094, "chunk_count": 4127, "content_chars": 0, "reasoning_content_chars": 16477, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:39:41"}
+{"event": "stream_progress", "elapsed_seconds": 120.172, "chunk_count": 5961, "content_chars": 3487, "reasoning_content_chars": 19388, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T02:40:11"}
+{"event": "stream_done", "elapsed_seconds": 135.875, "chunk_count": 6818, "content_chars": 6665, "reasoning_content_chars": 19388, "idle_seconds": 0.0, "finish_reason": "stop", "logged_at": "2026-06-04T02:40:26"}

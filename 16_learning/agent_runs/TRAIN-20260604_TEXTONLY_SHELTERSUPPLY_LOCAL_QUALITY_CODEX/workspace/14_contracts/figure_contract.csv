@@ -1,0 +1,7 @@
+﻿figure_id,title,result_id,evidence_source,output_svg,output_png,output_pdf,used_in_section,latex_label,quality_score,status,owner,notes
+F001,需求点空间服务圈图,R001,03_data/raw/logistics_route_data.csv,08_figures/output/F001.svg,08_figures/output/F001.png,,结果分析,fig:f001,4.8,ready,local_training_agent,chart_type=network; 非默认蓝金配色; 中文标注
+F002,三类模型总距离对比图,R002,07_results/model_metrics.csv,08_figures/output/F002.svg,08_figures/output/F002.png,,结果分析,fig:f002,4.8,ready,local_training_agent,chart_type=bar; 非默认蓝金配色; 中文标注
+F003,鲁棒路径方案甘特图,R002,07_results/route_plan.csv,08_figures/output/F003.svg,08_figures/output/F003.png,,结果分析,fig:f003,4.8,ready,local_training_agent,chart_type=gantt; 非默认蓝金配色; 中文标注
+F004,道路可靠度风险热力图,R003,03_data/raw/logistics_route_data.csv,08_figures/output/F004.svg,08_figures/output/F004.png,,结果分析,fig:f004,4.8,ready,local_training_agent,chart_type=heatmap; 非默认蓝金配色; 中文标注
+F005,车辆装载率与时间窗矩阵图,R004,07_results/route_plan.csv,08_figures/output/F005.svg,08_figures/output/F005.png,,结果分析,fig:f005,4.8,ready,local_training_agent,chart_type=matrix; 非默认蓝金配色; 中文标注
+F006,敏感性情景对比图,R005,07_results/sensitivity_summary.csv,08_figures/output/F006.svg,08_figures/output/F006.png,,结果分析,fig:f006,4.8,ready,local_training_agent,chart_type=scenario; 非默认蓝金配色; 中文标注
