@@ -1,0 +1,15 @@
+{
+  "run_id": "TRAIN-20260603_TEXTONLY_STAGE_LOCAL_TOPICFIX_CODEX",
+  "status": "pass",
+  "fail_count": 0,
+  "warn_count": 1,
+  "issue_count": 1,
+  "issues": [
+    {
+      "level": "warn",
+      "item": "empty_gap_report",
+      "detail": "gap_report.csv has no findings",
+      "path": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_LOCAL_TOPICFIX_CODEX\\reports\\gap_report.csv"
+    }
+  ]
+}
