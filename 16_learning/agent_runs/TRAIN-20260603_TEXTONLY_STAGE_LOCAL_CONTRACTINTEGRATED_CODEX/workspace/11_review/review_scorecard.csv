@@ -1,0 +1,4 @@
+﻿item,status,severity,evidence,notes
+text_only_problem,pass,,00_problem/problem_statement.md,no image dependency
+contracts_populated,pass,,14_contracts/*.csv,"results, claims, figures, formulas present"
+three_iteration_training,pass,,iteration=1,local executor iteration marker

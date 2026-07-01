@@ -1,0 +1,21 @@
+{
+  "stage": "final_export",
+  "generated_at": "2026-06-03T20:49:12",
+  "fail_count": 1,
+  "warn_count": 1,
+  "issue_count": 2,
+  "issues": [
+    {
+      "level": "warn",
+      "item": "unknown_status",
+      "detail": "revision_tasks.csv:2 status=open",
+      "path": "revision_tasks.csv"
+    },
+    {
+      "level": "fail",
+      "item": "revision_task_unresolved",
+      "detail": "REV-001 severity=major, status=open",
+      "path": "14_contracts/revision_tasks.csv"
+    }
+  ]
+}

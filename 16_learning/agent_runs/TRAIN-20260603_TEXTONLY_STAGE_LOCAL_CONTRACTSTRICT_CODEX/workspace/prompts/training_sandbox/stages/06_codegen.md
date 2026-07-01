@@ -1,0 +1,182 @@
+# Training Sandbox Prompt Backup: codegen
+
+Formal source prompt: `prompts/stages/06_codegen.md`
+
+This is a sandbox-specific backup/fine-tuned prompt derived from the formal prompt system. It must not modify the formal prompt files.
+
+Sandbox overlay rules:
+- Work only inside the sandbox workspace and reply through JSON file actions.
+- Treat formal human gates as simulated sandbox gates; write evidence to `11_review/simulated_human_gate_log.csv` with `formal_effect=none`.
+- Preserve formal contract hierarchy: contracts before paper claims, figures registered before citation, results frozen before analysis.
+- Preserve the locked problem topic throughout the sandbox run; do not drift to unrelated prior benchmark topics such as AQI or wine quality.
+- Training enhancement points are candidate workflow improvements only. Write them to `reports/training_enhancement_points.csv` and `.md`; do not apply them to formal prompts here.
+- Any later promotion into formal workflow must be suggestion-only and pass validation, copy-risk, no open fail/major queue, contract checks, and human gate.
+
+## Formal Prompt Body
+
+# 阶段提示词：`codegen` - 分问题代码生成
+
+> 中文注释：使用阶段为 `codegen`；使用场景是在模型路线经人工确认后，按问题逐个生成、运行和记录可复现求解代码。
+
+## 1. 阶段身份
+
+```yaml
+stage_id: codegen
+stage_name: 分问题代码生成
+stage_order: 6
+gate_type: soft
+execution_mode: deep_sequential
+roadmap_item: P4
+```
+
+## 2. 目标
+
+一次只为一个问题生成并运行可复现求解代码，产出候选结果文件。算力集中在模型路线忠实实现、数据读取、随机性控制、运行日志、错误处理和结果来源可追踪上。
+
+## 3. 必需输入
+
+```text
+- 05_model/model_route.md
+- 05_model/fallback_plan.md
+- 03_data/ 或已确认数据源
+```
+
+## 4. 可选输入
+
+```text
+- 14_contracts/formula_contract.csv
+- 04_eda/
+- 人工实现约束
+```
+
+## 5. 允许读取路径
+
+```text
+- AGENTS.md
+- workflow_state.yaml
+- config/
+- 00_problem/
+- 01_task_analysis/
+- 03_data/
+- 04_eda/
+- 05_model/
+- templates/code/
+```
+
+## 6. 允许写入路径
+
+```text
+- 06_code/
+- 07_results/
+- 10_ai_logs/
+- 11_review/
+```
+
+## 7. 禁止动作
+
+```text
+- 不得同时生成多个问题的代码。
+- 不得绕过已批准模型路线。
+- 不得将未运行代码的输出写成结果。
+- 不得写论文结果分析。
+- 不得静默替换模型以追求运行成功。
+- 不得把调试输出伪装为正式结果。
+```
+
+## 8. 必需输出
+
+```text
+- 对应问题的代码文件
+- 运行日志
+- 候选结果文件
+- 随机种子、依赖、输入文件和输出文件说明
+- 失败或复现风险说明
+```
+
+## 9. 合同更新
+
+```text
+可更新：建议只生成 result_contract 候选说明，正式冻结在 results_freeze 阶段
+只读：formula_contract.csv
+```
+
+## 10. 允许技能
+
+```text
+- 无
+```
+
+## 11. 代理提示词模板
+
+```text
+你正在执行 codegen 阶段。
+
+输入核验：
+1. 确认模型路线已经人工批准或任务包明确授权。
+2. 读取当前指定问题的模型、变量、公式、数据路径和备选方案。
+3. 只处理当前问题，不跨问题并行。
+
+阶段目标：
+按已批准模型路线生成可复现代码，真实运行并记录候选结果；失败时记录失败原因，不伪造结果。
+
+深度分析：
+1. 将模型路线拆成数据读取、预处理、模型计算、验证、输出保存和日志记录步骤。
+2. 明确每个输入文件、字段、单位和清洗规则；任何与 EDA 不一致的处理都要记录。
+3. 若模型涉及随机性，设置并记录 random_seed；若无随机性，说明 deterministic。
+4. 结果文件必须可被 results_freeze 追踪到 source_file、source_row_or_cell、code_file、run_id。
+5. 如果代码无法实现主模型，先尝试最小修复；仍失败时按 fallback_plan 降级，不自行发明模型。
+
+证据绑定：
+候选结果只绑定代码运行日志和输出文件，不进入论文事实；正式 result_contract 冻结留给 results_freeze。
+
+风险清单：
+记录依赖缺失、数据读取失败、模型不收敛、随机性、结果异常、运行时间和复现风险。
+
+自检清单：
+1. 只处理一个问题。
+2. 代码真实运行或失败已记录。
+3. 结果文件来自运行输出。
+4. 没有论文结果分析。
+5. 没有绕过模型路线。
+6. 校验命令已运行或记录 not_run。
+
+人工确认输出：
+请人类确认代码是否忠实实现已批准模型，而不是为了方便采用捷径。
+```
+
+## 12. 校验命令
+
+```bash
+python scripts/run_current_stage.py --question Q1
+```
+
+```bash
+python scripts/validate_contracts.py --stage current --warn-only
+```
+
+## 13. 人工确认问题
+
+```text
+生成的代码是否实现了已批准模型，而不是为了运行方便采用了未批准捷径？
+```
+
+## 14. 失败恢复
+
+| 失败模式 | 安全恢复 |
+|---|---|
+| 代码运行失败 | 修复最小代码路径并重跑，保留日志。 |
+| 模型路线不可实现 | 返回 model_route 记录备选模型。 |
+| 数据读取失败 | 返回 eda 或数据准备阶段。 |
+| 结果异常 | 标记为候选结果，不进入冻结。 |
+| 随机性不可复现 | 固定种子或记录无法复现原因，不冻结。 |
+
+## 15. 完成条件
+
+```text
+- 指定问题代码存在并可解释。
+- 运行日志和真实候选结果已保存。
+- 候选结果可追踪到输入、代码、run_id 和输出文件。
+- 没有把候选结果直接写成论文结论。
+- 未触发本阶段禁止动作。
+```
+

@@ -1,0 +1,6 @@
+﻿result_id,question_id,model_id,metric_name,metric_value,unit,source_file,source_row_or_cell,code_file,run_id,random_seed,assumption_ids,used_by_figure_ids,used_by_claim_ids,freeze_status,freeze_time,owner,notes
+R-Q1-001,Q1,M-LIN,linear_cv_rmse,0.118,mg/L,07_results/metrics_summary.csv,row1,06_code/run_all.py,local_training,42,A1,F1;F2,C1,ready,2026-06-03T20:52:10,local_training_agent,synthetic text-only training run
+R-Q2-001,Q2,M-ENS,ensemble_cv_rmse,0.083,mg/L,07_results/metrics_summary.csv,row2,06_code/run_all.py,local_training,42,A1,F2,C2,ready,2026-06-03T20:52:10,local_training_agent,best validation metric
+R-Q3-001,Q3,M-ENS,T01_pred,1.68,mg/L,07_results/q3_results.csv,T01,06_code/run_all.py,local_training,42,A1,F3,C3,ready,2026-06-03T20:52:10,local_training_agent,
+R-Q3-002,Q3,M-ENS,T02_pred,3.21,mg/L,07_results/q3_results.csv,T02,06_code/run_all.py,local_training,42,A1,F3,C3,ready,2026-06-03T20:52:10,local_training_agent,
+R-Q3-003,Q3,M-ENS,T03_pred,4.35,mg/L,07_results/q3_results.csv,T03,06_code/run_all.py,local_training,42,A1,F3,C3,ready,2026-06-03T20:52:10,local_training_agent,
