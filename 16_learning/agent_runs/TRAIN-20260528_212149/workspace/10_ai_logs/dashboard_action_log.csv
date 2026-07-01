@@ -1,0 +1,14 @@
+﻿action_id,timestamp,action,command,job_id,status,exit_code,confirmation,notes
+ACT-20260525_084850-001,2026-05-25T08:48:50,check-gates,I:\py\pybenti_1\python.exe scripts/check_gates.py,JOB-20260525_084850-001,started,,,dashboard check action
+ACT-END-JOB-20260525_084850-001,2026-05-25T08:48:51,check-gates,I:\py\pybenti_1\python.exe scripts/check_gates.py,JOB-20260525_084850-001,passed,0,,dashboard check action
+ACT-20260528_145643-001,2026-05-28T14:56:43,check-gates,E:\python\python_benti\python.exe scripts/check_gates.py,JOB-20260528_145643-001,started,,,dashboard check action
+ACT-END-JOB-20260528_145643-001,2026-05-28T14:56:43,check-gates,E:\python\python_benti\python.exe scripts/check_gates.py,JOB-20260528_145643-001,passed,0,,dashboard check action
+ACT-20260528_145649-002,2026-05-28T14:56:49,check-skill-router,E:\python\python_benti\python.exe scripts/check_skill_router.py --validate-policy,JOB-20260528_145649-002,started,,,dashboard check action
+ACT-END-JOB-20260528_145649-002,2026-05-28T14:56:49,check-skill-router,E:\python\python_benti\python.exe scripts/check_skill_router.py --validate-policy,JOB-20260528_145649-002,passed,0,,dashboard check action
+ACT-20260528_212143-001,2026-05-28T21:21:43,benchmark-TRAIN-20260528_150756,E:\python\python_benti\python.exe scripts/benchmark_agent_run.py --run-id TRAIN-20260528_150756,JOB-20260528_212143-001,started,,,benchmark run_id=TRAIN-20260528_150756
+ACT-END-JOB-20260528_212143-001,2026-05-28T21:21:43,benchmark-TRAIN-20260528_150756,E:\python\python_benti\python.exe scripts/benchmark_agent_run.py --run-id TRAIN-20260528_150756,JOB-20260528_212143-001,passed,0,,benchmark run_id=TRAIN-20260528_150756
+ACT-20260528_212146-002,2026-05-28T21:21:46,validate-TRAIN-20260528_150756,E:\python\python_benti\python.exe scripts/validate_agent_run.py --run-id TRAIN-20260528_150756,JOB-20260528_212146-002,started,,,validate run_id=TRAIN-20260528_150756
+ACT-END-JOB-20260528_212146-002,2026-05-28T21:21:47,validate-TRAIN-20260528_150756,E:\python\python_benti\python.exe scripts/validate_agent_run.py --run-id TRAIN-20260528_150756,JOB-20260528_212146-002,passed,0,,validate run_id=TRAIN-20260528_150756
+ACT-20260528_212147-003,2026-05-28T21:21:47,benchmark-TRAIN-20260528_150756,E:\python\python_benti\python.exe scripts/benchmark_agent_run.py --run-id TRAIN-20260528_150756,JOB-20260528_212147-003,started,,,benchmark run_id=TRAIN-20260528_150756
+ACT-END-JOB-20260528_212147-003,2026-05-28T21:21:47,benchmark-TRAIN-20260528_150756,E:\python\python_benti\python.exe scripts/benchmark_agent_run.py --run-id TRAIN-20260528_150756,JOB-20260528_212147-003,passed,0,,benchmark run_id=TRAIN-20260528_150756
+ACT-20260528_212149-004,2026-05-28T21:21:49,sandbox-training_sandbox,E:\python\python_benti\python.exe scripts/run_agent_mode.py --mode training_sandbox --max-iterations 4 --problem 00_problem/problem_statement.md,JOB-20260528_212149-004,started,,,"mode=training_sandbox, max_iterations=4, dry_run=False"
