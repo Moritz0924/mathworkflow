@@ -1,0 +1,22 @@
+$ E:\python\python_benti\python.exe scripts/run_agent_mode.py --mode training_sandbox --max-iterations 5 --problem 00_problem/problem_statement.md
+{
+  "run_id": "TRAIN-20260602_123559",
+  "status": "completed",
+  "benchmark": {
+    "run_id": "TRAIN-20260602_123559",
+    "draft_path": "16_learning/agent_runs/TRAIN-20260602_123559/workspace/09_paper/full_draft.md",
+    "draft_status": "existing",
+    "gap_count": 5,
+    "queue_count": 5,
+    "report": "16_learning/agent_runs/TRAIN-20260602_123559/reports/full_gap_report.md"
+  },
+  "validation": {
+    "run_id": "TRAIN-20260602_123559",
+    "status": "pass",
+    "fail_count": 0,
+    "warn_count": 0,
+    "issue_count": 0,
+    "issues": [],
+    "report": "16_learning/agent_runs/TRAIN-20260602_123559/reports/agent_run_validation.md"
+  }
+}

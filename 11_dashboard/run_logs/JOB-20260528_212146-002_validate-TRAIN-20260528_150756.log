@@ -1,0 +1,10 @@
+$ E:\python\python_benti\python.exe scripts/validate_agent_run.py --run-id TRAIN-20260528_150756
+{
+  "run_id": "TRAIN-20260528_150756",
+  "status": "pass",
+  "fail_count": 0,
+  "warn_count": 0,
+  "issue_count": 0,
+  "issues": [],
+  "report": "16_learning/agent_runs/TRAIN-20260528_150756/reports/agent_run_validation.md"
+}
