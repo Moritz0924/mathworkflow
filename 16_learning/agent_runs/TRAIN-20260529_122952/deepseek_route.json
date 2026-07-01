@@ -1,0 +1,11 @@
+{
+  "stage": "intake",
+  "mode": "training_sandbox",
+  "profile_id": "light",
+  "model_alias": "fast",
+  "model": "deepseek-v4-flash",
+  "thinking": false,
+  "reasoning_effort": null,
+  "temperature": 0.2,
+  "high_risk_detected": true
+}

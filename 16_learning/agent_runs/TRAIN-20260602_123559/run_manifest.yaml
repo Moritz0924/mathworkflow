@@ -1,0 +1,66 @@
+run_id: TRAIN-20260602_123559
+mode: training_sandbox
+status: completed
+created_at: '2026-06-02T12:36:00'
+workspace: 16_learning/agent_runs/TRAIN-20260602_123559/workspace
+problem: 00_problem/problem_statement.md
+max_iterations: 5
+formal_protected_snapshot: 16_learning/agent_runs/TRAIN-20260602_123559/formal_protected_snapshot.csv
+agent_prompt: 16_learning/agent_runs/TRAIN-20260602_123559/workspace/agent_prompt.md
+updated_at: '2026-06-02T12:36:44'
+agent_command_present: true
+initial_exit_code: 0
+initial_log_tail: "{\n  \"status\": \"completed\",\n  \"stage\": \"intake\",\n  \"\
+  profile_id\": \"light\",\n  \"model\": \"deepseek-v4-flash\",\n  \"response\": \"\
+  E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\
+  \\TRAIN-20260602_123559\\\\deepseek_response.md\",\n  \"file_actions\": [],\n  \"\
+  usage\": {\n    \"prompt_tokens\": 2645,\n    \"completion_tokens\": 165,\n    \"\
+  total_tokens\": 2810,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\"\
+  : 0\n    },\n    \"prompt_cache_hit_tokens\": 0,\n    \"prompt_cache_miss_tokens\"\
+  : 2645\n  }\n}\n"
+iteration_2_exit_code: 0
+iteration_2_log_tail: "{\n  \"status\": \"completed\",\n  \"stage\": \"intake\",\n\
+  \  \"profile_id\": \"light\",\n  \"model\": \"deepseek-v4-flash\",\n  \"response\"\
+  : \"E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\
+  \\TRAIN-20260602_123559\\\\deepseek_response.md\",\n  \"file_actions\": [],\n  \"\
+  usage\": {\n    \"prompt_tokens\": 2410,\n    \"completion_tokens\": 30,\n    \"\
+  total_tokens\": 2440,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\"\
+  : 0\n    },\n    \"prompt_cache_hit_tokens\": 0,\n    \"prompt_cache_miss_tokens\"\
+  : 2410\n  }\n}\n"
+iteration_3_exit_code: 0
+iteration_3_log_tail: "{\n  \"status\": \"completed\",\n  \"stage\": \"intake\",\n\
+  \  \"profile_id\": \"light\",\n  \"model\": \"deepseek-v4-flash\",\n  \"response\"\
+  : \"E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\
+  \\TRAIN-20260602_123559\\\\deepseek_response.md\",\n  \"file_actions\": [],\n  \"\
+  usage\": {\n    \"prompt_tokens\": 2410,\n    \"completion_tokens\": 31,\n    \"\
+  total_tokens\": 2441,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\"\
+  : 2176\n    },\n    \"prompt_cache_hit_tokens\": 2176,\n    \"prompt_cache_miss_tokens\"\
+  : 234\n  }\n}\n"
+iteration_4_exit_code: 0
+iteration_4_log_tail: "{\n  \"status\": \"completed\",\n  \"stage\": \"intake\",\n\
+  \  \"profile_id\": \"light\",\n  \"model\": \"deepseek-v4-flash\",\n  \"response\"\
+  : \"E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\
+  \\TRAIN-20260602_123559\\\\deepseek_response.md\",\n  \"file_actions\": [],\n  \"\
+  usage\": {\n    \"prompt_tokens\": 2410,\n    \"completion_tokens\": 4420,\n   \
+  \ \"total_tokens\": 6830,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\"\
+  : 2176\n    },\n    \"prompt_cache_hit_tokens\": 2176,\n    \"prompt_cache_miss_tokens\"\
+  : 234\n  }\n}\n"
+iteration_5_exit_code: 0
+iteration_5_log_tail: "{\n  \"status\": \"completed\",\n  \"stage\": \"intake\",\n\
+  \  \"profile_id\": \"light\",\n  \"model\": \"deepseek-v4-flash\",\n  \"response\"\
+  : \"E:\\\\math-module\\\\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\
+  \\TRAIN-20260602_123559\\\\deepseek_response.md\",\n  \"file_actions\": [],\n  \"\
+  usage\": {\n    \"prompt_tokens\": 2410,\n    \"completion_tokens\": 30,\n    \"\
+  total_tokens\": 2440,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\"\
+  : 2176\n    },\n    \"prompt_cache_hit_tokens\": 2176,\n    \"prompt_cache_miss_tokens\"\
+  : 234\n  }\n}\n"
+benchmark:
+  run_id: TRAIN-20260602_123559
+  draft_path: 16_learning/agent_runs/TRAIN-20260602_123559/workspace/09_paper/full_draft.md
+  draft_status: existing
+  gap_count: 5
+  queue_count: 5
+  report: 16_learning/agent_runs/TRAIN-20260602_123559/reports/full_gap_report.md
+copy_risk: pass
+copy_risk_report: 16_learning/agent_runs/TRAIN-20260602_123559/reports/copy_risk_report.csv
+copy_risk_markdown: 16_learning/agent_runs/TRAIN-20260602_123559/reports/copy_risk_report.md

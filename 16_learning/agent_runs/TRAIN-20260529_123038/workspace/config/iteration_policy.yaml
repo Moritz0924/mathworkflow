@@ -1,0 +1,60 @@
+version: v3.2-mvp
+enabled: true
+
+reviewers:
+  - problem_reviewer
+  - model_reviewer
+  - code_reviewer
+  - figure_reviewer
+  - paper_reviewer
+  - judge_reviewer
+
+reviewer_outputs:
+  comments_dir: 11_review
+  scorecard: 11_review/review_scorecard.csv
+  task_file: 14_contracts/revision_tasks.csv
+
+reviewer_permissions:
+  may_write:
+    - 11_review/*_reviewer_comments.md
+    - 11_review/review_scorecard.csv
+    - 14_contracts/revision_tasks.csv
+  may_not_modify:
+    - 02_latex_template
+    - 05_model
+    - 06_code
+    - 07_results
+    - 08_figures
+    - 09_paper
+    - 12_submission
+
+iteration:
+  max_rounds: 3
+  require_local_rerun_for_code_changes: true
+  require_contract_revalidation: true
+  require_review_scorecard_update: true
+  stop_when:
+    min_score: 85
+    no_fail_issues: true
+    no_required_tasks_open: true
+    human_confirmed: true
+
+task_severity:
+  fail:
+    must_fix: true
+    human_waiver_allowed: false
+  major:
+    must_fix: true
+    human_waiver_allowed: true
+  minor:
+    must_fix: false
+    human_waiver_allowed: true
+  suggestion:
+    must_fix: false
+    human_waiver_allowed: true
+
+memory:
+  path: 15_iteration_memory
+  keep_round_summaries: true
+  keep_decision_log: true
+  keep_task_closure_log: true

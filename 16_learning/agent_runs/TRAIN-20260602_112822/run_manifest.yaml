@@ -1,0 +1,16 @@
+run_id: TRAIN-20260602_112822
+mode: training_sandbox
+status: agent_failed
+created_at: '2026-06-02T11:28:22'
+workspace: 16_learning/agent_runs/TRAIN-20260602_112822/workspace
+problem: 00_problem/problem_statement.md
+max_iterations: 3
+formal_protected_snapshot: 16_learning/agent_runs/TRAIN-20260602_112822/formal_protected_snapshot.csv
+agent_prompt: 16_learning/agent_runs/TRAIN-20260602_112822/workspace/agent_prompt.md
+updated_at: '2026-06-02T11:28:22'
+agent_command_present: true
+initial_exit_code: 2
+initial_log_tail: '{"status": "failed", "failure_code": "DEEPSEEK_AGENT_ERROR", "message":
+  "DeepSeek request failed: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"}
+
+  '
