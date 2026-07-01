@@ -1,0 +1,197 @@
+{
+  "version": "v1",
+  "policy_name": "llm_router_policy",
+  "enabled": true,
+  "provider": {
+    "name": "deepseek",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "base_url_env": "DEEPSEEK_BASE_URL",
+    "default_base_url": "https://api.deepseek.com",
+    "chat_path": "/chat/completions",
+    "timeout_seconds": 120
+  },
+  "models": {
+    "fast": "deepseek-v4-pro",
+    "strong": "deepseek-v4-pro"
+  },
+  "model_policy": {
+    "default_model": "deepseek-v4-pro",
+    "context_window": "1M",
+    "allow_models": [
+      "deepseek-v4-pro"
+    ],
+    "forbidden_models": [
+      "deepseek-v4-flash",
+      "deepseek-chat",
+      "deepseek-reasoner"
+    ],
+    "forbid_compatibility_aliases": true,
+    "notes": "DeepSeek V4 official docs list deepseek-v4-pro as the 1M context Pro API model. Legacy compatibility aliases deepseek-chat/deepseek-reasoner map to deepseek-v4-flash and must not be used by this workflow."
+  },
+  "profiles": {
+    "light": {
+      "model": "strong",
+      "thinking": true,
+      "reasoning_effort": "high",
+      "temperature": 0.2
+    },
+    "standard": {
+      "model": "strong",
+      "thinking": true,
+      "reasoning_effort": "high",
+      "temperature": 0.2
+    },
+    "deep": {
+      "model": "strong",
+      "thinking": true,
+      "reasoning_effort": "max",
+      "temperature": 0.15
+    }
+  },
+  "routing": {
+    "default_profile": "standard",
+    "stage_defaults": {
+      "latex_template": "light",
+      "intake": "light",
+      "compile": "light",
+      "final_export": "light",
+      "eda": "standard",
+      "task_analysis": "standard",
+      "prior_retrieval": "standard",
+      "figures": "standard",
+      "paper_draft": "standard",
+      "paper_full": "standard",
+      "polish": "standard",
+      "model_route": "standard",
+      "codegen": "standard",
+      "auto_review": "standard",
+      "revision": "standard",
+      "results_freeze": "standard"
+    },
+    "deep_stage_candidates": [
+      "model_route",
+      "codegen",
+      "auto_review",
+      "revision"
+    ],
+    "deep_keywords": [
+      "high risk",
+      "fail",
+      "failure",
+      "error",
+      "exception",
+      "contract",
+      "frozen",
+      "result conflict",
+      "model selection",
+      "gate",
+      "revision",
+      "rollback",
+      "高风险",
+      "失败",
+      "报错",
+      "异常",
+      "契约",
+      "冻结",
+      "模型选择",
+      "闸门",
+      "修订"
+    ],
+    "image_keywords": [
+      "image",
+      "picture",
+      "figure",
+      "screenshot",
+      "photo",
+      "chart image",
+      "图像",
+      "图片",
+      "照片",
+      "截图",
+      "扫描",
+      "识别"
+    ],
+    "image_extensions": [
+      ".png",
+      ".jpg",
+      ".jpeg",
+      ".webp",
+      ".bmp",
+      ".tif",
+      ".tiff",
+      ".gif"
+    ],
+    "image_search_dirs": [
+      "00_problem/inbox",
+      "03_data/raw",
+      "08_figures"
+    ],
+    "max_image_candidates": 4
+  },
+  "permissions": {
+    "training_sandbox": {
+      "allow_workspace_writes": true,
+      "apply_file_actions": true
+    },
+    "formal_assist": {
+      "allow_workspace_writes": false,
+      "apply_file_actions": false,
+      "forbid_gate_confirmation": true
+    },
+    "always_forbidden_paths": [
+      "AGENTS.md",
+      "workflow_state.yaml",
+      "scripts/"
+    ],
+    "protected_formal_paths": [
+      "workflow_state.yaml",
+      "02_latex_template/",
+      "05_model/",
+      "06_code/",
+      "07_results/",
+      "08_figures/",
+      "09_paper/",
+      "12_submission/",
+      "14_contracts/"
+    ]
+  },
+  "vision_mcp": {
+    "enabled": true,
+    "provider": "alibaba_bailian_qwen_vl",
+    "command": [
+      "python",
+      "mcp_servers/vision_server.py"
+    ],
+    "tool_name": "image_recognize",
+    "timeout_seconds": 60,
+    "api_key_env_candidates": [
+      "QWEN_VL_API_KEY",
+      "DASHSCOPE_API_KEY",
+      "VISION_API_KEY"
+    ],
+    "base_url_env_candidates": [
+      "QWEN_VL_BASE_URL",
+      "VISION_BASE_URL"
+    ],
+    "default_base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "regional_base_urls": {
+      "beijing": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "singapore": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "virginia": "https://dashscope-us.aliyuncs.com/compatible-mode/v1"
+    },
+    "model_env_candidates": [
+      "QWEN_VL_MODEL",
+      "VISION_MODEL"
+    ],
+    "default_model": "qwen3-vl-plus",
+    "offline_env": "VISION_OFFLINE",
+    "max_image_bytes_env": "VISION_MAX_IMAGE_BYTES",
+    "api_key_placeholder": "leave blank in .env.example; fill in local .env only"
+  },
+  "logging": {
+    "request_manifest": "deepseek_request_manifest.json",
+    "route_manifest": "deepseek_route.json",
+    "response_markdown": "deepseek_response.md",
+    "file_actions_manifest": "deepseek_file_actions.json"
+  }
+}

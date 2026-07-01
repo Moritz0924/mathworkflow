@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360"><rect width="640" height="360" fill="#ffffff"/><text x="32" y="56" font-size="24" fill="#222">待测样本浓度预测区间图</text><text x="32" y="104" font-size="16" fill="#555">source: 07_results/q3_results.csv</text><text x="32" y="144" font-size="16" fill="#555">result: R-Q3-001</text></svg>

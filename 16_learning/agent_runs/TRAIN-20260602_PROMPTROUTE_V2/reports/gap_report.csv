@@ -1,0 +1,2 @@
+﻿gap_id,dimension,severity,benchmark_source_id,evidence_summary,our_artifact,recommended_change,acceptance_check,status,human_decision
+TRAIN-20260602_PROMPTROUTE_V2-GAP-002,figure_density,major,SRCadd1f8e9f5ab;SRC936eade783e1;SRCc5bda7492d45,our_count=1; benchmark_average=3.58; threshold=3.58,16_learning/agent_runs/TRAIN-20260602_PROMPTROUTE_V2/workspace/09_paper/full_draft.md,Add result-bound figures and register them in the sandbox figure contract before citing them.,Figure mentions are backed by existing figure files and figure_contract rows.,open,

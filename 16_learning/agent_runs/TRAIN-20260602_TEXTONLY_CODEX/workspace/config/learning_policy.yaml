@@ -1,0 +1,79 @@
+version: v1
+enabled: true
+mode: rag_plus_scorer
+auto_apply: false
+
+purpose:
+  summary: >
+    Build a local learning layer from historical mathematical modeling papers.
+    The layer may generate retrieval cards, local indexes, scorer reports, and
+    workflow optimization suggestions. It must not generate final paper text or
+    bypass contracts, gates, or human approval.
+  non_goal: >
+    This is not LLM pretraining or LoRA fine-tuning. It is a CPU-first local
+    RAG and lightweight scoring layer.
+
+paths:
+  corpus_root: 论文数据集
+  prior_db: 13_prior_db
+  manifest: 13_prior_db/screening/pdf_manifest.csv
+  source_text_dir: 13_prior_db/fulltext_index/source_texts
+  source_meta: 13_prior_db/fulltext_index/source_meta.jsonl
+  prior_cards: 13_prior_db/cards/prior_cards.jsonl
+  prior_index: 13_prior_db/fulltext_index/prior_card_tfidf.json
+  retrieval_results: 13_prior_db/screening/retrieval_results.csv
+  copy_risk_report: 13_prior_db/screening/copy_risk_report.csv
+  learning_root: 16_learning
+  training_data: 16_learning/training_data
+  models: 16_learning/models
+  reports: 16_learning/reports
+
+corpus:
+  pdf_glob: "**/*.pdf"
+  expected_pdf_count: 312
+  max_pages_per_pdf: 80
+  min_ok_text_chars: 300
+  store_extracted_text: true
+
+retrieval:
+  top_k_cards: 5
+  min_score_to_report: 0.01
+  ngram_max_tokens: 6000
+
+training:
+  seed: 20260524
+  test_ratio: 0.2
+  min_class_count_for_confident_metric: 3
+  max_tokens_per_document: 6000
+  max_features_per_label: 2000
+
+copy_risk:
+  ngram_size: 8
+  max_ngram_overlap_ratio: 0.08
+  fail_on_caption_overlap: true
+  fail_on_abstract_overlap: true
+  max_source_chars_per_doc: 120000
+
+permissions:
+  may_write:
+    - 13_prior_db/cards/
+    - 13_prior_db/fulltext_index/
+    - 13_prior_db/screening/
+    - 13_prior_db/pre_solve_cards.md
+    - 16_learning/
+    - 11_review/prior_copy_risk_report.md
+  must_not_modify:
+    - workflow_state.yaml
+    - AGENTS.md
+    - 02_latex_template/
+    - 07_results/
+    - 08_figures/
+    - 09_paper/
+    - 12_submission/
+    - 14_contracts/
+
+promotion_policy:
+  prior_cards_are_advisory: true
+  workflow_optimization_report_is_suggestion_only: true
+  require_human_gate_for_model_route_changes: true
+  require_copy_risk_pass_before_prior_card_use: true

@@ -1,0 +1,79 @@
+manifest_version: v3.2-p1
+call:
+  call_id: "SKILL-<stage_id>-<skill_id>-<YYYYMMDDTHHMMSSZ>"
+  timestamp_utc: "YYYY-MM-DDTHH:MM:SSZ"
+  stage_id: "<stage_id>"
+  skill_id: "<skill_id>"
+  skill_category: "review_response"
+  permission_level: "advisory | contract_suggest | draft_assist | post_final"
+  router_decision: "allow | deny | skip | block"
+  task_id: "<TASK_PACKET task id>"
+  operator: "Web GPT | Codex | Local DeepSeek Claude | Human"
+
+policy_context:
+  router_policy_file: "config/skill_router_policy.yaml"
+  router_policy_version: "v3.2-p1"
+  stage_prompt_file: "prompts/stages/<stage_prompt_file>.md"
+  workflow_state_file: "workflow_state.yaml"
+  authority_order_checked: true
+  deny_by_default_checked: true
+
+preflight:
+  current_stage_matches_requested_stage: false
+  skill_registered: false
+  skill_allowed_for_stage: false
+  permission_level_allowed: false
+  required_inputs_status: "not_checked | exists | missing_optional | missing_required | stale | frozen | invalid_contract"
+  required_inputs:
+    all_of: []
+    any_of: []
+    recommended: []
+    missing: []
+  required_human_gate:
+    required: false
+    satisfied: false
+    decision_id: ""
+
+input_files:
+  allowed_read_paths: []
+  files_read:
+    - path: ""
+      role: ""
+      status: "exists | missing | stale | frozen"
+      checksum_sha256: ""
+      notes: ""
+
+contract_context:
+  contracts_read:
+    - path: ""
+      status: "exists | missing | invalid | not_required"
+      relevant_ids: []
+      checksum_sha256: ""
+  frozen_artifacts_checked: false
+  frozen_artifact_violations: []
+
+requested_output:
+  output_type: "<registered_output_type>"
+  archive_path: "10_ai_logs/skill_outputs/<stage_id>/<skill_id>/<call_id>/raw_output.md"
+  expected_promotion_target: "archive_only | <target path>"
+  must_bind_to_contracts: []
+  must_preserve_protected_atoms: []
+
+risk_controls:
+  no_direct_contract_write: true
+  no_direct_final_paper_write: true
+  no_workflow_state_change: true
+  no_script_change: true
+  no_fabricated_data: true
+  no_fabricated_citation: true
+  no_prior_text_copy: true
+
+notes: ""
+
+category_specific:
+  allowed_skills: ['nature-response']
+  allowed_stages: ['auto_review', 'revision']
+  allowed_output_types: ['review_issue_triage', 'revision_task_candidate', 'reviewer_response_draft', 'closure_check_note']
+  required_bindings: ['reviewer_issue_id', 'revision_task_id']
+  promotion_targets: ['11_review/revision_tasks.csv', '14_contracts/revision_tasks.csv', '15_iteration_memory/task_closure_log.md']
+  validation_expectations: ['reviewer_source_exists', 'no_silent_dismissal', 'closure_check_explicit']

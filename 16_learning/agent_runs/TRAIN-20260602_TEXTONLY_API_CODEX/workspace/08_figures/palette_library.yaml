@@ -1,0 +1,59 @@
+palettes:
+  muted_blue_gold:
+    use_case: "主结果、排序对比、评价得分"
+    colors:
+      primary: "#2F5597"
+      secondary: "#D8A31A"
+      accent: "#5B8C5A"
+      neutral: "#7A7A7A"
+      background: "#FFFFFF"
+    avoid:
+      - "高饱和红绿对撞"
+      - "超过 5 种主色"
+
+  teal_orange_diverging:
+    use_case: "相关性、残差、权重差异、敏感性"
+    colors:
+      low: "#2166AC"
+      mid: "#F7F7F7"
+      high: "#B2182B"
+      accent: "#F4A261"
+      neutral: "#6C757D"
+      background: "#FFFFFF"
+
+  tech_purple_cyan:
+    use_case: "算法、聚类、机器学习、网络结构"
+    colors:
+      primary: "#5E4FA2"
+      secondary: "#3288BD"
+      accent: "#66C2A5"
+      neutral: "#8E8E8E"
+      background: "#FFFFFF"
+
+  nature_green_gold:
+    use_case: "生态、环境、资源、农业类问题"
+    colors:
+      primary: "#2E7D32"
+      secondary: "#F9A825"
+      accent: "#1565C0"
+      neutral: "#757575"
+      background: "#FFFFFF"
+
+  deep_blue_vermilion:
+    use_case: "优化、风险、核心对比、关键方案"
+    colors:
+      primary: "#264653"
+      secondary: "#E76F51"
+      accent: "#2A9D8F"
+      neutral: "#8D99AE"
+      background: "#FFFFFF"
+
+rules:
+  max_global_palettes: 2
+  max_colors_per_figure: 5
+  use_red_only_for: ["风险", "异常", "下降", "警告"]
+  avoid_rainbow: true
+  avoid_default_palette: true
+  keep_variable_color_consistent: true
+  require_chinese_font_check: true
+  require_axes_unicode_minus_false: true

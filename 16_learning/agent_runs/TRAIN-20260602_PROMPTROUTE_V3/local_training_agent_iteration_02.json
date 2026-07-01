@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "executor": "local_training_agent",
+  "iteration": 2,
+  "max_iterations": 3,
+  "workspace": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260602_PROMPTROUTE_V3\\workspace",
+  "problem_title": "赛题全文",
+  "updated": [
+    "09_paper/full_draft.md",
+    "12_submission/final_submit_paper.md",
+    "12_submission/final_submit_package.md",
+    "14_contracts/result_contract.csv",
+    "14_contracts/claim_evidence_map.csv",
+    "14_contracts/figure_contract.csv",
+    "14_contracts/formula_contract.csv",
+    "11_review/review_scorecard.csv",
+    "11_review/simulated_human_gate_log.csv",
+    "reports/training_enhancement_points.csv"
+  ]
+}

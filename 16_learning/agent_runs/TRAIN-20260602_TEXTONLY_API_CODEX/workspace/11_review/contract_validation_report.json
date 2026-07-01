@@ -1,0 +1,15 @@
+{
+  "stage": "final_export",
+  "generated_at": "2026-06-02T23:22:10",
+  "fail_count": 0,
+  "warn_count": 1,
+  "issue_count": 1,
+  "issues": [
+    {
+      "level": "warn",
+      "item": "review_scorecard_empty",
+      "detail": "review_scorecard has no rows",
+      "path": "11_review/review_scorecard.csv"
+    }
+  ]
+}
