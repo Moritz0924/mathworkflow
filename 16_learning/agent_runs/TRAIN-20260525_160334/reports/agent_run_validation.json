@@ -1,0 +1,15 @@
+{
+  "run_id": "TRAIN-20260525_160334",
+  "status": "pass",
+  "fail_count": 0,
+  "warn_count": 1,
+  "issue_count": 1,
+  "issues": [
+    {
+      "level": "warn",
+      "item": "copy_risk_not_run",
+      "detail": "copy risk skipped because run is incomplete or dry-run",
+      "path": "I:\\数模\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260525_160334\\reports\\copy_risk_report.csv"
+    }
+  ]
+}
