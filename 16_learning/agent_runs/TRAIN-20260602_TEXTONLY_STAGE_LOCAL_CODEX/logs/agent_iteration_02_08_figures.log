@@ -1,0 +1,3 @@
+$ python scripts/local_training_agent.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX\workspace\agent_stage_iteration_02_08_figures.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX --mode training_sandbox --max-iterations 3 --stage figures --call-id iteration_02_08_figures
+cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX\workspace
+

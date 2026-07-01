@@ -1,0 +1,12 @@
+文件路径,类别,来源阶段,备注
+09_paper/main.pdf,论文,compile,最终编译PDF
+02_latex_template/main.tex,源码,compile,LaTeX主文件
+08_figures/fig1.pdf,图表,figures,示例图
+14_contracts/claim_evidence_map.csv,合同,paper_draft,论证-证据映射
+14_contracts/result_contract.csv,合同,results_freeze,数值结果登记
+14_contracts/figure_contract.csv,合同,figures,图表登记
+14_contracts/citation_contract.csv,合同,literature,引用登记
+14_contracts/artifact_freeze_registry.csv,合同,polish,产物冻结登记
+11_review/revision_tasks.csv,审稿,auto_review/revision,修订任务追踪
+12_export/pptx/ppt_generation_guide.md,导出说明,final_export,展示材料生成指导
+12_export/ai_usage_statement.md,导出说明,final_export,AI使用声明

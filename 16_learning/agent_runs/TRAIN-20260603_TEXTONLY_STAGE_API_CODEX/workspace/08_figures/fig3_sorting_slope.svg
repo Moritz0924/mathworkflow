@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400">
+  <rect width="600" height="400" fill="#ffffff" />
+  <text x="300" y="30" font-family="SimHei, sans-serif" font-size="20" text-anchor="middle" font-weight="bold">排序坡度图</text>
+  <line x1="80" y1="50" x2="80" y2="350" stroke="black" stroke-width="1" />
+  <line x1="80" y1="350" x2="550" y2="350" stroke="black" stroke-width="1" />
+  <text x="50" y="350" font-family="Arial" font-size="12" text-anchor="end">排名1</text>
+  <text x="50" y="300" font-family="Arial" font-size="12" text-anchor="end">排名2</text>
+  <text x="50" y="250" font-family="Arial" font-size="12" text-anchor="end">排名3</text>
+  <text x="50" y="200" font-family="Arial" font-size="12" text-anchor="end">排名4</text>
+  <text x="50" y="150" font-family="Arial" font-size="12" text-anchor="end">排名5</text>
+  <text x="130" y="370" font-family="Arial" font-size="12" text-anchor="middle">2019</text>
+  <text x="230" y="370" font-family="Arial" font-size="12" text-anchor="middle">2020</text>
+  <text x="330" y="370" font-family="Arial" font-size="12" text-anchor="middle">2021</text>
+  <text x="430" y="370" font-family="Arial" font-size="12" text-anchor="middle">2022</text>
+  <text x="530" y="370" font-family="Arial" font-size="12" text-anchor="middle">2023</text>
+  <polyline points="130,150 230,200 330,180 430,250 530,220" stroke="#2c7bb6" stroke-width="2" fill="none" />
+  <circle cx="130" cy="150" r="3" fill="#2c7bb6" />
+  <circle cx="230" cy="200" r="3" fill="#2c7bb6" />
+  <circle cx="330" cy="180" r="3" fill="#2c7bb6" />
+  <circle cx="430" cy="250" r="3" fill="#2c7bb6" />
+  <circle cx="530" cy="220" r="3" fill="#2c7bb6" />
+  <text x="540" y="215" font-family="SimHei" font-size="12" fill="#2c7bb6">省份A</text>
+  <polyline points="130,300 230,250 330,310 430,200 530,150" stroke="#d7191c" stroke-width="2" fill="none" />
+  <circle cx="130" cy="300" r="3" fill="#d7191c" />
+  <circle cx="230" cy="250" r="3" fill="#d7191c" />
+  <circle cx="330" cy="310" r="3" fill="#d7191c" />
+  <circle cx="430" cy="200" r="3" fill="#d7191c" />
+  <circle cx="530" cy="150" r="3" fill="#d7191c" />
+  <text x="540" y="145" font-family="SimHei" font-size="12" fill="#d7191c">省份B</text>
+</svg>

@@ -1,0 +1,62 @@
+{
+  "action_count": 5,
+  "results": [
+    {
+      "path": "12_submission/compile_log.txt",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_submission/compile_log.txt"
+    },
+    {
+      "path": "12_submission/submission_checklist.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_submission/submission_checklist.md"
+    },
+    {
+      "path": "12_submission/gate_report_and_consistency.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_submission/gate_report_and_consistency.md"
+    },
+    {
+      "path": "10_ai_logs/compile_stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "10_ai_logs/compile_stage_summary.md"
+    },
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    }
+  ],
+  "protocol_issues": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 3228,
+      "completion_tokens": 2366,
+      "total_tokens": 5594,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 929
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 3228
+    },
+    "reasoning_content_chars": 2135,
+    "stream": true,
+    "chunk_count": 2368,
+    "content_chars": 5220,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_CODEX\\deepseek_calls\\initial_14_compile\\deepseek_stream_status.jsonl"
+  }
+}

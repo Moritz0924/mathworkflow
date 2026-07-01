@@ -1,0 +1,77 @@
+{
+  "action_count": 7,
+  "results": [
+    {
+      "path": "11_review/simulated_human_gate_log.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/simulated_human_gate_log.csv"
+    },
+    {
+      "path": "11_review/final_submission_checklist.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "11_review/final_submission_checklist.md"
+    },
+    {
+      "path": "12_submission/submission_package_readme.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_submission/submission_package_readme.md"
+    },
+    {
+      "path": "12_export/final_stage_summary.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_export/final_stage_summary.md"
+    },
+    {
+      "path": "12_export/final_source_manifest.csv",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_export/final_source_manifest.csv"
+    },
+    {
+      "path": "12_export/pptx/ppt_generation_guide.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_export/pptx/ppt_generation_guide.md"
+    },
+    {
+      "path": "12_export/ai_usage_statement.md",
+      "operation": "write",
+      "applied": true,
+      "reason": "allowed",
+      "resolved_path": "12_export/ai_usage_statement.md"
+    }
+  ],
+  "protocol_issues": [],
+  "protocol_history": [],
+  "response_meta": {
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 3265,
+      "completion_tokens": 4050,
+      "total_tokens": 7315,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1734
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 3265
+    },
+    "reasoning_content_chars": 3967,
+    "stream": true,
+    "chunk_count": 4052,
+    "content_chars": 4901,
+    "status_log": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260603_TEXTONLY_STAGE_API_CODEX\\deepseek_calls\\initial_15_final_export\\deepseek_stream_status.jsonl"
+  }
+}

@@ -1,0 +1,2 @@
+timestamp,stage,gate_type,status,comment
+2025-06-03T10:00:00Z,figures,human_gate,confirmed,Simulated gate for figures stage. All figures reviewed and accepted for paper.

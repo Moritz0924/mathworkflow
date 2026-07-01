@@ -1,0 +1,5 @@
+result_id,question_id,model_id,metric_name,metric_value,unit,source_file,source_row_or_cell,code_file,run_id,random_seed,freeze_status,downstream_usage,verified_by,notes
+R001,Q1,LSTM_v1,MAE,12.34,vehicles/15min,07_results/test_metrics.csv,row 2,06_code/train_lstm.py,run_20260603_001,42,frozen,,,
+R002,Q1,LSTM_v1,RMSE,16.89,vehicles/15min,07_results/test_metrics.csv,row 3,06_code/train_lstm.py,run_20260603_001,42,frozen,,,
+R003,Q1,LSTM_v1,MAPE,8.76,%,07_results/test_metrics.csv,row 4,06_code/train_lstm.py,run_20260603_001,42,frozen,,,
+R004,Q1,LSTM_v1,R²,0.925,dimensionless,07_results/test_metrics.csv,row 5,06_code/train_lstm.py,run_20260603_001,42,frozen,,,

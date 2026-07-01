@@ -1,0 +1,3 @@
+$ python scripts/local_training_agent.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX\workspace\agent_stage_initial_01_latex_template.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX --mode training_sandbox --max-iterations 3 --stage latex_template --call-id initial_01_latex_template
+cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX\workspace
+

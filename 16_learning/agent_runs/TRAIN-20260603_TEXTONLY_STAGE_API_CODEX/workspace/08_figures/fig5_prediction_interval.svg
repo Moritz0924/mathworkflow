@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="SimHei, Arial, sans-serif">
+  <rect width="800" height="600" fill="#ffffff"/>
+  <text x="400" y="40" fill="#2c3e50" text-anchor="middle" font-size="18" font-weight="bold">拥堵指数预测及置信区间</text>
+  <!-- 坐标轴 -->
+  <line x1="100" y1="80" x2="100" y2="480" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="480" x2="700" y2="480" stroke="#333" stroke-width="2"/>
+  <text x="400" y="520" fill="#2c3e50" text-anchor="middle" font-size="14">时间（月）→</text>
+  <text x="30" y="280" fill="#2c3e50" text-anchor="middle" font-size="14" transform="rotate(-90,30,280)">拥堵指数 →</text>
+  <!-- 时间标签 -->
+  <g font-size="12" fill="#2c3e50" text-anchor="middle">
+    <text x="150" y="500">1月</text>
+    <text x="250" y="500">3月</text>
+    <text x="350" y="500">5月</text>
+    <text x="450" y="500">7月</text>
+    <text x="550" y="500">9月</text>
+    <text x="650" y="500">11月</text>
+  </g>
+  <!-- 预测区间（阴影） -->
+  <polygon points="130,400 160,380 220,340 280,310 340,290 400,270 460,250 520,230 580,215 640,200 670,190 670,210 640,230 580,250 520,270 460,290 400,310 340,330 280,350 220,380 160,410 130,430" fill="#91bfdb" opacity="0.4"/>
+  <!-- 预测均值线 -->
+  <polyline points="130,415 160,395 220,360 280,330 340,310 400,290 460,270 520,250 580,230 640,215 670,200" fill="none" stroke="#d73027" stroke-width="3"/>
+  <!-- 实际值点 -->
+  <circle cx="130" cy="420" r="5" fill="#1a9850" stroke="#333"/>
+  <circle cx="160" cy="400" r="5" fill="#1a9850" stroke="#333"/>
+  <circle cx="220" cy="370" r="5" fill="#1a9850" stroke="#333"/>
+  <circle cx="280" cy="340" r="5" fill="#1a9850" stroke="#333"/>
+  <circle cx="340" cy="320" r="5" fill="#1a9850" stroke="#333"/>
+  <circle cx="400" cy="300" r="5" fill="#1a9850" stroke="#333"/>
+  <circle cx="460" cy="270" r="5" fill="#1a9850" stroke="#333"/>
+  <!-- 图例 -->
+  <rect x="550" y="80" width="150" height="80" fill="#f9f9f9" stroke="#ccc" rx="5"/>
+  <rect x="560" y="90" width="20" height="10" fill="#91bfdb" opacity="0.5" rx="2"/>
+  <text x="590" y="100" font-size="12" fill="#2c3e50">95% 置信区间</text>
+  <line x1="560" y1="120" x2="580" y2="120" stroke="#d73027" stroke-width="3"/>
+  <text x="590" y="125" font-size="12" fill="#2c3e50">预测均值</text>
+  <circle cx="570" cy="140" r="5" fill="#1a9850" stroke="#333"/>
+  <text x="590" y="145" font-size="12" fill="#2c3e50">实际值</text>
+  <!-- 图注 -->
+  <text x="400" y="570" fill="#7f8c8d" text-anchor="middle" font-size="12">图5：基于LSTM的拥堵指数预测结果及不确定性区间</text>
+</svg>

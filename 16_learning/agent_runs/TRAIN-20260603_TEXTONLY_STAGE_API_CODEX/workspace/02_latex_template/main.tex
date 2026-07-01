@@ -1,0 +1,69 @@
+% !TEX program = xelatex
+% 数学建模论文主文件（模板）
+% 此模板仅提供结构，不包含任何题目具体事实、数据、模型或结果。
+\documentclass[12pt,a4paper]{ctexart}
+
+% === 包与基本设置 ===
+\usepackage{geometry}
+\geometry{left=3cm,right=3cm,top=2.5cm,bottom=2.5cm}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{数学建模竞赛}
+\rhead{\thepage}
+
+% 图表编号包含章节（如需要可取消注释）
+% \numberwithin{figure}{section}
+% \numberwithin{table}{section}
+% \numberwithin{equation}{section}
+
+% 图、表、公式、算法标签前缀定义：
+% 图：fig:xxx ，表：tab:xxx ，公式：eq:xxx ，算法：alg:xxx ，章节：sec:xxx
+% 所有标签统一小写，用冒号分隔，禁止空格与特殊符号。
+% 示例：\label{fig:model_structure} , \label{tab:param_settings} , \label{eq:objective}
+
+\title{数学建模论文标题（占位）}
+\author{参赛队号 \quad 队员1 \quad 队员2 \quad 队员3}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% 摘要（中文摘要，后续由 paper_draft 阶段填写正式内容）
+\begin{abstract}
+本文为数学建模论文摘要占位。具体摘要由后期阶段根据合同结果生成。
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+% 正文章节（按顺序输入）
+\input{chapters/01_introduction}
+\input{chapters/02_problem_analysis}
+\input{chapters/03_model_hypothesis}
+\input{chapters/04_model_formulation}
+\input{chapters/05_results_analysis}
+\input{chapters/06_conclusions}
+
+% 参考文献
+\newpage
+\bibliographystyle{plain}
+\bibliography{references}
+
+% 附录（如有）
+% \appendix
+% \input{chapters/07_appendix}
+
+\end{document}

@@ -1,0 +1,2 @@
+artifact_path,freeze_version,freeze_date,status,notes
+09_paper/full_draft.tex,0.0.1-framework,2026-06-03,NOT_FROZEN,仅包含框架；待上游章节补充后冻结。

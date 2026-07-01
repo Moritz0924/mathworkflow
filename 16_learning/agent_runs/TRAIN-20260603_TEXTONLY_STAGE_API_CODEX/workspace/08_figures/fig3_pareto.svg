@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="SimHei, Arial, sans-serif">
+  <rect width="800" height="600" fill="#ffffff"/>
+  <!-- 标题 -->
+  <text x="400" y="40" fill="#2c3e50" text-anchor="middle" font-size="18" font-weight="bold">拥堵缓解策略 Pareto 前沿</text>
+  <!-- 坐标轴 -->
+  <line x1="100" y1="80" x2="100" y2="480" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="480" x2="700" y2="480" stroke="#333" stroke-width="2"/>
+  <!-- 轴标签 -->
+  <text x="400" y="520" fill="#2c3e50" text-anchor="middle" font-size="14">实施成本（标准化）→</text>
+  <text x="30" y="280" fill="#2c3e50" text-anchor="middle" font-size="14" transform="rotate(-90,30,280)">拥堵缓解效果（标准化）→</text>
+  <!-- 网格 -->
+  <g stroke="#bdc3c7" stroke-width="0.5" stroke-dasharray="4,4">
+    <line x1="100" y1="200" x2="700" y2="200"/>
+    <line x1="100" y1="300" x2="700" y2="300"/>
+    <line x1="100" y1="400" x2="700" y2="400"/>
+    <line x1="200" y1="80" x2="200" y2="480"/>
+    <line x1="300" y1="80" x2="300" y2="480"/>
+    <line x1="400" y1="80" x2="400" y2="480"/>
+    <line x1="500" y1="80" x2="500" y2="480"/>
+    <line x1="600" y1="80" x2="600" y2="480"/>
+  </g>
+  <!-- 数据点 (Pareto前沿及被支配解) -->
+  <!-- Pareto前沿点 -->
+  <circle cx="150" cy="180" r="8" fill="#1f78b4" stroke="#333" stroke-width="1"/>
+  <circle cx="250" cy="220" r="8" fill="#1f78b4" stroke="#333" stroke-width="1"/>
+  <circle cx="350" cy="290" r="8" fill="#1f78b4" stroke="#333" stroke-width="1"/>
+  <circle cx="500" cy="380" r="8" fill="#1f78b4" stroke="#333" stroke-width="1"/>
+  <circle cx="620" cy="450" r="8" fill="#1f78b4" stroke="#333" stroke-width="1"/>
+  <!-- 被支配解 -->
+  <circle cx="300" cy="350" r="6" fill="#ff7f00" stroke="#555" stroke-width="0.5"/>
+  <circle cx="450" cy="320" r="6" fill="#ff7f00" stroke="#555" stroke-width="0.5"/>
+  <circle cx="550" cy="420" r="6" fill="#ff7f00" stroke="#555" stroke-width="0.5"/>
+  <circle cx="180" cy="300" r="6" fill="#ff7f00" stroke="#555" stroke-width="0.5"/>
+  <!-- 连线Pareto前沿 -->
+  <polyline points="150,180 250,220 350,290 500,380 620,450" fill="none" stroke="#1f78b4" stroke-width="2" stroke-dasharray="6,4"/>
+  <!-- 图例 -->
+  <rect x="550" y="90" width="140" height="70" fill="#f9f9f9" stroke="#ccc" rx="5"/>
+  <circle cx="565" cy="110" r="6" fill="#1f78b4" stroke="#333"/>
+  <text x="580" y="115" font-size="12" fill="#2c3e50">Pareto 最优解</text>
+  <circle cx="565" cy="135" r="6" fill="#ff7f00" stroke="#555"/>
+  <text x="580" y="140" font-size="12" fill="#2c3e50">被支配解</text>
+  <!-- 图注 -->
+  <text x="400" y="570" fill="#7f8c8d" text-anchor="middle" font-size="12">图3：成本-效果二维目标下的Pareto前沿及非支配排序结果</text>
+</svg>

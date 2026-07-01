@@ -1,0 +1,1 @@
+auto_review,"Agent must verify input availability before proceeding; if key inputs missing, raise blocker rather than generating empty or fabricated review.",process

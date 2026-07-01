@@ -1,0 +1,8 @@
+# Data contract (draft)
+# This file captures the provenance, fields, and constraints of data used in the project.
+# It is a draft until data is available and validated.
+
+data_sources: []
+fields: []
+constraints: {}
+notes: "Data not yet available. Placeholder from eda stage."
