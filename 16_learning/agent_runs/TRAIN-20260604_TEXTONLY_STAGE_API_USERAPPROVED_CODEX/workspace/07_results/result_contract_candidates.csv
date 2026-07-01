@@ -1,0 +1,3 @@
+result_id,description,source_file,code_file,run_id,value,unit,status
+Q1_R2,R-squared on test set,07_results/Q1_candidate_results.csv,06_code/Q1_solve.py,run-20240604-001,0.789,dimensionless,candidate
+Q1_RMSE,RMSE on test set,07_results/Q1_candidate_results.csv,06_code/Q1_solve.py,run-20240604-001,4.8432,points,candidate

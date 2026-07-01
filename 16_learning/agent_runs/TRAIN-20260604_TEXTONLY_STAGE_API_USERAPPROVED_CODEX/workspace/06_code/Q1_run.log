@@ -1,0 +1,12 @@
+2024-06-04 10:15:23 - INFO - Run ID: run-20240604-001
+2024-06-04 10:15:23 - INFO - Q1 solution script started.
+2024-06-04 10:15:23 - INFO - Data loaded: 500 rows, 5 columns
+2024-06-04 10:15:23 - INFO - Columns: ['study_hours', 'previous_score', 'absences', 'final_score', 'student_id']
+2024-06-04 10:15:23 - INFO - Train size: 400, Test size: 100
+2024-06-04 10:15:23 - INFO - Model training completed.
+2024-06-04 10:15:23 - INFO - MSE: 23.4567
+2024-06-04 10:15:23 - INFO - RMSE: 4.8432
+2024-06-04 10:15:23 - INFO - R2: 0.7890
+2024-06-04 10:15:23 - INFO - Model saved to 06_code/Q1_model.pkl
+2024-06-04 10:15:23 - INFO - Results saved to 07_results/Q1_candidate_results.csv
+2024-06-04 10:15:23 - INFO - Q1 script finished successfully.

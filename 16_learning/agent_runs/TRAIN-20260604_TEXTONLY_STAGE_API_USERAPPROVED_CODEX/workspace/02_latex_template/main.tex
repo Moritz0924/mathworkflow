@@ -1,0 +1,71 @@
+% !TEX program = xelatex
+\documentclass[12pt,a4paper]{ctexart}
+
+% ---------- Packages ----------
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small \ProbTitle{}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{xcolor}
+
+% ---------- Metadata ----------
+\newcommand{\ProbTitle}{\textbf{（问题标题待填充）}}
+\newcommand{\ProbId}{（问题编号待填充）}
+\newcommand{\TeamId}{（队伍编号待填充）}
+
+% ---------- Label conventions ----------
+% Figures:   \label{fig: ...}
+% Tables:    \label{tab: ...}
+% Equations: \label{eq: ...}
+% Sections:  \label{sec: ...}
+% Algorithms:\label{alg: ...}
+% Contract-bound results are referenced via \ref{result:<id>} where <id> matches result_contract.csv
+
+\begin{document}
+
+% ---------- Title page ----------
+\begin{center}
+    {\LARGE \textbf{\ProbTitle}}\par
+    \vspace{1em}
+    {\large \ProbId}\par
+    \vspace{1em}
+    \TeamId
+\end{center}
+\vspace{2em}
+
+% ---------- Abstract ----------
+\include{sections/00_abstract}
+
+% ---------- Main sections ----------
+\include{sections/01_problem_restatement}
+\include{sections/02_assumptions}
+\include{sections/03_notations}
+\include{sections/04_model}
+\include{sections/05_results}
+\include{sections/06_evaluation}
+
+% ---------- References ----------
+\include{sections/07_references}
+
+% ---------- Appendix ----------
+\include{sections/08_appendix}
+
+\end{document}
