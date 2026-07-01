@@ -1,0 +1,2 @@
+﻿gap_id,dimension,severity,benchmark_source_id,evidence_summary,our_artifact,recommended_change,acceptance_check,status,human_decision
+TRAIN-20260602_TEXTONLY_CODEX_GATECHECK-GAP-002,figure_density,major,SRCad03b2fb65cc;SRCfb178d4139ba;SRC4225edb1178d,our_count=1; benchmark_average=2.00; threshold=2.00,16_learning/agent_runs/TRAIN-20260602_TEXTONLY_CODEX_GATECHECK/workspace/09_paper/full_draft.md,Add result-bound figures and register them in the sandbox figure contract before citing them.,Figure mentions are backed by existing figure files and figure_contract rows.,open,
