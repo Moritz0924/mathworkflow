@@ -1,0 +1,45 @@
+run_id: TRAIN-20260602_130017
+mode: training_sandbox
+status: completed
+created_at: '2026-06-02T13:00:17'
+workspace: 16_learning/agent_runs/TRAIN-20260602_130017/workspace
+problem: 00_problem/inbox/text_only_color_concentration_problem.md
+max_iterations: 3
+formal_protected_snapshot: 16_learning/agent_runs/TRAIN-20260602_130017/formal_protected_snapshot.csv
+agent_prompt: 16_learning/agent_runs/TRAIN-20260602_130017/workspace/agent_prompt.md
+updated_at: '2026-06-02T13:00:19'
+agent_command_present: true
+initial_exit_code: 0
+initial_log_tail: "{\n  \"status\": \"completed\",\n  \"executor\": \"local_training_agent\"\
+  ,\n  \"iteration\": 1,\n  \"max_iterations\": 3,\n  \"workspace\": \"E:\\\\math-module\\\
+  \\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\\TRAIN-20260602_130017\\\
+  \\workspace\",\n  \"problem_title\": \"颜色与物质浓度的辨识问题\",\n  \"updated\": [\n    \"\
+  09_paper/full_draft.md\",\n    \"14_contracts/result_contract.csv\",\n    \"14_contracts/claim_evidence_map.csv\"\
+  ,\n    \"14_contracts/figure_contract.csv\",\n    \"14_contracts/formula_contract.csv\"\
+  ,\n    \"11_review/review_scorecard.csv\"\n  ]\n}\n"
+iteration_2_exit_code: 0
+iteration_2_log_tail: "{\n  \"status\": \"completed\",\n  \"executor\": \"local_training_agent\"\
+  ,\n  \"iteration\": 2,\n  \"max_iterations\": 3,\n  \"workspace\": \"E:\\\\math-module\\\
+  \\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\\TRAIN-20260602_130017\\\
+  \\workspace\",\n  \"problem_title\": \"颜色与物质浓度的辨识问题\",\n  \"updated\": [\n    \"\
+  09_paper/full_draft.md\",\n    \"14_contracts/result_contract.csv\",\n    \"14_contracts/claim_evidence_map.csv\"\
+  ,\n    \"14_contracts/figure_contract.csv\",\n    \"14_contracts/formula_contract.csv\"\
+  ,\n    \"11_review/review_scorecard.csv\"\n  ]\n}\n"
+iteration_3_exit_code: 0
+iteration_3_log_tail: "{\n  \"status\": \"completed\",\n  \"executor\": \"local_training_agent\"\
+  ,\n  \"iteration\": 3,\n  \"max_iterations\": 3,\n  \"workspace\": \"E:\\\\math-module\\\
+  \\math-workflow\\\\math-workflow\\\\16_learning\\\\agent_runs\\\\TRAIN-20260602_130017\\\
+  \\workspace\",\n  \"problem_title\": \"颜色与物质浓度的辨识问题\",\n  \"updated\": [\n    \"\
+  09_paper/full_draft.md\",\n    \"14_contracts/result_contract.csv\",\n    \"14_contracts/claim_evidence_map.csv\"\
+  ,\n    \"14_contracts/figure_contract.csv\",\n    \"14_contracts/formula_contract.csv\"\
+  ,\n    \"11_review/review_scorecard.csv\"\n  ]\n}\n"
+benchmark:
+  run_id: TRAIN-20260602_130017
+  draft_path: 16_learning/agent_runs/TRAIN-20260602_130017/workspace/09_paper/full_draft.md
+  draft_status: existing
+  gap_count: 1
+  queue_count: 1
+  report: 16_learning/agent_runs/TRAIN-20260602_130017/reports/full_gap_report.md
+copy_risk: pass
+copy_risk_report: 16_learning/agent_runs/TRAIN-20260602_130017/reports/copy_risk_report.csv
+copy_risk_markdown: 16_learning/agent_runs/TRAIN-20260602_130017/reports/copy_risk_report.md

@@ -1,0 +1,4 @@
+﻿claim_id,paper_section,claim_text,evidence_type,evidence_id,source_artifact,result_ids,figure_ids,formula_ids,citation_ids,status,owner,notes
+C1,模型建立,颜色通道与浓度存在稳定单调关系，线性回归可作为可解释基线。,result,R-Q1-001,07_results/metrics_summary.csv,R-Q1-001,F1,EQ1,,sandbox,local_training_agent,
+C2,模型比较,集成模型在交叉验证 RMSE 上优于线性与多项式模型。,result,R-Q2-001,07_results/metrics_summary.csv,R-Q2-001,F2,EQ2,,sandbox,local_training_agent,
+C3,结果分析,三组待测样本浓度分别约为 1.68、3.21、4.35 mg/L。,result,R-Q3-001;R-Q3-002;R-Q3-003,07_results/q3_results.csv,R-Q3-001;R-Q3-002;R-Q3-003,F3,EQ3,,sandbox,local_training_agent,

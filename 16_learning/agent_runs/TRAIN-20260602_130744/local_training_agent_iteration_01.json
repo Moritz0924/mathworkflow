@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "executor": "local_training_agent",
+  "iteration": 1,
+  "max_iterations": 3,
+  "workspace": "E:\\math-module\\math-workflow\\math-workflow\\16_learning\\agent_runs\\TRAIN-20260602_130744\\workspace",
+  "problem_title": "颜色与物质浓度的辨识问题",
+  "updated": [
+    "09_paper/full_draft.md",
+    "14_contracts/result_contract.csv",
+    "14_contracts/claim_evidence_map.csv",
+    "14_contracts/figure_contract.csv",
+    "14_contracts/formula_contract.csv",
+    "11_review/review_scorecard.csv"
+  ]
+}

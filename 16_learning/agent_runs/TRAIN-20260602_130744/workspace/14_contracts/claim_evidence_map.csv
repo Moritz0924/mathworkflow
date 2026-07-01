@@ -1,0 +1,4 @@
+﻿claim_id,question_id,section_id,claim_text,claim_type,evidence_type,evidence_id,result_id,figure_id,formula_id,citation_id,support_grade,boundary_condition,risk_note,status,owner,last_checked
+C1,Q1,model,颜色通道与浓度存在稳定单调关系，线性回归可作为可解释基线。,model,result,R-Q1-001,R-Q1-001,F1,EQ1,,strong,标准样本浓度范围 0.5-5.0 mg/L,小样本外推需谨慎,ready,local_training_agent,2026-06-02T13:07:44
+C2,Q2,validation,集成模型在交叉验证 RMSE 上优于线性与多项式模型。,result,result,R-Q2-001,R-Q2-001,F2,EQ2,,strong,留一交叉验证,模型复杂度受样本量限制,ready,local_training_agent,2026-06-02T13:07:44
+C3,Q3,results,三组待测样本浓度分别约为 1.68、3.21、4.35 mg/L。,result,result,R-Q3-001,R-Q3-001,F3,EQ3,,strong,颜色通道位于训练范围内,区间为经验区间,ready,local_training_agent,2026-06-02T13:07:44

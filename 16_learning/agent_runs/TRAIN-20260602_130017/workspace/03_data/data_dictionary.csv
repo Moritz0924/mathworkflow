@@ -1,0 +1,4 @@
+﻿field_name,source_file,meaning,data_type,unit,valid_range,missing_rate,used_in_question,used_in_model,used_in_figure,notes
+sample_id,color_concentration_samples.csv,样本编号,string,,S/T prefix,0,Q1-Q3,all,F1-F3,S为标准样本，T为待测样本
+concentration_mg_L,color_concentration_samples.csv,溶液浓度,float,mg/L,0.5-5.0,0 for standards; 1 for tests,Q1-Q3,target,F1-F3,待测样本由模型预测
+R/G/B,color_concentration_samples.csv,归一化颜色通道,float,ratio,0-1,0,Q1-Q3,features,F1-F3,无需图像输入

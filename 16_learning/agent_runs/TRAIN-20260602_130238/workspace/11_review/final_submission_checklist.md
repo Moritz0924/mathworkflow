@@ -1,0 +1,38 @@
+# Final submission checklist
+
+- fail_count: 3
+- warn_count: 29
+- issue_count: 32
+
+- [warn] todo_exists (02_latex_template\sections\00_abstract.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\01_background.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\02_problem_analysis.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\03_assumptions.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\04_symbols.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\05_data_analysis.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\06_model_q1.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\07_model_q2.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\08_model_q3.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\09_sensitivity.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\10_model_evaluation.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\11_conclusion.tex): TODO/placeholder text remains
+- [warn] todo_exists (02_latex_template\sections\appendix.tex): TODO/placeholder text remains
+- [warn] figure_registry (08_figures/figure_registry.csv): 08_figures/figure_registry.csv is missing; v3.2 uses figure_contract.csv as source of truth
+- [warn] result_summary (07_results/result_summary.tex): 07_results/result_summary.tex is missing; paper must not contain final result analysis yet
+- [warn] contract.unknown_status (result_contract.csv): result_contract.csv:2 status=sandbox
+- [warn] contract.unknown_status (result_contract.csv): result_contract.csv:3 status=sandbox
+- [warn] contract.unknown_status (result_contract.csv): result_contract.csv:4 status=sandbox
+- [warn] contract.unknown_status (result_contract.csv): result_contract.csv:5 status=sandbox
+- [warn] contract.unknown_status (result_contract.csv): result_contract.csv:6 status=sandbox
+- [warn] contract.unknown_status (figure_contract.csv): figure_contract.csv:2 status=sandbox
+- [warn] contract.unknown_status (figure_contract.csv): figure_contract.csv:3 status=sandbox
+- [warn] contract.unknown_status (figure_contract.csv): figure_contract.csv:4 status=sandbox
+- [warn] contract.unknown_status (formula_contract.csv): formula_contract.csv:2 status=sandbox
+- [warn] contract.unknown_status (formula_contract.csv): formula_contract.csv:3 status=sandbox
+- [warn] contract.unknown_status (formula_contract.csv): formula_contract.csv:4 status=sandbox
+- [warn] contract.unknown_status (claim_evidence_map.csv): claim_evidence_map.csv:2 status=sandbox
+- [warn] contract.unknown_status (claim_evidence_map.csv): claim_evidence_map.csv:3 status=sandbox
+- [warn] contract.unknown_status (claim_evidence_map.csv): claim_evidence_map.csv:4 status=sandbox
+- [fail] contract.unsupported_claim (14_contracts/claim_evidence_map.csv): C1 support_grade=<empty>
+- [fail] contract.unsupported_claim (14_contracts/claim_evidence_map.csv): C2 support_grade=<empty>
+- [fail] contract.unsupported_claim (14_contracts/claim_evidence_map.csv): C3 support_grade=<empty>

@@ -1,0 +1,4 @@
+$ python scripts/pro_paper_training_agent.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_134905\workspace\agent_prompt.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_134905\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_134905 --mode training_sandbox --max-iterations 3
+cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_134905\workspace
+
+SyntaxError: Non-UTF-8 code starting with '\xe9' in file E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_134905\workspace\scripts\pro_paper_training_agent.py on line 480, but no encoding declared; see https://python.org/dev/peps/pep-0263/ for details

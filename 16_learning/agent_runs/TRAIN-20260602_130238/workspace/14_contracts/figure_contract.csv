@@ -1,0 +1,4 @@
+﻿figure_id,title,file_path,paper_section,source_data,result_ids,claim_ids,status,owner,notes
+F1,颜色通道与浓度关系散点图,08_figures/output/color_channel_scatter.md,数据分析,03_data/raw/color_concentration_samples.csv,R-Q1-001,C1,sandbox,local_training_agent,文本占位图说明，正式导出需转为图片
+F2,模型交叉验证误差对比图,08_figures/output/model_error_compare.md,模型评价,07_results/metrics_summary.csv,R-Q1-001;R-Q2-001,C2,sandbox,local_training_agent,
+F3,待测样本浓度预测区间图,08_figures/output/prediction_interval.md,结果分析,07_results/q3_results.csv,R-Q3-001;R-Q3-002;R-Q3-003,C3,sandbox,local_training_agent,
