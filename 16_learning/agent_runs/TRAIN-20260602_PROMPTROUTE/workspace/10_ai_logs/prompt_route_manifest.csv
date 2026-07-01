@@ -1,0 +1,17 @@
+﻿stage_order,stage_id,prompt_file,sha256,size_bytes,included_in_training
+0,latex_template,prompts/stages/latex_template.md,,0,missing
+1,intake,prompts/stages/intake.md,,0,missing
+2,eda,prompts/stages/eda.md,,0,missing
+3,task_analysis,prompts/stages/task_analysis.md,,0,missing
+4,prior_retrieval,prompts/stages/prior_retrieval.md,,0,missing
+5,model_route,prompts/stages/model_route.md,,0,missing
+6,codegen,prompts/stages/codegen.md,,0,missing
+7,results_freeze,prompts/stages/results_freeze.md,,0,missing
+8,figures,prompts/stages/figures.md,,0,missing
+9,paper_draft,prompts/stages/paper_draft.md,,0,missing
+10,paper_full,prompts/stages/paper_full.md,,0,missing
+11,auto_review,prompts/stages/auto_review.md,,0,missing
+12,revision,prompts/stages/revision.md,,0,missing
+13,polish,prompts/stages/polish.md,,0,missing
+14,compile,prompts/stages/compile.md,,0,missing
+15,final_export,prompts/stages/final_export.md,,0,missing

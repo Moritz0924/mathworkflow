@@ -1,0 +1,5 @@
+﻿figure_id,path,used_in_paper,quality_score,latex_label
+FIG_COLOR_CHANNEL,08_figures/output/color_channel_scatter.png,yes,4.8,fig:color_channel_concentration
+FIG_MODEL_ERROR,08_figures/output/model_error_compare.png,yes,4.8,fig:model_error_compare
+FIG_PRED_INTERVAL,08_figures/output/prediction_interval.png,yes,4.8,fig:prediction_interval
+FIG_RESIDUAL_SENS,08_figures/output/residual_sensitivity.png,yes,4.8,fig:residual_sensitivity

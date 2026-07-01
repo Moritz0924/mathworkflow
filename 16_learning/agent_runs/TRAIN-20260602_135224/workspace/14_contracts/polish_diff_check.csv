@@ -1,0 +1,2 @@
+﻿check_id,artifact_id,section_id,original_path,polished_path,changed_numbers,changed_units,changed_formulas,changed_labels,changed_refs,changed_citations,changed_model_names,changed_result_meanings,protected_atom_delta_count,decision,review_note,owner,last_checked
+POLISH-FINAL-001,ART_FINAL_MD,all,09_paper/final_submission_text.md,09_paper/final_submission_text.md,0,0,0,0,0,0,0,0,0,pass,no protected atom changed after final generation,pro_paper_training_agent,2026-06-02T13:52:25

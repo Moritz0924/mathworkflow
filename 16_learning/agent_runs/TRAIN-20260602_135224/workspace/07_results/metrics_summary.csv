@@ -1,0 +1,4 @@
+﻿model_id,model_name,cv_rmse,cv_mae,r2
+M1_linear,线性回归,0.118,0.094,0.991
+M2_poly,二阶多项式回归,0.101,0.081,0.994
+M3_ensemble,加权集成回归,0.083,0.067,0.997
