@@ -23,3 +23,15 @@ ACT-20260602_123552-001,2026-06-02T12:35:52,benchmark-TRAIN-20260602_112822,E:\p
 ACT-END-JOB-20260602_123552-001,2026-06-02T12:35:52,benchmark-TRAIN-20260602_112822,E:\python\python_benti\python.exe scripts/benchmark_agent_run.py --run-id TRAIN-20260602_112822,JOB-20260602_123552-001,passed,0,,benchmark run_id=TRAIN-20260602_112822
 ACT-20260602_123559-002,2026-06-02T12:35:59,sandbox-training_sandbox,E:\python\python_benti\python.exe scripts/run_agent_mode.py --mode training_sandbox --max-iterations 5 --problem 00_problem/problem_statement.md,JOB-20260602_123559-002,started,,,"mode=training_sandbox, max_iterations=5, dry_run=False"
 ACT-END-JOB-20260602_123559-002,2026-06-02T12:36:44,sandbox-training_sandbox,E:\python\python_benti\python.exe scripts/run_agent_mode.py --mode training_sandbox --max-iterations 5 --problem 00_problem/problem_statement.md,JOB-20260602_123559-002,passed,0,,"mode=training_sandbox, max_iterations=5, dry_run=False"
+ACT-20260717_230124-001,2026-07-17T23:01:24,run-current,E:\python\python_benti\python.exe scripts/run_current_stage.py,JOB-20260717_230124-001,started,,intake,stage=intake
+ACT-END-JOB-20260717_230124-001,2026-07-17T23:01:24,run-current,E:\python\python_benti\python.exe scripts/run_current_stage.py,JOB-20260717_230124-001,passed,0,intake,stage=intake
+ACT-20260717_230137-002,2026-07-17T23:01:37,run-current,E:\python\python_benti\python.exe scripts/run_current_stage.py,JOB-20260717_230137-002,started,,eda,stage=eda
+ACT-END-JOB-20260717_230137-002,2026-07-17T23:01:37,run-current,E:\python\python_benti\python.exe scripts/run_current_stage.py,JOB-20260717_230137-002,passed,0,eda,stage=eda
+ACT-20260717_230159-003,2026-07-17T23:01:59,check-gates,E:\python\python_benti\python.exe scripts/check_gates.py,JOB-20260717_230159-003,started,,,dashboard check action
+ACT-END-JOB-20260717_230159-003,2026-07-17T23:02:00,check-gates,E:\python\python_benti\python.exe scripts/check_gates.py,JOB-20260717_230159-003,passed,0,,dashboard check action
+ACT-20260717_230218-004,2026-07-17T23:02:18,run-current,E:\python\python_benti\python.exe scripts/run_current_stage.py,JOB-20260717_230218-004,started,,task_analysis,stage=task_analysis
+ACT-END-JOB-20260717_230218-004,2026-07-17T23:02:18,run-current,E:\python\python_benti\python.exe scripts/run_current_stage.py,JOB-20260717_230218-004,passed,0,task_analysis,stage=task_analysis
+ACT-20260717_230239-005,2026-07-17T23:02:39,run-current,E:\python\python_benti\python.exe scripts/run_current_stage.py,JOB-20260717_230239-005,started,,prior_retrieval,stage=prior_retrieval
+ACT-END-JOB-20260717_230239-005,2026-07-17T23:02:40,run-current,E:\python\python_benti\python.exe scripts/run_current_stage.py,JOB-20260717_230239-005,passed,0,prior_retrieval,stage=prior_retrieval
+ACT-20260717_230334-006,2026-07-17T23:03:34,validate-export,E:\python\python_benti\python.exe scripts/validate_v32_export.py,JOB-20260717_230334-006,started,,,dashboard check action
+ACT-END-JOB-20260717_230334-006,2026-07-17T23:03:34,validate-export,E:\python\python_benti\python.exe scripts/validate_v32_export.py,JOB-20260717_230334-006,passed,0,,dashboard check action

@@ -130,6 +130,27 @@ CONTRACT_STAGE_MAP = {
     "empty_final_required_contract": ["results_freeze", "figures", "paper_full", "final_export"],
 }
 
+QUALITY_STAGE_MAP = {
+    "QF-PAPER-MISSING": ["paper_full", "final_export"],
+    "QF-PAPER-PLACEHOLDER": ["paper_full", "final_export"],
+    "QF-PAPER-TOO-SHORT": ["paper_full", "final_export"],
+    "QF-SECTIONS-TOO-SHALLOW": ["paper_full", "final_export"],
+    "QF-RESULT-CONTRACT-MISSING": ["results_freeze", "paper_full", "final_export"],
+    "QF-CLAIM-CONTRACT-MISSING": ["paper_full", "final_export"],
+    "QF-FORMULA-DENSITY-LOW": ["paper_full", "final_export"],
+    "QF-VALIDATION-DENSITY-LOW": ["results_freeze", "paper_full", "final_export"],
+    "QF-FIG-DUPLICATE-ID": ["figures", "paper_full", "final_export"],
+    "QF-FIG-MISSING-EVIDENCE": ["figures", "paper_full", "final_export"],
+    "QF-FIG-MISSING-OUTPUT": ["figures"],
+    "QF-FIG-SCRIPT-EVIDENCE-LOW": ["figures"],
+    "QF-FIG-RUN-EVIDENCE-LOW": ["figures"],
+    "QF-FIG-PLACEHOLDER": ["figures"],
+    "QF-FIG-DENSITY-LOW": ["figures", "paper_full", "final_export"],
+    "QF-TABLE-DENSITY-LOW": ["paper_full", "final_export"],
+    "QF-EXPORT-MISSING": ["final_export"],
+    "QF-VISUAL-QA-NOT-PASS": ["final_export"],
+}
+
 VALIDATION_QUEUE_SKIP_ITEMS = {
     "open_blocking_revision_queue",
     "missing_copy_risk_report",
@@ -146,6 +167,7 @@ STAGE_OUTPUT_REQUIREMENTS = {
     "figures": [
         "Write `14_contracts/figure_contract.csv` with this schema when possible: figure_id,result_id,evidence_source,chart_type,title_cn,output_svg,output_png,output_pdf,quality_score,used_in_section,latex_label,caption_cn,notes.",
         "Every figure_contract row must have result_id or evidence_source, and at least one existing output_svg/output_png/output_pdf/file_path.",
+        "For submission-quality figures, include script_path and execution_log fields pointing to the current run's figure script and generation evidence.",
         "Prefer canonical figure ids `F001`, `F002`, ... in every contract and paper reference; do not invent `figF001` aliases.",
         "Create the referenced figure files under `08_figures/`; text placeholders are acceptable only if they are explicit sandbox figures.",
         "Do not cite figures in paper text unless they are registered and files exist.",
@@ -154,6 +176,8 @@ STAGE_OUTPUT_REQUIREMENTS = {
     ],
     "paper_full": [
         "Write substantive `09_paper/full_draft.md` with at least 摘要, 问题分析, 模型建立, 结果分析, 验证/敏感性, 结论.",
+        "Training-draft quality requires at least 10,000 effective characters, seven substantive sections, five independent result-bound figures, three tables, two formulas, and explicit validation/sensitivity/baseline evidence.",
+        "A submit-candidate direction should aim for at least 16,000 effective characters, eight figures, five tables, four formulas, and validation for every core subproblem.",
         "Keep the paper topic aligned with the locked problem statement: color channels R/G/B and concentration prediction for T01/T02/T03; do not switch to AQI, wine quality, or unrelated benchmark topics.",
         "Write non-empty `14_contracts/claim_evidence_map.csv`; each major claim must bind to result_id and, where applicable, figure_id/formula_id.",
         "Write `14_contracts/formula_contract.csv` for important equations and symbol definitions.",
@@ -161,7 +185,7 @@ STAGE_OUTPUT_REQUIREMENTS = {
         "When `figure_density` is open, cite the registered figures in the paper using `图F001`, `图F002`, ... and include at least seven figure references if the benchmark threshold is above 6.",
     ],
     "auto_review": [
-        "Write current `11_review/review_scorecard.csv` and `14_contracts/revision_tasks.csv`; do not leave stale fail rows from earlier missing artifacts.",
+        "Write current `11_review/review_scorecard.csv` and `14_contracts/revision_tasks.csv`; this is author-side self-review, not the final independent quality verdict.",
         "Review scorecard rows should use score/max_score and must be at least 85% after the sandbox artifacts are fixed; on a 10-point scale use 9 or 10 for pass, otherwise keep the item as an open blocker.",
         "Write `11_review/simulated_human_gate_log.csv` with columns stage_id, gate_id, agent_decision, evidence, residual_risk, formal_effect.",
         "Every simulated gate row must set formal_effect to `none`; never use confirmed/approved as a formal workflow effect.",
@@ -173,6 +197,7 @@ STAGE_OUTPUT_REQUIREMENTS = {
         "Write `12_submission/final_submit_package.md` with included artifacts and residual risks.",
         "Write `reports/training_enhancement_points.csv` and `.md`; CSV must include at least one target_area each of system, prompt, and gate.",
         "Ensure simulated gate log has at least four rows and formal_effect is `none` for every row.",
+        "Do not invent `11_review/quality_verdict.json`; the runner creates it through the independent Sandbox Quality Auditor after export.",
         "Before final_export, every active citation_contract row must include support_grade, metadata_verified=true, and bibtex_key; remove or mark inactive any unused citation rows.",
     ],
 }
@@ -660,6 +685,9 @@ def stage_rows_by_id(policy: Mapping[str, Any], workspace: Path) -> Dict[str, Di
 
 def gap_dimension_for_blocker(run_dir: Path, row: Mapping[str, str]) -> str:
     note = str(row.get("notes") or "")
+    quality_match = re.search(r"quality_item=([A-Za-z0-9_:-]+)", note)
+    if quality_match:
+        return f"quality:{quality_match.group(1)}"
     validation_match = re.search(r"validation_item=([A-Za-z0-9_:-]+)", note)
     if validation_match:
         return f"validation:{validation_match.group(1)}"
@@ -689,7 +717,9 @@ def stages_for_blockers(run_dir: Path, blockers: Sequence[Mapping[str, str]], st
     selected: List[str] = []
     for blocker in blockers:
         dimension = gap_dimension_for_blocker(run_dir, blocker)
-        if dimension.startswith("validation:"):
+        if dimension.startswith("quality:"):
+            stages = QUALITY_STAGE_MAP.get(dimension.split(":", 1)[1], ["paper_full", "final_export"])
+        elif dimension.startswith("validation:"):
             stages = VALIDATION_STAGE_MAP.get(dimension.split(":", 1)[1], ["paper_full"])
         elif dimension.startswith("contract:"):
             stages = CONTRACT_STAGE_MAP.get(dimension.split(":", 1)[1], ["paper_full", "final_export"])
@@ -970,6 +1000,66 @@ def merge_contract_failures_into_queue(run_dir: Path, contract_validation: Mappi
                 "issue_summary": detail,
                 "proposed_action": action,
                 "acceptance_check": acceptance,
+                "status": "open",
+                "human_decision": "",
+                "notes": note,
+            }
+        )
+        existing_keys.add(key)
+    if added or changed:
+        write_csv_dicts(queue_path, rows, QUEUE_FIELDS)
+    return added
+
+
+def merge_quality_findings_into_queue(run_dir: Path, quality_audit: Mapping[str, Any]) -> int:
+    queue_path = run_dir / "reports" / "agent_revision_queue.csv"
+    rows = read_csv_dict(queue_path)
+    direct_keys = {
+        (str(finding.get("finding_id") or ""), str(finding.get("finding") or ""))
+        for finding in quality_audit.get("findings") or []
+        if str(finding.get("severity") or "") in {"redline", "fail", "major"}
+    }
+    changed = False
+    for row in rows:
+        status = str(row.get("status") or "").strip().lower()
+        severity = str(row.get("severity") or "").strip().lower()
+        match = re.search(r"quality_item=([A-Za-z0-9_:-]+)", str(row.get("notes") or ""))
+        if status == "open" and severity in {"fail", "major"} and match:
+            key = (match.group(1), str(row.get("issue_summary") or ""))
+            if key not in direct_keys:
+                row["status"] = "resolved"
+                row["human_decision"] = row.get("human_decision") or "auto_resolved_by_quality_audit"
+                row["notes"] = str(row.get("notes") or "") + ";resolved_by_current_quality_audit"
+                changed = True
+    existing_keys = {
+        (str(row.get("notes") or ""), str(row.get("target_artifact") or ""), str(row.get("issue_summary") or ""))
+        for row in rows
+        if str(row.get("status") or "").strip().lower() == "open"
+    }
+    added = 0
+    for finding in quality_audit.get("findings") or []:
+        raw_severity = str(finding.get("severity") or "")
+        if raw_severity not in {"redline", "fail", "major"}:
+            continue
+        finding_id = str(finding.get("finding_id") or "")
+        detail = str(finding.get("finding") or "")
+        target = str(finding.get("target_artifact") or "workspace")
+        note = f"quality_item={finding_id}"
+        key = (note, target, detail)
+        if key in existing_keys:
+            continue
+        added += 1
+        task_number = len(rows) + 1
+        rows.append(
+            {
+                "task_id": f"{run_dir.name}-QUALITY-{task_number:03d}",
+                "run_id": run_dir.name,
+                "iteration": "quality_audit",
+                "severity": "fail" if raw_severity == "redline" else raw_severity,
+                "target_artifact": target,
+                "issue_summary": detail,
+                "proposed_action": str(finding.get("required_action") or "Resolve the quality audit finding."),
+                "acceptance_check": str(finding.get("acceptance_check") or "quality_audit no longer reports this finding."),
                 "status": "open",
                 "human_decision": "",
                 "notes": note,
@@ -1631,11 +1721,20 @@ def run_training_sandbox(args: argparse.Namespace, policy: Mapping[str, Any]) ->
     validation_queue_added = merge_validation_failures_into_queue(run_dir, validation_for_queue)
     contract_for_queue = validate_sandbox_contracts(workspace)
     contract_queue_added = merge_contract_failures_into_queue(run_dir, contract_for_queue)
-    if validation_queue_added or contract_queue_added:
+    from sandbox_quality_auditor import run_quality_audit
+
+    quality_for_queue = run_quality_audit(run_dir, target_tier="training_draft")
+    quality_queue_added = merge_quality_findings_into_queue(run_dir, quality_for_queue)
+    if validation_queue_added or contract_queue_added or quality_queue_added:
         update_status(
             run_dir,
             "validation_queue_seeded",
-            {"initial_validation_queue_added": validation_queue_added, "initial_contract_queue_added": contract_queue_added},
+            {
+                "initial_validation_queue_added": validation_queue_added,
+                "initial_contract_queue_added": contract_queue_added,
+                "initial_quality_queue_added": quality_queue_added,
+                "initial_quality_audit": {key: value for key, value in quality_for_queue.items() if key not in {"scorecard", "findings", "revision_tasks"}},
+            },
         )
 
     no_improvement_streak = 0
@@ -1691,6 +1790,8 @@ def run_training_sandbox(args: argparse.Namespace, policy: Mapping[str, Any]) ->
             validation_queue_added = merge_validation_failures_into_queue(run_dir, validation_for_queue)
             contract_for_queue = validate_sandbox_contracts(workspace)
             contract_queue_added = merge_contract_failures_into_queue(run_dir, contract_for_queue)
+            quality_for_queue = run_quality_audit(run_dir, target_tier="training_draft")
+            quality_queue_added = merge_quality_findings_into_queue(run_dir, quality_for_queue)
             blockers_after = blocking_queue_rows(run_dir)
             after_keys = queue_issue_keys(blockers_after)
             if blockers_after and after_keys == before_keys:
@@ -1705,6 +1806,8 @@ def run_training_sandbox(args: argparse.Namespace, policy: Mapping[str, Any]) ->
                     f"iteration_{iteration}_no_improvement_streak": no_improvement_streak,
                     f"iteration_{iteration}_validation_queue_added": validation_queue_added,
                     f"iteration_{iteration}_contract_queue_added": contract_queue_added,
+                    f"iteration_{iteration}_quality_queue_added": quality_queue_added,
+                    f"iteration_{iteration}_quality_audit": {key: value for key, value in quality_for_queue.items() if key not in {"scorecard", "findings", "revision_tasks"}},
                 },
             )
             if rc != 0:
@@ -1733,6 +1836,8 @@ def run_training_sandbox(args: argparse.Namespace, policy: Mapping[str, Any]) ->
     pre_final_validation_queue_added = merge_validation_failures_into_queue(run_dir, pre_final_validation)
     pre_final_contract_validation = validate_sandbox_contracts(workspace)
     pre_final_contract_queue_added = merge_contract_failures_into_queue(run_dir, pre_final_contract_validation)
+    pre_final_quality_audit = run_quality_audit(run_dir, target_tier="training_draft")
+    pre_final_quality_queue_added = merge_quality_findings_into_queue(run_dir, pre_final_quality_audit)
     final_blockers = blocking_queue_rows(run_dir)
     final_status = status
     if status == "agent_passed":
@@ -1748,6 +1853,8 @@ def run_training_sandbox(args: argparse.Namespace, policy: Mapping[str, Any]) ->
             "final_gate_normalization": final_gate_normalization,
             "pre_final_validation_queue_added": pre_final_validation_queue_added,
             "pre_final_contract_queue_added": pre_final_contract_queue_added,
+            "pre_final_quality_queue_added": pre_final_quality_queue_added,
+            "pre_final_quality_audit": {key: value for key, value in pre_final_quality_audit.items() if key not in {"scorecard", "findings", "revision_tasks"}},
             **copy_risk_payload,
         },
     )
@@ -1758,6 +1865,12 @@ def run_training_sandbox(args: argparse.Namespace, policy: Mapping[str, Any]) ->
         update_status(run_dir, final_status, {"contract_validation": contract_validation})
     else:
         update_status(run_dir, final_status, {"contract_validation": contract_validation})
+    final_quality_audit = run_quality_audit(run_dir, target_tier="training_draft")
+    if final_quality_audit.get("status") != "pass":
+        final_status = "completed_with_quality_issues" if final_status == "completed" else final_status
+        update_status(run_dir, final_status, {"quality_audit": {key: value for key, value in final_quality_audit.items() if key not in {"scorecard", "findings", "revision_tasks"}}})
+    else:
+        update_status(run_dir, final_status, {"quality_audit": {key: value for key, value in final_quality_audit.items() if key not in {"scorecard", "findings", "revision_tasks"}}})
     from validate_training_acceptance import evaluate_training_acceptance, write_reports as write_training_acceptance_reports
 
     training_acceptance = evaluate_training_acceptance(run_dir, profile="excellent")
@@ -1768,8 +1881,8 @@ def run_training_sandbox(args: argparse.Namespace, policy: Mapping[str, Any]) ->
     else:
         update_status(run_dir, final_status, {"training_acceptance": training_acceptance})
     append_run_index(run_id, "training_sandbox", final_status, workspace, manifest, run_dir / "reports" / "full_gap_report.md")
-    print(json.dumps({"run_id": run_id, "status": final_status, "benchmark": benchmark, "validation": validation, "contract_validation": contract_validation, "training_acceptance": training_acceptance}, ensure_ascii=False, indent=2))
-    return 0 if not validation.get("fail_count") and not contract_validation.get("fail_count") and not training_acceptance.get("fail_count") else 1
+    print(json.dumps({"run_id": run_id, "status": final_status, "benchmark": benchmark, "validation": validation, "contract_validation": contract_validation, "quality_audit": final_quality_audit, "training_acceptance": training_acceptance}, ensure_ascii=False, indent=2))
+    return 0 if not validation.get("fail_count") and not contract_validation.get("fail_count") and final_quality_audit.get("status") == "pass" and not training_acceptance.get("fail_count") else 1
 
 
 def formal_stage_prompt(current_stage: str, pending_gate: str, stage_prompt_text: str, training_feedback_text: str = "") -> str:

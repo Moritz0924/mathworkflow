@@ -28,7 +28,9 @@ def make_minimal_run(tmp_path: Path) -> Path:
     (workspace / "12_submission").mkdir(parents=True)
     (workspace / "14_contracts").mkdir(parents=True)
     (workspace / "11_review").mkdir(parents=True)
+    (workspace / "07_results" / "logs").mkdir(parents=True)
     (workspace / "08_figures" / "output").mkdir(parents=True)
+    (workspace / "08_figures" / "scripts").mkdir(parents=True)
 
     (run_dir / "run_manifest.yaml").write_text("run_id: TRAIN-QUALITY\nmode: training_sandbox\nstatus: completed\n", encoding="utf-8")
     write_csv(
@@ -68,6 +70,18 @@ def make_minimal_run(tmp_path: Path) -> Path:
         [{"task_id": "REV-001", "source": "training", "severity": "major", "target_artifact": "paper", "issue": "quality", "action": "fixed", "status": "closed", "owner": "agent", "notes": ""}],
         ["task_id", "source", "severity", "target_artifact", "issue", "action", "status", "owner", "notes"],
     )
+    (workspace / "07_results" / "metrics.csv").write_text("metric,value\nrmse,0.12\n", encoding="utf-8")
+    (workspace / "07_results" / "logs" / "generate_figures.log").write_text("generated F001-F006 from 07_results/metrics.csv\n", encoding="utf-8")
+    write_csv(
+        workspace / "14_contracts" / "result_contract.csv",
+        [{"result_id": "R001", "metric_name": "rmse", "metric_value": "0.12", "source_file": "07_results/metrics.csv", "used_by_claim_ids": "C001", "freeze_status": "frozen", "notes": ""}],
+        ["result_id", "metric_name", "metric_value", "source_file", "used_by_claim_ids", "freeze_status", "notes"],
+    )
+    write_csv(
+        workspace / "14_contracts" / "claim_evidence_map.csv",
+        [{"claim_id": "C001", "claim_text": "模型误差满足训练验收要求", "result_ids": "R001", "figure_ids": "F001", "formula_ids": "EQ1", "citation_ids": "", "status": "ready", "notes": ""}],
+        ["claim_id", "claim_text", "result_ids", "figure_ids", "formula_ids", "citation_ids", "status", "notes"],
+    )
 
     for idx in range(1, 7):
         fig = workspace / "08_figures" / "output" / f"F{idx:03d}.svg"
@@ -75,13 +89,17 @@ def make_minimal_run(tmp_path: Path) -> Path:
             f"<svg xmlns='http://www.w3.org/2000/svg' width='640' height='360'><rect width='640' height='360' fill='#f8fafc'/><text x='20' y='40'>图 {idx}：中文图表</text><path d='M40 320 L600 80' stroke='#2563eb' stroke-width='4'/></svg>",
             encoding="utf-8",
         )
+        (workspace / "08_figures" / "scripts" / f"F{idx:03d}.py").write_text(
+            "from pathlib import Path\nPath('08_figures/output').mkdir(parents=True, exist_ok=True)\n",
+            encoding="utf-8",
+        )
     write_csv(
         workspace / "14_contracts" / "figure_contract.csv",
         [
-            {"figure_id": f"F{idx:03d}", "title": f"图 {idx}", "result_id": "R001", "evidence_source": "07_results/metrics.csv", "output_svg": f"08_figures/output/F{idx:03d}.svg", "output_png": "", "output_pdf": "", "used_in_section": "结果分析", "latex_label": f"fig:f{idx:03d}", "quality_score": "4.8", "status": "ready", "owner": "agent", "notes": ""}
+            {"figure_id": f"F{idx:03d}", "title": f"图 {idx}", "result_id": "R001", "evidence_source": "07_results/metrics.csv", "script_path": f"08_figures/scripts/F{idx:03d}.py", "execution_log": "07_results/logs/generate_figures.log", "output_svg": f"08_figures/output/F{idx:03d}.svg", "output_png": "", "output_pdf": "", "used_in_section": "结果分析", "latex_label": f"fig:f{idx:03d}", "quality_score": "4.8", "status": "ready", "owner": "agent", "notes": ""}
             for idx in range(1, 7)
         ],
-        ["figure_id", "title", "result_id", "evidence_source", "output_svg", "output_png", "output_pdf", "used_in_section", "latex_label", "quality_score", "status", "owner", "notes"],
+        ["figure_id", "title", "result_id", "evidence_source", "script_path", "execution_log", "output_svg", "output_png", "output_pdf", "used_in_section", "latex_label", "quality_score", "status", "owner", "notes"],
     )
     write_csv(
         workspace / "14_contracts" / "formula_contract.csv",
@@ -126,9 +144,11 @@ def make_minimal_run(tmp_path: Path) -> Path:
 class TrainingQualityAcceptanceTests(unittest.TestCase):
     def test_training_acceptance_requires_mixed_quality_gates(self) -> None:
         from validate_training_acceptance import evaluate_training_acceptance
+        from sandbox_quality_auditor import run_quality_audit
 
         with tempfile.TemporaryDirectory() as tmp:
             run_dir = make_minimal_run(Path(tmp))
+            run_quality_audit(run_dir, target_tier="training_draft")
             payload = evaluate_training_acceptance(run_dir, profile="excellent")
         self.assertEqual(payload["status"], "pass")
         self.assertEqual(payload["thresholds"]["min_chars"], 12000)
@@ -140,9 +160,11 @@ class TrainingQualityAcceptanceTests(unittest.TestCase):
 
     def test_training_acceptance_fails_missing_export_and_appendix(self) -> None:
         from validate_training_acceptance import evaluate_training_acceptance
+        from sandbox_quality_auditor import run_quality_audit
 
         with tempfile.TemporaryDirectory() as tmp:
             run_dir = make_minimal_run(Path(tmp))
+            run_quality_audit(run_dir, target_tier="training_draft")
             workspace = run_dir / "workspace"
             (workspace / "12_submission" / "final_submit_paper.docx").unlink()
             paper = (workspace / "12_submission" / "final_submit_paper.md").read_text(encoding="utf-8")
@@ -152,6 +174,17 @@ class TrainingQualityAcceptanceTests(unittest.TestCase):
         items = {issue["item"] for issue in payload["issues"] if issue["level"] == "fail"}
         self.assertIn("missing_docx_export", items)
         self.assertIn("missing_acceptance_appendix", items)
+        self.assertEqual(payload["status"], "fail")
+
+    def test_training_acceptance_requires_independent_quality_verdict(self) -> None:
+        from validate_training_acceptance import evaluate_training_acceptance
+
+        with tempfile.TemporaryDirectory() as tmp:
+            run_dir = make_minimal_run(Path(tmp))
+            payload = evaluate_training_acceptance(run_dir, profile="excellent")
+
+        items = {issue["item"] for issue in payload["issues"] if issue["level"] == "fail"}
+        self.assertIn("missing_quality_verdict", items)
         self.assertEqual(payload["status"], "fail")
 
 

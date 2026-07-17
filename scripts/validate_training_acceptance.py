@@ -18,6 +18,13 @@ CLOSED_STATUSES = {"closed", "resolved", "waived", "pass", "passed"}
 NO_FORMAL_EFFECT_VALUES = {"none", "no", "false", "0", "无", "没有", "不影响"}
 QUALITY_TERMS = re.compile(r"validation|sensitivity|robust|robustness|residual|误差|残差|灵敏|敏感|检验|验证|稳健|鲁棒", re.I)
 TABLE_RE = re.compile(r"(^|\n)\s*(表\s*[0-9一二三四五六七八九十]+|table\s*\d+|\\begin\{tabular\}|\|.+\|)", re.I)
+QUALITY_TIER_ORDER = {
+    "needs_revision": 0,
+    "rejected": 0,
+    "training_draft": 1,
+    "submission_candidate": 2,
+    "excellent_training_sample": 3,
+}
 
 
 def add(issues: List[Dict[str, str]], level: str, item: str, detail: str, path: Path | str = "") -> None:
@@ -134,6 +141,31 @@ def validate_exports(workspace: Path, issues: List[Dict[str, str]]) -> Dict[str,
     return manifest
 
 
+def validate_quality_verdict(run_dir: Path, workspace: Path, issues: List[Dict[str, str]], target_tier: str = "training_draft") -> Dict[str, Any]:
+    verdict_path = workspace / "11_review" / "quality_verdict.json"
+    verdict = read_json(verdict_path)
+    if not verdict:
+        add(issues, "fail", "missing_quality_verdict", "quality_verdict.json missing or invalid", verdict_path)
+        return {}
+    snapshot_id = str(verdict.get("snapshot_id") or "").strip()
+    snapshot_manifest = run_dir / "audit_snapshot" / "snapshot_manifest.json"
+    if not snapshot_id:
+        add(issues, "fail", "quality_verdict_missing_snapshot_id", "quality verdict must bind to a snapshot_id", verdict_path)
+    if not snapshot_manifest.exists():
+        add(issues, "fail", "missing_quality_audit_snapshot", "audit_snapshot/snapshot_manifest.json missing", snapshot_manifest)
+    total_score = float(verdict.get("total_score") or 0.0)
+    if total_score < 75.0:
+        add(issues, "fail", "quality_score_below_passline", f"total_score={total_score} < 75", verdict_path)
+    if not bool(verdict.get("hard_gate_passed")):
+        add(issues, "fail", "quality_hard_gate_not_passed", "quality verdict hard_gate_passed is false", verdict_path)
+    recommended = str(verdict.get("recommended_decision") or verdict.get("quality_tier") or "needs_revision")
+    if QUALITY_TIER_ORDER.get(recommended, 0) < QUALITY_TIER_ORDER.get(target_tier, 1):
+        add(issues, "fail", "quality_verdict_below_target_tier", f"{recommended} < {target_tier}", verdict_path)
+    if int(verdict.get("redline_count") or 0) > 0 or int(verdict.get("open_fail_count") or 0) > 0:
+        add(issues, "fail", "quality_redline_or_fail_open", f"redline={verdict.get('redline_count')} fail={verdict.get('open_fail_count')}", verdict_path)
+    return verdict
+
+
 def evaluate_training_acceptance(run_dir: Path | str, profile: str = "excellent") -> Dict[str, Any]:
     run_dir = Path(run_dir)
     workspace = run_dir / "workspace"
@@ -208,6 +240,7 @@ def evaluate_training_acceptance(run_dir: Path | str, profile: str = "excellent"
         add(issues, "fail", "excellent_formula_density_low", f"formulas={ready_formulas} < {thresholds['min_formulas']}", workspace / "14_contracts" / "formula_contract.csv")
 
     export_manifest = validate_exports(workspace, issues)
+    quality_verdict = validate_quality_verdict(run_dir, workspace, issues, target_tier="training_draft")
 
     fail_count = sum(1 for issue in issues if issue.get("level") == "fail")
     payload = {
@@ -225,6 +258,7 @@ def evaluate_training_acceptance(run_dir: Path | str, profile: str = "excellent"
             "formulas": ready_formulas,
             "quality_terms": quality_terms,
             "export_manifest": bool(export_manifest),
+            "quality_verdict": bool(quality_verdict),
         },
         "issues": issues,
     }

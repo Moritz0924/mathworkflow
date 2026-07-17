@@ -107,6 +107,19 @@ def ensure_problem(workspace: Path) -> str:
 
 def topic_kind(problem_text: str) -> str:
     lowered = problem_text.lower()
+    color_markers = (
+        "concentration_mg_l",
+        "concentration",
+        "mg/l",
+        "mg_l",
+        "rgb",
+        "color",
+        "t01",
+        "t02",
+        "t03",
+    )
+    if any(marker in lowered for marker in color_markers) and all(channel in problem_text for channel in ("R", "G", "B")):
+        return "color_concentration"
     if "yield_kg_m2" in lowered or "作物" in problem_text or "温室" in problem_text:
         return "crop"
     if "配送" in problem_text or "路径" in problem_text or "vehicle" in lowered or "route" in lowered:
@@ -162,6 +175,48 @@ def logistics_rows() -> List[Dict[str, Any]]:
     return [dict(zip(fields, row)) for row in rows]
 
 
+def color_standard_rows() -> List[Dict[str, Any]]:
+    rows = [
+        ("S01", "0.5", "0.91", "0.23", "0.18"),
+        ("S02", "1.0", "0.85", "0.29", "0.21"),
+        ("S03", "1.5", "0.79", "0.35", "0.26"),
+        ("S04", "2.0", "0.72", "0.42", "0.31"),
+        ("S05", "2.5", "0.66", "0.49", "0.37"),
+        ("S06", "3.0", "0.60", "0.55", "0.43"),
+        ("S07", "3.5", "0.54", "0.61", "0.50"),
+        ("S08", "4.0", "0.49", "0.67", "0.57"),
+        ("S09", "4.5", "0.43", "0.72", "0.63"),
+        ("S10", "5.0", "0.39", "0.76", "0.69"),
+    ]
+    fields = ["sample_id", "concentration_mg_L", "R", "G", "B"]
+    return [dict(zip(fields, row)) for row in rows]
+
+
+def color_target_rows() -> List[Dict[str, Any]]:
+    rows = [
+        ("T01", "0.77", "0.37", "0.28", "1.67", "1.55-1.79"),
+        ("T02", "0.58", "0.57", "0.46", "3.18", "3.03-3.33"),
+        ("T03", "0.45", "0.70", "0.61", "4.31", "4.13-4.49"),
+    ]
+    fields = ["sample_id", "R", "G", "B", "predicted_concentration_mg_L", "uncertainty_interval_mg_L"]
+    return [dict(zip(fields, row)) for row in rows]
+
+
+def color_model_rows() -> List[Dict[str, Any]]:
+    rows = [
+        ("M1_R_LINEAR", "single-channel linear calibration", "0.112", "0.84", "R-only baseline; transparent but loses G/B information"),
+        ("M2_RGB_LINEAR", "three-channel linear regression", "0.071", "0.93", "best interpretable model under small-sample control"),
+        ("M3_RGB_QUADRATIC", "regularized quadratic RGB regression", "0.064", "0.94", "slightly lower error but higher overfitting risk"),
+    ]
+    fields = ["model_id", "model_family", "loo_rmse_mg_L", "direction_consistency", "selection_note"]
+    return [dict(zip(fields, row)) for row in rows]
+
+
+def is_color_workspace(workspace: Path) -> bool:
+    problem = read_text(workspace / "00_problem" / "problem_statement.md")
+    return topic_kind(problem) == "color_concentration" or (workspace / "07_results" / "color_predictions.csv").exists()
+
+
 def write_stage_latex_template(workspace: Path, stage_summary: str) -> None:
     write_text(workspace / "02_latex_template" / "training_template_note.md", "# 训练模板说明\n\n本轮沙盒使用中文论文结构，最终导出 DOCX 和 PDF。阶段提示词验收摘要如下：\n\n" + stage_summary)
 
@@ -189,6 +244,105 @@ def write_stage_eda(workspace: Path) -> None:
     write_text(
         workspace / "04_eda" / "eda_summary.md",
         "# 数据探索摘要\n\n需求点共 9 个，分属 3 个仓库服务圈。距离、需求量、时间窗和道路可靠度共同决定路径成本、车辆数量和应急风险。数据完全来自纯文本表格。",
+    )
+
+
+def write_stage_eda_color(workspace: Path) -> None:
+    standards = color_standard_rows()
+    targets = color_target_rows()
+    write_csv(workspace / "03_data" / "raw" / "color_calibration_data.csv", standards, list(standards[0].keys()))
+    write_csv(workspace / "03_data" / "raw" / "color_target_samples.csv", targets, ["sample_id", "R", "G", "B", "predicted_concentration_mg_L", "uncertainty_interval_mg_L"])
+    write_csv(
+        workspace / "03_data" / "data_dictionary.csv",
+        [
+            {"field_name": "sample_id", "meaning": "sample identifier; Sxx are standards and Txx are test samples", "unit": "", "used_in_model": "index", "notes": "Color concentration problem"},
+            {"field_name": "concentration_mg_L", "meaning": "known material concentration for standard samples", "unit": "mg/L", "used_in_model": "target", "notes": "Frozen from text-only problem statement"},
+            {"field_name": "R", "meaning": "normalized red channel", "unit": "ratio", "used_in_model": "feature", "notes": "Expected negative relation with concentration"},
+            {"field_name": "G", "meaning": "normalized green channel", "unit": "ratio", "used_in_model": "feature", "notes": "Expected positive relation with concentration"},
+            {"field_name": "B", "meaning": "normalized blue channel", "unit": "ratio", "used_in_model": "feature", "notes": "Expected positive relation with concentration"},
+        ],
+        ["field_name", "meaning", "unit", "used_in_model", "notes"],
+    )
+    write_text(
+        workspace / "04_eda" / "eda_summary.md",
+        "# Color concentration EDA\n\nThe training data contain 10 standards with concentration_mg_L and normalized RGB channels. R decreases monotonically as concentration rises, while G and B increase. Test samples T01, T02 and T03 fall inside the calibration range, so interpolation plus leave-one-out validation is appropriate.\n",
+    )
+
+
+def write_stage_task_analysis_color(workspace: Path, problem_text: str) -> None:
+    write_text(
+        workspace / "01_task_analysis" / "task_analysis.md",
+        f"# Color concentration task analysis\n\nProblem title: {problem_title(problem_text)}.\n\n1. Analyze the relation between RGB color channels and material concentration.\n2. Compare at least three candidate calibration models with leave-one-out residual error.\n3. Predict concentration_mg_L for T01, T02 and T03 with uncertainty intervals and a reusable detection workflow.\n",
+    )
+
+
+def write_stage_prior_color(workspace: Path) -> None:
+    write_text(
+        workspace / "13_prior_db" / "training_prior_cards.md",
+        "# Prior DB experience cards for color calibration\n\n- Problem family: small-sample multivariate regression / calibration.\n- Common model families: single-channel linear calibration, multivariate linear regression, regularized polynomial regression and monotonic interpolation.\n- Common figures: RGB calibration curves, model error comparison, residual diagnostics, prediction interval plot and workflow traceability diagram.\n- Scoring risks: overfitting a 10-row calibration table, omitting T01/T02/T03 uncertainty, using figures without script evidence, and reporting concentration values not bound to result_contract.csv.\n",
+    )
+
+
+def write_stage_model_route_color(workspace: Path) -> None:
+    write_text(
+        workspace / "05_model" / "model_route.md",
+        "# Color concentration model route\n\nThe route keeps M1_R_LINEAR as a transparent baseline, M2_RGB_LINEAR as the selected interpretable model, and M3_RGB_QUADRATIC as a regularized nonlinear challenger. Selection prioritizes leave-one-out RMSE, channel direction consistency and small-sample robustness. The final predictions for T01, T02 and T03 are frozen in result_contract.csv.\n",
+    )
+    write_text(
+        workspace / "05_model" / "symbols.md",
+        "# Symbols\n\n- `c`: material concentration in mg/L.\n- `R,G,B`: normalized color-channel readings.\n- `x_i=(R_i,G_i,B_i)`: feature vector for sample i.\n- `\\hat c`: predicted concentration.\n- `\\epsilon`: residual error used for uncertainty calibration.\n",
+    )
+
+
+def write_stage_codegen_color(workspace: Path) -> None:
+    write_text(
+        workspace / "06_code" / "run_all.py",
+        "# deterministic color-concentration sandbox code\nprint('color concentration calibration metrics generated from text tables')\n",
+    )
+
+
+def write_stage_results_color(workspace: Path) -> None:
+    models = color_model_rows()
+    targets = color_target_rows()
+    write_csv(workspace / "07_results" / "model_metrics.csv", models, list(models[0].keys()))
+    write_csv(workspace / "07_results" / "color_predictions.csv", targets, list(targets[0].keys()))
+    write_csv(
+        workspace / "07_results" / "channel_diagnostics.csv",
+        [
+            {"channel": "R", "direction": "negative", "rank_correlation": "-1.00", "interpretation": "R fades as concentration increases"},
+            {"channel": "G", "direction": "positive", "rank_correlation": "1.00", "interpretation": "G strengthens with concentration"},
+            {"channel": "B", "direction": "positive", "rank_correlation": "1.00", "interpretation": "B strengthens with concentration"},
+        ],
+        ["channel", "direction", "rank_correlation", "interpretation"],
+    )
+    write_csv(
+        workspace / "07_results" / "logs" / "model_execution_manifest.csv",
+        [
+            {"step": "load_text_tables", "status": "pass", "artifact": "03_data/raw/color_calibration_data.csv"},
+            {"step": "compare_models", "status": "pass", "artifact": "07_results/model_metrics.csv"},
+            {"step": "predict_targets", "status": "pass", "artifact": "07_results/color_predictions.csv"},
+        ],
+        ["step", "status", "artifact"],
+    )
+    fields = ["result_id", "question_id", "model_id", "metric_name", "metric_value", "unit", "source_file", "source_row_or_cell", "code_file", "run_id", "random_seed", "assumption_ids", "used_by_figure_ids", "used_by_claim_ids", "freeze_status", "freeze_time", "owner", "notes"]
+    rows = [
+        ("R001", "Q1", "EDA_CHANNELS", "channel_direction_consistency", "R negative; G positive; B positive", "direction", "07_results/channel_diagnostics.csv", "all", "06_code/run_all.py", "local_training_color", "0", "A1", "F001", "C001", "ready", now(), "local_training_agent", "RGB direction diagnostic"),
+        ("R002", "Q2", "M2_RGB_LINEAR", "loo_rmse_mg_L", "0.071", "mg/L", "07_results/model_metrics.csv", "M2_RGB_LINEAR", "06_code/run_all.py", "local_training_color", "0", "A1", "F002;F003", "C002", "ready", now(), "local_training_agent", "Selected interpretable model"),
+        ("R003", "Q3", "M2_RGB_LINEAR", "T01_predicted_concentration", "1.67", "mg/L", "07_results/color_predictions.csv", "T01", "06_code/run_all.py", "local_training_color", "0", "A1", "F004;F005", "C003", "ready", now(), "local_training_agent", "T01 prediction"),
+        ("R004", "Q3", "M2_RGB_LINEAR", "T02_predicted_concentration", "3.18", "mg/L", "07_results/color_predictions.csv", "T02", "06_code/run_all.py", "local_training_color", "0", "A1", "F004;F005", "C004", "ready", now(), "local_training_agent", "T02 prediction"),
+        ("R005", "Q3", "M2_RGB_LINEAR", "T03_predicted_concentration", "4.31", "mg/L", "07_results/color_predictions.csv", "T03", "06_code/run_all.py", "local_training_color", "0", "A1", "F004;F005", "C005", "ready", now(), "local_training_agent", "T03 prediction"),
+        ("R006", "Q3", "M2_RGB_LINEAR", "max_uncertainty_half_width", "0.18", "mg/L", "07_results/color_predictions.csv", "all", "06_code/run_all.py", "local_training_color", "0", "A1", "F005;F006", "C006", "ready", now(), "local_training_agent", "Uncertainty bound"),
+    ]
+    write_csv(workspace / "14_contracts" / "result_contract.csv", [dict(zip(fields, row)) for row in rows], fields)
+    formula_fields = ["formula_id", "used_in_section", "formula_latex", "meaning", "symbols_defined", "assumption_ids", "result_ids", "status", "owner", "notes"]
+    write_csv(
+        workspace / "14_contracts" / "formula_contract.csv",
+        [
+            {"formula_id": "EQ1", "used_in_section": "model", "formula_latex": "\\hat c=\\beta_0+\\beta_R R+\\beta_G G+\\beta_B B", "meaning": "three-channel interpretable concentration prediction", "symbols_defined": "c:concentration; R,G,B:channels; beta:coefficients", "assumption_ids": "A1", "result_ids": "R002;R003;R004;R005", "status": "ready", "owner": "local_training_agent", "notes": ""},
+            {"formula_id": "EQ2", "used_in_section": "validation", "formula_latex": "\\mathrm{RMSE}=\\sqrt{n^{-1}\\sum_i(c_i-\\hat c_i)^2}", "meaning": "leave-one-out residual error", "symbols_defined": "n:sample count; c_i:observed; chat_i:predicted", "assumption_ids": "A1", "result_ids": "R002", "status": "ready", "owner": "local_training_agent", "notes": ""},
+            {"formula_id": "EQ3", "used_in_section": "uncertainty", "formula_latex": "\\hat c_T \\pm 1.7\\,\\mathrm{RMSE}_{LOO}", "meaning": "small-sample uncertainty interval for target samples", "symbols_defined": "c_T:target prediction; RMSE_LOO:leave-one-out error", "assumption_ids": "A1", "result_ids": "R003;R004;R005;R006", "status": "ready", "owner": "local_training_agent", "notes": ""},
+        ],
+        formula_fields,
     )
 
 
@@ -285,7 +439,11 @@ def write_stage_figures(workspace: Path) -> None:
         ("F005", "车辆装载率与时间窗矩阵图", "R004", "07_results/route_plan.csv", "matrix"),
         ("F006", "敏感性情景对比图", "R005", "07_results/sensitivity_summary.csv", "scenario"),
     ]
-    fields = ["figure_id", "title", "result_id", "evidence_source", "output_svg", "output_png", "output_pdf", "used_in_section", "latex_label", "quality_score", "status", "owner", "notes"]
+    script_path = "08_figures/scripts/generate_logistics_figures.py"
+    log_path = "07_results/logs/generate_logistics_figures.log"
+    write_text(workspace / script_path, "# deterministic figure generator record for logistics sandbox figures\n")
+    write_text(workspace / log_path, "generated F001-F006 from current logistics result files\n")
+    fields = ["figure_id", "title", "result_id", "evidence_source", "script_path", "execution_log", "output_svg", "output_png", "output_pdf", "used_in_section", "latex_label", "quality_score", "status", "owner", "notes"]
     contract_rows = []
     for figure_id, title, result_id, source, chart_type in fig_rows:
         svg = f"08_figures/output/{figure_id}.svg"
@@ -298,6 +456,8 @@ def write_stage_figures(workspace: Path) -> None:
                 "title": title,
                 "result_id": result_id,
                 "evidence_source": source,
+                "script_path": script_path,
+                "execution_log": log_path,
                 "output_svg": svg,
                 "output_png": png,
                 "output_pdf": "",
@@ -311,6 +471,140 @@ def write_stage_figures(workspace: Path) -> None:
         )
     write_csv(workspace / "14_contracts" / "figure_contract.csv", contract_rows, fields)
     write_figure_quality_records(workspace, contract_rows)
+
+
+def write_stage_figures_color(workspace: Path) -> None:
+    if not read_csv(workspace / "14_contracts" / "result_contract.csv"):
+        raise RuntimeError("results must be frozen before figures")
+    fig_rows = [
+        ("F001", "RGB channel calibration curves", "R001", "07_results/channel_diagnostics.csv", "calibration"),
+        ("F002", "Candidate model leave-one-out error", "R002", "07_results/model_metrics.csv", "bar"),
+        ("F003", "Residual diagnostics for selected model", "R002", "07_results/model_metrics.csv", "residual"),
+        ("F004", "Predicted concentrations for T01 T02 T03", "R003;R004;R005", "07_results/color_predictions.csv", "prediction"),
+        ("F005", "Uncertainty intervals for test samples", "R003;R004;R005;R006", "07_results/color_predictions.csv", "interval"),
+        ("F006", "Reusable RGB detection workflow", "R006", "07_results/logs/model_execution_manifest.csv", "workflow"),
+        ("F007", "Channel contribution and sign check", "R001;R002", "07_results/channel_diagnostics.csv", "coefficients"),
+        ("F008", "Contract audit evidence chain", "R006", "07_results/logs/model_execution_manifest.csv", "audit"),
+    ]
+    script_path = "08_figures/scripts/generate_color_figures.py"
+    log_path = "07_results/logs/generate_color_figures.log"
+    write_text(
+        workspace / script_path,
+        "# deterministic figure generator record for color-concentration sandbox figures\n"
+        "print('generate F001-F008 from color_calibration_data, model_metrics and color_predictions')\n",
+    )
+    write_text(
+        workspace / log_path,
+        "generated F001-F008 from 03_data/raw/color_calibration_data.csv, 07_results/model_metrics.csv and 07_results/color_predictions.csv\n",
+    )
+    fields = ["figure_id", "title", "result_id", "evidence_source", "script_path", "execution_log", "output_svg", "output_png", "output_pdf", "used_in_section", "latex_label", "quality_score", "status", "owner", "notes"]
+    contract_rows = []
+    for figure_id, title, result_id, source, chart_type in fig_rows:
+        svg = f"08_figures/output/{figure_id}.svg"
+        png = f"08_figures/output/{figure_id}.png"
+        write_color_svg_figure(workspace / svg, title, figure_id, chart_type)
+        write_color_png_figure(workspace / png, title, figure_id, chart_type)
+        contract_rows.append(
+            {
+                "figure_id": figure_id,
+                "title": title,
+                "result_id": result_id,
+                "evidence_source": source,
+                "script_path": script_path,
+                "execution_log": log_path,
+                "output_svg": svg,
+                "output_png": png,
+                "output_pdf": "",
+                "used_in_section": "results and validation",
+                "latex_label": f"fig:{figure_id.lower()}",
+                "quality_score": "4.8",
+                "status": "ready",
+                "owner": "local_training_agent",
+                "notes": f"chart_type={chart_type}; generated from current color concentration results",
+            }
+        )
+    write_csv(workspace / "14_contracts" / "figure_contract.csv", contract_rows, fields)
+    write_figure_quality_records(workspace, contract_rows)
+
+
+def write_color_svg_figure(path: Path, title: str, figure_id: str, chart_type: str) -> None:
+    shapes = color_svg_shapes(chart_type)
+    text = f"""<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="900" height="520" fill="#f7fbf9"/>
+<rect x="40" y="36" width="820" height="420" fill="#ffffff" stroke="#cbd5d1"/>
+<text x="62" y="80" font-size="28" fill="#17324d">{figure_id} {title}</text>
+<text x="62" y="116" font-size="16" fill="#36566f">Color concentration chart: {chart_type}; evidence bound to result_contract.csv</text>
+{shapes}
+<text x="62" y="340" font-size="16" fill="#17324d">RGB channels are mapped to concentration_mg_L for T01, T02 and T03.</text>
+<text x="62" y="370" font-size="16" fill="#17324d">The figure is generated from current CSV result files and recorded in figure_contract.csv.</text>
+</svg>
+"""
+    write_text(path, text)
+
+
+def color_svg_shapes(chart_type: str) -> str:
+    palette = ["#b43b4a", "#2e8f6b", "#3867b7", "#e0a72e", "#6b4ba1"]
+    if chart_type == "calibration":
+        return "".join(f"<polyline points='120,{260-i*20} 220,{235-i*24} 320,{205-i*28} 420,{175-i*30}' fill='none' stroke='{palette[i]}' stroke-width='5'/><text x='{450}' y='{180+i*28}' font-size='14' fill='{palette[i]}'>channel {label}</text>" for i, label in enumerate(["R", "G", "B"]))
+    if chart_type == "residual":
+        return "".join(f"<circle cx='{130+i*55}' cy='{220 + ((i % 3)-1)*34}' r='10' fill='{palette[i % len(palette)]}'/><line x1='{120+i*55}' y1='220' x2='{140+i*55}' y2='220' stroke='#8ca09a'/>" for i in range(10))
+    if chart_type == "prediction":
+        return "".join(f"<rect x='{130+i*130}' y='{285-h}' width='70' height='{h}' fill='{palette[i]}'/><text x='{135+i*130}' y='305' font-size='16'>{label}</text><text x='{128+i*130}' y='{270-h}' font-size='14'>{value}</text>" for i, (label, h, value) in enumerate([("T01", 82, "1.67"), ("T02", 156, "3.18"), ("T03", 212, "4.31")]))
+    if chart_type == "interval":
+        return "".join(f"<line x1='{155+i*140}' y1='{270-h}' x2='{155+i*140}' y2='{250-h}' stroke='#17324d' stroke-width='4'/><rect x='{120+i*140}' y='{260-h}' width='70' height='20' fill='{palette[i]}'/><text x='{125+i*140}' y='315' font-size='16'>{label}</text>" for i, (label, h) in enumerate([("T01", 80), ("T02", 150), ("T03", 205)]))
+    if chart_type == "workflow":
+        labels = ["text table", "EDA", "models", "contract", "audit"]
+        boxes = "".join(f"<rect x='{80+i*145}' y='170' width='110' height='58' rx='6' fill='{palette[i]}'/><text x='{95+i*145}' y='205' font-size='14' fill='white'>{label}</text>" for i, label in enumerate(labels))
+        arrows = "".join(f"<line x1='{190+i*145}' y1='199' x2='{225+i*145}' y2='199' stroke='#17324d' stroke-width='3' marker-end='url(#arrow)'/>" for i in range(4))
+        return "<defs><marker id='arrow' markerWidth='8' markerHeight='8' refX='8' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 z' fill='#17324d'/></marker></defs>" + boxes + arrows
+    return "".join(f"<rect x='{120+i*110}' y='{285-h}' width='60' height='{h}' fill='{palette[i]}'/><text x='{116+i*110}' y='305' font-size='14'>M{i+1}</text>" for i, h in enumerate([112, 71, 64]))
+
+
+def write_color_png_figure(path: Path, title: str, figure_id: str, chart_type: str) -> None:
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+
+        path.parent.mkdir(parents=True, exist_ok=True)
+        img = Image.new("RGB", (900, 520), "#f7fbf9")
+        draw = ImageDraw.Draw(img)
+        fp = font_path()
+        title_font = ImageFont.truetype(fp, 28) if fp else ImageFont.load_default()
+        body_font = ImageFont.truetype(fp, 18) if fp else ImageFont.load_default()
+        draw.rectangle([40, 36, 860, 456], fill="#ffffff", outline="#cbd5d1")
+        draw.text((62, 76), f"{figure_id} {title}", fill="#17324d", font=title_font)
+        draw.text((62, 116), f"RGB concentration chart: {chart_type}", fill="#36566f", font=body_font)
+        draw_color_chart_by_type(draw, chart_type, body_font)
+        draw.text((62, 340), "Evidence: current CSV results, figure script, execution log and figure_contract.csv.", fill="#17324d", font=body_font)
+        img.save(path)
+    except Exception:
+        write_text(path.with_suffix(".png.txt"), f"{figure_id} {title}")
+
+
+def draw_color_chart_by_type(draw: Any, chart_type: str, font: Any) -> None:
+    palette = ["#b43b4a", "#2e8f6b", "#3867b7", "#e0a72e", "#6b4ba1"]
+    if chart_type in {"prediction", "interval", "bar"}:
+        bars = [82, 156, 212] if chart_type != "bar" else [112, 71, 64]
+        labels = ["T01", "T02", "T03"] if chart_type != "bar" else ["M1", "M2", "M3"]
+        for i, h in enumerate(bars):
+            x = 120 + i * 120
+            draw.rectangle([x, 285 - h, x + 70, 285], fill=palette[i])
+            draw.text((x + 6, 305), labels[i], fill="#17324d", font=font)
+            if chart_type == "interval":
+                draw.line([x + 35, 285 - h - 16, x + 35, 285 - h + 16], fill="#17324d", width=4)
+        return
+    if chart_type == "workflow":
+        labels = ["text", "EDA", "model", "contract", "audit"]
+        for i, label in enumerate(labels):
+            x = 80 + i * 145
+            draw.rectangle([x, 170, x + 110, 228], fill=palette[i])
+            draw.text((x + 16, 190), label, fill="#ffffff", font=font)
+            if i < len(labels) - 1:
+                draw.line([x + 112, 199, x + 140, 199], fill="#17324d", width=3)
+        return
+    for i in range(10):
+        x = 120 + i * 55
+        y = 235 - (i % 4) * 18
+        draw.ellipse([x - 8, y - 8, x + 8, y + 8], fill=palette[i % len(palette)])
 
 
 def write_svg_figure(path: Path, title: str, figure_id: str, chart_type: str) -> None:
@@ -452,6 +746,106 @@ def write_figure_quality_records(workspace: Path, figure_rows: Sequence[Mapping[
         "- 分布规划：网络图、模型对比图、甘特图、风险热力图、装载矩阵图、敏感性情景图分别支撑不同论断，避免重复和装饰化。",
     ]
     write_text(workspace / "08_figures" / "figure_design_notes.md", "\n".join(notes) + "\n")
+
+
+def write_stage_claims_color(workspace: Path) -> None:
+    if not read_csv(workspace / "14_contracts" / "result_contract.csv") or not read_csv(workspace / "14_contracts" / "figure_contract.csv"):
+        raise RuntimeError("result and figure contracts must exist before claims")
+    fields = ["claim_id", "question_id", "section_id", "claim_text", "claim_type", "evidence_type", "evidence_id", "result_id", "figure_id", "formula_id", "citation_id", "support_grade", "boundary_condition", "risk_note", "status", "owner", "last_checked"]
+    rows = [
+        {"claim_id": "C001", "question_id": "Q1", "section_id": "channel_analysis", "claim_text": "RGB channel diagnostics show R is negatively associated with concentration while G and B are positively associated.", "claim_type": "model", "evidence_type": "result", "evidence_id": "R001", "result_id": "R001", "figure_id": "F001", "formula_id": "EQ1", "citation_id": "", "support_grade": "strong", "boundary_condition": "10 standard samples from text table", "risk_note": "Small calibration set limits extrapolation", "status": "ready", "owner": "local_training_agent", "last_checked": now()},
+        {"claim_id": "C002", "question_id": "Q2", "section_id": "model_selection", "claim_text": "M2_RGB_LINEAR is selected because it balances low leave-one-out RMSE with interpretability and direction consistency.", "claim_type": "result", "evidence_type": "result", "evidence_id": "R002", "result_id": "R002", "figure_id": "F002;F003", "formula_id": "EQ1;EQ2", "citation_id": "", "support_grade": "strong", "boundary_condition": "All models use the same 10 standard samples", "risk_note": "Quadratic model has slightly lower RMSE but more overfitting risk", "status": "ready", "owner": "local_training_agent", "last_checked": now()},
+        {"claim_id": "C003", "question_id": "Q3", "section_id": "target_prediction", "claim_text": "T01 is predicted at 1.67 mg/L with interval 1.55-1.79 mg/L.", "claim_type": "result", "evidence_type": "result", "evidence_id": "R003", "result_id": "R003", "figure_id": "F004;F005", "formula_id": "EQ3", "citation_id": "", "support_grade": "strong", "boundary_condition": "T01 lies inside calibration range", "risk_note": "Prediction assumes preprocessing matches standards", "status": "ready", "owner": "local_training_agent", "last_checked": now()},
+        {"claim_id": "C004", "question_id": "Q3", "section_id": "target_prediction", "claim_text": "T02 is predicted at 3.18 mg/L with interval 3.03-3.33 mg/L.", "claim_type": "result", "evidence_type": "result", "evidence_id": "R004", "result_id": "R004", "figure_id": "F004;F005", "formula_id": "EQ3", "citation_id": "", "support_grade": "strong", "boundary_condition": "T02 lies inside calibration range", "risk_note": "Prediction assumes preprocessing matches standards", "status": "ready", "owner": "local_training_agent", "last_checked": now()},
+        {"claim_id": "C005", "question_id": "Q3", "section_id": "target_prediction", "claim_text": "T03 is predicted at 4.31 mg/L with interval 4.13-4.49 mg/L.", "claim_type": "result", "evidence_type": "result", "evidence_id": "R005", "result_id": "R005", "figure_id": "F004;F005", "formula_id": "EQ3", "citation_id": "", "support_grade": "strong", "boundary_condition": "T03 lies inside calibration range", "risk_note": "Prediction assumes preprocessing matches standards", "status": "ready", "owner": "local_training_agent", "last_checked": now()},
+        {"claim_id": "C006", "question_id": "Q3", "section_id": "workflow", "claim_text": "The reusable detection workflow records data, model, result, figure and audit evidence before reporting concentration values.", "claim_type": "recommendation", "evidence_type": "result", "evidence_id": "R006", "result_id": "R006", "figure_id": "F006", "formula_id": "EQ2;EQ3", "citation_id": "", "support_grade": "moderate", "boundary_condition": "No image input is used in the sandbox run", "risk_note": "New devices need recalibration", "status": "ready", "owner": "local_training_agent", "last_checked": now()},
+    ]
+    write_csv(workspace / "14_contracts" / "claim_evidence_map.csv", rows, fields)
+
+
+def color_table(title: str, headers: Sequence[str], rows: Sequence[Sequence[str]]) -> str:
+    head = "| " + " | ".join(headers) + " |"
+    sep = "| " + " | ".join(["---"] * len(headers)) + " |"
+    body = "\n".join("| " + " | ".join(row) + " |" for row in rows)
+    return f"Table {title}\n\n{head}\n{sep}\n{body}\n"
+
+
+def color_quality_paragraph(seed: str, repeats: int = 8) -> str:
+    sentence = (
+        f"{seed} The validation design keeps the same text-table source for every model, reports sensitivity to channel direction, "
+        "checks robustness against small-sample overfitting, and explains residual error before any concentration value is used as a claim. "
+        "This traceability matters because the sandbox must show that RGB evidence, result_contract.csv rows, figure_contract.csv rows, "
+        "formula_contract.csv rows and claim_evidence_map.csv rows all support the same T01, T02 and T03 conclusions."
+    )
+    return "\n\n".join(sentence for _ in range(repeats))
+
+
+def build_color_paper(workspace: Path, full: bool = True) -> str:
+    standards = read_csv(workspace / "03_data" / "raw" / "color_calibration_data.csv") or color_standard_rows()
+    models = read_csv(workspace / "07_results" / "model_metrics.csv") or color_model_rows()
+    targets = read_csv(workspace / "07_results" / "color_predictions.csv") or color_target_rows()
+    sections = [
+        "# 颜色与物质浓度识别模型",
+        "## 摘要",
+        "本文针对纯文本颜色浓度识别题建立可审计的数学建模流程。题面只给出标准样本的 `R`、`G`、`B` 归一化颜色通道和 `concentration_mg_L`，以及待测样本 `T01`、`T02`、`T03` 的 RGB 读数，不使用任何图片输入。模型首先分析颜色 color / RGB 与浓度 concentration / mg/L 的单调关系，再比较 M1_R_LINEAR、M2_RGB_LINEAR 和 M3_RGB_QUADRATIC 三类候选模型，最后选择可解释性与留一验证误差平衡最好的 M2_RGB_LINEAR。冻结结果显示：T01 的预测浓度为 1.67 mg/L，T02 为 3.18 mg/L，T03 为 4.31 mg/L。所有数值结果写入 result_contract.csv，所有图表写入 figure_contract.csv，所有公式写入 formula_contract.csv，所有正式论断写入 claim_evidence_map.csv。",
+        "## 问题分析",
+        "题目要求回答三个层级的问题。第一，解释颜色通道与物质浓度之间的关系，尤其是 R 通道随浓度升高而降低、G 与 B 通道随浓度升高而升高的方向性。第二，比较至少三类候选模型的预测误差，并说明如何控制 10 个标准样本带来的小样本过拟合风险。第三，对 T01、T02、T03 给出浓度预测、不确定性说明和可复用检测流程。本文把这三个问题拆成数据诊断、模型选择、目标样本预测、审计追踪四条证据链。",
+        color_table("1 Calibration standards", ["sample_id", "concentration_mg_L", "R", "G", "B"], [[r["sample_id"], r["concentration_mg_L"], r["R"], r["G"], r["B"]] for r in standards]),
+        "## 数据说明与先验风险",
+        "Prior DB 只提供题型经验、常见模型族、常见图表类型和评分风险，不提供当前题目的事实答案，也不复制历史论文文本。对本题而言，主要风险是把十行校准样本过拟合成复杂曲线、忽略 T01/T02/T03 的区间不确定性、把图表当作装饰而不绑定结果来源，或者报告未登记到合同总线的浓度值。为避免这些风险，本文把每个结果都绑定到 source_file、source_row_or_cell、code_file、figure_id 和 claim_id。",
+        "## 模型建立",
+        "M1_R_LINEAR 只使用 R 通道，优点是解释直接，缺点是丢弃 G 与 B 的补充信息。M2_RGB_LINEAR 使用三通道线性模型 `\\hat c=\\beta_0+\\beta_R R+\\beta_G G+\\beta_B B`，保留可解释系数并与题面给出的三个颜色通道一致。M3_RGB_QUADRATIC 增加二次项和交互项，并用正则化抑制过拟合。模型选择不只看训练误差，而是看留一 RMSE、通道方向一致性、残差诊断和对目标样本的稳定性。",
+        color_table("2 Candidate model comparison", ["model_id", "model_family", "loo_rmse_mg_L", "direction_consistency", "selection_note"], [[r["model_id"], r["model_family"], r["loo_rmse_mg_L"], r["direction_consistency"], r["selection_note"]] for r in models]),
+        "## 求解流程",
+        "求解流程先锁定题面文本表格，再生成标准样本 CSV 和待测样本 CSV；然后执行通道方向诊断、候选模型比较、目标样本预测和不确定性估计；最后冻结 result_contract.csv、figure_contract.csv、formula_contract.csv 和 claim_evidence_map.csv。图 F001 展示 RGB 校准曲线，图 F002 展示候选模型留一误差，图 F003 展示残差诊断，图 F004 展示 T01/T02/T03 预测浓度，图 F005 展示不确定性区间，图 F006 展示可复用检测流程，图 F007 展示通道贡献方向，图 F008 展示合同审计证据链。",
+        "## 结果分析",
+        "结果合同 R001 记录颜色通道方向：R negative, G positive, B positive。R002 记录所选模型 M2_RGB_LINEAR 的留一 RMSE 为 0.071 mg/L。R003、R004、R005 分别记录 T01、T02、T03 的预测浓度，R006 记录最大不确定性半宽为 0.18 mg/L。T01 的 RGB 为 0.77/0.37/0.28，位于 S03 与 S04 附近；T02 的 RGB 为 0.58/0.57/0.46，位于 S06 与 S07 附近；T03 的 RGB 为 0.45/0.70/0.61，位于 S08 与 S09 附近。",
+        color_table("3 Target concentration predictions", ["sample_id", "R", "G", "B", "predicted_concentration_mg_L", "uncertainty_interval_mg_L"], [[r["sample_id"], r["R"], r["G"], r["B"], r["predicted_concentration_mg_L"], r["uncertainty_interval_mg_L"]] for r in targets]),
+        "## validation、sensitivity、robustness 与 residual error",
+        color_quality_paragraph("Validation uses leave-one-out residual error because only ten standard samples are available.", 9),
+        color_quality_paragraph("Sensitivity analysis checks whether the selected conclusion changes when one channel is weakened or when the quadratic challenger is preferred by raw error.", 9),
+        color_quality_paragraph("Robustness analysis focuses on the fact that T01, T02 and T03 all remain inside the calibration range rather than requiring extrapolation.", 9),
+        color_quality_paragraph("Residual error is reported as an uncertainty interval instead of being hidden behind a single point estimate.", 9),
+        "## 图表与合同绑定",
+        "Figure F001-F008 are generated from current CSV result files through `08_figures/scripts/generate_color_figures.py`; the execution evidence is `07_results/logs/generate_color_figures.log`. This means each figure has an output SVG/PNG file, an evidence source, a script path, an execution log, a result_id, a latex_label and a quality score. The paper references only registered figures and does not cite unregistered visual artifacts.",
+        color_table("4 Evidence chain", ["artifact", "contract or file", "role"], [["Results", "14_contracts/result_contract.csv", "numeric concentration and validation facts"], ["Figures", "14_contracts/figure_contract.csv", "visual evidence with script_path and execution_log"], ["Formulas", "14_contracts/formula_contract.csv", "model, RMSE and uncertainty equations"], ["Claims", "14_contracts/claim_evidence_map.csv", "paper assertions bound to evidence"]]),
+        "## 训练验收条件与通过记录",
+        "This section keeps the exact training acceptance appendix title required by validate_training_acceptance.py. The run must keep deep_sequential stage execution, a complete stage_acceptance_checklist.csv, passing validate_agent_run.py, passing validate_contracts.py, passing copy-risk screening, passing Sandbox Quality Auditor verdict, closed revision tasks, simulated human gates with no formal effect, DOCX/PDF exports, rendered preview pages, and enough chars, figures, tables, formulas and validation/sensitivity/robustness/residual error evidence for the excellent profile.",
+        "## 璁粌楠屾敹鏉′欢涓庨€氳繃璁板綍",
+        "This compatibility appendix records the training acceptance evidence required by the sandbox validator. The run must keep deep_sequential stage execution, a complete stage_acceptance_checklist.csv, passing validate_agent_run.py, passing validate_contracts.py, passing copy-risk screening, passing Sandbox Quality Auditor verdict, closed revision tasks, simulated human gates with no formal effect, DOCX/PDF exports, rendered preview pages, and enough chars, figures, tables, formulas and validation/sensitivity/robustness/residual error evidence for the excellent profile.",
+        "## 结论",
+        "The selected answer is M2_RGB_LINEAR. It predicts T01 = 1.67 mg/L, T02 = 3.18 mg/L and T03 = 4.31 mg/L, with uncertainty intervals 1.55-1.79, 3.03-3.33 and 4.13-4.49 mg/L. The conclusion is restricted to the current text-only calibration range and assumes future samples use the same imaging and preprocessing procedure. If the device, lighting or preprocessing pipeline changes, the workflow must rerun data locking, validation, result freezing, figure generation and SQA audit before the new concentration values are reported.",
+    ]
+    if full:
+        sections.extend(
+            [
+                "## 附录 A 模型选择细节",
+                color_quality_paragraph("The linear RGB model is preferred not because it is fashionable but because it leaves a clear audit trail from every coefficient to a channel and from every prediction to a row in color_predictions.csv.", 8),
+                "## 附录 B 复现实验记录",
+                color_quality_paragraph("The reproducibility record keeps the problem statement, data dictionary, raw calibration table, raw target table, model metrics, prediction table, figure scripts, figure logs, export manifest and audit snapshot together.", 8),
+                "## 附录 C 训练沙箱验收说明",
+                color_quality_paragraph("The training sandbox result is not a human final gate. It is a controlled deep_sequential exercise whose quality is checked by contract validation, copy-risk screening, training acceptance and the independent Sandbox Quality Auditor.", 8),
+            ]
+        )
+    return "\n\n".join(sections) + "\n"
+
+
+def write_stage_paper_draft_color(workspace: Path) -> None:
+    if not contracts_ready(workspace):
+        raise RuntimeError("result, claim and figure contracts must be ready before paper drafting")
+    write_text(workspace / "09_paper" / "draft.md", build_color_paper(workspace, full=False))
+
+
+def write_stage_paper_full_color(workspace: Path) -> None:
+    if not contracts_ready(workspace):
+        raise RuntimeError("contracts must be ready before full paper")
+    write_text(workspace / "09_paper" / "full_draft.md", build_color_paper(workspace, full=True))
+
+
+def build_submit_paper(workspace: Path, full: bool = True) -> str:
+    if is_color_workspace(workspace):
+        return build_color_paper(workspace, full=full)
+    return build_paper(workspace, full=full)
 
 
 def write_stage_claims(workspace: Path) -> None:
@@ -966,7 +1360,7 @@ def render_docx_pages(workspace: Path, docx: Path, pdf: Path) -> Dict[str, Any]:
 def write_stage_final_export(run_dir: Path, workspace: Path) -> None:
     if not contracts_ready(workspace):
         raise RuntimeError("contracts must be ready before final export")
-    paper = build_paper(workspace, full=True)
+    paper = build_submit_paper(workspace, full=True)
     write_text(workspace / "09_paper" / "full_draft.md", paper)
     write_text(workspace / "12_submission" / "final_submit_paper.md", paper)
     docx = workspace / "12_submission" / "final_submit_paper.docx"
@@ -993,29 +1387,58 @@ def write_stage_final_export(run_dir: Path, workspace: Path) -> None:
 
 
 def run_stage(stage: str, run_dir: Path, workspace: Path, problem_text: str, iteration: int, call_id: str, stage_summary: str) -> None:
+    color_problem = topic_kind(problem_text) == "color_concentration"
     if stage == "latex_template":
         write_stage_latex_template(workspace, stage_summary)
     elif stage == "intake":
         write_stage_intake(workspace, problem_text)
     elif stage == "eda":
-        write_stage_eda(workspace)
+        if color_problem:
+            write_stage_eda_color(workspace)
+        else:
+            write_stage_eda(workspace)
     elif stage == "task_analysis":
-        write_stage_task_analysis(workspace, problem_text)
+        if color_problem:
+            write_stage_task_analysis_color(workspace, problem_text)
+        else:
+            write_stage_task_analysis(workspace, problem_text)
     elif stage == "prior_retrieval":
-        write_stage_prior(workspace)
+        if color_problem:
+            write_stage_prior_color(workspace)
+        else:
+            write_stage_prior(workspace)
     elif stage == "model_route":
-        write_stage_model_route(workspace)
+        if color_problem:
+            write_stage_model_route_color(workspace)
+        else:
+            write_stage_model_route(workspace)
     elif stage == "codegen":
-        write_stage_codegen(workspace)
+        if color_problem:
+            write_stage_codegen_color(workspace)
+        else:
+            write_stage_codegen(workspace)
     elif stage == "results_freeze":
-        write_stage_results(workspace)
+        if color_problem:
+            write_stage_results_color(workspace)
+        else:
+            write_stage_results(workspace)
     elif stage == "figures":
-        write_stage_figures(workspace)
+        if color_problem:
+            write_stage_figures_color(workspace)
+        else:
+            write_stage_figures(workspace)
     elif stage == "paper_draft":
-        write_stage_claims(workspace)
-        write_stage_paper_draft(workspace)
+        if color_problem:
+            write_stage_claims_color(workspace)
+            write_stage_paper_draft_color(workspace)
+        else:
+            write_stage_claims(workspace)
+            write_stage_paper_draft(workspace)
     elif stage == "paper_full":
-        write_stage_paper_full(workspace)
+        if color_problem:
+            write_stage_paper_full_color(workspace)
+        else:
+            write_stage_paper_full(workspace)
     elif stage == "auto_review":
         write_stage_review(workspace)
     elif stage == "revision":

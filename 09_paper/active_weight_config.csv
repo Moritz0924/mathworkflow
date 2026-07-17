@@ -1,0 +1,7 @@
+﻿question,problem_type,model_family,main_model,baseline_model,abstract_pct,problem_restatement_pct,analysis_pct,assumption_symbol_pct,data_processing_pct,model_building_pct,solution_pct,result_analysis_pct,validation_pct,evaluation_extension_pct,main_figures_target,main_tables_target,figure_text_ratio,text_weight,figure_weight,table_weight,formula_weight,validation_weight,writing_emphasis,prior_card_ids,prior_source_ids,prior_confidence
+Q1,机器学习型,机器学习,随机森林/梯度提升树,逻辑回归/随机森林/LightGBM,6,6,7,6,17,16,11,14,13,3,7-11,4-8,0.44:0.56,0.34,0.34,0.14,0.06,0.12,训练流程、对比实验、泛化误差和可解释性要闭环,,,
+Q2,预测回归型,预测回归,预测回归模型,线性回归/ARIMA/指数平滑,6,7,8,6,16,16,10,16,11,3,5-8,3-6,0.38:0.62,0.42,0.28,0.12,0.08,0.1,数据清洗、变量解释、误差控制和外推边界要足够,,,
+Q3,预测回归型,预测回归,多元回归/正则化回归,线性回归/ARIMA/指数平滑,6,7,8,6,16,16,10,16,11,3,5-8,3-6,0.38:0.62,0.42,0.28,0.12,0.08,0.1,数据清洗、变量解释、误差控制和外推边界要足够,,,
+Q4,数据评价型,统计评价,指标评价模型,等权评价/TOPSIS/熵权法,6,7,8,7,13,17,10,18,8,4,6-9,6-10,0.42:0.58,0.38,0.27,0.22,0.05,0.08,指标含义、权重来源、评价解释和稳健性优先,,,
+Q5,预测回归型,预测回归,多元回归/正则化回归,线性回归/ARIMA/指数平滑,6,7,8,6,16,16,10,16,11,3,5-8,3-6,0.38:0.62,0.42,0.28,0.12,0.08,0.1,数据清洗、变量解释、误差控制和外推边界要足够,,,
+Q6,预测回归型,预测回归,多元回归/正则化回归,线性回归/ARIMA/指数平滑,6,7,8,6,16,16,10,16,11,3,5-8,3-6,0.38:0.62,0.42,0.28,0.12,0.08,0.1,数据清洗、变量解释、误差控制和外推边界要足够,,,

@@ -1,6 +1,6 @@
 # Contract validation report
 
-- stage: intake
+- stage: prior_retrieval
 - fail_count: 0
 - warn_count: 0
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import io
 import json
 import os
@@ -30,6 +31,15 @@ SKILL_ROUTER_POLICY_PATH = ROOT / "config" / "skill_router_policy.yaml"
 DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-pro"
 DEFAULT_FORBIDDEN_MODELS = {"deepseek-v4-flash", "deepseek-chat", "deepseek-reasoner"}
 PSEUDO_TOOL_PATTERN = re.compile(r"</?\s*(read_file|list_files|write_file|edit_file|tool|function)\b", re.IGNORECASE)
+QUALITY_AUDITOR_MANAGED_PATHS = [
+    "11_review/quality_verdict.json",
+    "11_review/quality_audit_report.json",
+    "11_review/quality_audit_report.md",
+    "11_review/quality_scorecard.csv",
+    "11_review/quality_findings.csv",
+    "11_review/quality_reaudit_report.json",
+    "14_contracts/quality_revision_tasks.csv",
+]
 
 
 class AgentRunnerError(RuntimeError):
@@ -415,7 +425,9 @@ def build_system_prompt(mode: str, stage: str, pending_gate: str, retry_note: st
         "You are a controlled external agent for Math Modeling Workflow v3.2-MVP.\n"
         "Follow deep_sequential mode only. The workflow controller owns state; contracts and validation scripts "
         "are higher authority than model output. Treat MCP vision results as observations, not final paper facts.\n"
-        f"Current stage: {stage}. Pending gate: {pending_gate or 'none'}.{formal_extra}{training_extra}\n"
+        "Prompt cache discipline: stable repository and protocol rules stay in the stable prefix; "
+        "stage, gate, workspace, run id, queue, and artifact deltas are supplied later in the user message.\n"
+        f"{formal_extra}{training_extra}\n"
         "If you propose file writes, place them in a JSON object with a top-level 'files' list of "
         "{path, content, operation}. Do not include secrets."
     )
@@ -424,21 +436,42 @@ def build_system_prompt(mode: str, stage: str, pending_gate: str, retry_note: st
 def build_user_prompt(workspace: Path, prompt_path: Path, stage: str, observations: Sequence[Mapping[str, Any]], mode: str = "") -> Tuple[str, Dict[str, Any]]:
     agents = read_text(workspace / "AGENTS.md", 20000)
     state = read_text(workspace / "workflow_state.yaml", 12000)
+    pending_gate = pending_gate_from_state(workspace)
     prompt_source = stage_prompt_path(stage, workspace, mode)
     stage_prompt = read_text(prompt_source or Path(), 30000)
     task_prompt = read_text(prompt_path, 60000)
     observation_text = json.dumps(list(observations), ensure_ascii=False, indent=2) if observations else "[]"
-    parts = [
+    stable_prefix_parts = [
+        "# Stable System Prefix",
+        "The following repository rules and invariant protocol constraints should remain before dynamic run data for prompt-cache reuse.",
         "# Repository Rules",
         agents,
-        "# Workflow State",
-        state,
-        "# Stage Prompt",
-        stage_prompt,
-        "# MCP Vision Observations",
-        observation_text,
-        "# User/Controller Task",
-        task_prompt,
+    ]
+    stable_prefix = "\n\n".join(stable_prefix_parts)
+    stage_delta = "\n\n".join(
+        [
+            "# Stage Delta",
+            f"Current stage: `{stage}`",
+            f"Stage prompt source: `{prompt_source or ''}`",
+            stage_prompt,
+        ]
+    )
+    run_delta = "\n\n".join(
+        [
+            "# Run Delta",
+            f"Pending gate: `{pending_gate or 'none'}`",
+            "# Workflow State",
+            state,
+            "# MCP Vision Observations",
+            observation_text,
+            "# User/Controller Task",
+            task_prompt,
+        ]
+    )
+    parts = [
+        stable_prefix,
+        stage_delta,
+        run_delta,
     ]
     combined = "\n\n".join(parts)
     lengths = {
@@ -448,6 +481,10 @@ def build_user_prompt(workspace: Path, prompt_path: Path, stage: str, observatio
         "stage_prompt_source": str(prompt_source or ""),
         "task_prompt_chars": len(task_prompt),
         "vision_observation_chars": len(observation_text),
+        "stable_prefix_chars": len(stable_prefix),
+        "stable_prefix_sha256": hashlib.sha256(stable_prefix.encode("utf-8")).hexdigest(),
+        "stage_delta_chars": len(stage_delta),
+        "run_delta_chars": len(run_delta),
         "total_estimated_tokens": estimate_tokens(combined),
     }
     return combined, lengths
@@ -867,6 +904,8 @@ def is_write_allowed(target: Path, workspace: Path, mode: str, stage: str, polic
         return False, f"workspace writes disabled for mode {mode}"
     if mode == "training_sandbox" and rel_path == "reports/agent_revision_queue.csv":
         return False, "runner managed path is protected"
+    if mode == "training_sandbox" and path_matches_any(rel_path, QUALITY_AUDITOR_MANAGED_PATHS):
+        return False, "quality auditor managed path is protected"
     protected_inputs = [str(item) for item in (mode_policy.get("protected_input_paths") or [])]
     if protected_inputs and path_matches_any(rel_path, protected_inputs):
         return False, "training sandbox input source is protected"

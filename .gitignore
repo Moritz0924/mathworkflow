@@ -8,6 +8,7 @@
 
 node_modules/
 11_dashboard/web/node_modules/
+.worktrees/
 
 10_ai_logs/mcp_*.log
 10_ai_logs/*_secret*.json

@@ -1,16 +1,16 @@
 version: v3.2-mvp
 execution_mode: deep_sequential
 allow_parallel: false
-current_stage: intake
+current_stage: model_route
 pending_gate: null
 last_confirmed_gate: null
 completed_stages:
 - latex_template
-locked_stages:
+- intake
 - eda
 - task_analysis
 - prior_retrieval
-- model_route
+locked_stages:
 - codegen
 - results_freeze
 - figures
@@ -23,11 +23,11 @@ locked_stages:
 - final_export
 stage_status:
   latex_template: completed
-  intake: pending
-  eda: locked
-  task_analysis: locked
-  prior_retrieval: locked
-  model_route: locked
+  intake: completed
+  eda: completed
+  task_analysis: completed
+  prior_retrieval: completed
+  model_route: pending
   codegen: locked
   results_freeze: locked
   figures: locked
