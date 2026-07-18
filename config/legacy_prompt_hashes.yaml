@@ -1,5 +1,6 @@
 version: v1
 frozen_at_tag: v3.2-pre-thin-core
+canonical_line_endings: crlf
 files:
   prompts/stage_prompt_contract.md: 58ebc885ed9b333e9b0b968daefde3504b0e1b63606060c8aaf54d46046900c7
   prompts/stages/00_latex_template.md: 7f88d4c161bab5ef17defeaacd107e9ef61471e3d364ab3e03d196c4f80cc122

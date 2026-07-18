@@ -47,6 +47,36 @@ class LegacyPromptProtectionTests(unittest.TestCase):
             with self.assertRaisesRegex(WorkflowError, "legacy prompt protection failed"):
                 verify_legacy_prompts(root)
 
+    def test_crlf_frozen_hash_accepts_lf_checkout(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            relative = "prompts/stages/00_demo.md"
+            path = root / relative
+            path.parent.mkdir(parents=True)
+            path.write_bytes(b"first line\nsecond line\n")
+            digest = hashlib.sha256(b"first line\r\nsecond line\r\n").hexdigest()
+            config = root / "config"
+            config.mkdir()
+            (config / "legacy_prompt_hashes.yaml").write_text(
+                yaml.safe_dump(
+                    {
+                        "version": "v1",
+                        "canonical_line_endings": "crlf",
+                        "files": {relative: digest},
+                    },
+                    sort_keys=False,
+                ),
+                encoding="utf-8",
+            )
+
+            try:
+                result = verify_legacy_prompts(root)
+            except WorkflowError as exc:
+                self.fail(f"LF checkout should preserve the frozen prompt: {exc}")
+
+            self.assertEqual(1, result["verified_files"])
+            self.assertEqual([], result["changed"])
+
 
 class ActivePromptContractTests(unittest.TestCase):
     def test_all_new_prompts_are_result_contracts_without_scaffold_language(self) -> None:

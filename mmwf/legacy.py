@@ -15,6 +15,7 @@ def verify_legacy_prompts(root: Path) -> Dict[str, Any]:
         raise WorkflowError("legacy prompt hash manifest is missing")
     manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8")) or {}
     files = manifest.get("files") or {}
+    canonical_line_endings = manifest.get("canonical_line_endings")
     missing: List[str] = []
     changed: List[str] = []
     for relative, expected in files.items():
@@ -22,7 +23,10 @@ def verify_legacy_prompts(root: Path) -> Dict[str, Any]:
         if not path.exists():
             missing.append(relative)
             continue
-        actual = hashlib.sha256(path.read_bytes()).hexdigest()
+        content = path.read_bytes()
+        if canonical_line_endings == "crlf":
+            content = content.replace(b"\r\n", b"\n").replace(b"\r", b"\n").replace(b"\n", b"\r\n")
+        actual = hashlib.sha256(content).hexdigest()
         if actual != str(expected):
             changed.append(relative)
     if missing or changed:
