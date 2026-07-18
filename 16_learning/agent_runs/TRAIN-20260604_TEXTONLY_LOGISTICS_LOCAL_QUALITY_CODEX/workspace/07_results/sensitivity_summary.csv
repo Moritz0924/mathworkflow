@@ -1,4 +1,0 @@
-﻿scenario,distance_change_pct,risk_change_pct,recommendation
-道路可靠度下降10%,3.8,18.5,启用备用路段
-需求量上升15%,9.6,7.2,增加1辆备用车
-时间窗压缩20%,6.1,13.4,优先服务D03/D06/D09

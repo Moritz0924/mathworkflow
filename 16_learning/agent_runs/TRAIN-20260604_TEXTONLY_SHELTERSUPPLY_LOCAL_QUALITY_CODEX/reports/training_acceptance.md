@@ -1,9 +1,0 @@
-# Training Acceptance
-
-- run_id: TRAIN-20260604_TEXTONLY_SHELTERSUPPLY_LOCAL_QUALITY_CODEX
-- status: pass
-- profile: excellent
-- thresholds: `{"min_chars": 12261, "min_figures": 6, "min_tables": 4, "min_formulas": 3, "min_quality_terms": 30}`
-- observed: `{"chars": 22509, "ready_figures": 6, "tables": 25, "formulas": 3, "quality_terms": 952, "export_manifest": true}`
-
-No training acceptance issues found.

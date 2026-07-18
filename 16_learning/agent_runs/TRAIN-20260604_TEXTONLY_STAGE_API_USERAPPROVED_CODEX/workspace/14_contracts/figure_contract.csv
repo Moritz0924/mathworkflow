@@ -1,5 +1,0 @@
-figure_id,file_path,caption,status
-F001,08_figures/fig1_scatter.png,"图F001：预测浓度与实测浓度散点图",final
-F002,08_figures/fig2_residuals.png,"图F002：标准化残差与拟合值散点图",final
-F003,08_figures/fig3_coefficients.png,"图F003：回归系数置信区间（95%）",final
-F004,08_figures/fig4_pred_vs_actual.png,"图F004：留一法交叉验证预测值与实测值对比",final

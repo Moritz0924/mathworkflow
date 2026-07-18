@@ -1,2 +1,0 @@
-timestamp,stage,gate_type,formal_effect,decision,notes,reviewer
-2025-06-04T10:00:00Z,figures,human_promotion,simulated,provisional_pass,所有图表已生成并登记，等待人工确认哪些晋升论文正式图。目前8张图作为候选。,Codex-figures-stage

@@ -1,4 +1,0 @@
-model,CV_RMSE_LOOCV,train_RMSE,AIC,BIC
-linear_OLS,0.0748,0.0674,-45.87,-44.65
-polynomial_degree2,0.347,0.0012,,
-ridge,0.098,0.077,,

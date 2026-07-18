@@ -1,4 +1,0 @@
-﻿model_id,total_distance_km,late_penalty,risk_score,vehicles
-M1_GREEDY,91.4,7.6,0.184,4
-M2_SAVING,82.7,4.1,0.142,3
-M3_ROBUST,86.2,2.8,0.096,3

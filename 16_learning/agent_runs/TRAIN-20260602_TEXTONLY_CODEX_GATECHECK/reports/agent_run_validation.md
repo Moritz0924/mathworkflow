@@ -1,8 +1,0 @@
-# Agent Run Validation
-
-- run_id: TRAIN-20260602_TEXTONLY_CODEX_GATECHECK
-- status: fail
-- fail_count: 1
-- warn_count: 0
-
-- [fail] open_blocking_revision_queue: major TRAIN-20260602_TEXTONLY_CODEX_GATECHECK-TASK-001: Add result-bound figures and register them in the sandbox figure contract before citing them. (E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_CODEX_GATECHECK\reports\agent_revision_queue.csv)

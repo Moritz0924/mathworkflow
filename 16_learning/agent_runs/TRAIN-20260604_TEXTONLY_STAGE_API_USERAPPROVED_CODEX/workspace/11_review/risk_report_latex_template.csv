@@ -1,7 +1,0 @@
-risk_id,description,severity,mitigation,status
-R-TPL-01,Chinese font package (ctex) not available in compilation environment,critical,Verify font installation or provide fallback (e.g., xeCJK with system fonts). Not yet tested.,open
-R-TPL-02,Placeholder text may be mistaken for real content if not replaced before submission,medium,All sections contain explicit "\% 待填充" or placeholder markers. Final review must check.,open
-R-TPL-03,Figure and table paths (../08_figures/) may break if directory structure changes,low,Document in template initialization record and enforce with contract checks.,open
-R-TPL-04,Contract interface comments may be deleted by accident during writing,low,Review process should verify retention of interface comments or replace with visible markers.,open
-R-TPL-05,Cross-references with 'result:' prefix depend on manual matching to contract IDs,medium,Optional mechanism; if used, ensure consistency via script.,open
-R-TPL-06,Citation format (thebibliography) may not match competition requirements,medium,Adjust to BibTeX or natbib if needed; out of scope for template stage.,open

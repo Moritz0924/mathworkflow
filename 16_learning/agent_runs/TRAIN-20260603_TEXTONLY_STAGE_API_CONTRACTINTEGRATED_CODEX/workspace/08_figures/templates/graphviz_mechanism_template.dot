@@ -1,7 +1,0 @@
-digraph Mechanism {
-    rankdir=LR;
-    graph [bgcolor="white"];
-    node [shape=box, style="rounded,filled", fillcolor="#F6F8FA", color="#2F5597", fontname="Arial"];
-    edge [color="#666666", arrowsize=0.8];
-    Input -> Mechanism -> Model -> Output -> Decision;
-}

@@ -1,1 +1,0 @@
-call_id,timestamp,stage_id,skill_id,permission_level,router_decision,required_inputs_status,archive_path,output_type,promotion_target,validation_status,failure_code,human_confirmation_required,notes

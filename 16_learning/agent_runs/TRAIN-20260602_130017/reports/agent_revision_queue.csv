@@ -1,2 +1,0 @@
-﻿task_id,run_id,iteration,severity,target_artifact,issue_summary,proposed_action,acceptance_check,status,human_decision,notes
-TRAIN-20260602_130017-TASK-001,TRAIN-20260602_130017,1,major,16_learning/agent_runs/TRAIN-20260602_130017/workspace/09_paper/full_draft.md,our_count=10; benchmark_average=13.40; threshold=13.40,"Add validation, sensitivity, robustness, or error analysis tied to model outputs.",Validation section cites frozen result rows or reproducible code outputs.,open,,from TRAIN-20260602_130017-GAP-003

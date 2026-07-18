@@ -1,3 +1,0 @@
-$ python scripts/local_training_agent.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX\workspace\agent_stage_initial_10_paper_full.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX --mode training_sandbox --max-iterations 3 --stage paper_full --call-id initial_10_paper_full
-cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_TEXTONLY_STAGE_LOCAL_CODEX\workspace
-

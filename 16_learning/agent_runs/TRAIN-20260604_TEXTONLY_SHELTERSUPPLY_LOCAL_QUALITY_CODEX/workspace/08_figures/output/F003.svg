@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
-<rect width="900" height="520" fill="#f8fafc"/>
-<rect x="40" y="36" width="820" height="420" fill="#ffffff" stroke="#d0d7de"/>
-<text x="62" y="80" font-size="28" fill="#1f2937">F003 鲁棒路径方案甘特图</text>
-<text x="62" y="116" font-size="16" fill="#475569">图表类型：gantt；证据绑定：F003</text>
-<rect x='120' y='150' width='220' height='26' fill='#1f4e79'/><text x='70' y='170' font-size='14'>车辆1</text><rect x='150' y='192' width='202' height='26' fill='#2a9d8f'/><text x='70' y='212' font-size='14'>车辆2</text><rect x='180' y='234' width='184' height='26' fill='#f2b134'/><text x='70' y='254' font-size='14'>车辆3</text>
-<text x="62" y="330" font-size="16" fill="#334155">中文坐标轴：成本、风险、时间窗、装载率</text>
-<text x="62" y="360" font-size="16" fill="#334155">结论：该图服务于路径优化论证，不作为装饰图。</text>
-</svg>

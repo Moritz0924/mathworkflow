@@ -1,3 +1,0 @@
-artifact_path,artifact_type,freeze_stage,protected_atoms,signed_by,timestamp,notes
-09_paper/full_draft.md,full_draft,paper_full,"abstract_text, section_structure, claim_statements","Codex Agent iteration_04",2026-06-04T12:00:00Z,"Candidate full draft; consistency checks pending."artifact_id,stage,path,hash_or_version,timestamp
-A01,paper_full,09_paper/full_draft.md,v1.0,2026-06-04T10:00:00Z

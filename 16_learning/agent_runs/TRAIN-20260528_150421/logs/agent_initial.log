@@ -1,4 +1,0 @@
-$ python scripts/deepseek_agent_runner.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260528_150421\workspace\agent_prompt.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260528_150421\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260528_150421 --mode training_sandbox --max-iterations 3
-cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260528_150421\workspace
-
-{"status": "failed", "failure_code": "DEEPSEEK_AGENT_ERROR", "message": "missing API key env: DEEPSEEK_API_KEY"}

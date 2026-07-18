@@ -1,6 +1,0 @@
-$ E:\python\python_benti\python.exe scripts/run_agent_mode.py --mode formal_assist --max-iterations 1 --problem 00_problem/problem_statement.md --dry-run
-{
-  "run_id": "FORMAL-20260528_222054",
-  "status": "dry_run",
-  "report": "16_learning/agent_runs/FORMAL-20260528_222054/reports/formal_assist_report.md"
-}

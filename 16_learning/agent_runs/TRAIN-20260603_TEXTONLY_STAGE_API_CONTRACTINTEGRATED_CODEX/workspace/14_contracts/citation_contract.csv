@@ -1,6 +1,0 @@
-citation_id,bibtex_key,title,authors,year,journal,type,status,notes
-B01,Beer_1852,Bestimmung der Absorption des rothen Lichts in farbigen Flüssigkeiten,Beer A.,1852,Annalen der Physik,original,verified,朗伯-比尔定律原始文献
-B02,Geladi_1986,Partial least-squares regression: a tutorial,Geladi P. Kowalski B.R.,1986,Analytica Chimica Acta,method,verified,PLS教程
-B03,Smith_2019,Smartphone-based colorimetric analysis for point-of-care diagnostics,Smith M.A.,2019,Analyst,review,verified,智能手机比色综述
-B04,Hastie_2009,The Elements of Statistical Learning,Hastie T. et al.,2009,Springer,book,verified,统计学习经典教材
-B05,CIE_2018,Colorimetry 4th Edition,CIE,2018,CIE,standard,verified,色度学标准

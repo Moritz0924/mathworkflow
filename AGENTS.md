@@ -1,113 +1,93 @@
-# 数学建模工作流 v3.2-MVP 代理规则
+# 数学建模双 AI 正式工作流 v4 代理规则
 
-本仓库使用受控的深度顺序数学建模工作流。工作流控制器拥有状态；Codex 负责执行任务；`nature-skills` 是阶段内专家工具；先验数据库只提供经验提示，不提供答案；审稿器只生成审稿与修订工件。
+本仓库使用 8 阶段、文件交接、合同驱动的正式流水线。ChatGPT 网页端负责建模决策与论文表达；Codex 负责本地事实、代码复现与数值核验；控制器独占状态推进权。
 
 ## 权威顺序
 
-1. 人类最终闸门
-2. 工作流控制器与阶段状态
-3. 合同总线与校验脚本
-4. Codex 执行器
-5. `nature-skills` 专家指导
-6. Prior DB 检索说明
+1. 人工闸门与比赛规则
+2. v4 控制器和 `workflow_state.yaml`
+3. 本地数据、可复现代码输出与合同总线
+4. 已导入的 ChatGPT 阶段决策
+5. Codex 实现与核验意见
+6. 可选文献和 Prior DB 参考
 
-规则冲突时，服从更高层级的权威。
+发生冲突时服从更高层级。Codex 可以修复实现问题；涉及模型假设、路线、口径或结论的冲突必须记录并退回 ChatGPT，不得静默改写。
 
 ## 硬性约束
 
-- 只能使用 `deep_sequential` 模式。
-- 不得并行运行多个阶段。
-- 不得跳过人工闸门。
-- 在结果合同存在前，不得生成完整论文。
-- 没有模型输出和 `result_contract.csv` 条目时，不得写结果分析。
-- 图未登记到 `figure_contract.csv` 且文件不存在时，不得在论文中引用。
+- 只能按 `intake → data_analysis → model_design → implementation → result_freeze → evidence_design → paper_review → finalize` 顺序推进。
+- 只有 `scripts/workflow.py` 经状态机校验后可以推进状态；前端不得直接写状态。
+- 任何 AI 都不得确认人工闸门，也不得伪造人工确认记录。
+- 不直接调用任何模型 API；ChatGPT 与 Codex 只通过结构化文件交接。
+- 没有真实代码输出和 `result_contract.csv` 条目时，不得写结果分析。
+- 图未登记到 `figure_contract.csv` 或文件不存在时，不得在论文中引用。
+- 未登记的论断、公式和引用不得进入论文。
 - 润色不得改变数字、公式、标签、引用、文献、模型名或结果含义。
-- 不得复制历史论文文本，包括摘要、正文段落、图注、表格和结论。
-- 不得允许审稿代理直接修改正式交付物。
-- 不得把 `nature-skills` 当作工作流控制器。
+- 不得复制历史论文的摘要、正文、图注、表格或结论。
+- 审稿意见只能写入审稿/修订工件，不得直接篡改冻结的正式产物。
 
-## 阶段到技能路由
+## 双 AI 边界
 
-| 阶段 | 允许技能 | 角色 | 使用前必需合同 |
-|---|---|---|---|
-| `literature` | `nature-academic-search`, `nature-citation` | 文献检索与引用核验 | `citation_contract.csv` 脚手架 |
-| `data` | `nature-data` | 数据来源与可复现性说明 | 如存在则使用 `data_contract.yaml` |
-| `prior_retrieval` | `nature-reader` | 只抽取经验卡片 | `prior_db_policy.yaml` |
-| `figures` | `nature-figure` | 图表论证设计与导出质量 | `result_contract.csv`, `figure_contract.csv` |
-| `paper_draft` | `nature-writing` | 分章节论证草拟 | `claim_evidence_map.csv`, `result_contract.csv`, `figure_contract.csv` |
-| `paper_full` | `nature-writing` | 跨章节一致性 | 同 `paper_draft` |
-| `auto_review` | `nature-response` 风格逻辑 | 评论归并与可追踪修订 | 草稿论文与合同 |
-| `polish` | `nature-polishing` | 不改事实的语言润色 | `artifact_freeze_registry.csv` |
-| `final_export` | `nature-paper2ppt` | 终稿确认后的展示材料 | 人工确认的终稿 |
+| 主体 | 负责 | 不得做 |
+|---|---|---|
+| ChatGPT | 问题拆解、建模决策、公式与假设、解释、证据叙事、论文与修订建议 | 声称运行了本地代码、虚构数据/结果、推进状态或确认闸门 |
+| Codex | 数据检查、代码实现、从零运行、数值/来源/合同核验、实现缺陷修复 | 静默改变模型路线、假设或结论，代替人工确认 |
+| 控制器 | 哈希、状态转换、交接不可变性、阶段验收、闸门锁定 | 替任一 AI 做建模决策 |
 
-## 合同总线规则
+## 交接协议
 
-所有正式论断必须记录在 `14_contracts/claim_evidence_map.csv`。
-论文使用的所有数值结果必须记录在 `14_contracts/result_contract.csv`。
-论文使用的所有图表必须记录在 `14_contracts/figure_contract.csv`。
-所有重要公式必须记录在 `14_contracts/formula_contract.csv`。
-所有引用必须记录在 `14_contracts/citation_contract.csv`。
-所有冻结产物必须记录在 `14_contracts/artifact_freeze_registry.csv`。
-所有润色变更必须通过 `14_contracts/polish_diff_check.csv`。
-所有审稿问题必须记录在 `14_contracts/revision_tasks.csv`。
+每次交接写入 `10_ai_logs/handoffs/<handoff_id>/`：
 
-## 审稿器权限
+```text
+manifest.yaml
+chatgpt_prompt.md
+chatgpt_response.md
+codex_task.md
+codex_receipt.json
+```
 
-审稿器可以写入：
+ChatGPT 回复必须携带与清单完全一致的 `protocol`、`project_id`、`stage`、`handoff_id`、`context_sha256`。原始回复和 Codex 回执不可覆盖；旧哈希、重复回复、错阶段、合同缺失或验证冲突必须阻止推进。
 
-- `11_review/*_reviewer_comments.md`
-- `11_review/review_scorecard.csv`
-- `11_review/revision_tasks.csv`
+## 阶段与闸门
+
+| 阶段 | 责任重点 | 人工闸门 |
+|---|---|---|
+| `intake` | 题面、附件、指纹和敏感信息检查 | — |
+| `data_analysis` | 数据质量、EDA 与问题拆解复现 | — |
+| `model_design` | 模型、公式、假设、备选方案与可实现性 | `model_freeze_gate` |
+| `implementation` | 正式代码、依赖、测试与从零运行 | — |
+| `result_freeze` | 数值、敏感性、稳定性及来源核验 | `result_freeze_gate` |
+| `evidence_design` | 图表、表格、论断与论文提纲绑定 | `evidence_gate` |
+| `paper_review` | 草稿、审稿、修订和全局一致性 | `paper_gate` |
+| `finalize` | PDF、提交包、视觉与合同总检 | `final_submission_gate` |
+
+## 合同总线
+
+正式内容必须记录在：
+
+- `14_contracts/result_contract.csv`
+- `14_contracts/figure_contract.csv`
+- `14_contracts/formula_contract.csv`
+- `14_contracts/claim_evidence_map.csv`
+- `14_contracts/citation_contract.csv`
+- `14_contracts/artifact_freeze_registry.csv`
+- `14_contracts/polish_diff_check.csv`
 - `14_contracts/revision_tasks.csv`
 
-审稿器不得修改：
+## 旧提示词保护
 
-- `02_latex_template/`
-- `05_model/`
-- `06_code/`
-- `07_results/`
-- `08_figures/`
-- `09_paper/`
-- `12_submission/`
+`prompts/stages/*.md` 与 `prompts/stage_prompt_contract.md` 是只读历史资产：禁止删除、重命名、修改或覆盖。新提示词只能写入 `prompts/formal_v4/`。变更前后必须运行旧提示词哈希测试。
 
-## Prior DB 规则
+## 可选证据边界
 
-求解前，Prior DB 检索只能输出：
+`02_literature/` 和 `13_prior_db/` 可以提供经验与文献线索，但不参与状态推进，不提供当前题目的事实答案。引用必须重新核验并登记；历史文本不得复用。
 
-- 题型经验
-- 常见模型族
-- 常见图表类型
-- 常见评分风险
+## 最终交付
 
-第一版完整草稿形成后，Prior DB 检索才可以额外输出：
+形成最终提交前必须同时满足：
 
-- 结构对比
-- 论证缺口对比
-- 图表密度对比
-- 评分风险对比
-
-禁止行为：
-
-- 复制历史论文文本
-- 复用历史图注
-- 复用历史摘要或结论
-- 直接复制历史表格
-- 把历史论文当作当前题目的事实答案
-
-## `nature-skills` 集成规则
-
-- 复制整个 `skills/nature-*` 目录，而不是只复制 `SKILL.md`。
-- 项目内 vendored 技能放在 `vendor/nature-skills/skills/`。
-- 只有本地运行 Codex 时才同步到 `~/.codex/skills/`。
-- 条件允许时，在 `vendor/nature-skills/VERSION.txt` 固定 `nature-skills` 提交版本。
-- 技能只作为阶段内专家；其输出仍必须通过合同校验。
-
-## 最终闸门
-
-只有同时满足以下条件，才允许形成最终交付：
-
-- `scripts/check_gates.py` 通过。
-- `scripts/validate_contracts.py` 通过。
-- `11_review/review_scorecard.csv` 中没有 fail 级未关闭问题。
-- 所有必需修订任务已经关闭，或由人类明确豁免。
-- 人类最终闸门已确认。
+- `scripts/check_gates.py` 通过；
+- `scripts/validate_contracts.py --stage current` 通过；
+- `11_review/review_scorecard.csv` 没有未关闭的 fail/major 问题；
+- 所有必需修订已关闭或由人类明确豁免；
+- `final_submission_gate` 已由人类确认。

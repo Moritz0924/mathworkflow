@@ -1,0 +1,75 @@
+version: v4
+protocol: mmwf-handoff/v1
+execution_mode: dual_ai_sequential
+model_labels:
+  chatgpt: gpt-5.6
+  codex: gpt-5.6
+external_model_api: false
+stages:
+  - intake
+  - data_analysis
+  - model_design
+  - implementation
+  - result_freeze
+  - evidence_design
+  - paper_review
+  - finalize
+gates:
+  model_design: model_freeze_gate
+  result_freeze: result_freeze_gate
+  evidence_design: evidence_gate
+  paper_review: paper_gate
+  finalize: final_submission_gate
+stage_contracts:
+  intake:
+    context_paths: [00_problem]
+    required_artifacts:
+      - 00_problem/problem_statement.md
+      - 00_problem/attachments_overview.md
+  data_analysis:
+    context_paths: [00_problem, 01_task_analysis, 03_data, 04_eda, 04_eda_code]
+    required_artifacts:
+      - 01_task_analysis/task_decomposition.md
+      - 03_data/data_dictionary.csv
+      - 03_data/data_quality_report.md
+      - 04_eda/eda_report.md
+  model_design:
+    context_paths: [00_problem, 01_task_analysis, 02_literature, 03_data, 04_eda, 05_model, 14_contracts/formula_contract.csv]
+    required_artifacts:
+      - 05_model/model_route.md
+    required_contract_rows:
+      14_contracts/formula_contract.csv: 1
+  implementation:
+    context_paths: [01_task_analysis, 03_data, 05_model, 06_code]
+    required_artifacts:
+      - 06_code/run_all.py
+      - 06_code/execution_log.md
+  result_freeze:
+    context_paths: [05_model, 06_code, 07_results, 14_contracts]
+    required_artifacts:
+      - 07_results/result_freeze_report.md
+    required_contract_rows:
+      14_contracts/result_contract.csv: 1
+      14_contracts/artifact_freeze_registry.csv: 1
+  evidence_design:
+    context_paths: [07_results, 08_figures, 14_contracts]
+    required_artifacts:
+      - 08_figures/active_figure_plan.csv
+    required_contract_rows:
+      14_contracts/figure_contract.csv: 1
+      14_contracts/claim_evidence_map.csv: 1
+  paper_review:
+    context_paths: [02_literature, 07_results, 08_figures, 09_paper, 11_review, 14_contracts]
+    required_artifacts:
+      - 09_paper/full_draft.md
+      - 11_review/review_scorecard.csv
+    required_contract_rows:
+      14_contracts/claim_evidence_map.csv: 1
+      14_contracts/citation_contract.csv: 1
+  finalize:
+    context_paths: [02_latex_template, 09_paper, 10_polish, 11_review, 12_submission, 14_contracts]
+    required_artifacts:
+      - 12_submission/final_paper.pdf
+      - 12_submission/submission_checklist.md
+    required_contract_rows:
+      14_contracts/polish_diff_check.csv: 1

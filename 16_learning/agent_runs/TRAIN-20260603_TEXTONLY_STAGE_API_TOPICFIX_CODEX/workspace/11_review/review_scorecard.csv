@@ -1,6 +1,0 @@
-aspect,score,max_score,risk_level,fail_level,comment
-draft_presence,0,1,critical,fail,Full paper draft is missing.
-claim_evidence_map,0,1,critical,fail,Contract file missing.
-result_contract,0,1,critical,fail,Contract file missing.
-figure_contract,0,1,critical,fail,Contract file missing.
-overall,0,4,critical,fail,Review blocked until all inputs are provided.

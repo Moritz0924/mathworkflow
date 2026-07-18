@@ -1,9 +1,0 @@
-result_id,description,value,unit,source,frozen
-R001,多元回归R²(测试集),0.82,无,模型输出,TRUE
-R002,随机森林R²(测试集),0.85,无,模型输出,TRUE
-R003,10折交叉验证R²均值,0.83,无,计算,TRUE
-R004,10折交叉验证R²标准差,0.02,无,计算,TRUE
-R005,风速回归系数(多元回归),-0.35,μg/m³ per m/s,回归输出,TRUE
-R006,湿度回归系数(多元回归),0.18,μg/m³ per %,回归输出,TRUE
-R007,随机森林RMSE,12.4,μg/m³,模型输出,TRUE
-R008,多元回归RMSE,13.1,μg/m³,模型输出,TRUE

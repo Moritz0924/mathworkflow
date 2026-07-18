@@ -1,7 +1,0 @@
-claim_id,question_id,section_id,claim_text,claim_type,evidence_type,evidence_id,result_id,figure_id,formula_id,citation_id,support_grade,boundary_condition,risk_note,status,owner,last_checked
-C01,Q1,sec_model,线性回归模型能够以极高拟合优度（R²=0.9977）描述浓度与RGB通道的关系,result,result,R05;R06,R05;R06,F002,F01,,strong,对于标准样本范围(0.5—5.0 mg/L)成立；外推需谨慎,,draft,system,2026-06-04T18:00:00Z
-C02,Q1,sec_model,R通道与浓度呈现负相关（系数-1.8214），表明红色分量增加导致预测浓度降低,result,result,R02,R02,F001;F005,,,strong,,,draft,system,2026-06-04T18:00:00Z
-C03,Q1,sec_model,G通道与浓度呈现弱正相关（系数0.9956），其影响幅度小于B通道,result,result,R03,R03,F001;F005,,,moderate,G通道系数置信区间需进一步考察,,draft,system,2026-06-04T18:00:00Z
-C04,Q1,sec_model,B通道是浓度预测的主导正向因子（系数5.6310），显示蓝色分量对浓度变化的响应最强烈,result,result,R04,R04,F001;F005,,,strong,,,draft,system,2026-06-04T18:00:00Z
-C05,Q1,sec_diagnostics,残差图未显示系统模式，残差近似满足正态性和同方差性，支持OLS假设,figure,figure,F003;F004,,F003;F004,,,moderate,样本量仅10个，诊断统计效力有限,,draft,system,2026-06-04T18:00:00Z
-C06,Q1,sec_diagnostics,模型RMSE为0.0674 mg/L，表明预测误差在可接受范围,result,result,R06,R06,F003;F004,,CIT01,moderate,,需结合浓度范围评估,draft,system,2026-06-04T18:00:00Z

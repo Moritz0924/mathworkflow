@@ -1,4 +1,0 @@
-figure_id,title_cn,chart_type,result_id,evidence_source,used_in_section,latex_label,quality_score,file_path,notes
-FIG001,指标权重分布,bar_chart,RES001,weight_analysis,sec:method,fig:weight_dist,4.5,08_figures/fig1_weight_heatmap.svg,展示各指标权重
-FIG002,综合得分矩阵,heatmap,RES002,score_evaluation,sec:results,fig:score_matrix,4.3,08_figures/fig2_score_matrix.svg,省份指标得分
-FIG003,排序坡度图,line_chart,RES003,ranking_analysis,sec:results,fig:sorting_slope,4.2,08_figures/fig3_sorting_slope.svg,排名变化趋势

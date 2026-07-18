@@ -1,4 +1,0 @@
-formula_id,latex,description,variables,section_appear
-F001,"C = \beta_0 + \beta_1 R + \beta_2 G + \beta_3 B + \beta_4 RG + \beta_5 RB + \beta_6 GB + \varepsilon",多元线性回归模型,"C:浓度; R,G,B:颜色通道; \beta:系数; \varepsilon:误差",3
-F002,R² = 1 - \frac{SS_{res}}{SS_{tot}},决定系数,"SS_res:残差平方和; SS_tot:总平方和",3
-F003,RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^n (C_i - \hat{C}_i)^2},均方根误差,"n:样本数; C_i:真实值; \hat{C}_i:预测值",3

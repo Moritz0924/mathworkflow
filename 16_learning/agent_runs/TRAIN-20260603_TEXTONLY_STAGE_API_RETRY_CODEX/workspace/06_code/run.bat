@@ -1,1 +1,0 @@
-python 06_code/Q1_arima_model.py

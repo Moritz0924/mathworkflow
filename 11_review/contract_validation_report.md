@@ -1,6 +1,6 @@
 # Contract validation report
 
-- stage: prior_retrieval
+- stage: model_design
 - fail_count: 0
 - warn_count: 0
 

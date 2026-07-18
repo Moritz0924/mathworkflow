@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
-<rect width="900" height="520" fill="#f8fafc"/>
-<rect x="40" y="36" width="820" height="420" fill="#ffffff" stroke="#d0d7de"/>
-<text x="62" y="80" font-size="28" fill="#1f2937">F002 三类模型总距离对比图</text>
-<text x="62" y="116" font-size="16" fill="#475569">图表类型：bar；证据绑定：F002</text>
-<rect x='100' y='168' width='50' height='92' fill='#1f4e79'/><text x='100' y='282' font-size='14'>M1</text><rect x='190' y='130' width='50' height='130' fill='#2a9d8f'/><text x='190' y='282' font-size='14'>M2</text><rect x='280' y='148' width='50' height='112' fill='#f2b134'/><text x='280' y='282' font-size='14'>M3</text><rect x='370' y='192' width='50' height='68' fill='#c44536'/><text x='370' y='282' font-size='14'>M4</text><rect x='460' y='116' width='50' height='144' fill='#5b8c5a'/><text x='460' y='282' font-size='14'>M5</text><line x1='80' y1='260' x2='790' y2='260' stroke='#334155' stroke-width='2'/><line x1='80' y1='260' x2='80' y2='120' stroke='#334155' stroke-width='2'/>
-<text x="62" y="330" font-size="16" fill="#334155">中文坐标轴：成本、风险、时间窗、装载率</text>
-<text x="62" y="360" font-size="16" fill="#334155">结论：该图服务于路径优化论证，不作为装饰图。</text>
-</svg>

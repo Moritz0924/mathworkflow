@@ -1,2 +1,0 @@
-﻿task_id,source,severity,target_artifact,issue,action,status,owner,notes
-REV-001,training,major,09_paper/full_draft.md,need validation and contract binding,add validation section and contract references,open,local_training_agent,iteration 1

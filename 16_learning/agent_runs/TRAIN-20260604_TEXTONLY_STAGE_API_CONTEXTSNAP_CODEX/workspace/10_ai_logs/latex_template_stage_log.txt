@@ -1,8 +1,0 @@
-[latex_template] stage execution log
-- Execution mode: deep_sequential
-- Created 02_latex_template/ main.tex and section stubs (14 files)
-- No model facts, results, or citations introduced
-- Compilation not tested (scripts unavailable)
-- Contract updates: none (stage only reads contracts)
-- Simulated human gate logged in 11_review/simulated_human_gate_log.csv
-- Stage completed with risk notes

@@ -1,4 +1,0 @@
-timestamp: 2026-06-03T10:00:00
-agent: codex
-stage: codegen
-decision: Generated ARIMA(1,1,1) code for Q1 as per model_route (assumed). Used synthetic data fallback. Code is deterministic (seed=42). Marked as candidate; formal freeze pending execution.

@@ -1,3 +1,0 @@
-figure_id,result_id,evidence_source,chart_type,title_cn,output_svg,output_png,output_pdf,quality_score,used_in_section,latex_label,caption_cn,notes
-F001,R001,result_contract.csv row R001,scatter,预测值与真实值比较,08_figures/F001_scatter.svg,08_figures/F001_scatter.png,,4.5,3,,图1：模型预测值与观测真实值的散点对比，点越靠近对角线说明预测越准。,
-F002,R002,result_contract.csv row R002,bar,特征重要性排序,08_figures/F002_importance.svg,08_figures/F002_importance.png,,4.6,4,,图2：特征重要性条形图，特征B对输出贡献最大。,
