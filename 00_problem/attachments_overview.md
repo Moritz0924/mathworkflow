@@ -1,15 +1,22 @@
-# 附件总览（自动生成）
+# 附件总览（经原始文件核验）
 
 ## 题目文件
 
-| 文件 | 类型 | 状态 | 抽取字符数 |
-|---|---:|---|---:|
-| text_only_color_concentration_problem.md | .md | 已抽取文本 | 1063 |
-| text_only_crop_yield_problem.md | .md | 已抽取文本 | 1487 |
-| text_only_emergency_logistics_problem.md | .md | 已抽取文本 | 1318 |
-| text_only_medical_supply_dispatch_problem.md | .md | 已抽取文本 | 1839 |
-| text_only_shelter_supply_problem.md | .md | 已抽取文本 | 1805 |
+| 文件 | 类型 | 状态 | 说明 |
+|---|---|---|---|
+| A题.pdf | .pdf | 已验证可读（PDF-1.7，286,520 bytes） | 赛题原文；可提取 1 页文本 |
 
 ## 数据文件
 
-未发现数据文件。
+| 文件 | 类型 | 路径 | 说明 |
+|---|---|---|---|
+| result1.xlsx | .xlsx | 03_data/raw/result1.xlsx | 问题三结果模板：FY1 三枚干扰弹参数（运动方向、速度、投放点坐标、起爆点坐标、有效干扰时长） |
+| result2.xlsx | .xlsx | 03_data/raw/result2.xlsx | 问题四结果模板：FY1/FY2/FY3 协同干扰参数 |
+| result3.xlsx | .xlsx | 03_data/raw/result3.xlsx | 问题五结果模板：全编队五机三弹协同分配参数（含所干扰导弹编号） |
+
+## 先验数据库
+
+| 目录 | 说明 |
+|---|---|
+| 13_prior_db/ | 已构建结构化先验数据库（含 TF-IDF 全文索引、检索结果、论文卡片） |
+| 论文数据集/ | 原始论文 PDF 集合（按建模方法分类：线性规划、神经网络等38类） |

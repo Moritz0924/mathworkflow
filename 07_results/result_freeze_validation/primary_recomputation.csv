@@ -1,0 +1,8 @@
+﻿scenario,question_id,missile_id,metric_name,metric_value_s,merged_intervals,constraint_issues
+primary_strict_recomputation,Q1,M1,primary_duration_M1,1.3622014999389869,"[[8.056308984756512, 9.4185104846955]]",
+primary_strict_recomputation,Q2,M1,primary_duration_M1,2.2381643772125575,"[[7.817155600773029, 10.055319977985587]]",
+primary_strict_recomputation,Q3,M1,primary_duration_M1,2.2381643772125575,"[[7.817155600773029, 10.055319977985587]]",
+primary_strict_recomputation,Q4,M1,primary_duration_M1,2.2381643772125575,"[[7.817155600773029, 10.055319977985587]]",
+primary_strict_recomputation,Q5,M1,primary_duration_M1,2.2381643772125575,"[[7.817155600773029, 10.055319977985587]]",
+primary_strict_recomputation,Q5,M2,primary_duration_M2,1.9820433139801334,"[[9.641431898272616, 11.62347521225275]]",
+primary_strict_recomputation,Q5,M3,primary_duration_M3,1.8768008708953303,"[[15.30570047657822, 17.18250134747355]]",

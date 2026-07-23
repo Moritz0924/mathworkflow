@@ -1,1 +1,33 @@
 ﻿file_name,column_name,inferred_type,missing_rate,unique_count,sample_values,possible_meaning,risk_note
+result1.xlsx,无人机运动方向,numeric,not_applicable_template,0,,无人机运动方向,结果待计算；空白单元格不是观测数据缺失
+result1.xlsx,无人机运动速度 (m/s),numeric,not_applicable_template,0,,无人机运动速度 (m/s),结果待计算；空白单元格不是观测数据缺失
+result1.xlsx,烟幕干扰弹编号,integer,not_applicable_template,3,1 | 2 | 3,烟幕干扰弹编号,结果待计算；空白单元格不是观测数据缺失
+result1.xlsx,烟幕干扰弹投放点的x坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹投放点的x坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result1.xlsx,烟幕干扰弹投放点的y坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹投放点的y坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result1.xlsx,烟幕干扰弹投放点的z坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹投放点的z坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result1.xlsx,烟幕干扰弹起爆点的x坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹起爆点的x坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result1.xlsx,烟幕干扰弹起爆点的y坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹起爆点的y坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result1.xlsx,烟幕干扰弹起爆点的z坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹起爆点的z坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result1.xlsx,有效干扰时长 (s),numeric,not_applicable_template,0,,有效干扰时长 (s),结果待计算；空白单元格不是观测数据缺失
+result2.xlsx,无人机编号,categorical,not_applicable_template,3,FY1 | FY2 | FY3,无人机编号,结果待计算；空白单元格不是观测数据缺失
+result2.xlsx,无人机运动方向,numeric,not_applicable_template,0,,无人机运动方向,结果待计算；空白单元格不是观测数据缺失
+result2.xlsx,无人机运动速度 (m/s),numeric,not_applicable_template,0,,无人机运动速度 (m/s),结果待计算；空白单元格不是观测数据缺失
+result2.xlsx,烟幕干扰弹投放点的x坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹投放点的x坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result2.xlsx,烟幕干扰弹投放点的y坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹投放点的y坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result2.xlsx,烟幕干扰弹投放点的z坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹投放点的z坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result2.xlsx,烟幕干扰弹起爆点的x坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹起爆点的x坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result2.xlsx,烟幕干扰弹起爆点的y坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹起爆点的y坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result2.xlsx,烟幕干扰弹起爆点的z坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹起爆点的z坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result2.xlsx,有效干扰时长 (s),numeric,not_applicable_template,0,,有效干扰时长 (s),结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,无人机编号,categorical,not_applicable_template,5,FY1 | FY1 | FY1 | FY2 | FY2 | FY2 | FY3 | FY3 | FY3 | FY4 | FY4 | FY4 | FY5 | FY5 | FY5,无人机编号,结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,无人机运动方向,numeric,not_applicable_template,0,,无人机运动方向,结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,无人机运动速度 (m/s),numeric,not_applicable_template,0,,无人机运动速度 (m/s),结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,烟幕干扰弹编号,integer,not_applicable_template,3,1 | 2 | 3 | 1 | 2 | 3 | 1 | 2 | 3 | 1 | 2 | 3 | 1 | 2 | 3,烟幕干扰弹编号,结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,烟幕干扰弹投放点的x坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹投放点的x坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,烟幕干扰弹投放点的y坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹投放点的y坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,烟幕干扰弹投放点的z坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹投放点的z坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,烟幕干扰弹起爆点的x坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹起爆点的x坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,烟幕干扰弹起爆点的y坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹起爆点的y坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,烟幕干扰弹起爆点的z坐标 (m),numeric,not_applicable_template,0,,烟幕干扰弹起爆点的z坐标 (m),结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,有效干扰时长 (s),numeric,not_applicable_template,0,,有效干扰时长 (s),结果待计算；空白单元格不是观测数据缺失
+result3.xlsx,干扰的导弹编号,categorical,not_applicable_template,0,,干扰的导弹编号,结果待计算；空白单元格不是观测数据缺失

@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "generated_at": "2026-07-23T10:04:01.462527+00:00",
+  "source": "09_paper/final_submission.tex",
+  "output": "12_submission/final_paper.pdf",
+  "pages": 10,
+  "figures": 8,
+  "figure_formats": [
+    "pdf",
+    "svg",
+    "png"
+  ],
+  "latex_log": "tmp/latex/final_paper/final_submission.log",
+  "blocking_log_markers": [],
+  "human_gate": "final_submission_gate remains pending human confirmation"
+}

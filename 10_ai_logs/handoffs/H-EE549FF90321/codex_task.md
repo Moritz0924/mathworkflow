@@ -1,0 +1,25 @@
+# implementation / Codex
+
+## 结果
+把冻结模型实现为可从统一入口运行、可测试并可记录环境与随机性的代码。
+
+## 边界
+可以修复清洗、算法、数值和工程缺陷；改变模型含义必须生成冲突并退回ChatGPT。
+
+## 交付
+提交代码、依赖、运行命令、测试、日志、随机种子和无法复现项。
+
+## 验收
+从干净输入运行 `06_code/run_all.py` 可生成约定结果，失败时返回非零状态并留下证据。
+
+## 阻塞
+依赖缺失、计算不可完成、结果不稳定或实现需要改变模型时返回阻塞或修订。
+
+## Handoff
+
+- handoff_id: `H-EE549FF90321`
+- response: `10_ai_logs/handoffs/H-EE549FF90321/chatgpt_response.md`
+
+## Required receipt
+
+Return pass, needs_revision, or blocked with checks, artifacts, contract_rows, conflicts, and next_action.

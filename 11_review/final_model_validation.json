@@ -1,0 +1,102 @@
+{
+  "status": "pass",
+  "frozen_package": "RF-20260722T114756Z",
+  "generated_at": "2026-07-23T10:05:32.458234+00:00",
+  "method_boundary": "冻结方案复核；不声明全局最优，不改变模型假设。",
+  "headline_metrics": {
+    "Q1/primary_duration_M1": 1.3622014999389869,
+    "Q2/primary_duration_M1": 2.2381643772125575,
+    "Q5/objective_total_duration": 6.097008562088021,
+    "Q5/objective_minimum_duration": 1.8768008708953303
+  },
+  "recomputed_metrics": {
+    "Q1/primary_duration_M1": 1.3622014999389869,
+    "Q2/primary_duration_M1": 2.2381643772125575,
+    "Q3/primary_duration_M1": 2.2381643772125575,
+    "Q4/primary_duration_M1": 2.2381643772125575,
+    "Q5/primary_duration_M1": 2.2381643772125575,
+    "Q5/primary_duration_M2": 1.9820433139801334,
+    "Q5/primary_duration_M3": 1.8768008708953303,
+    "Q5/objective_total_duration": 6.097008562088021,
+    "Q5/objective_minimum_duration": 1.8768008708953303
+  },
+  "checks": [
+    {
+      "check_id": "frozen_metric_status",
+      "status": "pass",
+      "detail": "冻结汇总含 9 项指标，状态集合为 ['frozen']。"
+    },
+    {
+      "check_id": "result_contract_alignment",
+      "status": "pass",
+      "detail": "冻结 CSV 与结果合同逐项对齐；最大绝对差 0.000e+00 s。",
+      "maximum_absolute_error_s": 0.0
+    },
+    {
+      "check_id": "row_interval_duration",
+      "status": "pass",
+      "detail": "复算 23 条方案记录的区间长度；最大绝对差 0.000e+00 s。",
+      "maximum_absolute_error_s": 0.0
+    },
+    {
+      "check_id": "question_aggregate_metrics",
+      "status": "pass",
+      "detail": "按区间并集复算 Q1--Q5 汇总指标；最大绝对差 0.000e+00 s。",
+      "maximum_absolute_error_s": 0.0
+    },
+    {
+      "check_id": "physical_and_timing_constraints",
+      "status": "pass",
+      "detail": "速度、时序、起爆高度和同机投放间隔均满足冻结实现约束。",
+      "issues": []
+    },
+    {
+      "check_id": "q5_assignment",
+      "status": "pass",
+      "detail": "Q5 使用 FY1→M1、FY2→M2、FY5→M3，每枚导弹均获得正遮蔽。",
+      "active_assignments": [
+        "FY1→M1",
+        "FY2→M2",
+        "FY5→M3"
+      ]
+    },
+    {
+      "check_id": "seed_stability",
+      "status": "pass",
+      "detail": "三个登记随机种子逐指标一致；最大跨度 0.000e+00 s。",
+      "maximum_span_s": 0.0
+    },
+    {
+      "check_id": "grid_tolerance_convergence",
+      "status": "pass",
+      "detail": "较上一档加密配置，最终严格复算的主指标最大变化 2.039e-04 s，低于登记稳定性阈值 0.05 s。",
+      "maximum_absolute_change_s": 0.00020389556884659044,
+      "registered_stability_tolerance_s": 0.05
+    },
+    {
+      "check_id": "a03_sensitivity",
+      "status": "pass",
+      "detail": "取消干扰弹水平速度继承后，登记指标均降为 0 s，结论对 A03 高敏感。"
+    },
+    {
+      "check_id": "a07_sensitivity",
+      "status": "pass",
+      "detail": "本组方案的烟幕未在有效区间触地，A07 变体最大变化 0.000e+00 s。",
+      "maximum_absolute_change_s": 0.0
+    },
+    {
+      "check_id": "a08_sensitivity",
+      "status": "pass",
+      "detail": "将全点遮蔽放宽到 80% 覆盖后指标不下降，且 M2 出现显著增量，说明结论受 A08 口径影响。",
+      "changes_s": {
+        "Q1/primary_duration_M1": 0.017779827117919922,
+        "Q2/primary_duration_M1": 0.013144207000728159,
+        "Q3/primary_duration_M1": 0.013144207000728159,
+        "Q4/primary_duration_M1": 0.013144207000728159,
+        "Q5/primary_duration_M1": 0.013144207000728159,
+        "Q5/primary_duration_M2": 0.23240108489990163,
+        "Q5/primary_duration_M3": 0.054958915710443534
+      }
+    }
+  ]
+}

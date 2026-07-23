@@ -1,0 +1,107 @@
+{
+  "verdict": "pass",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "The imported evidence-design response matches H-AC982523FD2E and context hash fb221145a9a7e79220b0bd82753e7c9a7af7fb26d82798aebac6a61744be3c73."
+    },
+    {
+      "id": "frozen_source_boundary",
+      "status": "pass",
+      "detail": "The generator reads formal outcome values only from 07_results/frozen/ and registered result-freeze validation records. Candidate and ready-for-freeze files are not evidence inputs."
+    },
+    {
+      "id": "zero_contribution_preserved",
+      "status": "pass",
+      "detail": "F004/T4 retain Q3 bomb 2 and bomb 3 as 0 s; F005/T5 retain FY2 and FY3 as 0 s. The figures and claims do not state additional multi-bomb or multi-UAV gain."
+    },
+    {
+      "id": "figure_and_claim_contracts",
+      "status": "pass",
+      "detail": "Eleven PNG/SVG figures, nine source tables, eleven figure-contract rows, and ten claim-evidence rows were generated. Every figure and claim references existing RES-* frozen result IDs and existing files."
+    },
+    {
+      "id": "visual_quality",
+      "status": "pass",
+      "detail": "Visual inspection covered F001, F002, F004, F005, F006, F009, F010, and F011. Chinese labels, units, zero rows, Q5 assignment, target scale labels, and the Q2/M1–Q5/M1 A08 numerical overlap are readable and explicitly bounded."
+    },
+    {
+      "id": "reproducibility",
+      "status": "pass",
+      "detail": "06_code/generate_evidence.py regenerates the complete evidence package from the frozen inputs, including the formal contracts, caption bank, active figure plan, and QA registers."
+    },
+    {
+      "id": "verification_suite",
+      "status": "pass",
+      "detail": "Focused evidence-generation tests and full unittest discovery passed. scripts/validate_contracts.py --stage current and scripts/check_gates.py --json both reported 0 failures and 0 warnings."
+    },
+    {
+      "id": "artifact:08_figures/evidence_generation_report.md",
+      "status": "pass",
+      "evidence": "08_figures/evidence_generation_report.md"
+    },
+    {
+      "id": "contract:14_contracts/figure_contract.csv",
+      "status": "pass",
+      "evidence": "14_contracts/figure_contract.csv rows=11"
+    },
+    {
+      "id": "contract:14_contracts/claim_evidence_map.csv",
+      "status": "pass",
+      "evidence": "14_contracts/claim_evidence_map.csv rows=10"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "06_code/generate_evidence.py",
+      "role": "reproducible frozen-evidence generator"
+    },
+    {
+      "path": "08_figures/main_figures",
+      "role": "eleven 300 dpi PNG and SVG formal figures"
+    },
+    {
+      "path": "08_figures/tables",
+      "role": "nine frozen-source evidence tables"
+    },
+    {
+      "path": "08_figures/evidence_generation_report.md",
+      "role": "source boundary, file fingerprint, and QA report"
+    },
+    {
+      "path": "08_figures/active_figure_plan.csv",
+      "role": "active evidence-design plan for F001–F011"
+    },
+    {
+      "path": "08_figures/figure_caption_bank.md",
+      "role": "contract-bound captions and use boundaries"
+    },
+    {
+      "path": "08_figures/figure_status.csv",
+      "role": "figure readiness and human-gate review status"
+    },
+    {
+      "path": "08_figures/figure_design_review.csv",
+      "role": "visual quality review register"
+    },
+    {
+      "path": "14_contracts/figure_contract.csv",
+      "role": "eleven traceable figure registrations"
+    },
+    {
+      "path": "14_contracts/claim_evidence_map.csv",
+      "role": "ten traceable and bounded formal claims"
+    },
+    {
+      "path": "tests/test_evidence_generation.py",
+      "role": "regression tests for frozen inputs, zero rows, contracts, legends, and target labels"
+    }
+  ],
+  "contract_rows": [
+    "F001", "F002", "F003", "F004", "F005", "F006", "F007", "F008", "F009", "F010", "F011",
+    "C001", "C002", "C003", "C004", "C005", "C006", "C007", "C008", "C009", "C010"
+  ],
+  "conflicts": [],
+  "next_action": "The controller may move evidence_design to pending_human. A human must review 08_figures/evidence_generation_report.md, the registered figures and claims, then explicitly confirm evidence_gate in the dashboard before paper_review begins. This report does not confirm that gate."
+}

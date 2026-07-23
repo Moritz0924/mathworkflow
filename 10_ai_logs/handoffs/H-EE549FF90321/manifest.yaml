@@ -1,0 +1,83 @@
+schema_version: v1
+protocol: mmwf-handoff/v1
+project_id: ccmc2025-a
+stage: implementation
+handoff_id: H-EE549FF90321
+revision: 1
+context_sha256: 497524d09cc6d557d1fbf0d23a76856bd37642fcc460069bbb33f79267442442
+context_files:
+- path: 01_task_analysis/task_decomposition.md
+  size: 3107
+  sha256: 4b112a69f6e5c328fa77ff9c20380f6c24e467289f93419833c22d1573ed5bca
+- path: 03_data/cleaning_rules.md
+  size: 1647
+  sha256: 27feacbba1e27c3e99bc95e0c4c6cb28a67f5758fe6c8048528673137335d816
+- path: 03_data/data_dictionary.csv
+  size: 5749
+  sha256: 5a0993b9b1fb9a8bde4b9e77f5dc54e3cc1c03dc7166dbf9b0034048c341943b
+- path: 03_data/data_quality_report.md
+  size: 1077
+  sha256: c0d20d94a13dfce39bebb2339c6aafaba1a7d253b9d6591dcaa9af1919508e9a
+- path: 03_data/data_quality_report.tex
+  size: 144
+  sha256: dc4204431d016eecd8f359a8dfce3426d97eaedee912ad6b5919ce9ff8983047
+- path: 03_data/input_decision_table.csv
+  size: 1244
+  sha256: 31affaa4175f4986eabadb414b17f169f4e24c039c899ce47bb55cc3de4084fb
+- path: 03_data/raw/result1.xlsx
+  size: 10316
+  sha256: af04b16e6a4719628971bcf5a03d230c9da6738e67eebac9276d254fdd4df1a7
+- path: 03_data/raw/result2.xlsx
+  size: 10438
+  sha256: c681d5e378538f71c77fca199a3ca8303a04dbcfc7bd95f870ae22f01ab69f91
+- path: 03_data/raw/result3.xlsx
+  size: 9763
+  sha256: b648c82d63e459ba6e6b3711ae79875e373521cd543b45571c4d8ff1ad5ec54a
+- path: 03_data/template_structure_report.md
+  size: 2098
+  sha256: 7c3940e8f88bd78939ad8a745ed752944812a5f7fbe5bae629228fdf7adfe284
+- path: 05_model/assumptions.csv
+  size: 2895
+  sha256: 4e751cf3e4d42df94c130ec26459cec3672e9ad9bc1fa0ba4c37c9371e811810
+- path: 05_model/implementation_contract.md
+  size: 2027
+  sha256: 0920812925b5374cbb5392d10aaf93b4517d43340ed542abce9a38f91b75690f
+- path: 05_model/model_route.md
+  size: 3823
+  sha256: f6dd86b3cfd740ab89298fd7a5f16d6671a4d02f7b2dd691e0ca9be646a1b329
+- path: 06_code/README.md
+  size: 487
+  sha256: ba390f1eb1d78029d02b36c53e23f95e170e221af7050024cadaa6e174e6c6a0
+- path: 06_code/execution_log.md
+  size: 166
+  sha256: 00392e4e7245ee312d9fb6e102406903e42a20aadae0d3d86be777841476abf4
+- path: 06_code/requirements.txt
+  size: 119
+  sha256: b3127f05b55ef93d545dffbd07751d760c752e1b209318ae58b1cdbfce881542
+- path: 06_code/run_all.py
+  size: 1154
+  sha256: 9e79a25a4b0b704032f81eb72ed70133fcfb10b9a75169ec04a292cf07f4ebd7
+- path: 06_code/src/__init__.py
+  size: 0
+  sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- path: 06_code/src/io_utils.py
+  size: 325
+  sha256: 2a15efa3e2d3308d992252c2a4c6cf958028893d161ed34941ec9d8051990256
+excluded_files:
+- path: 01_task_analysis/.gitkeep
+  reason: hidden_or_environment_file
+- path: 03_data/processed/.gitkeep
+  reason: hidden_or_environment_file
+- path: 03_data/raw/.gitkeep
+  reason: hidden_or_environment_file
+- path: 05_model/.gitkeep
+  reason: hidden_or_environment_file
+- path: 06_code/notebooks/.gitkeep
+  reason: hidden_or_environment_file
+- path: 06_code/src/.gitkeep
+  reason: hidden_or_environment_file
+created_at: '2026-07-22T09:48:22+00:00'
+status: codex_pass
+response_sha256: 2f89b905f1122cfc5b4713c20f758c28cbeccc86018b86ab85e59712199e722f
+imported_at: '2026-07-22T10:07:15+00:00'
+receipt_sha256: dfbeaa90b5f10f458f636f91887615989e676bd0de482ea4cf9041dba6b2a08a

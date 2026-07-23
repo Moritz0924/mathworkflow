@@ -2,6 +2,13 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; RAW=ROOT/"03_data/raw"; FIG=ROOT/"08_figures/output"; REG=ROOT/"08_figures/figure_registry.csv"
+
+
+def has_correlation_ready_columns(non_null_counts):
+    """Return true only when at least two numeric columns have observations."""
+    return sum(int(count) >= 2 for count in non_null_counts.values()) >= 2
+
+
 def main():
     try:
         import pandas as pd, matplotlib.pyplot as plt
@@ -14,7 +21,13 @@ def main():
         try: df=pd.read_excel(p) if p.suffix.lower() in {".xlsx",".xls"} else pd.read_csv(p, sep="\t" if p.suffix.lower()==".tsv" else None, engine="python")
         except Exception as e: print(f"[WARN] skip {p.name}: {e}"); continue
         num=df.select_dtypes(include="number")
-        if num.shape[1]>=2:
+        non_null_counts={str(column): int(num[column].notna().sum()) for column in num.columns}
+        if not has_correlation_ready_columns(non_null_counts):
+            print(f"[INFO] skip correlation EDA for {p.name}: fewer than two observed numeric columns")
+            continue
+        ready_columns=[column for column in num.columns if int(num[column].notna().sum()) >= 2]
+        if len(ready_columns)>=2:
+            num=num[ready_columns]
             corr=num.corr(numeric_only=True); fig,ax=plt.subplots(figsize=(8,6),dpi=160); im=ax.imshow(corr,cmap="viridis",vmin=-1,vmax=1)
             ax.set_xticks(range(len(corr.columns)),labels=[str(c) for c in corr.columns],rotation=45,ha="right",fontsize=8); ax.set_yticks(range(len(corr.index)),labels=[str(c) for c in corr.index],fontsize=8); ax.set_title(f"{p.stem} 数值变量相关性热力图",fontsize=12,fontweight="bold"); fig.colorbar(im,ax=ax); fig.tight_layout()
             out=FIG/f"eda_{p.stem}_corr_heatmap.png"; fig.savefig(out,bbox_inches="tight"); plt.close(fig)

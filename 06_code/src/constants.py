@@ -1,0 +1,32 @@
+from __future__ import annotations
+
+from .entities import Missile, UAV
+
+
+GRAVITY_MPS2 = 9.8
+MISSILE_SPEED_MPS = 300.0
+UAV_SPEED_MIN_MPS = 70.0
+UAV_SPEED_MAX_MPS = 140.0
+SMOKE_RADIUS_M = 10.0
+SMOKE_SINK_SPEED_MPS = 3.0
+SMOKE_LIFETIME_S = 20.0
+TARGET_RADIUS_M = 7.0
+TARGET_HEIGHT_M = 10.0
+TARGET_BASE_CENTER = (0.0, 200.0, 0.0)
+MIN_RELEASE_GAP_S = 1.0
+
+
+MISSILES = {
+    "M1": Missile("M1", (20000.0, 0.0, 2000.0), MISSILE_SPEED_MPS),
+    "M2": Missile("M2", (19000.0, 600.0, 2100.0), MISSILE_SPEED_MPS),
+    "M3": Missile("M3", (18000.0, -600.0, 1900.0), MISSILE_SPEED_MPS),
+}
+
+
+UAVS = {
+    "FY1": UAV("FY1", (17800.0, 0.0, 1800.0)),
+    "FY2": UAV("FY2", (12000.0, 1400.0, 1400.0)),
+    "FY3": UAV("FY3", (6000.0, -3000.0, 700.0)),
+    "FY4": UAV("FY4", (11000.0, 2000.0, 1800.0)),
+    "FY5": UAV("FY5", (13000.0, -2000.0, 1300.0)),
+}

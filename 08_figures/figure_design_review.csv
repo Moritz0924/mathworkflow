@@ -1,1 +1,12 @@
 ﻿figure_id,model_family,figure_type,type_diversity_score,color_score,layout_score,information_density_score,annotation_score,paper_readability_score,chinese_font_score,non_default_palette_score,model_fit_score,export_quality_score,overall_score_1_5,problems,revision_action,approved_for_main_text
+F001,冻结几何仿真,3D scene diagram,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,几何示意不得被解释为轨迹求解结果。,待人工 evidence_gate 审核后定稿,pending_human_gate
+F002,冻结几何仿真,3D trajectory diagram,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,干扰弹曲线仅作空间关系示意，时长以冻结 CSV 为准。,待人工 evidence_gate 审核后定稿,pending_human_gate
+F003,冻结几何仿真,interval comparison,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,仅比较冻结方案，不声明全局最优。,待人工 evidence_gate 审核后定稿,pending_human_gate
+F004,冻结几何仿真,interval decomposition,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,不得省略零贡献行或暗示多弹协同增益。,待人工 evidence_gate 审核后定稿,pending_human_gate
+F005,冻结几何仿真,interval decomposition,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,不得将参与投放解释为形成有效遮蔽或额外收益。,待人工 evidence_gate 审核后定稿,pending_human_gate
+F006,冻结几何仿真,bipartite assignment network,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,未连边无人机和弹位表示未使用，不得补画。,待人工 evidence_gate 审核后定稿,pending_human_gate
+F007,冻结几何仿真,multi-target timeline,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,时间轴间隙必须保留，避免误读为连续保护。,待人工 evidence_gate 审核后定稿,pending_human_gate
+F008,冻结几何仿真,dot comparison,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,相等的数值不应被解释为因果或协同效果。,待人工 evidence_gate 审核后定稿,pending_human_gate
+F009,冻结几何仿真,baseline comparison,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,基线仅作口径对照，不得当作额外优化结论。,待人工 evidence_gate 审核后定稿,pending_human_gate
+F010,冻结几何仿真,paired sensitivity slope graph,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,仅代表已检验的 A08 情景，不外推到其他口径。,待人工 evidence_gate 审核后定稿,pending_human_gate
+F011,冻结几何仿真,categorical risk matrix,5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.6,4.6,4.6,矩阵是验证摘要，不能替代数值表和边界条件。,待人工 evidence_gate 审核后定稿,pending_human_gate

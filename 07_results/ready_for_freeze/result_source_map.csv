@@ -1,0 +1,6 @@
+﻿result_id,question_id,source_file,result_status,producing_run_id,source_candidate_run
+ready_q1_plans,Q1,07_results/ready_for_freeze/q1_results.csv,ready,RF-20260722T114756Z,result_freeze_validation/runs/refined
+ready_q2_plans,Q2,07_results/ready_for_freeze/q2_results.csv,ready,RF-20260722T114756Z,result_freeze_validation/runs/refined
+ready_q3_plans,Q3,07_results/ready_for_freeze/q3_results.csv,ready,RF-20260722T114756Z,result_freeze_validation/runs/refined
+ready_q4_plans,Q4,07_results/ready_for_freeze/q4_results.csv,ready,RF-20260722T114756Z,result_freeze_validation/runs/refined
+ready_q5_plans,Q5,07_results/ready_for_freeze/q5_results.csv,ready,RF-20260722T114756Z,result_freeze_validation/runs/refined

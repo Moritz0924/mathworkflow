@@ -1,0 +1,4 @@
+﻿variant,assignment,total_duration_s,minimum_duration_s,require_positive,priority
+A11_primary_total_then_min,"{""M1"": ""FY1"", ""M2"": ""FY2"", ""M3"": ""FY5""}",6.097008132934651,1.876800918579125,True,total_then_min
+A11_fairness_first,"{""M1"": ""FY1"", ""M2"": ""FY4"", ""M3"": ""FY2""}",6.080231857299891,1.908269119262723,True,min_then_total
+A12_relaxed_positive_coverage,"{""M1"": ""FY1"", ""M2"": ""FY2"", ""M3"": ""FY5""}",6.097008132934651,1.876800918579125,False,total_then_min

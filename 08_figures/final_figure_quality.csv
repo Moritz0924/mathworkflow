@@ -1,0 +1,9 @@
+﻿figure_id,file_stem,legibility,evidence_fidelity,semantic_fit,layout,quality_score,status,review_note
+PF001,PF001_model_chain,4.6,4.8,4.7,4.6,4.6,ready,中文标注、非默认配色、证据边界和正文尺寸已按终稿标准检查。
+PF002,PF002_scene_los,4.6,4.8,4.7,4.6,4.6,ready,中文标注、非默认配色、证据边界和正文尺寸已按终稿标准检查。
+PF003,PF003_q1_q2_comparison,4.7,4.8,4.7,4.7,4.7,ready,中文标注、非默认配色、证据边界和正文尺寸已按终稿标准检查。
+PF004,PF004_q3_q4_contribution,4.7,4.8,4.7,4.7,4.7,ready,中文标注、非默认配色、证据边界和正文尺寸已按终稿标准检查。
+PF005,PF005_q5_assignment,4.6,4.8,4.7,4.6,4.6,ready,中文标注、非默认配色、证据边界和正文尺寸已按终稿标准检查。
+PF006,PF006_q5_intervals,4.7,4.8,4.7,4.7,4.7,ready,中文标注、非默认配色、证据边界和正文尺寸已按终稿标准检查。
+PF007,PF007_convergence_stability,4.6,4.8,4.7,4.6,4.6,ready,中文标注、非默认配色、证据边界和正文尺寸已按终稿标准检查。
+PF008,PF008_sensitivity,4.7,4.8,4.7,4.7,4.7,ready,中文标注、非默认配色、证据边界和正文尺寸已按终稿标准检查。

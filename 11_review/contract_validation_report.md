@@ -1,6 +1,6 @@
 # Contract validation report
 
-- stage: model_design
+- stage: finalize
 - fail_count: 0
 - warn_count: 0
 

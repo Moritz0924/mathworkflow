@@ -1,6 +1,9 @@
 contest:
-  name: "高教杯全国大学生数学建模竞赛"
-  problem_id: ""
+  name: "高教社杯全国大学生数学建模竞赛"
+  year: 2025
+  problem_id: "A"
+  problem_title: "烟幕干扰弹的投放策略"
+  source_file: "00_problem/inbox/A题.pdf"
   start_time: ""
   end_time: ""
   total_hours: 72

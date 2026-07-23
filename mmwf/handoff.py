@@ -4,6 +4,7 @@ import json
 import re
 import shutil
 import uuid
+import csv
 from pathlib import Path
 from typing import Any, Dict, Mapping
 
@@ -96,11 +97,19 @@ def prepare_handoff(root: Path, target: str, handoff_id: str | None = None) -> D
         template = root / "prompts" / "formal_v4" / stage / "chatgpt.md"
         if not template.exists():
             raise WorkflowError(f"ChatGPT prompt template is missing: {template}")
+        sections = [template.read_text(encoding="utf-8").strip()]
+        if manifest.get("revision", 1) > 1:
+            revision_block = _build_revision_block(root, stage)
+            if revision_block:
+                sections.append(revision_block)
+        sections.append(
+            "## Response metadata\n\nBegin the response with this exact metadata block:\n\n" + _response_header(manifest)
+        )
+        sections.append("## Verified context\n" + render_context_snapshot(root, context))
         prompt = "\n\n".join(
             [
                 template.read_text(encoding="utf-8").strip(),
-                "## Response metadata\n\nBegin the response with this exact metadata block:\n\n" + _response_header(manifest),
-                "## Verified context\n" + render_context_snapshot(root, context),
+                *sections[1:],
             ]
         )
         (directory / "chatgpt_prompt.md").write_text(prompt.rstrip() + "\n", encoding="utf-8")
@@ -254,3 +263,43 @@ def record_codex_verification(root: Path, handoff_id: str, report: Mapping[str, 
     add_history(state, "codex_verification_recorded", stage=stage, handoff_id=handoff_id, verdict=verdict)
     write_state(root, state)
     return receipt
+def _build_revision_block(root: Path, stage: str) -> str | None:
+    """Read active (non-closed) revision tasks and format them for prompt injection."""
+    task_path = root / "14_contracts" / "revision_tasks.csv"
+    if not task_path.exists():
+        return None
+    with task_path.open(encoding="utf-8-sig", newline="") as fh:
+        rows = list(csv.DictReader(fh))
+    closed = {"closed", "resolved", "waived"}
+    active = []
+    for row in rows:
+        st = (row.get("status") or "").strip().lower()
+        sev = (row.get("severity") or "").strip().lower()
+        if st in closed or (not st and sev in closed):
+            continue
+        active.append(row)
+    if not active:
+        return None
+    lines = ["## 未关闭的修订任务（必须逐项完成并做出回应）", ""]
+    for row in active:
+        tid = (row.get("task_id") or "?").strip()
+        sev = (row.get("severity") or "?").strip().upper()
+        issue = (row.get("issue_summary") or "").strip()
+        action = (row.get("required_action") or "").strip()
+        check = (row.get("acceptance_check") or "").strip()
+        linked = (row.get("linked_contract_ids") or "").strip()
+        target = (row.get("target_location") or "").strip()
+        lines.append(f"### {tid} [{sev}]")
+        if target:
+            lines.append(f"- 位置：{target}")
+        if issue:
+            lines.append(f"- 问题：{issue}")
+        if action:
+            lines.append(f"- 要求：{action}")
+        if check:
+            lines.append(f"- 验收：{check}")
+        if linked:
+            lines.append(f"- 关联合同：{linked}")
+        lines.append("")
+    lines.append("请在回复正文中逐一写出你对上述每项任务的完成情况，不能只复制原论文。")
+    return "\n".join(lines)

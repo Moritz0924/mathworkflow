@@ -1,0 +1,14 @@
+﻿question_id,metric_name,metric_value,unit,result_status
+Q1,primary_duration_M1,1.3624053955078335,s,candidate
+Q1,objective_1,1.3624053955078335,s,candidate
+Q2,primary_duration_M1,2.238164138793973,s,candidate
+Q2,objective_1,2.238164138793973,s,candidate
+Q3,primary_duration_M1,2.238164138793973,s,candidate
+Q3,objective_1,2.238164138793973,s,candidate
+Q4,primary_duration_M1,2.238164138793973,s,candidate
+Q4,objective_1,2.238164138793973,s,candidate
+Q5,primary_duration_M1,2.238164138793973,s,candidate
+Q5,primary_duration_M2,1.9820430755615526,s,candidate
+Q5,primary_duration_M3,1.876800918579125,s,candidate
+Q5,objective_1,6.097008132934651,s,candidate
+Q5,objective_2,1.876800918579125,s,candidate

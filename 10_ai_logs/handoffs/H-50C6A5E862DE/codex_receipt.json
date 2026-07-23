@@ -1,0 +1,118 @@
+{
+  "schema_version": "v1",
+  "project_id": "ccmc2025-a",
+  "stage": "paper_review",
+  "handoff_id": "H-50C6A5E862DE",
+  "created_at": "2026-07-22T16:45:54+00:00",
+  "verdict": "needs_revision",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "The imported paper-review response matches handoff H-50C6A5E862DE."
+    },
+    {
+      "id": "frozen_numeric_traceability",
+      "status": "pass",
+      "detail": "All 5 unique metric_value entries in result_contract.csv appear in the draft; the frozen package remains RF-20260722T114756Z."
+    },
+    {
+      "id": "figure_reference_paths",
+      "status": "pass",
+      "detail": "All 9 markdown figure references resolve from 09_paper/ to existing registered files. The only local change was correcting the imported relative paths; no figure content or conclusion changed."
+    },
+    {
+      "id": "citation_contract",
+      "status": "fail",
+      "detail": "The draft has no inline citation or reference section, and 14_contracts/citation_contract.csv has zero data rows."
+    },
+    {
+      "id": "formula_contract_alignment",
+      "status": "fail",
+      "detail": "The draft drifts from FML007/FML008 by using d_ikjq(t), omits the y_ik=1 condition from FML010, and adds an unregistered Q5 near-optimal tolerance contrary to FML013."
+    },
+    {
+      "id": "prior_copy_risk",
+      "status": "pass",
+      "detail": "A fresh read-only 8-character n-gram scan against 13_prior_db/fulltext_index/source_texts found a maximum overlap ratio of 0.000614, below the 0.08 review threshold."
+    },
+    {
+      "id": "review_artifacts_and_tasks",
+      "status": "pass",
+      "detail": "The scorecard, review report, copy-risk report, and four owner-assigned revision tasks have been recorded in both review and contract locations."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "09_paper/full_draft.md",
+      "role": "imported paper draft with only verified figure-path corrections"
+    },
+    {
+      "path": "11_review/paper_review_report.md",
+      "role": "contract-bound review findings and re-review requirements"
+    },
+    {
+      "path": "11_review/review_scorecard.csv",
+      "role": "72/100 review scorecard with active fail and major findings"
+    },
+    {
+      "path": "11_review/revision_tasks.csv",
+      "role": "reviewer-facing revision task register"
+    },
+    {
+      "path": "14_contracts/revision_tasks.csv",
+      "role": "formal revision task contract with four active tasks"
+    },
+    {
+      "path": "11_review/paper_review_copy_risk_report.md",
+      "role": "fresh prior-text copy-risk scan"
+    }
+  ],
+  "contract_rows": [
+    "C001",
+    "C002",
+    "C003",
+    "C004",
+    "C005",
+    "C006",
+    "C007",
+    "C008",
+    "C009",
+    "C010",
+    "FML007",
+    "FML008",
+    "FML010",
+    "FML013",
+    "REV-PR-001",
+    "REV-PR-002",
+    "REV-PR-003",
+    "REV-PR-004"
+  ],
+  "conflicts": [
+    {
+      "id": "PRR-001",
+      "severity": "fail",
+      "owner": "ChatGPT",
+      "detail": "Citation contract and references are missing."
+    },
+    {
+      "id": "PRR-002",
+      "severity": "major",
+      "owner": "ChatGPT",
+      "detail": "FML007/FML008 notation drift."
+    },
+    {
+      "id": "PRR-003",
+      "severity": "major",
+      "owner": "ChatGPT",
+      "detail": "FML010 usage condition omitted."
+    },
+    {
+      "id": "PRR-004",
+      "severity": "major",
+      "owner": "ChatGPT",
+      "detail": "Unregistered near-optimal tolerance changes the Q5 objective semantics."
+    }
+  ],
+  "next_action": "Return this paper_review stage to ChatGPT for revision. The revised response must close REV-PR-001 through REV-PR-004 without changing frozen results, model assumptions, or conclusions; Codex will then rerun the contract and gate checks."
+}

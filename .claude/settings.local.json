@@ -5,7 +5,12 @@
       "Bash(netstat:*)",
       "Bash(python:*)",
       "Bash(curl:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(git:*)",
+      "Bash(pip install:*)",
+      "Bash(C:UsersadminAppDataLocalProgramsPythonPython310python.exe:*)",
+      "Bash(python3:*)",
+      "Bash(pdftotext:*)"
     ]
   }
 }

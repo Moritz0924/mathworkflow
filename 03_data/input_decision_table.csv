@@ -1,1 +1,9 @@
-﻿input_id,field_name,source_file,question,model,decision,reason,risk_level,fallback,notes
+input_id,field_name,source_file,question,model,decision,reason,risk_level,fallback,notes
+IN01,导弹初始位置,00_problem/inbox/A题.pdf,Q1-Q5,全问,采用题面给定坐标,题面硬数据不可改,低,,M1/M2/M3 坐标
+IN02,无人机初始位置,00_problem/inbox/A题.pdf,Q1-Q5,全问,采用题面给定坐标,题面硬数据不可改,低,,FY1~FY5 坐标
+IN03,导弹速度,00_problem/inbox/A题.pdf,Q1-Q5,全问,300 m/s 匀速,题面给定,低,,导弹指向假目标原点
+IN04,无人机速度范围,00_problem/inbox/A题.pdf,Q1-Q5,全问,70~140 m/s 约束,题面给定,低,,等高度匀速直线飞行
+IN05,Q1投放时刻,00_problem/inbox/A题.pdf,Q1,固定情景,接令后1.5 s,Q1题面给定的投放时刻,低,,不适用于Q2-Q5
+IN06,Q1投放至起爆间隔,00_problem/inbox/A题.pdf,Q1,固定情景,3.6 s,Q1题面给定的投放至起爆间隔,低,,起爆后烟幕瞬时形成；不适用于Q2-Q5
+IN07,烟幕物理有效期,00_problem/inbox/A题.pdf,Q1-Q5,全问,起爆后20 s,题面给定,低,,实际遮蔽时长不超过该上限
+IN08,Q2-Q5起爆时序,00_problem/inbox/A题.pdf,Q2-Q5,待建模口径,题面未规定,不得将Q1时序外推到Q2-Q5,高,模型设计阶段登记假设,需与地面边界和弹道可行性共同处理

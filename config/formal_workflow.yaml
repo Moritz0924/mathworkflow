@@ -22,7 +22,10 @@ gates:
   finalize: final_submission_gate
 stage_contracts:
   intake:
-    context_paths: [00_problem]
+    # The competition PDF and the three official Excel result templates are
+    # first-stage facts. Include both in the manifest so ChatGPT's intake
+    # response is reproducibly tied to the files it receives.
+    context_paths: [00_problem, 03_data/raw]
     required_artifacts:
       - 00_problem/problem_statement.md
       - 00_problem/attachments_overview.md

@@ -1,0 +1,65 @@
+{
+  "verdict": "needs_revision",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "The imported response matches evidence_design handoff H-60E117CA654C and context hash ab122c28b44e57ef24242cde61dd7792567799534f661912b8f1dba382255f76."
+    },
+    {
+      "id": "controller_gate_fact",
+      "status": "pass",
+      "detail": "workflow_state.yaml records the human result_freeze_gate confirmation at 2026-07-22T12:00:58+00:00."
+    },
+    {
+      "id": "frozen_package_created",
+      "status": "pass",
+      "detail": "A new 07_results/frozen package, frozen result contracts, and frozen artifact registry entries were created after that controller event without changing the numerical values or model route."
+    },
+    {
+      "id": "response_coverage",
+      "status": "needs_revision",
+      "detail": "The submitted response correctly refused to create formal evidence while only a pre-confirmation ready package was visible. It therefore does not yet bind formal figure IDs, claim IDs, or citations to the now-frozen result package."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "07_results/frozen/frozen_manifest.json",
+      "role": "controller-backed frozen result manifest"
+    },
+    {
+      "path": "07_results/frozen/freeze_confirmation.md",
+      "role": "human-gate confirmation provenance"
+    },
+    {
+      "path": "07_results/frozen/metrics_summary.csv",
+      "role": "frozen Q1-Q5 metrics"
+    },
+    {
+      "path": "14_contracts/result_contract.csv",
+      "role": "frozen numerical result contracts"
+    },
+    {
+      "path": "14_contracts/artifact_freeze_registry.csv",
+      "role": "frozen artifact hashes"
+    }
+  ],
+  "contract_rows": [
+    "RES-Q1-PRIMARY_DURATION_M1",
+    "RES-Q2-PRIMARY_DURATION_M1",
+    "RES-Q3-PRIMARY_DURATION_M1",
+    "RES-Q4-PRIMARY_DURATION_M1",
+    "RES-Q5-PRIMARY_DURATION_M1",
+    "RES-Q5-PRIMARY_DURATION_M2",
+    "RES-Q5-PRIMARY_DURATION_M3",
+    "RES-Q5-OBJECTIVE_TOTAL_DURATION",
+    "RES-Q5-OBJECTIVE_MINIMUM_DURATION"
+  ],
+  "conflicts": [
+    {
+      "id": "pre_confirmation_package_status",
+      "detail": "The imported response was necessarily based on a pre-confirmation ready package. The authoritative controller event and a separately generated frozen package now supersede that status boundary."
+    }
+  ],
+  "next_action": "Prepare a revised evidence_design ChatGPT handoff that uses 07_results/frozen/frozen_manifest.json, frozen result files, frozen result_contract records, and the recorded human gate. It must return concrete active figure IDs, figure/claim bindings, captions, and evidence wording that preserves the documented Q3/Q4 zero-increment and Q5 sensitivity limits."
+}

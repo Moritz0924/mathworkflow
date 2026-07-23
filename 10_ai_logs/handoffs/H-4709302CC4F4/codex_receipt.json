@@ -1,0 +1,89 @@
+{
+  "schema_version": "v1",
+  "project_id": "ccmc2025-a",
+  "stage": "data_analysis",
+  "handoff_id": "H-4709302CC4F4",
+  "created_at": "2026-07-22T09:15:05+00:00",
+  "verdict": "pass",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "Response frontmatter matches the active data_analysis handoff and current context hash."
+    },
+    {
+      "id": "data_analysis_scope",
+      "status": "pass",
+      "detail": "The response distinguishes official facts, template structure, data limitations, candidate metrics, and unresolved assumptions without selecting a model or fabricating numerical results."
+    },
+    {
+      "id": "template_reproduction",
+      "status": "pass",
+      "detail": "The v4 template inspector reproduces the three official template structures: Q3 has 3 rows, Q4 has 3 rows, Q5 has 15 rows; all are single-sheet, unprotected, formula-free, and without hidden rows or columns."
+    },
+    {
+      "id": "q1_timing_correction",
+      "status": "pass",
+      "detail": "IN05 and IN06 now preserve the PDF semantics and Q1-only scope: release at 1.5 s after task receipt and detonation 3.6 s after release."
+    },
+    {
+      "id": "empty_template_eda_guard",
+      "status": "pass",
+      "detail": "Correlation EDA now requires two observed numeric columns and the v4 EDA entry point performs template structure inspection without invoking the removed v3 workflow controller."
+    },
+    {
+      "id": "regression_suite",
+      "status": "pass",
+      "detail": "Fresh evidence: 33 unit tests passed; stage artifact validation, gate check, contract validation, and whitespace diff check passed."
+    },
+    {
+      "id": "artifact:01_task_analysis/task_decomposition.md",
+      "status": "pass",
+      "evidence": "01_task_analysis/task_decomposition.md"
+    },
+    {
+      "id": "artifact:03_data/data_dictionary.csv",
+      "status": "pass",
+      "evidence": "03_data/data_dictionary.csv"
+    },
+    {
+      "id": "artifact:03_data/data_quality_report.md",
+      "status": "pass",
+      "evidence": "03_data/data_quality_report.md"
+    },
+    {
+      "id": "artifact:04_eda/eda_report.md",
+      "status": "pass",
+      "evidence": "04_eda/eda_report.md"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "01_task_analysis/task_decomposition.md",
+      "role": "data-analysis problem decomposition and assumption boundary"
+    },
+    {
+      "path": "03_data/data_dictionary.csv",
+      "role": "template-aware data dictionary"
+    },
+    {
+      "path": "03_data/data_quality_report.md",
+      "role": "template-aware data quality report"
+    },
+    {
+      "path": "03_data/template_structure_report.md",
+      "role": "reproducible official template inspection"
+    },
+    {
+      "path": "04_eda/eda_report.md",
+      "role": "EDA scope and non-statistical analysis report"
+    },
+    {
+      "path": "04_eda_code/inspect_result_templates.py",
+      "role": "reproducible template inspection implementation"
+    }
+  ],
+  "contract_rows": [],
+  "conflicts": [],
+  "next_action": "Advance to model_design. ChatGPT must define the geometry, motion, timing, interval-union, and Q5 objective assumptions; register formulas before the model_freeze_gate."
+}

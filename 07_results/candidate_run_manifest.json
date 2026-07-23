@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-07-22T10:36:12.731980+00:00",
+  "result_status": "candidate",
+  "mode": "candidate",
+  "questions": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4",
+    "Q5"
+  ],
+  "solver_config": {
+    "target": {
+      "angular_samples": 12,
+      "height_samples": 3,
+      "radial_samples": 2,
+      "scan_step_s": 0.1,
+      "root_tolerance_s": 1e-05
+    },
+    "differential_evolution_maxiter": 6,
+    "differential_evolution_popsize": 5,
+    "local_refinement": true,
+    "random_seed": 20250722
+  },
+  "dependencies": {
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "pandas": "2.3.3",
+    "openpyxl": "3.1.5",
+    "PyYAML": "6.0.3"
+  },
+  "q5_feasible": true,
+  "q5_diagnostics": {
+    "feasible": true,
+    "assignment": {
+      "M1": "FY1",
+      "M2": "FY2",
+      "M3": "FY5"
+    },
+    "global_method": "differential_evolution",
+    "local_method": "Powell",
+    "random_seed": 20250722,
+    "q5_credit_policy": "primary_target_only"
+  },
+  "notice": "Candidate artifacts are not result-freeze outputs and are not registered in result_contract.csv."
+}

@@ -1,0 +1,74 @@
+schema_version: v1
+protocol: mmwf-handoff/v1
+project_id: ccmc2025-a
+stage: data_analysis
+handoff_id: H-4709302CC4F4
+revision: 1
+context_sha256: 5c588472fb675356b4d656f153cf75f9476e4c6b14f280027902cfab5a4dec0f
+context_files:
+- path: 00_problem/attachments_overview.md
+  size: 1035
+  sha256: e69d0e9f9c72f885e893cfbb7965617e2a265c9dd978d6002861b981cb909c10
+- path: 00_problem/contest_info.yaml
+  size: 481
+  sha256: 1e92dad6221f405e63f3442b61fd53c86b3e55e6f7edb1652d13ee3d6ed28f32
+- path: 00_problem/inbox/A题.pdf
+  size: 286520
+  sha256: a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447
+- path: 00_problem/problem_statement.md
+  size: 3735
+  sha256: 9bbaa4b1bc76b3e0b33749ecfeeca7dcddd885571072a19713793e85f255c961
+- path: 03_data/cleaning_rules.md
+  size: 778
+  sha256: 80a560918021d8b781e8b917c05fd5741b3ab78ee6938ee466adfd71b1677718
+- path: 03_data/data_dictionary.csv
+  size: 3488
+  sha256: 338d0b6465e00778ca0960823e75c4bfd9fd1393ca7a733057fad287f1d4c8fc
+- path: 03_data/data_quality_report.md
+  size: 963
+  sha256: 5a32f1d582e6783a2603921283572342935ebacf87d5326fe37cc833aee35dbb
+- path: 03_data/data_quality_report.tex
+  size: 144
+  sha256: dc4204431d016eecd8f359a8dfce3426d97eaedee912ad6b5919ce9ff8983047
+- path: 03_data/input_decision_table.csv
+  size: 790
+  sha256: 8785c77679008b42141eee54e7dfcd7e97cbe2e0bf7861a4dfd72a738ea26963
+- path: 03_data/raw/result1.xlsx
+  size: 10316
+  sha256: af04b16e6a4719628971bcf5a03d230c9da6738e67eebac9276d254fdd4df1a7
+- path: 03_data/raw/result2.xlsx
+  size: 10438
+  sha256: c681d5e378538f71c77fca199a3ca8303a04dbcfc7bd95f870ae22f01ab69f91
+- path: 03_data/raw/result3.xlsx
+  size: 9763
+  sha256: b648c82d63e459ba6e6b3711ae79875e373521cd543b45571c4d8ff1ad5ec54a
+- path: 04_eda_code/eda_visuals.py
+  size: 2372
+  sha256: 25fe2b1b84cf4919267f7680e15265a1fa1cf03e2c0ff24a11729e159d495192
+- path: 04_eda_code/generate_data_dictionary.py
+  size: 1935
+  sha256: 9de9aa1b294d8d57c706edb04111c37e926eb684ebc597e4beb79d1179e3521b
+- path: 04_eda_code/run_data_quality_check.py
+  size: 2218
+  sha256: 25b0e14e3286439d5b51bc2772e5db099339f20896ba9e19fd64d7c559ac247d
+- path: 04_eda_code/run_eda_pipeline.py
+  size: 888
+  sha256: 334a1c0c30cac21f64c5644bcb256b62cc769c2639ffd0192ad1376a59648412
+excluded_files:
+- path: 00_problem/.gitkeep
+  reason: hidden_or_environment_file
+- path: 01_task_analysis/.gitkeep
+  reason: hidden_or_environment_file
+- path: 03_data/processed/.gitkeep
+  reason: hidden_or_environment_file
+- path: 03_data/raw/.gitkeep
+  reason: hidden_or_environment_file
+- path: 04_eda/eda_figures/.gitkeep
+  reason: hidden_or_environment_file
+- path: 04_eda_code/.gitkeep
+  reason: hidden_or_environment_file
+created_at: '2026-07-22T08:58:59+00:00'
+status: codex_pass
+response_sha256: 89e6b7774434c2e1cecf6c2b7bdf37ca52d14f076167128054fc666498d0827d
+imported_at: '2026-07-22T09:08:36+00:00'
+receipt_sha256: 8ea227ae797c3693889955724b9040aa4160ed774a084cd391da8adeff287dab

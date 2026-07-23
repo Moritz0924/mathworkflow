@@ -1,0 +1,14 @@
+assumption_id,content,source,applies_to,risk_level,validation_or_sensitivity,confirmation_status,notes
+A01,导弹视为质点并在到达假目标原点前保持题面给定的匀速直线运动,ChatGPT模型设计 H-21D19FE5FD2C,Q1-Q5,低,与题面初始位置和到达时刻核对,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A02,无人机在t=0瞬时完成一次转向后保持固定水平航向和恒定高度飞行,ChatGPT模型设计 H-21D19FE5FD2C,Q1-Q5,低,检查航向速度在同机各弹记录中一致,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A03,干扰弹释放瞬间继承无人机水平速度且初始竖直速度为0,ChatGPT模型设计 H-21D19FE5FD2C,Q1-Q5,中,与不继承水平速度的替代口径比较,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A04,起爆前忽略空气阻力并取重力加速度g=9.8 m/s²,ChatGPT模型设计 H-21D19FE5FD2C,Q1-Q5,中,比较g=9.8与g=9.81并记录差异,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A05,起爆后烟幕不保留水平速度且不受风影响，仅以3 m/s竖直下沉,ChatGPT模型设计 H-21D19FE5FD2C,Q1-Q5,中,检查烟幕中心轨迹和风场缺失的影响,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A06,干扰弹只允许在地面以上起爆，即起爆高度z≥0,ChatGPT模型设计 H-21D19FE5FD2C,Q1-Q5,中,验证延迟不超过由高度导出的物理上界,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A07,烟幕中心到达地面后停止计入有效遮蔽,ChatGPT模型设计 H-21D19FE5FD2C,Q1-Q5,中,与中心停留地面的替代口径比较,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A08,主模型以全部圆柱代表点均被遮挡作为有效遮蔽判据,ChatGPT模型设计 H-21D19FE5FD2C,Q1-Q5,高,与中心点和覆盖比例口径作敏感性分析,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A09,同一导弹受到多枚烟幕的有效时长按时间区间并集计算且不重复累计,ChatGPT模型设计 H-21D19FE5FD2C,Q3-Q5,中,构造重叠区间单元测试,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A10,Q5中每一枚已使用干扰弹登记一个主目标导弹编号,ChatGPT模型设计 H-21D19FE5FD2C,Q5,中,检查结果3模板的目标编号字段,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A11,Q5按先总遮蔽时长后最短导弹遮蔽时长的字典序目标优化,ChatGPT模型设计 H-21D19FE5FD2C,Q5,高,与公平性优先的备选目标比较,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A12,Q5要求M1/M2/M3均至少分配一枚产生正有效时长的已使用干扰弹,ChatGPT模型设计 H-21D19FE5FD2C,Q5,高,检查每枚导弹的T_j>0并做取消约束对照,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认
+A13,未使用弹位在内部数据中标记is_used=0且最终模板默认留空,ChatGPT模型设计 H-21D19FE5FD2C,Q5,中,检查未使用行不输出伪坐标或负值,human_confirmed,model_freeze_gate 于 2026-07-22T09:48:20+00:00 确认

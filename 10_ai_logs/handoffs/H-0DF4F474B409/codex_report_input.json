@@ -1,0 +1,62 @@
+{
+  "verdict": "needs_revision",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "Response protocol, project_id, stage, handoff_id, and context_sha256 match the active manifest."
+    },
+    {
+      "id": "context_integrity",
+      "status": "pass",
+      "detail": "The active intake context remains unchanged from the manifest at import time; the PDF and all three official Excel templates are present and hashed."
+    },
+    {
+      "id": "problem_facts",
+      "status": "pass",
+      "detail": "The response correctly treats the original PDF as authoritative and correctly states the 70–140 m/s UAV range, 10 m smoke radius, 3 m/s descent, 20 s effectiveness, and Q4's one bomb per UAV."
+    },
+    {
+      "id": "manifest_consistency",
+      "status": "fail",
+      "detail": "Section 8.3 of the response says the current manifest does not include result1.xlsx, result2.xlsx, and result3.xlsx. The active manifest lists all three with paths, byte sizes, and SHA-256 hashes."
+    },
+    {
+      "id": "source_marker_portability",
+      "status": "fail",
+      "detail": "The response contains platform-specific filecite markers (turn3file*), which are not local, registered sources in the handoff. The revision must use local file paths or plain source descriptions instead."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "10_ai_logs/handoffs/H-0DF4F474B409/chatgpt_response.md",
+      "role": "immutable imported ChatGPT intake response"
+    },
+    {
+      "path": "10_ai_logs/handoffs/H-0DF4F474B409/manifest.yaml",
+      "role": "active context manifest"
+    },
+    {
+      "path": "00_problem/inbox/A题.pdf",
+      "role": "authoritative competition problem"
+    }
+  ],
+  "contract_rows": [],
+  "conflicts": [
+    {
+      "id": "INTAKE-001",
+      "severity": "major",
+      "location": "chatgpt_response.md section 8.3",
+      "detail": "The response conflicts with the active manifest by claiming that the three official result templates were not registered.",
+      "required_resolution": "State that the manifest already registers result1.xlsx, result2.xlsx, and result3.xlsx, then retain template field inspection as a data_analysis task only."
+    },
+    {
+      "id": "INTAKE-002",
+      "severity": "minor",
+      "location": "chatgpt_response.md throughout",
+      "detail": "Platform-specific filecite markers cannot be audited from the local workspace.",
+      "required_resolution": "Remove filecite markers and identify the source as A题.pdf or a named local handoff file."
+    }
+  ],
+  "next_action": "Return to ChatGPT for a new intake revision. Preserve the correct PDF-derived facts, remove platform-specific citation markers, and correct section 8.3 to acknowledge that the active manifest already hashes all three Excel templates."
+}

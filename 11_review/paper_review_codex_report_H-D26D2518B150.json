@@ -1,0 +1,94 @@
+{
+  "verdict": "needs_revision",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "The imported response matches H-D26D2518B150 and its prepared context hash."
+    },
+    {
+      "id": "revision_body_changed",
+      "status": "fail",
+      "detail": "The response body SHA-256 is identical to H-50C6A5E862DE: 3557584ae45bc62578a5ae49eb91b1e0b220608f9eba3ed43e4ed1c0a447f9f5."
+    },
+    {
+      "id": "frozen_numeric_traceability",
+      "status": "pass",
+      "detail": "All 5 unique metric_value entries in result_contract.csv remain present in the response body."
+    },
+    {
+      "id": "citation_revision",
+      "status": "fail",
+      "detail": "No inline citation or reference section was added and citation_contract.csv still has zero data rows; REV-PR-001 remains active."
+    },
+    {
+      "id": "formula_revision",
+      "status": "fail",
+      "detail": "The response still uses d_ikjq rather than the registered delta_ikjq, omits y_ik=1 from the FML010 union, and retains the unregistered Q5 near-optimal tolerance; REV-PR-002 through REV-PR-004 remain active."
+    },
+    {
+      "id": "formal_draft_integrity",
+      "status": "pass",
+      "detail": "The unchanged response was not copied over 09_paper/full_draft.md, so its already-verified figure paths remain intact."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "11_review/paper_review_followup_H-D26D2518B150.md",
+      "role": "evidence that the re-submitted body was unchanged and tasks remain open"
+    },
+    {
+      "path": "11_review/paper_review_report.md",
+      "role": "original review findings"
+    },
+    {
+      "path": "11_review/review_scorecard.csv",
+      "role": "active 72/100 review scorecard"
+    },
+    {
+      "path": "14_contracts/revision_tasks.csv",
+      "role": "four active, owner-assigned revision tasks"
+    },
+    {
+      "path": "09_paper/full_draft.md",
+      "role": "unchanged verified local draft retained because the new response made no revision"
+    }
+  ],
+  "contract_rows": [
+    "FML007",
+    "FML008",
+    "FML010",
+    "FML013",
+    "REV-PR-001",
+    "REV-PR-002",
+    "REV-PR-003",
+    "REV-PR-004"
+  ],
+  "conflicts": [
+    {
+      "id": "REV-PR-001",
+      "severity": "fail",
+      "owner": "ChatGPT",
+      "detail": "Citation and citation-contract correction is absent."
+    },
+    {
+      "id": "REV-PR-002",
+      "severity": "major",
+      "owner": "ChatGPT",
+      "detail": "FML007/FML008 notation correction is absent."
+    },
+    {
+      "id": "REV-PR-003",
+      "severity": "major",
+      "owner": "ChatGPT",
+      "detail": "FML010 usage-condition correction is absent."
+    },
+    {
+      "id": "REV-PR-004",
+      "severity": "major",
+      "owner": "ChatGPT",
+      "detail": "FML013 strict-lexicographic correction is absent."
+    }
+  ],
+  "next_action": "Prepare a new paper_review ChatGPT revision prompt. The next response must be substantively different from H-50C6A5E862DE, close REV-PR-001 through REV-PR-004 with evidence, and preserve all frozen numbers and model assumptions."
+}

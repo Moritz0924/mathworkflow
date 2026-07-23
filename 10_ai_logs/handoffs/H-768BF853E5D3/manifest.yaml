@@ -1,0 +1,25 @@
+schema_version: v1
+protocol: mmwf-handoff/v1
+project_id: ccmc2025-a
+stage: intake
+handoff_id: H-768BF853E5D3
+revision: 1
+context_sha256: 92a9658b2ea8b45604c60868475351246bd924fec0c45eb1aa80c518dd4408fb
+context_files:
+- path: 00_problem/attachments_overview.md
+  size: 487
+  sha256: 359f1443bcfcbef25f2dbca18a6cf6da0842eadcb55ed2d31d00ea67ca75af95
+- path: 00_problem/contest_info.yaml
+  size: 472
+  sha256: 8a93ef4f7a5c3571708083b224dea33690527e75cb5656898cc45e078039aa6d
+- path: 00_problem/inbox/A题.pdf
+  size: 286520
+  sha256: a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447
+- path: 00_problem/problem_statement.md
+  size: 3730
+  sha256: 4263aef5987f2f007a8940f894ad12929239a09e19e2abdd5a6a3fba12e7ae2d
+excluded_files:
+- path: 00_problem/.gitkeep
+  reason: hidden_or_environment_file
+created_at: '2026-07-21T10:33:03+00:00'
+status: awaiting_chatgpt

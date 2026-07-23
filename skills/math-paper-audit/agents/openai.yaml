@@ -1,0 +1,4 @@
+interface:
+  display_name: "Math Paper Audit"
+  short_description: "Audit mathematical-modeling papers for evidence and quality"
+  default_prompt: "Use $math-paper-audit to audit this mathematical-modeling paper."

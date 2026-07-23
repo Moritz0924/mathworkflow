@@ -1,0 +1,104 @@
+{
+  "schema_version": "v1",
+  "project_id": "ccmc2025-a",
+  "stage": "implementation",
+  "handoff_id": "H-EE549FF90321",
+  "created_at": "2026-07-22T10:37:46+00:00",
+  "verdict": "pass",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "The imported response matches implementation handoff H-EE549FF90321 and context hash 497524d09cc6d557d1fbf0d23a76856bd37642fcc460069bbb33f79267442442."
+    },
+    {
+      "id": "human_freeze_sync",
+      "status": "pass",
+      "detail": "The controller contains the model_freeze_gate human_gate_confirmed event. model_route.md and assumptions.csv now mirror that controller fact without changing the frozen model content."
+    },
+    {
+      "id": "frozen_model_implementation",
+      "status": "pass",
+      "detail": "06_code implements fixed-time Q1, 3D missile/UAV/bomb/smoke motion, all-representative-point line-segment occlusion, scan-and-boundary interval construction, interval union, Q3/Q4 constraints, Q5 lexicographic primary-target-only accounting, and unused-slot blank export policy."
+    },
+    {
+      "id": "dependency_versions",
+      "status": "pass",
+      "detail": "Controlled runtime dependencies are installed and recorded: NumPy 2.0.2, SciPy 1.13.1, Pandas 2.3.3, OpenPyXL 3.1.5, and PyYAML 6.0.3."
+    },
+    {
+      "id": "candidate_run",
+      "status": "pass",
+      "detail": "Fresh full candidate run via python 06_code/run_all.py --full generated Q1-Q5 CSV artifacts, three copied candidate templates, source mapping, manifest, and execution log. Q5 found a feasible primary assignment FY1→M1, FY2→M2, FY5→M3 with positive candidate durations for all three missiles."
+    },
+    {
+      "id": "candidate_boundary",
+      "status": "pass",
+      "detail": "All generated values are explicitly candidate outputs. result_contract.csv was not populated and official source templates were not overwritten; result_freeze remains responsible for numerical convergence, stability, and formal result registration."
+    },
+    {
+      "id": "verification_suite",
+      "status": "pass",
+      "detail": "Fresh evidence: 46 unit tests passed, 06_code compiled, implementation stage artifacts passed, gate check reported 0 failures and 0 warnings, contract validation completed without failures, and git diff --check reported no whitespace errors."
+    },
+    {
+      "id": "artifact:06_code/run_all.py",
+      "status": "pass",
+      "evidence": "06_code/run_all.py"
+    },
+    {
+      "id": "artifact:06_code/execution_log.md",
+      "status": "pass",
+      "evidence": "06_code/execution_log.md"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "06_code/src/constants.py",
+      "role": "verified problem constants and entity lookup maps"
+    },
+    {
+      "path": "06_code/src/dynamics.py",
+      "role": "missile, UAV, bomb, and smoke kinematics"
+    },
+    {
+      "path": "06_code/src/target_geometry.py",
+      "role": "deterministic cylinder representative points"
+    },
+    {
+      "path": "06_code/src/occlusion.py",
+      "role": "line-segment clearance and all-points occlusion"
+    },
+    {
+      "path": "06_code/src/intervals.py",
+      "role": "continuous interval boundary refinement and union"
+    },
+    {
+      "path": "06_code/src/constraints.py",
+      "role": "frozen physical and question-specific constraints"
+    },
+    {
+      "path": "06_code/src/evaluator.py",
+      "role": "single-bomb and Q1 evaluation"
+    },
+    {
+      "path": "06_code/src/solvers.py",
+      "role": "Q2-Q5 candidate global/local optimization and hierarchical Q5 assignment"
+    },
+    {
+      "path": "06_code/src/exporters.py",
+      "role": "read-only template-copy export"
+    },
+    {
+      "path": "06_code/run_all.py",
+      "role": "reproducible candidate entry point"
+    },
+    {
+      "path": "07_results/candidate_run_manifest.json",
+      "role": "candidate status, configuration, dependency versions, and Q5 diagnostics"
+    }
+  ],
+  "contract_rows": [],
+  "conflicts": [],
+  "next_action": "Advance to result_freeze. Use the implementation outputs only as candidates. Run representative-point, time-step, root-tolerance, seed, and optimization-budget convergence checks; then register only reproducible accepted values in result_contract.csv and artifact_freeze_registry.csv. Any changed model meaning must return as a model revision."
+}

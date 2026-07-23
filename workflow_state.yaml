@@ -1,17 +1,205 @@
 version: v4
-project_id: math-workflow-current
-current_stage: model_design
-status: pending_chatgpt
+project_id: ccmc2025-a
+current_stage: finalize
+status: pending_human
 active_handoff_id: null
 context_sha256: null
-pending_gate: null
+pending_gate: final_submission_gate
 completed_stages:
 - intake
 - data_analysis
+- model_design
+- implementation
+- result_freeze
+- evidence_design
+- paper_review
 history:
-- at: '2026-07-17T16:16:06+00:00'
-  event: migrated_from_v3.2
-  old_stage: model_route
-  validated_stages:
-  - intake
-  - data_analysis
+- at: '2026-07-21T10:33:03+00:00'
+  event: chatgpt_handoff_prepared
+  stage: intake
+  handoff_id: H-768BF853E5D3
+- at: '2026-07-22T08:30:05+00:00'
+  event: chatgpt_handoff_prepared
+  stage: intake
+  handoff_id: H-0DF4F474B409
+- at: '2026-07-22T08:48:43+00:00'
+  event: chatgpt_response_imported
+  stage: intake
+  handoff_id: H-0DF4F474B409
+- at: '2026-07-22T08:49:29+00:00'
+  event: codex_verification_recorded
+  stage: intake
+  handoff_id: H-0DF4F474B409
+  verdict: needs_revision
+- at: '2026-07-22T08:49:38+00:00'
+  event: chatgpt_handoff_prepared
+  stage: intake
+  handoff_id: H-BE16605CE85B
+- at: '2026-07-22T08:58:24+00:00'
+  event: chatgpt_response_imported
+  stage: intake
+  handoff_id: H-BE16605CE85B
+- at: '2026-07-22T08:58:59+00:00'
+  event: codex_verification_recorded
+  stage: intake
+  handoff_id: H-BE16605CE85B
+  verdict: pass
+- at: '2026-07-22T08:58:59+00:00'
+  event: chatgpt_handoff_prepared
+  stage: data_analysis
+  handoff_id: H-4709302CC4F4
+- at: '2026-07-22T09:08:36+00:00'
+  event: chatgpt_response_imported
+  stage: data_analysis
+  handoff_id: H-4709302CC4F4
+- at: '2026-07-22T09:15:05+00:00'
+  event: codex_verification_recorded
+  stage: data_analysis
+  handoff_id: H-4709302CC4F4
+  verdict: pass
+- at: '2026-07-22T09:15:05+00:00'
+  event: chatgpt_handoff_prepared
+  stage: model_design
+  handoff_id: H-21D19FE5FD2C
+- at: '2026-07-22T09:34:47+00:00'
+  event: chatgpt_response_imported
+  stage: model_design
+  handoff_id: H-21D19FE5FD2C
+- at: '2026-07-22T09:41:29+00:00'
+  event: codex_verification_recorded
+  stage: model_design
+  handoff_id: H-21D19FE5FD2C
+  verdict: pass
+- at: '2026-07-22T09:48:20+00:00'
+  event: human_gate_confirmed
+  stage: model_design
+  gate: model_freeze_gate
+- at: '2026-07-22T09:48:22+00:00'
+  event: chatgpt_handoff_prepared
+  stage: implementation
+  handoff_id: H-EE549FF90321
+- at: '2026-07-22T10:07:15+00:00'
+  event: chatgpt_response_imported
+  stage: implementation
+  handoff_id: H-EE549FF90321
+- at: '2026-07-22T10:37:46+00:00'
+  event: codex_verification_recorded
+  stage: implementation
+  handoff_id: H-EE549FF90321
+  verdict: pass
+- at: '2026-07-22T10:37:54+00:00'
+  event: chatgpt_handoff_prepared
+  stage: result_freeze
+  handoff_id: H-58AA00D62F3B
+- at: '2026-07-22T11:24:54+00:00'
+  event: chatgpt_response_imported
+  stage: result_freeze
+  handoff_id: H-58AA00D62F3B
+- at: '2026-07-22T11:55:20+00:00'
+  event: codex_verification_recorded
+  stage: result_freeze
+  handoff_id: H-58AA00D62F3B
+  verdict: pass
+- at: '2026-07-22T12:00:58+00:00'
+  event: human_gate_confirmed
+  stage: result_freeze
+  gate: result_freeze_gate
+- at: '2026-07-22T12:01:27+00:00'
+  event: chatgpt_handoff_prepared
+  stage: evidence_design
+  handoff_id: H-60E117CA654C
+- at: '2026-07-22T12:11:01+00:00'
+  event: chatgpt_response_imported
+  stage: evidence_design
+  handoff_id: H-60E117CA654C
+- at: '2026-07-22T12:13:15+00:00'
+  event: codex_verification_recorded
+  stage: evidence_design
+  handoff_id: H-60E117CA654C
+  verdict: needs_revision
+- at: '2026-07-22T12:13:16+00:00'
+  event: chatgpt_handoff_prepared
+  stage: evidence_design
+  handoff_id: H-AC982523FD2E
+- at: '2026-07-22T12:24:26+00:00'
+  event: chatgpt_response_imported
+  stage: evidence_design
+  handoff_id: H-AC982523FD2E
+- at: '2026-07-22T12:49:24+00:00'
+  event: codex_verification_recorded
+  stage: evidence_design
+  handoff_id: H-AC982523FD2E
+  verdict: pass
+- at: '2026-07-22T16:22:24+00:00'
+  event: human_gate_confirmed
+  stage: evidence_design
+  gate: evidence_gate
+- at: '2026-07-22T16:23:07+00:00'
+  event: chatgpt_handoff_prepared
+  stage: paper_review
+  handoff_id: H-50C6A5E862DE
+- at: '2026-07-22T16:31:54+00:00'
+  event: chatgpt_response_imported
+  stage: paper_review
+  handoff_id: H-50C6A5E862DE
+- at: '2026-07-22T16:45:54+00:00'
+  event: codex_verification_recorded
+  stage: paper_review
+  handoff_id: H-50C6A5E862DE
+  verdict: needs_revision
+- at: '2026-07-22T16:46:00+00:00'
+  event: chatgpt_handoff_prepared
+  stage: paper_review
+  handoff_id: H-D26D2518B150
+- at: '2026-07-23T03:37:33+00:00'
+  event: chatgpt_response_imported
+  stage: paper_review
+  handoff_id: H-D26D2518B150
+- at: '2026-07-23T03:39:48+00:00'
+  event: codex_verification_recorded
+  stage: paper_review
+  handoff_id: H-D26D2518B150
+  verdict: needs_revision
+- at: '2026-07-23T03:40:09+00:00'
+  event: chatgpt_handoff_prepared
+  stage: paper_review
+  handoff_id: H-E98AE6269455
+- at: '2026-07-23T03:48:15+00:00'
+  event: chatgpt_response_imported
+  stage: paper_review
+  handoff_id: H-E98AE6269455
+- at: '2026-07-23T03:50:23+00:00'
+  event: codex_verification_recorded
+  stage: paper_review
+  handoff_id: H-E98AE6269455
+  verdict: needs_revision
+- at: '2026-07-23T04:48:59+00:00'
+  event: chatgpt_handoff_prepared
+  stage: paper_review
+  handoff_id: H-6FFDA02B228F
+- at: '2026-07-23T04:57:09+00:00'
+  event: chatgpt_response_imported
+  stage: paper_review
+  handoff_id: H-6FFDA02B228F
+- at: '2026-07-23T04:59:23+00:00'
+  event: codex_verification_recorded
+  stage: paper_review
+  handoff_id: H-6FFDA02B228F
+  verdict: pass
+- at: '2026-07-23T05:01:03+00:00'
+  event: human_gate_confirmed
+  stage: paper_review
+  gate: paper_gate
+- at: '2026-07-23T05:01:28+00:00'
+  event: chatgpt_handoff_prepared
+  stage: finalize
+  handoff_id: H-E1440393972F
+- at: '2026-07-23T05:09:38+00:00'
+  event: chatgpt_response_imported
+  stage: finalize
+  handoff_id: H-E1440393972F
+- at: '2026-07-23T05:13:54+00:00'
+  event: codex_verification_recorded
+  stage: finalize
+  handoff_id: H-E1440393972F
+  verdict: pass

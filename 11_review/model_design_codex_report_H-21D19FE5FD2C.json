@@ -1,0 +1,71 @@
+{
+  "verdict": "pass",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "The imported response frontmatter matches active model_design handoff H-21D19FE5FD2C and context hash 3b02ce794b93953aa97d9b127c9db913ef1697e565feed5fb77db13290c4f79a."
+    },
+    {
+      "id": "model_route_fidelity",
+      "status": "pass",
+      "detail": "The registered route retains the submitted 3D kinematics, cylindrical multi-line-of-sight occlusion, interval union, Q2-Q4 continuous search, and Q5 hierarchical assignment route; it does not introduce numerical results or substitute assumptions."
+    },
+    {
+      "id": "formula_contract",
+      "status": "pass",
+      "detail": "Fourteen formula rows FML001-FML014 register missile/UAV/bomb/smoke motion, target geometry, line-of-sight test, interval union, and Q2-Q5 objectives and constraints with defined symbols and assumption links."
+    },
+    {
+      "id": "physical_feasibility",
+      "status": "pass",
+      "detail": "Recomputed missile arrival times are M1=66.999170807 s, M2=63.750381262 s, and M3=60.366473403 s. The Q1 fixed 3.6 s delay is below FY1's ground-feasible limit 19.166297 s under the submitted A03/A04/A06 assumptions."
+    },
+    {
+      "id": "dependency_boundary",
+      "status": "pass",
+      "detail": "NumPy and OpenPyXL are locally available. SciPy is absent and has been recorded as an implementation-stage prerequisite for the submitted differential_evolution/Powell suggestion; no alternative optimizer was silently selected."
+    },
+    {
+      "id": "verification_suite",
+      "status": "pass",
+      "detail": "Fresh evidence: model_design artifact/contract validation passed; contract validation and gate check report 0 failures and 0 warnings; 33 repository unit tests passed; git diff --check reported no whitespace errors."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "05_model/model_route.md",
+      "role": "canonical pending-human model route and unresolved-freeze checklist"
+    },
+    {
+      "path": "05_model/assumptions.csv",
+      "role": "A01-A13 assumption register with risk, sensitivity, and pending-human status"
+    },
+    {
+      "path": "05_model/implementation_contract.md",
+      "role": "implementation boundary, planned module responsibilities, and dependency prerequisite"
+    },
+    {
+      "path": "14_contracts/formula_contract.csv",
+      "role": "registered model formulas FML001-FML014"
+    }
+  ],
+  "contract_rows": [
+    "FML001",
+    "FML002",
+    "FML003",
+    "FML004",
+    "FML005",
+    "FML006",
+    "FML007",
+    "FML008",
+    "FML009",
+    "FML010",
+    "FML011",
+    "FML012",
+    "FML013",
+    "FML014"
+  ],
+  "conflicts": [],
+  "next_action": "Request human review and confirmation of model_freeze_gate. The review must explicitly decide the high-risk A08/A11/A12 choices, the ground-boundary rule, Q5 side-effect accounting, unused-row policy, and the later numerical-resolution and optimization-budget acceptance criteria. After that gate is confirmed by a human, prepare the implementation-stage handoff; install SciPy under controlled dependency management before using the submitted SciPy solver suggestion."
+}

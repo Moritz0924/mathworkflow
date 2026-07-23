@@ -1,0 +1,89 @@
+{
+  "schema_version": "v1",
+  "project_id": "ccmc2025-a",
+  "stage": "finalize",
+  "handoff_id": "H-E1440393972F",
+  "created_at": "2026-07-23T05:13:54+00:00",
+  "verdict": "pass",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "H-E1440393972F response matches context."
+    },
+    {
+      "id": "text_baseline_locked",
+      "status": "pass",
+      "detail": "ChatGPT confirmed full_draft.md as frozen text baseline; all factual elements confirmed unchanged."
+    },
+    {
+      "id": "final_paper_pdf",
+      "status": "pass",
+      "detail": "12_submission/final_paper.pdf generated: 12 pages, 175801 bytes."
+    },
+    {
+      "id": "submission_checklist",
+      "status": "pass",
+      "detail": "12_submission/submission_checklist.md present."
+    },
+    {
+      "id": "contract_validation",
+      "status": "pass",
+      "detail": "validate_contracts.py --stage finalize: 0 failures, 0 warnings."
+    },
+    {
+      "id": "polish_diff_contract",
+      "status": "pass",
+      "detail": "polish_diff_check.csv: 0 rows."
+    },
+    {
+      "id": "all_gates_passed",
+      "status": "pass",
+      "detail": "All prior gates confirmed: model_freeze_gate, result_freeze_gate, evidence_gate, paper_gate."
+    },
+    {
+      "id": "revision_tasks_all_closed",
+      "status": "pass",
+      "detail": "All REV-PR tasks closed in paper_review stage."
+    },
+    {
+      "id": "artifact:12_submission/final_paper.pdf",
+      "status": "pass",
+      "evidence": "12_submission/final_paper.pdf"
+    },
+    {
+      "id": "artifact:12_submission/submission_checklist.md",
+      "status": "pass",
+      "evidence": "12_submission/submission_checklist.md"
+    },
+    {
+      "id": "contract:14_contracts/polish_diff_check.csv",
+      "status": "pass",
+      "evidence": "14_contracts/polish_diff_check.csv rows=1"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "12_submission/final_paper.pdf",
+      "role": "final submission PDF"
+    },
+    {
+      "path": "12_submission/submission_checklist.md",
+      "role": "submission readiness checklist"
+    },
+    {
+      "path": "09_paper/full_draft.md",
+      "role": "frozen text baseline"
+    },
+    {
+      "path": "14_contracts/polish_diff_check.csv",
+      "role": "polish diff contract"
+    }
+  ],
+  "contract_rows": [
+    "CIT001",
+    "CIT002"
+  ],
+  "conflicts": [],
+  "next_action": "All deliverables and contracts verified. The finalize stage is complete. Awaiting final_submission_gate confirmation from human."
+}

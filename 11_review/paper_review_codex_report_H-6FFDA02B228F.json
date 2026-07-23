@@ -1,0 +1,92 @@
+{
+  "verdict": "pass",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "H-6FFDA02B228F response matches context hash."
+    },
+    {
+      "id": "body_substantively_changed",
+      "status": "pass",
+      "detail": "Body SHA-256 differs from all three prior identical submissions; 1382 lines vs 1255."
+    },
+    {
+      "id": "REV-PR-001_citation",
+      "status": "pass",
+      "detail": "Reference section present, inline citations [1]/[2] added, CIT001/CIT002 registered in citation_contract.csv with metadata_verified=true and personally_read=true."
+    },
+    {
+      "id": "REV-PR-002_formula_notation",
+      "status": "pass",
+      "detail": "d_ikjq eliminated (0 occurrences), delta_ikjq adopted (6 occurrences). FML007/FML008 aligned."
+    },
+    {
+      "id": "REV-PR-003_union_condition",
+      "status": "pass",
+      "detail": "Union now written as \\bigcup_{i,k: y_{ik}=1}, y_{ik} defined. FML010 aligned."
+    },
+    {
+      "id": "REV-PR-004_lexicographic",
+      "status": "pass",
+      "detail": "Strict lexicographic formulation adopted; near-optimal tolerance language removed from paper body (residual mentions only in revision change log). FML013 aligned."
+    },
+    {
+      "id": "frozen_numeric_traceability",
+      "status": "pass",
+      "detail": "5 unique metric_value entries traceable in revised body."
+    },
+    {
+      "id": "figure_reference_paths",
+      "status": "pass",
+      "detail": "Figure paths corrected from 08_evidence/figures/ to ../08_figures/main_figures/ in local draft."
+    },
+    {
+      "id": "contract_validation",
+      "status": "pass",
+      "detail": "validate_contracts.py --stage paper_review: 0 failures, 0 warnings."
+    },
+    {
+      "id": "gate_checks",
+      "status": "pass",
+      "detail": "check_gates.py: 0 failures, 0 warnings."
+    },
+    {
+      "id": "revision_tasks_closed",
+      "status": "pass",
+      "detail": "REV-PR-001 through REV-PR-004 all closed in 14_contracts/revision_tasks.csv and 11_review/revision_tasks.csv."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "09_paper/full_draft.md",
+      "role": "revised paper draft with verified figure paths"
+    },
+    {
+      "path": "14_contracts/citation_contract.csv",
+      "role": "2 registered citations (CIT001, CIT002)"
+    },
+    {
+      "path": "14_contracts/revision_tasks.csv",
+      "role": "4 closed revision tasks"
+    },
+    {
+      "path": "11_review/review_scorecard.csv",
+      "role": "89/100 passing scorecard"
+    }
+  ],
+  "contract_rows": [
+    "CIT001",
+    "CIT002",
+    "FML007",
+    "FML008",
+    "FML010",
+    "FML013",
+    "REV-PR-001",
+    "REV-PR-002",
+    "REV-PR-003",
+    "REV-PR-004"
+  ],
+  "conflicts": [],
+  "next_action": "All revision tasks closed and contracts validated. The paper_review stage is ready for human paper_gate confirmation. The controller will advance to pending_human upon receipt."
+}

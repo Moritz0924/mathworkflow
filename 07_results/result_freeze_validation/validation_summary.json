@@ -1,0 +1,683 @@
+{
+  "generated_at": "2026-07-22T11:43:20.290343+00:00",
+  "result_status": "candidate_validation",
+  "source_run": "refined",
+  "strict_evaluation_config": {
+    "angular_samples": 20,
+    "height_samples": 5,
+    "radial_samples": 4,
+    "scan_step_s": 0.025,
+    "root_tolerance_s": 1e-07,
+    "gravity_mps2": 9.8,
+    "bomb_horizontal_velocity_factor": 1.0,
+    "smoke_ground_mode": "terminate",
+    "interval_method": "refined",
+    "min_coverage_fraction": 1.0
+  },
+  "scenario_manifests": {
+    "seed_20250722": {
+      "generated_at": "2026-07-22T11:40:27.078595+00:00",
+      "result_status": "candidate",
+      "mode": "quick",
+      "questions": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5"
+      ],
+      "solver_config": {
+        "target": {
+          "angular_samples": 12,
+          "height_samples": 3,
+          "radial_samples": 2,
+          "scan_step_s": 0.1,
+          "root_tolerance_s": 1e-05,
+          "gravity_mps2": 9.8,
+          "bomb_horizontal_velocity_factor": 1.0,
+          "smoke_ground_mode": "terminate",
+          "interval_method": "refined",
+          "min_coverage_fraction": 1.0
+        },
+        "differential_evolution_maxiter": 6,
+        "differential_evolution_popsize": 5,
+        "local_refinement": true,
+        "random_seed": 20250722
+      },
+      "dependencies": {
+        "numpy": "2.0.2",
+        "scipy": "1.13.1",
+        "pandas": "2.3.3",
+        "openpyxl": "3.1.5",
+        "PyYAML": "6.0.3"
+      },
+      "q5_feasible": true,
+      "q5_diagnostics": {
+        "feasible": true,
+        "assignment": {
+          "M1": "FY1",
+          "M2": "FY2",
+          "M3": "FY5"
+        },
+        "global_method": "differential_evolution",
+        "local_method": "Powell",
+        "random_seed": 20250722,
+        "q5_credit_policy": "primary_target_only",
+        "score_matrix": [
+          {
+            "uav_id": "FY1",
+            "missile_id": "M1",
+            "effective_duration_s": 2.238162231445303
+          },
+          {
+            "uav_id": "FY1",
+            "missile_id": "M2",
+            "effective_duration_s": 0
+          },
+          {
+            "uav_id": "FY1",
+            "missile_id": "M3",
+            "effective_duration_s": 0
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M1",
+            "effective_duration_s": 2.0354522705078057
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M2",
+            "effective_duration_s": 1.9820404052734322
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M3",
+            "effective_duration_s": 1.9082672119140547
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M1",
+            "effective_duration_s": 1.5796417236328395
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M2",
+            "effective_duration_s": 1.4996856689453288
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M3",
+            "effective_duration_s": 1.545223999023463
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M1",
+            "effective_duration_s": 1.942984008789093
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M2",
+            "effective_duration_s": 1.9337982177734325
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M3",
+            "effective_duration_s": 1.819174194335961
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M1",
+            "effective_duration_s": 1.9742156982422188
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M2",
+            "effective_duration_s": 1.8203033447265824
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M3",
+            "effective_duration_s": 1.8768035888672046
+          }
+        ]
+      },
+      "notice": "Candidate artifacts are not result-freeze outputs and are not registered in result_contract.csv."
+    },
+    "seed_20250723": {
+      "generated_at": "2026-07-22T11:40:55.785607+00:00",
+      "result_status": "candidate",
+      "mode": "quick",
+      "questions": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5"
+      ],
+      "solver_config": {
+        "target": {
+          "angular_samples": 12,
+          "height_samples": 3,
+          "radial_samples": 2,
+          "scan_step_s": 0.1,
+          "root_tolerance_s": 1e-05,
+          "gravity_mps2": 9.8,
+          "bomb_horizontal_velocity_factor": 1.0,
+          "smoke_ground_mode": "terminate",
+          "interval_method": "refined",
+          "min_coverage_fraction": 1.0
+        },
+        "differential_evolution_maxiter": 6,
+        "differential_evolution_popsize": 5,
+        "local_refinement": true,
+        "random_seed": 20250723
+      },
+      "dependencies": {
+        "numpy": "2.0.2",
+        "scipy": "1.13.1",
+        "pandas": "2.3.3",
+        "openpyxl": "3.1.5",
+        "PyYAML": "6.0.3"
+      },
+      "q5_feasible": true,
+      "q5_diagnostics": {
+        "feasible": true,
+        "assignment": {
+          "M1": "FY1",
+          "M2": "FY2",
+          "M3": "FY5"
+        },
+        "global_method": "differential_evolution",
+        "local_method": "Powell",
+        "random_seed": 20250723,
+        "q5_credit_policy": "primary_target_only",
+        "score_matrix": [
+          {
+            "uav_id": "FY1",
+            "missile_id": "M1",
+            "effective_duration_s": 2.238162231445303
+          },
+          {
+            "uav_id": "FY1",
+            "missile_id": "M2",
+            "effective_duration_s": 0
+          },
+          {
+            "uav_id": "FY1",
+            "missile_id": "M3",
+            "effective_duration_s": 0
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M1",
+            "effective_duration_s": 2.0354522705078057
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M2",
+            "effective_duration_s": 1.9820404052734322
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M3",
+            "effective_duration_s": 1.9082672119140547
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M1",
+            "effective_duration_s": 1.5796417236328395
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M2",
+            "effective_duration_s": 1.4996856689453288
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M3",
+            "effective_duration_s": 1.545223999023463
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M1",
+            "effective_duration_s": 1.942984008789093
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M2",
+            "effective_duration_s": 1.9337982177734325
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M3",
+            "effective_duration_s": 1.819174194335961
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M1",
+            "effective_duration_s": 1.9742156982422188
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M2",
+            "effective_duration_s": 1.8203033447265824
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M3",
+            "effective_duration_s": 1.8768035888672046
+          }
+        ]
+      },
+      "notice": "Candidate artifacts are not result-freeze outputs and are not registered in result_contract.csv."
+    },
+    "seed_20250724": {
+      "generated_at": "2026-07-22T11:41:25.035720+00:00",
+      "result_status": "candidate",
+      "mode": "quick",
+      "questions": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5"
+      ],
+      "solver_config": {
+        "target": {
+          "angular_samples": 12,
+          "height_samples": 3,
+          "radial_samples": 2,
+          "scan_step_s": 0.1,
+          "root_tolerance_s": 1e-05,
+          "gravity_mps2": 9.8,
+          "bomb_horizontal_velocity_factor": 1.0,
+          "smoke_ground_mode": "terminate",
+          "interval_method": "refined",
+          "min_coverage_fraction": 1.0
+        },
+        "differential_evolution_maxiter": 6,
+        "differential_evolution_popsize": 5,
+        "local_refinement": true,
+        "random_seed": 20250724
+      },
+      "dependencies": {
+        "numpy": "2.0.2",
+        "scipy": "1.13.1",
+        "pandas": "2.3.3",
+        "openpyxl": "3.1.5",
+        "PyYAML": "6.0.3"
+      },
+      "q5_feasible": true,
+      "q5_diagnostics": {
+        "feasible": true,
+        "assignment": {
+          "M1": "FY1",
+          "M2": "FY2",
+          "M3": "FY5"
+        },
+        "global_method": "differential_evolution",
+        "local_method": "Powell",
+        "random_seed": 20250724,
+        "q5_credit_policy": "primary_target_only",
+        "score_matrix": [
+          {
+            "uav_id": "FY1",
+            "missile_id": "M1",
+            "effective_duration_s": 2.238162231445303
+          },
+          {
+            "uav_id": "FY1",
+            "missile_id": "M2",
+            "effective_duration_s": 0
+          },
+          {
+            "uav_id": "FY1",
+            "missile_id": "M3",
+            "effective_duration_s": 0
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M1",
+            "effective_duration_s": 2.0354522705078057
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M2",
+            "effective_duration_s": 1.9820404052734322
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M3",
+            "effective_duration_s": 1.9082672119140547
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M1",
+            "effective_duration_s": 1.5796417236328395
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M2",
+            "effective_duration_s": 1.4996856689453288
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M3",
+            "effective_duration_s": 1.545223999023463
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M1",
+            "effective_duration_s": 1.942984008789093
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M2",
+            "effective_duration_s": 1.9337982177734325
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M3",
+            "effective_duration_s": 1.819174194335961
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M1",
+            "effective_duration_s": 1.9742156982422188
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M2",
+            "effective_duration_s": 1.8203033447265824
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M3",
+            "effective_duration_s": 1.8768035888672046
+          }
+        ]
+      },
+      "notice": "Candidate artifacts are not result-freeze outputs and are not registered in result_contract.csv."
+    },
+    "budget_plus": {
+      "generated_at": "2026-07-22T11:41:58.490751+00:00",
+      "result_status": "candidate",
+      "mode": "quick",
+      "questions": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5"
+      ],
+      "solver_config": {
+        "target": {
+          "angular_samples": 12,
+          "height_samples": 3,
+          "radial_samples": 2,
+          "scan_step_s": 0.1,
+          "root_tolerance_s": 1e-05,
+          "gravity_mps2": 9.8,
+          "bomb_horizontal_velocity_factor": 1.0,
+          "smoke_ground_mode": "terminate",
+          "interval_method": "refined",
+          "min_coverage_fraction": 1.0
+        },
+        "differential_evolution_maxiter": 12,
+        "differential_evolution_popsize": 8,
+        "local_refinement": true,
+        "random_seed": 20250722
+      },
+      "dependencies": {
+        "numpy": "2.0.2",
+        "scipy": "1.13.1",
+        "pandas": "2.3.3",
+        "openpyxl": "3.1.5",
+        "PyYAML": "6.0.3"
+      },
+      "q5_feasible": true,
+      "q5_diagnostics": {
+        "feasible": true,
+        "assignment": {
+          "M1": "FY1",
+          "M2": "FY2",
+          "M3": "FY5"
+        },
+        "global_method": "differential_evolution",
+        "local_method": "Powell",
+        "random_seed": 20250722,
+        "q5_credit_policy": "primary_target_only",
+        "score_matrix": [
+          {
+            "uav_id": "FY1",
+            "missile_id": "M1",
+            "effective_duration_s": 2.238162231445303
+          },
+          {
+            "uav_id": "FY1",
+            "missile_id": "M2",
+            "effective_duration_s": 0
+          },
+          {
+            "uav_id": "FY1",
+            "missile_id": "M3",
+            "effective_duration_s": 0
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M1",
+            "effective_duration_s": 2.0354522705078057
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M2",
+            "effective_duration_s": 1.9820404052734322
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M3",
+            "effective_duration_s": 1.9082672119140547
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M1",
+            "effective_duration_s": 1.5796417236328395
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M2",
+            "effective_duration_s": 1.4996856689453288
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M3",
+            "effective_duration_s": 1.545223999023463
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M1",
+            "effective_duration_s": 1.942984008789093
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M2",
+            "effective_duration_s": 1.9337982177734325
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M3",
+            "effective_duration_s": 1.819174194335961
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M1",
+            "effective_duration_s": 1.9742156982422188
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M2",
+            "effective_duration_s": 1.8203033447265824
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M3",
+            "effective_duration_s": 1.8768035888672046
+          }
+        ]
+      },
+      "notice": "Candidate artifacts are not result-freeze outputs and are not registered in result_contract.csv."
+    },
+    "refined": {
+      "generated_at": "2026-07-22T11:43:06.894495+00:00",
+      "result_status": "candidate",
+      "mode": "quick",
+      "questions": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5"
+      ],
+      "solver_config": {
+        "target": {
+          "angular_samples": 16,
+          "height_samples": 4,
+          "radial_samples": 3,
+          "scan_step_s": 0.05,
+          "root_tolerance_s": 1e-06,
+          "gravity_mps2": 9.8,
+          "bomb_horizontal_velocity_factor": 1.0,
+          "smoke_ground_mode": "terminate",
+          "interval_method": "refined",
+          "min_coverage_fraction": 1.0
+        },
+        "differential_evolution_maxiter": 12,
+        "differential_evolution_popsize": 8,
+        "local_refinement": true,
+        "random_seed": 20250722
+      },
+      "dependencies": {
+        "numpy": "2.0.2",
+        "scipy": "1.13.1",
+        "pandas": "2.3.3",
+        "openpyxl": "3.1.5",
+        "PyYAML": "6.0.3"
+      },
+      "q5_feasible": true,
+      "q5_diagnostics": {
+        "feasible": true,
+        "assignment": {
+          "M1": "FY1",
+          "M2": "FY2",
+          "M3": "FY5"
+        },
+        "global_method": "differential_evolution",
+        "local_method": "Powell",
+        "random_seed": 20250722,
+        "q5_credit_policy": "primary_target_only",
+        "score_matrix": [
+          {
+            "uav_id": "FY1",
+            "missile_id": "M1",
+            "effective_duration_s": 2.238164138793973
+          },
+          {
+            "uav_id": "FY1",
+            "missile_id": "M2",
+            "effective_duration_s": 0
+          },
+          {
+            "uav_id": "FY1",
+            "missile_id": "M3",
+            "effective_duration_s": 0
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M1",
+            "effective_duration_s": 2.035452651977568
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M2",
+            "effective_duration_s": 1.9820430755615526
+          },
+          {
+            "uav_id": "FY2",
+            "missile_id": "M3",
+            "effective_duration_s": 1.908269119262723
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M1",
+            "effective_duration_s": 1.5796390533447564
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M2",
+            "effective_duration_s": 1.4996883392334155
+          },
+          {
+            "uav_id": "FY3",
+            "missile_id": "M3",
+            "effective_duration_s": 1.545225906372096
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M1",
+            "effective_duration_s": 1.942985153198272
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M2",
+            "effective_duration_s": 1.933798599243195
+          },
+          {
+            "uav_id": "FY4",
+            "missile_id": "M3",
+            "effective_duration_s": 1.8191745758056896
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M1",
+            "effective_duration_s": 1.974216079711944
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M2",
+            "effective_duration_s": 1.8203006744384993
+          },
+          {
+            "uav_id": "FY5",
+            "missile_id": "M3",
+            "effective_duration_s": 1.876800918579125
+          }
+        ]
+      },
+      "notice": "Candidate artifacts are not result-freeze outputs and are not registered in result_contract.csv."
+    }
+  },
+  "checks": {
+    "constraints_clear": true,
+    "primary_durations_positive": true,
+    "seed_metric_span_s": 0.0,
+    "seed_stability_tolerance_s": 0.05,
+    "seed_stable": true,
+    "seed_metric_spans_by_output": {
+      "Q1/primary_duration_M1": 0.0,
+      "Q1/objective_1": 0.0,
+      "Q2/primary_duration_M1": 0.0,
+      "Q2/objective_1": 0.0,
+      "Q3/primary_duration_M1": 0.0,
+      "Q3/objective_1": 0.0,
+      "Q4/primary_duration_M1": 0.0,
+      "Q4/objective_1": 0.0,
+      "Q5/primary_duration_M1": 0.0,
+      "Q5/primary_duration_M2": 0.0,
+      "Q5/primary_duration_M3": 0.0,
+      "Q5/objective_1": 0.0,
+      "Q5/objective_2": 0.0
+    }
+  },
+  "notice": "This validation bundle is evidence for result-freeze review; it does not itself confirm the human result_freeze_gate.",
+  "summary_refreshed_at": "2026-07-22T11:44:51.117484+00:00"
+}

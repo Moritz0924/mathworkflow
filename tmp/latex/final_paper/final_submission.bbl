@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{storn1997de}
+Rainer Storn and Kenneth Price.
+\newblock Differential evolution---a simple and efficient heuristic for global
+  optimization over continuous spaces.
+\newblock {\em Journal of Global Optimization}, 11(4):341--359, 1997.
+
+\bibitem{powell1964efficient}
+M.~J.~D. Powell.
+\newblock An efficient method for finding the minimum of a function of several
+  variables without calculating derivatives.
+\newblock {\em The Computer Journal}, 7(2):155--162, 1964.
+
+\end{thebibliography}

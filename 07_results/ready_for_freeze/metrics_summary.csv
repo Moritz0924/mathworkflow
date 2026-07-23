@@ -1,0 +1,10 @@
+﻿question_id,metric_name,metric_value,unit,result_status,source_record
+Q1,primary_duration_M1,1.3622014999389869,s,ready,Q1/M1
+Q2,primary_duration_M1,2.2381643772125575,s,ready,Q2/M1
+Q3,primary_duration_M1,2.2381643772125575,s,ready,Q3/M1
+Q4,primary_duration_M1,2.2381643772125575,s,ready,Q4/M1
+Q5,primary_duration_M1,2.2381643772125575,s,ready,Q5/M1
+Q5,primary_duration_M2,1.9820433139801334,s,ready,Q5/M2
+Q5,primary_duration_M3,1.8768008708953303,s,ready,Q5/M3
+Q5,objective_total_duration,6.097008562088021,s,ready,Q5/M1;M2;M3
+Q5,objective_minimum_duration,1.8768008708953303,s,ready,Q5/M1;M2;M3

@@ -1,0 +1,136 @@
+{
+  "schema_version": "v1",
+  "project_id": "ccmc2025-a",
+  "stage": "result_freeze",
+  "handoff_id": "H-58AA00D62F3B",
+  "created_at": "2026-07-22T11:55:20+00:00",
+  "verdict": "pass",
+  "checks": [
+    {
+      "id": "handoff_metadata",
+      "status": "pass",
+      "detail": "The imported result_freeze response matches H-58AA00D62F3B and context hash 00bf0013ea3195a5fa126a2fd1e06bf511e73641990d6d24931b9b5718f9abae."
+    },
+    {
+      "id": "candidate_boundary_preserved",
+      "status": "pass",
+      "detail": "The original candidate artifacts remain candidate evidence. The accepted package is marked ready and explicitly awaits the human result_freeze_gate; no AI marked it frozen or confirmed the gate."
+    },
+    {
+      "id": "reproducibility_and_stability",
+      "status": "pass",
+      "detail": "Three seeds produced zero span for every recorded output. Increased optimization budget and denser target/time evaluation reproduced the same primary plan structure; all strict independent recomputation durations are positive."
+    },
+    {
+      "id": "constraints_and_union",
+      "status": "pass",
+      "detail": "All Q1-Q5 plan constraints pass. Q3, Q4, and Q5 interval unions were independently rebuilt from the per-bomb records; Q5 retains positive primary duration for M1, M2, and M3."
+    },
+    {
+      "id": "baseline_and_sensitivity",
+      "status": "pass",
+      "detail": "Center-point, fixed-grid, A03, A07, A08, A11, and A12 comparison evidence is recorded. A03 is materially sensitive and A11 changes the fairness-first counterfactual assignment; neither alternative replaces the human-confirmed frozen primary model."
+    },
+    {
+      "id": "template_mapping",
+      "status": "pass",
+      "detail": "Official result1-result3 templates were imported and populated with artifact-tool. Visual inspection passed, zero formula-error matches were found, all mapped fields match the ready plan records, and unused Q5 slots are blank."
+    },
+    {
+      "id": "contracts_and_integrity",
+      "status": "pass",
+      "detail": "Nine ready result-contract records and twelve ready artifact-registry records were generated. All registered SHA-256 values match their files; contract validation and gate checks report zero failures and zero warnings."
+    },
+    {
+      "id": "verification_suite",
+      "status": "pass",
+      "detail": "Fresh evidence: 55 unit tests passed, 06_code compiled, contract validation passed, gate validation passed, and all ready artifact hashes matched the registry."
+    },
+    {
+      "id": "artifact:07_results/result_freeze_report.md",
+      "status": "pass",
+      "evidence": "07_results/result_freeze_report.md"
+    },
+    {
+      "id": "contract:14_contracts/result_contract.csv",
+      "status": "pass",
+      "evidence": "14_contracts/result_contract.csv rows=9"
+    },
+    {
+      "id": "contract:14_contracts/artifact_freeze_registry.csv",
+      "status": "pass",
+      "evidence": "14_contracts/artifact_freeze_registry.csv rows=12"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "07_results/result_freeze_report.md",
+      "role": "ready-for-human-freeze report with primary metrics and sensitivity boundary"
+    },
+    {
+      "path": "07_results/ready_for_freeze/ready_for_freeze_manifest.json",
+      "role": "freeze package ID, status, provenance, validation checks, and pending human gate"
+    },
+    {
+      "path": "07_results/ready_for_freeze/q1_results.csv",
+      "role": "strictly recomputed Q1 plan detail"
+    },
+    {
+      "path": "07_results/ready_for_freeze/q2_results.csv",
+      "role": "strictly recomputed Q2 plan detail"
+    },
+    {
+      "path": "07_results/ready_for_freeze/q3_results.csv",
+      "role": "strictly recomputed Q3 three-bomb detail"
+    },
+    {
+      "path": "07_results/ready_for_freeze/q4_results.csv",
+      "role": "strictly recomputed Q4 three-UAV detail"
+    },
+    {
+      "path": "07_results/ready_for_freeze/q5_results.csv",
+      "role": "strictly recomputed Q5 fifteen-slot detail"
+    },
+    {
+      "path": "07_results/ready_for_freeze/result1.xlsx",
+      "role": "ready official template for Q3"
+    },
+    {
+      "path": "07_results/ready_for_freeze/result2.xlsx",
+      "role": "ready official template for Q4"
+    },
+    {
+      "path": "07_results/ready_for_freeze/result3.xlsx",
+      "role": "ready official template for Q5"
+    },
+    {
+      "path": "07_results/result_freeze_validation/validation_summary.json",
+      "role": "convergence and multi-seed evidence"
+    },
+    {
+      "path": "07_results/result_freeze_validation/baseline_and_sensitivity.csv",
+      "role": "registered baseline and high-risk assumption sensitivity evidence"
+    },
+    {
+      "path": "14_contracts/result_contract.csv",
+      "role": "nine ready numerical result records"
+    },
+    {
+      "path": "14_contracts/artifact_freeze_registry.csv",
+      "role": "twelve ready protected artifact records with matching hashes"
+    }
+  ],
+  "contract_rows": [
+    "RES-Q1-PRIMARY_DURATION_M1",
+    "RES-Q2-PRIMARY_DURATION_M1",
+    "RES-Q3-PRIMARY_DURATION_M1",
+    "RES-Q4-PRIMARY_DURATION_M1",
+    "RES-Q5-PRIMARY_DURATION_M1",
+    "RES-Q5-PRIMARY_DURATION_M2",
+    "RES-Q5-PRIMARY_DURATION_M3",
+    "RES-Q5-OBJECTIVE_TOTAL_DURATION",
+    "RES-Q5-OBJECTIVE_MINIMUM_DURATION"
+  ],
+  "conflicts": [],
+  "next_action": "The controller may now move this stage to pending_human. A human must review 07_results/result_freeze_report.md and explicitly confirm result_freeze_gate in the dashboard before any result is treated as formally frozen or used downstream."
+}

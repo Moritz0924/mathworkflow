@@ -1,0 +1,2 @@
+﻿question_id,uav_id,bomb_id,missile_id,is_used,heading_deg,speed_mps,release_time_s,delay_s,detonation_time_s,release_x_m,release_y_m,release_z_m,detonation_x_m,detonation_y_m,detonation_z_m,effective_duration_s,occlusion_intervals,result_status
+Q2,FY1,1,M1,1,179.43654517246082,130.08336768519578,2.838973088474825,4.978182512298204,7.817155600773029,17430.714677459066,3.631721349123526,1800.0,16783.16724483817,9.999999999999895,1678.5667244838169,2.238164138793973,"[[7.817155600773029, 10.055319739567002]]",candidate

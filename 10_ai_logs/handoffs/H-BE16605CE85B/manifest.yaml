@@ -1,0 +1,39 @@
+schema_version: v1
+protocol: mmwf-handoff/v1
+project_id: ccmc2025-a
+stage: intake
+handoff_id: H-BE16605CE85B
+revision: 3
+context_sha256: 446010dc78d0ce960f91bf509374e5d1d02e8c11b218711efd93153aa65865fc
+context_files:
+- path: 00_problem/attachments_overview.md
+  size: 1035
+  sha256: e69d0e9f9c72f885e893cfbb7965617e2a265c9dd978d6002861b981cb909c10
+- path: 00_problem/contest_info.yaml
+  size: 481
+  sha256: 1e92dad6221f405e63f3442b61fd53c86b3e55e6f7edb1652d13ee3d6ed28f32
+- path: 00_problem/inbox/A题.pdf
+  size: 286520
+  sha256: a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447
+- path: 00_problem/problem_statement.md
+  size: 3735
+  sha256: 9bbaa4b1bc76b3e0b33749ecfeeca7dcddd885571072a19713793e85f255c961
+- path: 03_data/raw/result1.xlsx
+  size: 10316
+  sha256: af04b16e6a4719628971bcf5a03d230c9da6738e67eebac9276d254fdd4df1a7
+- path: 03_data/raw/result2.xlsx
+  size: 10438
+  sha256: c681d5e378538f71c77fca199a3ca8303a04dbcfc7bd95f870ae22f01ab69f91
+- path: 03_data/raw/result3.xlsx
+  size: 9763
+  sha256: b648c82d63e459ba6e6b3711ae79875e373521cd543b45571c4d8ff1ad5ec54a
+excluded_files:
+- path: 00_problem/.gitkeep
+  reason: hidden_or_environment_file
+- path: 03_data/raw/.gitkeep
+  reason: hidden_or_environment_file
+created_at: '2026-07-22T08:49:38+00:00'
+status: codex_pass
+response_sha256: ae795665bdf078d3d0891554b7bf250021a4a1377ea6b711356cc261b3b93eda
+imported_at: '2026-07-22T08:58:24+00:00'
+receipt_sha256: c782b0e82a75e46f087755f97a86923482054800db151100857823bc105b71d0

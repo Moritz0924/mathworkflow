@@ -1,0 +1,76 @@
+schema_version: v1
+protocol: mmwf-handoff/v1
+project_id: ccmc2025-a
+stage: model_design
+handoff_id: H-21D19FE5FD2C
+revision: 1
+context_sha256: 3b02ce794b93953aa97d9b127c9db913ef1697e565feed5fb77db13290c4f79a
+context_files:
+- path: 00_problem/attachments_overview.md
+  size: 1035
+  sha256: e69d0e9f9c72f885e893cfbb7965617e2a265c9dd978d6002861b981cb909c10
+- path: 00_problem/contest_info.yaml
+  size: 481
+  sha256: 1e92dad6221f405e63f3442b61fd53c86b3e55e6f7edb1652d13ee3d6ed28f32
+- path: 00_problem/inbox/A题.pdf
+  size: 286520
+  sha256: a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447
+- path: 00_problem/problem_statement.md
+  size: 3735
+  sha256: 9bbaa4b1bc76b3e0b33749ecfeeca7dcddd885571072a19713793e85f255c961
+- path: 01_task_analysis/task_decomposition.md
+  size: 3107
+  sha256: 4b112a69f6e5c328fa77ff9c20380f6c24e467289f93419833c22d1573ed5bca
+- path: 03_data/cleaning_rules.md
+  size: 1647
+  sha256: 27feacbba1e27c3e99bc95e0c4c6cb28a67f5758fe6c8048528673137335d816
+- path: 03_data/data_dictionary.csv
+  size: 5749
+  sha256: 5a0993b9b1fb9a8bde4b9e77f5dc54e3cc1c03dc7166dbf9b0034048c341943b
+- path: 03_data/data_quality_report.md
+  size: 1077
+  sha256: c0d20d94a13dfce39bebb2339c6aafaba1a7d253b9d6591dcaa9af1919508e9a
+- path: 03_data/data_quality_report.tex
+  size: 144
+  sha256: dc4204431d016eecd8f359a8dfce3426d97eaedee912ad6b5919ce9ff8983047
+- path: 03_data/input_decision_table.csv
+  size: 1244
+  sha256: 31affaa4175f4986eabadb414b17f169f4e24c039c899ce47bb55cc3de4084fb
+- path: 03_data/raw/result1.xlsx
+  size: 10316
+  sha256: af04b16e6a4719628971bcf5a03d230c9da6738e67eebac9276d254fdd4df1a7
+- path: 03_data/raw/result2.xlsx
+  size: 10438
+  sha256: c681d5e378538f71c77fca199a3ca8303a04dbcfc7bd95f870ae22f01ab69f91
+- path: 03_data/raw/result3.xlsx
+  size: 9763
+  sha256: b648c82d63e459ba6e6b3711ae79875e373521cd543b45571c4d8ff1ad5ec54a
+- path: 03_data/template_structure_report.md
+  size: 2098
+  sha256: 7c3940e8f88bd78939ad8a745ed752944812a5f7fbe5bae629228fdf7adfe284
+- path: 04_eda/eda_report.md
+  size: 1104
+  sha256: 218455f3f421ea3d24af0f3e31146a6c78eb5008639bd528b561dda442513621
+- path: 14_contracts/formula_contract.csv
+  size: 191
+  sha256: 2da5248502c9d4b48ffe6030e339f0e04b1b56a738faae988aff2d6f6a399cfd
+excluded_files:
+- path: 00_problem/.gitkeep
+  reason: hidden_or_environment_file
+- path: 01_task_analysis/.gitkeep
+  reason: hidden_or_environment_file
+- path: 02_literature/.gitkeep
+  reason: hidden_or_environment_file
+- path: 03_data/processed/.gitkeep
+  reason: hidden_or_environment_file
+- path: 03_data/raw/.gitkeep
+  reason: hidden_or_environment_file
+- path: 04_eda/eda_figures/.gitkeep
+  reason: hidden_or_environment_file
+- path: 05_model/.gitkeep
+  reason: hidden_or_environment_file
+created_at: '2026-07-22T09:15:05+00:00'
+status: codex_pass
+response_sha256: e8d6d2f127424fd60fdd87e2f2eefc7d165a4538389a285271a8f06c90d1b1e6
+imported_at: '2026-07-22T09:34:47+00:00'
+receipt_sha256: d36ec1324e7921cd0662a89d73c08a010c6eb3c66aeac03f0089b1860cab1247

@@ -1,0 +1,34 @@
+{
+  "freeze_id": "RF-20260722T114756Z",
+  "result_status": "frozen",
+  "human_gate": "result_freeze_gate",
+  "human_gate_status": "confirmed",
+  "human_gate_confirmed_at": "2026-07-22T12:00:58+00:00",
+  "controller_event": {
+    "at": "2026-07-22T12:00:58+00:00",
+    "event": "human_gate_confirmed",
+    "stage": "result_freeze",
+    "gate": "result_freeze_gate"
+  },
+  "source_ready_package": "07_results/ready_for_freeze",
+  "source_ready_manifest_sha256": "7e8d7654f6b2d61c3e50a8c3177f88eeb1cb50a716ba3e434fe49c40dbe78b18",
+  "freeze_process": "06_code/finalize_result_freeze.py",
+  "files": [
+    "q1_results.csv",
+    "q2_results.csv",
+    "q3_results.csv",
+    "q4_results.csv",
+    "q5_results.csv",
+    "metrics_summary.csv",
+    "result_source_map.csv",
+    "result1.xlsx",
+    "result2.xlsx",
+    "result3.xlsx",
+    "template_mapping_check.json",
+    "template_mapping_verification.json",
+    "template_mapping_expected.csv"
+  ],
+  "contracts_verified": true,
+  "template_mapping_status": "pass",
+  "notice": "Created after the controller recorded the human result_freeze_gate confirmation; numerical values are copied from the ready package without recalculation or model changes."
+}

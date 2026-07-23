@@ -1,1 +1,7 @@
-round_id,reviewer,dimension,score,max_score,severity,issue_count,top_risk,required_action,status,last_checked
+﻿round_id,reviewer,dimension,score,max_score,severity,issue_count,top_risk,required_action,status,last_checked
+PR-20260723-02,Codex,总体审查,89,100,minor,0,无未解决fail/major,提交paper_gate,pass,2026-07-23T04:59:16+00:00
+PR-20260723-02,Codex,冻结数值与结果合同,20,20,none,0,未发现数值漂移,保持冻结包 RF-20260722T114756Z 的可追溯性,pass,2026-07-23T04:59:16+00:00
+PR-20260723-02,Codex,图表与证据路径,20,20,none,0,9 张已引用图路径均可解析,保留已登记图号及图文件,pass,2026-07-23T04:59:16+00:00
+PR-20260723-02,Codex,公式与模型合同,20,20,none,0,符号与合同一致,按对应已冻结公式修订且不新增模型口径,pass,2026-07-23T04:59:16+00:00
+PR-20260723-02,Codex,引用与参考文献,17,20,minor,0,两条方法引用已登记,补充真实来源并登记 citation_contract,pass,2026-07-23T04:59:16+00:00
+PR-20260723-02,Codex,可复现与拷贝风险,19,20,none,0,8 字符 n-gram 最大重合率 0.000614,维持独立表达并在复审时再次扫描,pass,2026-07-23T04:59:16+00:00

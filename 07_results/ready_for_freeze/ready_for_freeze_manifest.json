@@ -1,0 +1,41 @@
+{
+  "freeze_id": "RF-20260722T114756Z",
+  "result_status": "ready",
+  "human_gate": "result_freeze_gate",
+  "human_gate_status": "pending",
+  "source_candidate_run": "07_results/result_freeze_validation/runs/refined",
+  "strict_recomputation": "07_results/result_freeze_validation/primary_recomputation.csv",
+  "questions": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4",
+    "Q5"
+  ],
+  "validation_checks": {
+    "constraints_clear": true,
+    "primary_durations_positive": true,
+    "seed_metric_span_s": 0.0,
+    "seed_stability_tolerance_s": 0.05,
+    "seed_stable": true,
+    "seed_metric_spans_by_output": {
+      "Q1/primary_duration_M1": 0.0,
+      "Q1/objective_1": 0.0,
+      "Q2/primary_duration_M1": 0.0,
+      "Q2/objective_1": 0.0,
+      "Q3/primary_duration_M1": 0.0,
+      "Q3/objective_1": 0.0,
+      "Q4/primary_duration_M1": 0.0,
+      "Q4/objective_1": 0.0,
+      "Q5/primary_duration_M1": 0.0,
+      "Q5/primary_duration_M2": 0.0,
+      "Q5/primary_duration_M3": 0.0,
+      "Q5/objective_1": 0.0,
+      "Q5/objective_2": 0.0
+    }
+  },
+  "notice": "Prepared for human result-freeze review. No AI has confirmed the human gate.",
+  "contracts_registered": true,
+  "template_mapping_status": "pass",
+  "prepared_at": "2026-07-22T11:53:23.725660+00:00"
+}
