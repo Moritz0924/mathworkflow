@@ -1,4 +1,0 @@
-interface:
-  display_name: "Modeling Data Reproducibility"
-  short_description: "数模数据来源、预处理与复现说明增强"
-  default_prompt: "帮我把这些数据来源、预处理步骤和代码附件整理成数学建模论文中的数据与复现说明。"

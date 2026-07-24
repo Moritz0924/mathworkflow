@@ -1,4 +1,0 @@
-﻿formula_id,used_in_section,formula_latex,meaning,symbols_defined,assumption_ids,result_ids,status,owner,notes
-EQ1,模型建立,\hat y=\beta_0+\sum_k \beta_k x_k,可解释多元产量回归,y: yield; x_k: greenhouse feature; beta: coefficient,A1,R-Q1-001,ready,local_training_agent,
-EQ2,模型评价,RMSE=\sqrt{n^{-1}\sum_i(y_i-\hat y_i)^2},交叉验证误差,RMSE: root mean squared error; y: observed yield; yhat: predicted yield,A1,R-Q2-001,ready,local_training_agent,
-EQ3,不确定性,"I_j=[\hat y_j-1.96s_e,\hat y_j+1.96s_e]",待评估批次产量预测区间,I: interval; yhat: prediction; se: empirical residual std,A1,R-Q3-001;R-Q3-002;R-Q3-003,ready,local_training_agent,

@@ -1,4 +1,0 @@
-﻿enhancement_id,target_area,severity,evidence,proposed_change,acceptance_check,status,notes
-ENH-SYS-001,system,major,reports/stage_acceptance_checklist.csv,训练模式必须逐阶段记录正式流程迁移验收项。,stage_acceptance_checklist.csv 至少16条且全部pass。,candidate,
-ENH-PROMPT-001,prompt,major,prompts/training_sandbox/stages,sandbox prompt 保留正式阶段的必需输入、输出、自检和完成条件。,prompt_route_manifest.csv 有 formal/sandbox 对照。,candidate,
-ENH-GATE-001,gate,major,11_review/simulated_human_gate_log.csv,训练闸门只产生 formal_effect=none 的模拟记录。,training acceptance 检查 formal_effect。,candidate,

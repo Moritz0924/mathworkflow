@@ -1,4 +1,0 @@
-interface:
-  display_name: "Modeling Paper Writing"
-  short_description: "数学建模论文写作与结构重构增强"
-  default_prompt: "帮我把赛题、模型、结果和中文草稿整理成符合数学建模竞赛风格的论文段落。"

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
-<rect width="900" height="520" fill="#f8fafc"/>
-<rect x="40" y="36" width="820" height="420" fill="#ffffff" stroke="#d0d7de"/>
-<text x="62" y="80" font-size="28" fill="#1f2937">F006 敏感性情景对比图</text>
-<text x="62" y="116" font-size="16" fill="#475569">图表类型：scenario；证据绑定：F006</text>
-<rect x='120' y='192' width='48' height='68' fill='#1f4e79'/><text x='116' y='282' font-size='14'>情景1</text><rect x='215' y='142' width='48' height='118' fill='#2a9d8f'/><text x='211' y='282' font-size='14'>情景2</text><rect x='310' y='168' width='48' height='92' fill='#f2b134'/><text x='306' y='282' font-size='14'>情景3</text><path d='M120 230 L215 170 L310 198' fill='none' stroke='#7c3aed' stroke-width='4'/>
-<text x="62" y="330" font-size="16" fill="#334155">中文坐标轴：成本、风险、时间窗、装载率</text>
-<text x="62" y="360" font-size="16" fill="#334155">结论：该图服务于路径优化论证，不作为装饰图。</text>
-</svg>

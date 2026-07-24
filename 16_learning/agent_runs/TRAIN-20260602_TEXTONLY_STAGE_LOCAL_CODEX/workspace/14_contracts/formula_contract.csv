@@ -1,4 +1,0 @@
-﻿formula_id,used_in_section,formula_latex,meaning,symbols_defined,assumption_ids,result_ids,status,owner,notes
-EQ1,模型建立,\hat c=\beta_0+\beta_R R+\beta_G G+\beta_B B,线性浓度识别模型,c: concentration; R/G/B: normalized channels; beta: coefficients,A1,R-Q1-001,ready,local_training_agent,
-EQ2,模型评价,RMSE=\sqrt{n^{-1}\sum_i(c_i-\hat c_i)^2},交叉验证误差,RMSE: root mean squared error; c: observed; chat: predicted; n: sample count,A1,R-Q1-001;R-Q2-001,ready,local_training_agent,
-EQ3,不确定性,"I_j=[\hat c_j-1.96s_e,\hat c_j+1.96s_e]",待测样本预测区间,I: interval; chat: prediction; se: empirical residual standard deviation,A1,R-Q3-001;R-Q3-002;R-Q3-003,ready,local_training_agent,

@@ -1,2 +1,0 @@
-﻿task_id,source,severity,target_artifact,issue,action,status,owner,notes
-REV-001,training,major,09_paper/full_draft.md,ensure excellent density and export readiness,"expanded validation, tables, figures and appendix",closed,local_training_agent,

@@ -1,4 +1,7 @@
-﻿question,problem_type,model_family,main_model,baseline_model,data_shape,output_type,risk_focus,confidence_0_1,notes
-Q1,,,,,,,,,
-Q2,,,,,,,,,
-Q3,,,,,,,,,
+﻿question_id,question,problem_type,model_family,main_model,data_feature,output_goal,input_data,core_variables,evaluation_metric,risk_level,human_confirmed,notes
+Q1,Q1,分类识别型,机器学习,随机森林/聚类/分类模型,待结合数据字典确认,待人工确认,待匹配附件,待识别,待定,中,否,命中关键词：识别、训练
+Q2,Q2,预测分析型,预测回归,回归/时间序列模型,待结合数据字典确认,待人工确认,待匹配附件,待识别,待定,中,否,命中关键词：预测
+Q3,Q3,预测分析型,预测回归,回归/时间序列模型,待结合数据字典确认,待人工确认,待匹配附件,待识别,待定,中,否,命中关键词：预测、回归、拟合、误差
+Q4,Q4,预测分析型,预测回归,回归/时间序列模型,待结合数据字典确认,待人工确认,待匹配附件,待识别,待定,中,否,命中关键词：预测
+Q5,Q5,预测分析型,预测回归,回归/时间序列模型,待结合数据字典确认,待人工确认,待匹配附件,待识别,待定,中,否,命中关键词：预测
+Q6,Q6,预测分析型,预测回归,回归/时间序列模型,待结合数据字典确认,待人工确认,待匹配附件,待识别,待定,中,否,命中关键词：预测、回归、拟合、误差

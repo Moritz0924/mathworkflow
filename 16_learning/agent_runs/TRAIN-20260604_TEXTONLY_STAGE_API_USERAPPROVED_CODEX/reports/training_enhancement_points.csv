@@ -1,7 +1,0 @@
-target_area,point_id,description,severity,stage_observed
-system,SYS01,沙盒环境文件读取能力受限，代理无法获取当前合同和论文状态，导致决策依赖假设，建议提供轻量级文件查询接口,high,final_export
-system,SYS02,合同文件在final_export阶段只读但上游可能遗留错误，需建立阶段前合同自检与自动修复机制,medium,final_export
-prompt,PRMPT01,final_export阶段提示未明确如何处理合同不一致问题，可增加“如合同不满足导出条件，应终止并指示上游修复”的指引,low,final_export
-prompt,PRMPT02,训练沙盒的open fail队列应随阶段流转自动注入并与stage prompt绑定，以减少人工复述,medium,all_stages
-gate,GATE01,模拟闸门日志格式统一性不足，建议定义标准列集并自动生成空模板,low,final_export
-gate,GATE02,阶段出口闸门应增加自动校验合同完整性的步骤，而不依赖代理手动判断,high,all_stages

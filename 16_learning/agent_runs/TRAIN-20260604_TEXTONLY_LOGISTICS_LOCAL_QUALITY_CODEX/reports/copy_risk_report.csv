@@ -1,2 +1,0 @@
-﻿target_path,target_type,max_overlap_ratio,matched_source_id,matched_source_path,ngram_size,threshold,decision,checked_at
-16_learning/agent_runs/TRAIN-20260604_TEXTONLY_LOGISTICS_LOCAL_QUALITY_CODEX/workspace/09_paper/full_draft.md,agent_training_sandbox_draft,0.001798,SRCb43dcd606732,2/拟合模型/血管管道的三维重建.pdf,8,0.080000,pass,2026-06-04T23:53:39

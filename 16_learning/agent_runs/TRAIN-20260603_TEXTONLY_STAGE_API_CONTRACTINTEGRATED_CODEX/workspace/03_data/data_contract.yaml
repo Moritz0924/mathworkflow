@@ -1,9 +1,0 @@
-# Draft Data Contract
-# Filled fields will be populated after data access.
-
-data_sources: []  # to be listed
-format: "csv"     # assumed, verify
-encoding: "utf-8" # assumed, verify
-delimiter: ","    # assumed, verify
-missing_values: ["NA", "", "null"]  # placeholder
-notes: "This contract is a draft. Actual values pending data review."

@@ -1,4 +1,0 @@
-﻿field,meaning,unit,source
-sample_id,样本编号,-,题目给定或沙盒标准样本
-concentration,溶液浓度,mg/L,标准样本标签
-R/G/B,归一化颜色通道读数,-,检测装置输出

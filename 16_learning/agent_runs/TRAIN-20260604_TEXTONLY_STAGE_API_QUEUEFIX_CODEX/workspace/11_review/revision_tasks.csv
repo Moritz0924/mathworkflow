@@ -1,2 +1,0 @@
-task_id,source_stage,target_artifact,severity,status,description,assigned_to,notes
-TASK-RF-001,results_freeze,07_results/model_output.csv,critical,open,Execute model code to produce real output files in 07_results/; then re-run results freeze.,codegen+human,"Required to produce verifiable results for result_contract.csv"

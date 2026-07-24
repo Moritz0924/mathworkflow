@@ -1,6 +1,0 @@
-timestamp,stage,gate_type,decision,comment,formal_effect
-2025-06-03T10:00:00Z,intake,human_gate,approved,模拟摄入阶段闸门确认,simulated_none
-2025-06-03T10:15:00Z,task_analysis,human_gate,approved,模拟任务分析闸门确认,simulated_none
-2025-06-03T10:30:00Z,model_route,human_gate,approved,模拟模型路径闸门确认,simulated_none
-2025-06-03T11:00:00Z,paper_draft,human_gate,approved,模拟论文初稿闸门确认,simulated_none
-2025-06-03T12:00:00Z,final_export,human_gate,approved,模拟最终导出闸门确认,simulated_none

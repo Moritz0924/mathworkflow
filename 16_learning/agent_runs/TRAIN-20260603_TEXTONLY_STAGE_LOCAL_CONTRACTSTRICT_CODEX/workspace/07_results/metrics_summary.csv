@@ -1,4 +1,0 @@
-﻿model,cv_rmse,cv_mae,interpretability
-linear,0.118,0.094,high
-polynomial,0.101,0.081,medium
-ensemble,0.083,0.067,medium

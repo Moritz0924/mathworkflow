@@ -1,6 +1,0 @@
-id,target_area,suggestion,rationale,priority,status
-TEP-001,system,增加合同校验脚本对 figure_contract 中单行多 result_id 的严格检查，当前已由人工修复但自动化规则可前置,减少后期修复工作量；增强合同一致性,high,draft
-TEP-002,system,集成 MCP 视觉反馈以验证图表中文字体渲染效果，避免仅依赖 meta 数据,当前 sandbox 无法验证字体渲染，可能影响实际排版,medium,draft
-TEP-003,prompt,final_export 阶段提示词中明确 PPT 生成条件与内容边界，避免过度生成,当前提示词虽提及可选但未详细说明内容禁止新增事实，可细化,medium,draft
-TEP-004,prompt,在 final_export 阶段增加对“所有可见文字为中文”的硬性检查步骤，并输出检查报告,沙盒训练发现该要求容易遗漏，可做成可执行检查项,high,draft
-TEP-005,gate,模拟人工闸门日志应包含对最终导出产物中文合规的确认项,目前手工填写 formal_effect=none，但未强制包含中文检查，可扩展到闸门问题,medium,draft

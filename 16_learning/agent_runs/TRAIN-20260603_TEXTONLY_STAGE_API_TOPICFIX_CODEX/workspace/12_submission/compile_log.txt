@@ -1,1 +1,0 @@
-LaTeX compilation attempted but failed: missing 02_latex_template/main.tex or sections/*.tex. File not found or empty. No PDF generated.

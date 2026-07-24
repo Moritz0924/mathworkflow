@@ -1,5 +1,0 @@
-id,target_area,description,source_stage,severity
-SYS-001,system,"Workflow controller should enforce stage lockout more strictly when preconditions not met",final_export,minor
-PROMPT-001,prompt,"Prompt for final_export should include fallback instructions when full_draft.md unavailable",final_export,major
-GATE-001,gate,"Human gate simulation should be automatically logged with formal effect none",final_export,minor
-PROMPT-002,prompt,"Add explicit read capability for previous stage artifacts during final_export to ensure paper copy",final_export,major

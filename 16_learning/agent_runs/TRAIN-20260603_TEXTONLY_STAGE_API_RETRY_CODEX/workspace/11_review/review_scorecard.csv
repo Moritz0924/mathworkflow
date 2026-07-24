@@ -1,9 +1,0 @@
-issue_id,category,severity,description,evidence,recommendation,acceptance_check
-C001,Problem Coverage,Fail,Task requirements not fully addressed; placeholder sections,"Paper contains placeholder markers; validation training_final_paper_placeholder",Expand all sections to meet problem statement.,No placeholder markers remain; all sections have substantive content.
-C002,Data,Fail,No data sourcing or description,Data section missing,Provide data source and description.,Data section written with source statement.
-C003,Model,Major,Model description insufficient,Model section thin,Elaborate model assumptions variables equations.,Model section comprehensive with at least 3 equations.
-C004,Results,Fail,No numerical results or analysis,Results section placeholder,Generate and report actual results.,Results section contains tables with verifiable numbers.
-C005,Figures,Fail,Figures are empty placeholder files (11 bytes),"MCP vision metadata_only; file size 11 bytes.",Generate proper figures and register in contract.,Figure files >10KB and show valid charts.
-C006,Writing,Fail,Paper too thin (1224 chars 8 sections),Validation report,Expand paper to substantive length and improve coherence.,Paper length >5000 chars with complete argument.
-C007,Contracts,Major,Contracts likely incomplete or missing,Validation report,Complete all contract files and validate.,validate_contracts.py passes.
-C008,Scoring Risk,Major,High probability of fail due to accumulated issues,All above,Address all fail/major issues before submission.,Scorecard shows no fail issues and ≤2 major.

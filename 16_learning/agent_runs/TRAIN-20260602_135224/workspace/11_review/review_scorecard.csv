@@ -1,3 +1,0 @@
-﻿round_id,reviewer,dimension,score,max_score,severity,issue_count,top_risk,required_action,status,last_checked
-R2,auto_review,国赛论文框架,96,100,pass,0,none,none,closed,2026-06-02T13:52:25
-R2,auto_review,图表与结果分析,95,100,pass,0,none,none,closed,2026-06-02T13:52:25

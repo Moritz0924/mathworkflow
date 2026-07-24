@@ -1,3 +1,0 @@
-result_file,source_code,description
-07_results/q1_coefficients.csv,06_code/q1_linear_model.py,OLS coefficients for Q1
-07_results/q1_metrics.csv,06_code/q1_linear_model.py,Performance metrics for Q1

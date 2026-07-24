@@ -1,9 +1,0 @@
-claim_id,claim_text,severity,evidence_type,evidence_ref,formula_ids,status
-C001,"RGB channels are strong predictors of concentration",major,result,R001,F001,validated
-C002,"MLR model meets linearity assumption",minor,diagnostic,D001,,validated
-C003,"Model has high adjusted R-squared",major,result,R001,F001,validated
-C004,"Cross-validation RMSE is stable",major,result,R002,F002,validated
-C005,"Residuals are normally distributed",minor,diagnostic,D002,,validated
-C006,"No heteroscedasticity detected",minor,diagnostic,D003,,validated
-C007,"The linear model explains most variance",medium,result,R001,F001,validated
-C008,"Prediction error is consistent across folds",strong,result,R002,F002,validated

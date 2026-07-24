@@ -1,8 +1,0 @@
-round_id,reviewer,dimension,score,max_score,severity,issue_count,top_risk,required_action,status,last_checked
-4,problem_reviewer,Problem Coverage,10,10,none,0,None,None,closed,2026-06-04T22:00:00Z
-4,model_reviewer,Model Rigor,10,10,none,0,None,None,closed,2026-06-04T22:00:00Z
-4,code_reviewer,Code Reproducibility,9,10,minor,1,Insufficient code documentation,Add docstrings and comments to Python scripts,open,2026-06-04T22:00:00Z
-4,figure_reviewer,Figure Quality,9,10,minor,1,Chinese font rendering unverified,Verify Chinese font rendering and regenerate if needed,open,2026-06-04T22:00:00Z
-4,paper_reviewer,Writing & Argumentation,9,10,minor,1,Minor language polish,Perform language polish pass,open,2026-06-04T22:00:00Z
-4,contract_auditor,Contract Integrity,10,10,none,0,None,None,closed,2026-06-04T22:00:00Z
-4,judge_reviewer,Overall Judgment,10,10,none,0,None,None,closed,2026-06-04T22:00:00Z

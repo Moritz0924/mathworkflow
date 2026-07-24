@@ -1,13 +1,16 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import re
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Set
 
-from workflow_utils import ROOT, read_config, read_csv_dict, read_csv_header, rel, truthy
+import yaml
+
+ROOT = Path(__file__).resolve().parents[1]
 
 REPORT_JSON = ROOT / "11_review" / "contract_validation_report.json"
 REPORT_MD = ROOT / "11_review" / "contract_validation_report.md"
@@ -41,22 +44,22 @@ FINAL_REQUIRED_NONEMPTY_CONTRACTS = {
 TRUE_VALUES = {"1", "true", "yes", "y", "是", "已验证", "verified", "read", "已读"}
 
 STAGE_REQUIREMENT_KEYS: Dict[str, List[str]] = {
-    "prior_retrieval": ["before_prior_retrieval"],
-    "figures": ["before_figures"],
-    "paper_draft": ["before_paper_draft"],
-    "paper_full": ["before_paper_draft"],
-    "auto_review": ["before_auto_review"],
-    "revision": ["before_auto_review"],
-    "polish": ["before_polish"],
-    "compile": ["before_final"],
-    "final_export": ["before_final"],
+    # These are prerequisites for entering a stage. The stage validator checks
+    # the outputs produced by that stage before state advancement.
+    "model_design": [],
+    "implementation": ["before_model_design"],
+    "result_freeze": ["before_model_design"],
+    "evidence_design": ["before_result_freeze"],
+    "paper_review": ["before_evidence_design"],
+    "finalize": ["before_paper_review"],
 }
 
 REQUIRED_NONEMPTY_BY_KEY: Dict[str, Set[str]] = {
-    "before_figures": {"14_contracts/result_contract.csv"},
-    "before_paper_draft": {"14_contracts/claim_evidence_map.csv", "14_contracts/result_contract.csv"},
-    "before_auto_review": {"14_contracts/claim_evidence_map.csv", "14_contracts/result_contract.csv"},
-    "before_polish": {"14_contracts/artifact_freeze_registry.csv"},
+    "before_model_design": {"14_contracts/formula_contract.csv"},
+    "before_result_freeze": {"14_contracts/result_contract.csv", "14_contracts/artifact_freeze_registry.csv"},
+    "before_evidence_design": {"14_contracts/result_contract.csv", "14_contracts/figure_contract.csv", "14_contracts/claim_evidence_map.csv"},
+    "before_paper_review": {"14_contracts/claim_evidence_map.csv", "14_contracts/result_contract.csv"},
+    "before_finalize": {"14_contracts/artifact_freeze_registry.csv", "14_contracts/polish_diff_check.csv"},
 }
 
 
@@ -69,6 +72,45 @@ def configure_root(root: Path) -> None:
     ROOT = root.resolve()
     REPORT_JSON = ROOT / "11_review" / "contract_validation_report.json"
     REPORT_MD = ROOT / "11_review" / "contract_validation_report.md"
+
+
+def read_config(filename: str) -> Dict[str, Any]:
+    path = ROOT / "config" / filename
+    if not path.exists():
+        return {}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+
+
+def read_csv_dict(path: Path) -> List[Dict[str, str]]:
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def read_csv_header(path: Path) -> List[str]:
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        return next(csv.reader(handle), [])
+
+
+def truthy(value: Any) -> bool:
+    return str(value or "").strip().lower() in {"1", "true", "yes", "y", "on", "confirmed"}
+
+
+def rel(path: Path) -> str:
+    try:
+        return path.resolve().relative_to(ROOT).as_posix()
+    except ValueError:
+        return str(path)
+
+
+def read_state() -> Dict[str, Any]:
+    path = ROOT / "workflow_state.yaml"
+    if not path.exists():
+        return {}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
 
 
 def clean(value: Any) -> str:
@@ -449,7 +491,7 @@ def validate_contract_bus(stage: str = "current", all_requirements: bool = False
     polish_rows = read_csv_dict(base / "polish_diff_check.csv")
     task_rows = read_csv_dict(base / "revision_tasks.csv")
 
-    if stage in {"compile", "final_export"} or all_requirements:
+    if stage in {"finalize", "final_export"} or all_requirements:
         final_rows = {
             "result_contract.csv": result_rows,
             "claim_evidence_map.csv": claim_rows,
@@ -481,7 +523,7 @@ def validate_contract_bus(stage: str = "current", all_requirements: bool = False
     validate_polish_diff(polish_rows, issues)
     validate_revision_tasks(task_rows, issues)
 
-    if stage in {"auto_review", "revision", "compile", "final_export"} or all_requirements:
+    if stage in {"paper_review", "finalize", "auto_review", "revision", "compile", "final_export"} or all_requirements:
         validate_review_scorecard(issues)
 
     return issues
@@ -520,8 +562,6 @@ def write_report(issues: Sequence[Mapping[str, str]], stage: str) -> None:
 
 def run_validation(stage: str = "current", all_requirements: bool = False, write: bool = True) -> List[Dict[str, str]]:
     if stage == "current":
-        from workflow_utils import read_state
-
         stage = str(read_state().get("current_stage") or "current")
     issues = validate_contract_bus(stage, all_requirements=all_requirements)
     if write:
@@ -530,7 +570,7 @@ def run_validation(stage: str = "current", all_requirements: bool = False, write
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Validate v3.2-MVP contract bus files.")
+    parser = argparse.ArgumentParser(description="Validate v4 formal-workflow contract bus files.")
     parser.add_argument("--stage", default="current", help="Stage name or current.")
     parser.add_argument("--root", default="", help="Optional workflow root to validate, e.g. a training sandbox workspace.")
     parser.add_argument("--all", action="store_true", help="Validate all configured requirement groups.")

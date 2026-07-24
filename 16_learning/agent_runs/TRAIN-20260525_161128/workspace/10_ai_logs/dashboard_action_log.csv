@@ -1,3 +1,0 @@
-﻿action_id,timestamp,action,command,job_id,status,exit_code,confirmation,notes
-ACT-20260525_084850-001,2026-05-25T08:48:50,check-gates,I:\py\pybenti_1\python.exe scripts/check_gates.py,JOB-20260525_084850-001,started,,,dashboard check action
-ACT-END-JOB-20260525_084850-001,2026-05-25T08:48:51,check-gates,I:\py\pybenti_1\python.exe scripts/check_gates.py,JOB-20260525_084850-001,passed,0,,dashboard check action

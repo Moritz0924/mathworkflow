@@ -1,5 +1,0 @@
-figure_id,file_path,caption,source,claim_ids
-figF001,08_figures/figF001.png,"Scatter plot of predicted vs actual concentration (train)",figures,C001
-figF002,08_figures/figF002.png,"Residual plot",figures,C005 C006
-figF003,08_figures/figF003.png,"Cross-validation RMSE distribution",figures,C004
-figF004,08_figures/figF004.png,"Coefficient importance bar chart",figures,C001

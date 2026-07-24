@@ -1,4 +1,0 @@
-$ python scripts/deepseek_agent_runner.py --prompt E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_112822\workspace\agent_prompt.md --workspace E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_112822\workspace --run-dir E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_112822 --mode training_sandbox --max-iterations 3
-cwd: E:\math-module\math-workflow\math-workflow\16_learning\agent_runs\TRAIN-20260602_112822\workspace
-
-{"status": "failed", "failure_code": "DEEPSEEK_AGENT_ERROR", "message": "DeepSeek request failed: <urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>"}

@@ -1,3 +1,0 @@
-formula_id,formula_name,description,latex,source,tags
-F001,MLR_Model,Multiple Linear Regression equation for concentration prediction,"C = \beta_0 + \beta_1 R + \beta_2 G + \beta_3 B + \epsilon",paper_draft,regression color concentration
-F002,RMSE,Root Mean Square Error,"RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^n (C_i - \hat{C}_i)^2}",paper_draft,error metric

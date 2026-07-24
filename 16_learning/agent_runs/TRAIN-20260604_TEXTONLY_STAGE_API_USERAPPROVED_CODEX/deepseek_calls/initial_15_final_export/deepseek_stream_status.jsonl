@@ -1,3 +1,0 @@
-{"event": "stream_start", "elapsed_seconds": 0.0, "chunk_count": 0, "content_chars": 0, "reasoning_content_chars": 0, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T00:40:56"}
-{"event": "stream_progress", "elapsed_seconds": 30.063, "chunk_count": 1060, "content_chars": 0, "reasoning_content_chars": 2437, "idle_seconds": 0.0, "finish_reason": null, "logged_at": "2026-06-04T00:41:26"}
-{"event": "stream_done", "elapsed_seconds": 53.75, "chunk_count": 2218, "content_chars": 2703, "reasoning_content_chars": 2489, "idle_seconds": 0.0, "finish_reason": "stop", "logged_at": "2026-06-04T00:41:49"}

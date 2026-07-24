@@ -1,5 +1,0 @@
-citation_id,reference_text,source_file,status,support_grade,metadata_verified,bibtex_key
-CIT01,"Box G. E. P., Draper N. R. (1987). Empirical Model-Building and Response Surfaces. Wiley.",09_paper/full_draft.md,active,method,true,BoxDraper1987
-CIT02,"James G., Witten D., Hastie T., Tibshirani R. (2013). An Introduction to Statistical Learning. Springer.",09_paper/full_draft.md,active,method,true,James2013ISLR
-CIT03,"Pedregosa F. et al. (2011). Scikit-learn: Machine Learning in Python. JMLR, 12, 2825-2830.",09_paper/full_draft.md,active,tool,true,Pedregosa2011Sklearn
-CIT04,"Seabold S., Perktold J. (2010). Statsmodels: Econometric and Statistical Modeling with Python. Proc. 9th Python in Science Conf.",09_paper/full_draft.md,active,tool,true,Seabold2010Statsmodels

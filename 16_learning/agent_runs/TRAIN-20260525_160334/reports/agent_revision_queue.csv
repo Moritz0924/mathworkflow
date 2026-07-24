@@ -1,2 +1,0 @@
-﻿task_id,run_id,iteration,severity,target_artifact,issue_summary,proposed_action,acceptance_check,status,human_decision,notes
-TRAIN-20260525_160334-TASK-001,TRAIN-20260525_160334,1,fail,16_learning/agent_runs/TRAIN-20260525_160334/workspace/09_paper/full_draft.md,No sandbox full draft or section content was found.,Run the agent to produce a contract-bound draft before benchmarking.,workspace/09_paper/full_draft.md exists and contains substantive content.,open,,from TRAIN-20260525_160334-GAP-001

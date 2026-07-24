@@ -1,12 +1,15 @@
-# 附件概览
+# 附件总览（自动生成）
 
-| 附件编号 | 文件名 | 类型 | 初步内容 | 可能服务问题 | 读取状态 | 风险 |
-|---|---|---|---|---|---|---|
-| A1 |  |  |  |  | 未读取 |  |
+## 题目文件
 
-## 附件读取备注
+| 文件 | 类型 | 状态 | 抽取字符数 |
+|---|---:|---|---:|
+| text_only_color_concentration_problem.md | .md | 已抽取文本 | 1063 |
+| text_only_crop_yield_problem.md | .md | 已抽取文本 | 1487 |
+| text_only_emergency_logistics_problem.md | .md | 已抽取文本 | 1318 |
+| text_only_medical_supply_dispatch_problem.md | .md | 已抽取文本 | 1839 |
+| text_only_shelter_supply_problem.md | .md | 已抽取文本 | 1805 |
 
+## 数据文件
 
-## 暂不可读或含义不明的附件
-
-
+未发现数据文件。

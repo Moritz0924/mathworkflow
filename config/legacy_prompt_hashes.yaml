@@ -1,0 +1,21 @@
+version: v1
+frozen_at_tag: v3.2-pre-thin-core
+canonical_line_endings: crlf
+files:
+  prompts/stage_prompt_contract.md: 58ebc885ed9b333e9b0b968daefde3504b0e1b63606060c8aaf54d46046900c7
+  prompts/stages/00_latex_template.md: 7f88d4c161bab5ef17defeaacd107e9ef61471e3d364ab3e03d196c4f80cc122
+  prompts/stages/01_intake.md: 9fe4a6e4e12775d36ec17d296c022324f5a478a486780607ba0e33cf174e11e9
+  prompts/stages/02_eda.md: 39c3725610696a917bba0bf01b3734a89d39916d2159a55ebb148a7d897a0a1d
+  prompts/stages/03_task_analysis.md: c9741e56c6cd5f861e1a5f2d64630d2204344ea63ca6a500388cf7711bc831b5
+  prompts/stages/04_prior_retrieval.md: f9d6ce1d106acc140223e88d68f874318d86940bf1044d4edb31ab91336376c7
+  prompts/stages/05_model_route.md: 63e9dd3d180256accff692df0522c3d77ddf4bf325dba98bba98c1eec547d3ae
+  prompts/stages/06_codegen.md: 98c24f4379b33367af23a53c5bcc7d0495f1a88f01379bca44d58d2dbc63c43b
+  prompts/stages/07_results_freeze.md: 454b592460a7dd7f02190adac9b78775e0414ecf851c326c477fd9646a309599
+  prompts/stages/08_figures.md: a7f85076737ff5985e9e02efbd2c48772a98035db2ac9c6440ae9423109a1f82
+  prompts/stages/09_paper_draft.md: 3e8273306ac8f8716a4a611ab4bcc2f094386921225c8266a44c24a11fd4a084
+  prompts/stages/10_paper_full.md: 0f75c050278a8dee94f6fd899ac2f738917ae7557ec92cf13d63c69dc5135c0c
+  prompts/stages/11_auto_review.md: 275d54eeb2778cfdf65070753e056d178ca1ec59b8181a671e46ddecf5781706
+  prompts/stages/12_revision.md: b82f5dc27de9608b3995d89d4b6698bf04dc3b6ce5df205121fb3c9b015ff3f6
+  prompts/stages/13_polish.md: 9def560f9548a715f4859a93a2b4ebb175f9dd691bd547d8e7f4d090dbb2eab2
+  prompts/stages/14_compile.md: 48bd1e93cbe906aea67577f99f63a8da311e98c689887884eb77e61989f3e9c1
+  prompts/stages/15_final_export.md: 69b47e86d7c0a49b5bf32769c06d96de6ee8ffda2c5445f0340fbce92333f8e5

@@ -5,3 +5,4 @@ PyYAML
 pypdf
 numpy
 pytest
+reportlab

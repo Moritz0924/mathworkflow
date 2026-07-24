@@ -1,6 +1,0 @@
-pandas
-openpyxl
-matplotlib
-PyYAML
-pypdf
-numpy

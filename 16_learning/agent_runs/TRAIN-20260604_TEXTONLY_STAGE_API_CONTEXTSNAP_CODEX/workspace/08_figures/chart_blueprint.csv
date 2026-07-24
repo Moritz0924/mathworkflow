@@ -1,9 +1,0 @@
-figure_id,question_id,core_claim,result_id,chart_type,panel_plan,backend,color_scheme,font_family,quality_score,used_in_section,latex_label,caption_cn,review_risk,status
-F001,Q1,OLS系数估计值与方向,R01;R02;R03;R04,bar,单图,matplotlib,deep_blue_vermilion,SimHei,4.5,sec_model,fig:coef,多元线性回归模型各变量系数估计值,font_risk,active
-F002,Q1,模型预测值与真实值对比,R05;R06,scatter,单图,matplotlib,muted_blue_gold,SimHei,4.5,sec_results,fig:pred_actual,模型预测值与标准样本真实浓度的散点图,font_risk,active
-F003,Q1,残差同方差性检验,R05;R06,scatter,单图,matplotlib,muted_blue_gold,SimHei,4.5,sec_diagnostics,fig:resid_fitted,残差对拟合值的散点图检验同方差性,font_risk,active
-F004,Q1,残差正态性检验,R05;R06,qq,单图,matplotlib,muted_blue_gold,SimHei,4.5,sec_diagnostics,fig:qq,残差分位数-理论分位数图检验正态性,font_risk,active
-F005,Q1,浓度与各通道线性关系,R02;R03;R04,scatter_matrix,一组散点图,matplotlib,teal_orange_diverging,SimHei,4.2,sec_model,fig:scatter_matrix,浓度与RGB通道的散点图矩阵,font_risk,active
-F006,Q1,变量相关性热力图,R01;R05,heatmap,单图,matplotlib,RdBu_r diverging,SimHei,4.2,sec_model,fig:corr_heat,浓度及RGB通道Pearson相关系数热力图,font_risk,active
-F007,Q2,模型对比交叉验证RMSE,R07;R08;R09,bar,单图,matplotlib,muted_blue_gold,SimHei,4.5,sec_model_comparison,fig:model_cmp,三种模型留一交叉验证RMSE对比,font_risk,active
-F008,Q3,预测区间可视化,R10;R11;R12;R13;R14;R15;R16;R17;R18,errorbar,单图,matplotlib,nature_green_gold,SimHei,4.5,sec_predictions,fig:pred_intervals,待测样本点预测及95%预测区间,font_risk,active

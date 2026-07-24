@@ -1,5 +1,0 @@
-stage,gate_type,decision,formal_effect,notes,timestamp
-intake,human,passed,none,"Simulated intake gate pass",2025-06-03T12:00:00Z
-model_route,human,passed,none,"Simulated model route gate pass; route selected: linear regression",2025-06-03T12:05:00Z
-compile,human,passed,none,"Simulated compile gate pass; paper compiled",2025-06-03T12:10:00Z
-final_export,human,passed,none,"Simulated final gate pass with exemption for open fail items (VAL-001 to VAL-010) due to sandbox limitations",2025-06-03T12:15:00Z

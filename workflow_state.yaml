@@ -1,40 +1,17 @@
-version: v3.2-mvp
-execution_mode: deep_sequential
-allow_parallel: false
-current_stage: intake
+version: v4
+project_id: math-workflow-current
+current_stage: model_design
+status: pending_chatgpt
+active_handoff_id: null
+context_sha256: null
 pending_gate: null
-last_confirmed_gate: null
 completed_stages:
-- latex_template
-locked_stages:
-- eda
-- task_analysis
-- prior_retrieval
-- model_route
-- codegen
-- results_freeze
-- figures
-- paper_draft
-- paper_full
-- auto_review
-- revision
-- polish
-- compile
-- final_export
-stage_status:
-  latex_template: completed
-  intake: pending
-  eda: locked
-  task_analysis: locked
-  prior_retrieval: locked
-  model_route: locked
-  codegen: locked
-  results_freeze: locked
-  figures: locked
-  paper_draft: locked
-  paper_full: locked
-  auto_review: locked
-  revision: locked
-  polish: locked
-  compile: locked
-  final_export: locked
+- intake
+- data_analysis
+history:
+- at: '2026-07-17T16:16:06+00:00'
+  event: migrated_from_v3.2
+  old_stage: model_route
+  validated_stages:
+  - intake
+  - data_analysis

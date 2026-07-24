@@ -1,6 +1,0 @@
-timestamp,stage,gate_name,decision,notes,formal_effect
-2025-06-04T09:00:00,intake,human_gate_intake,pass,模拟人工确认输入材料完整,无
-2025-06-04T09:30:00,task_analysis,human_gate_task_approved,pass,模拟批准问题分析与任务定义,无
-2025-06-04T10:00:00,model_route,human_gate_model_selected,pass,模拟确认建模路线,无
-2025-06-04T10:30:00,results_freeze,human_gate_results_frozen,pass,模拟确认结果冻结,无
-2025-06-04T11:00:00,final_export,human_gate_export,pass,模拟确认最终导出材料,无

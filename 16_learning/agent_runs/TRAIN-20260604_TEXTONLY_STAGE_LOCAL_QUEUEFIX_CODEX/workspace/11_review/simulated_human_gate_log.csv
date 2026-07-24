@@ -1,5 +1,0 @@
-﻿stage_id,gate_id,agent_decision,evidence,residual_risk,formal_effect
-model_route,model_route_gate,approve_for_training_sandbox,05_model/model_route.md; 14_contracts/formula_contract.csv,small-sample model choice still requires human review in formal mode,none
-results_freeze,results_freeze_gate,approve_for_training_sandbox,14_contracts/result_contract.csv; 07_results/metrics_summary.csv,synthetic sandbox results cannot become formal facts,none
-paper_full,draft_review_gate,approve_for_training_sandbox_revision,09_paper/full_draft.md; 11_review/review_scorecard.csv,formal paper still requires human draft review,none
-compile,final_submission_gate,approve_training_submission_package,12_submission/final_submit_paper.md; 12_submission/final_submit_package.md,training package is not a formal contest submission,none
